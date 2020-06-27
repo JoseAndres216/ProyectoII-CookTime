@@ -1,0 +1,30 @@
+package Logic.Users;
+
+import Logic.DataStructures.SimpleList.SimpleList;
+import Logic.DataStructures.Stack.Stack;
+import javafx.scene.image.Image;
+
+public abstract class AbstractUser {
+    //User personal data and credentials
+    protected String email;
+    protected String password;
+    //user info for UI representation
+    protected String name;
+    protected Image image;
+    protected MyMenu myMenu;
+    //For notifications logic, UI and logical work
+    protected SimpleList<AbstractUser> followers;
+    protected SimpleList<AbstractUser> following;
+    protected Stack<String> notifications;
+    protected Stack<Recipes> newsFeed;
+
+    //methods for the logic of followers
+    protected void addFollower(AbstractUser user) {
+        this.followers.add(user);
+    }
+
+    protected void followUser(AbstractUser user) {
+        this.following.add(user);
+    }
+
+}
