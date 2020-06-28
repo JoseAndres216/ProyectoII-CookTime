@@ -7,6 +7,7 @@ import Logic.DataStructures.SplayTree.SplayTree;
 import Logic.Users.AbstractUser;
 import Logic.Users.Recipes;
 import Logic.Users.User;
+import com.google.gson.Gson;
 
 public class ServerManager {
     private static ServerManager instance = null;
@@ -37,6 +38,14 @@ public class ServerManager {
         System.out.println(ServerManager.getInstance().getUser("macfly@gmail.com"));
     }
 
+    /**
+     * Main method for finding users/enterprises
+     *
+     * @param user  bool, true if user, false if enterprise
+     * @param email search key
+     * @return user who has the email
+     * @throws NullPointerException if not found
+     */
     public AbstractUser findUser(boolean user, String email) throws NullPointerException {
         Node<AbstractUser> current;
         if (user) {
@@ -61,6 +70,13 @@ public class ServerManager {
 
     }
 
+    /**
+     * Main method for finding users/enterprises
+     *
+     * @param user  bool, true if user, false if enterprise
+     * @param email search key
+     * @return true if found, false if not
+     */
     public boolean existUser(boolean user, String email) {
         boolean exists = false;
         try {
@@ -78,6 +94,13 @@ public class ServerManager {
      * @param userData should be string in format json, with the attributes of user
      */
     public void createUser(String userData) {
+        Gson gson = new Gson();
+        User newUser = gson.fromJson(userData, User.class);
+        if (this.existUser(true, newUser.getEmail())) {
+            throw new IllegalArgumentException("The user already exists");
+        } else {
+            this.users.insert(newUser);
+        }
 
     }
 

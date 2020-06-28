@@ -1,0 +1,16 @@
+{
+  "email": "eduardo212792@gmail.com",
+  "password": "encrypted MD5",
+  "name": "Eduardo",
+  "photo": "string representation of a photo",
+  "myMenu": {
+  },
+  "following": {
+  },
+  "followers": {
+  },
+  "notifications": {
+  },
+  "stack": {
+  }
+}

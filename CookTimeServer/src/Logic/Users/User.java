@@ -1,15 +1,16 @@
 package Logic.Users;
 
 public class User extends AbstractUser {
-    private int age;
-    private boolean isChef = false;
-    private int rating;
+    public int age;
+    public boolean isChef = false;
+    public int rating;
 
 
     public User(String email) {
         this.name = "Test User";
         this.email = email;
         this.age = 20;
+
 
     }
 

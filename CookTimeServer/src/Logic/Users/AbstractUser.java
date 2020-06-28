@@ -2,15 +2,15 @@ package Logic.Users;
 
 import Logic.DataStructures.SimpleList.SimpleList;
 import Logic.DataStructures.Stack.Stack;
-import javafx.scene.image.Image;
+
 
 public abstract class AbstractUser implements Comparable<AbstractUser> {
     //User personal data and credentials
+    protected String name;
     protected String email;
     protected String password;
     //user info for UI representation
-    protected String name;
-    protected Image image;
+
     protected MyMenu myMenu;
     //For notifications logic, UI and logical work
     protected SimpleList<AbstractUser> followers;

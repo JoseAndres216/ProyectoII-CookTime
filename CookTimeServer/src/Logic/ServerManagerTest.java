@@ -1,7 +1,9 @@
 package Logic;
 
+import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
 import Logic.Users.User;
+import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -65,5 +67,29 @@ public class ServerManagerTest {
         Assert.assertEquals(true, ServerManager.getInstance().existUser(true, "miguel"));
         Assert.assertEquals(false, ServerManager.getInstance().existUser(true, "carlos"));
         Assert.assertEquals(true, ServerManager.getInstance().existUser(true, "juan"));
+    }
+
+    @Test
+    public void testJsonAddUser() {
+        AbstractUser testUser = new User("eduardo");
+        AbstractUser testUser2 = new User("juan");
+        AbstractUser testUser3 = new User("carlos");
+
+        Gson gson = new Gson();
+        String tstUserString = gson.toJson(testUser, testUser.getClass());
+        String tstUserString2 = gson.toJson(testUser2, testUser.getClass());
+        String tstUserString3 = gson.toJson(testUser3, testUser.getClass());
+
+
+        ServerManager.getInstance().createUser(tstUserString);
+        ServerManager.getInstance().createUser(tstUserString2);
+        ServerManager.getInstance().createUser(tstUserString3);
+
+        Assert.assertTrue(ServerManager.getInstance().existUser(true, "eduardo"));
+        Assert.assertTrue(ServerManager.getInstance().existUser(true, "juan"));
+        Assert.assertTrue(ServerManager.getInstance().existUser(true, "carlos"));
+        ServerManager.getInstance().getUsers().print();
+
+
     }
 }
