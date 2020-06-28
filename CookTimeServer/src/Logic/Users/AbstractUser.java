@@ -5,7 +5,7 @@ import Logic.DataStructures.Stack.Stack;
 import Logic.ServerManager;
 
 
-public abstract class AbstractUser implements Comparable<AbstractUser> {
+public class AbstractUser implements Comparable<AbstractUser> {
     //User personal data and credentials
     protected String name;
     protected String email;
