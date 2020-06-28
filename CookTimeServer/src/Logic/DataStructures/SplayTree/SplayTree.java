@@ -302,9 +302,12 @@ public class SplayTree<T extends Comparable<T>> {
     }
 
     // print the tree structure on the screen
-    public void prettyPrint() {
+    public void print() {
         printHelper(this.root, "", true);
     }
 
 
+    public Node<T> getRoot() {
+        return this.root;
+    }
 }

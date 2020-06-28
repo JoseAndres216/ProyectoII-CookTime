@@ -1,0 +1,3 @@
+{
+  "Tree": "BST{root=Node{data=50, left=Node{data=5, left=null, right=null}, right=Node{data=580, left=Node{data=55, left=null, right=Node{data=85, left=null, right=null}}, right=Node{data=53442, left=null, right=null}}}}"
+}

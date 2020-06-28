@@ -4,37 +4,8 @@ public class BST<T extends Comparable<T>> {
 
     private Node<T> root;
 
-    public boolean isAlready(T data) {
-        Node<T> current = root;
-        while (current != null) {
-            if (current.getData().compareTo(data) == 0) {
-                return true;
-            } else if (current.getData().compareTo(data) > 0) {
-                current = current.getLeft();
-            } else {
-                current = current.getRight();
-            }
-        }
-        return false;
-    }
-
-    public Node<T> find(T data) {
-        Node<T> current = root;
-        while (current != null) {
-            if (current.getData().compareTo(data) == 0) {
-                break;
-            } else if (current.getData().compareTo(data) > 0) {
-                current = current.getLeft();
-            } else {
-                current = current.getRight();
-            }
-        }
-        return current;
-    }
-
     public void insert(T newData) {
         Node<T> newNode = new Node<>(newData);
-
         //Caso en que el arbol esta vacio
         if (root == null) {
             root = newNode;
@@ -46,18 +17,19 @@ public class BST<T extends Comparable<T>> {
         while (!inserted) {
             if (temp.getData().compareTo(newData) == 0) {
                 throw new IllegalArgumentException("Repeated node, cannot insert");
-            } else if (temp.getData().compareTo(newData) > 0) {
+
+            } else if (temp.getData().compareTo(newData) < 0) {
                 if (temp.getRight() != null) {
                     temp = temp.getRight();
                 } else {
                     temp.setRight(newNode);
                     inserted = true;
                 }
-            } else if (temp.getData().compareTo(newData) < 0) {
+            } else if (temp.getData().compareTo(newData) > 0) {
                 if (temp.getLeft() != null) {
                     temp = temp.getLeft();
                 } else {
-                    temp.setRight(newNode);
+                    temp.setLeft(newNode);
                     inserted = true;
                 }
             }
@@ -155,4 +127,30 @@ public class BST<T extends Comparable<T>> {
         return successsor;
     }
 
+    private void printHelper(Node<T> currPtr, String indent, boolean last) {
+        // print the tree structure on the screen
+        if (currPtr != null) {
+            System.out.print(indent);
+            if (last) {
+                System.out.print("R----");
+                indent += "     ";
+            } else {
+                System.out.print("L----");
+                indent += "|    ";
+            }
+
+            System.out.println(currPtr.getData());
+
+            printHelper(currPtr.getLeft(), indent, false);
+            printHelper(currPtr.getRight(), indent, true);
+        }
+    }
+
+    public void print() {
+        this.printHelper(this.root, "  ", true);
+    }
+
+    public Node<T> getRoot() {
+        return this.root;
+    }
 }

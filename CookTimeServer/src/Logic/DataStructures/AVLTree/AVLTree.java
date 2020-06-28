@@ -190,4 +190,28 @@ public class AVLTree<T extends Comparable<T>> {
     public void delete(T value) {
         this.deleteNode(this.root, value);
     }
+
+
+    private void printHelper(Node<T> currPtr, String indent, boolean last) {
+        // print the tree structure on the screen
+        if (currPtr != null) {
+            System.out.print(indent);
+            if (last) {
+                System.out.print("R----");
+                indent += "     ";
+            } else {
+                System.out.print("L----");
+                indent += "|    ";
+            }
+
+            System.out.println(currPtr.getData());
+
+            printHelper(currPtr.getLeft(), indent, false);
+            printHelper(currPtr.getRight(), indent, true);
+        }
+    }
+
+    public void print() {
+        this.printHelper(this.root, "  ", true);
+    }
 }

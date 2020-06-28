@@ -4,7 +4,7 @@ import Logic.DataStructures.SimpleList.SimpleList;
 import Logic.DataStructures.Stack.Stack;
 import javafx.scene.image.Image;
 
-public abstract class AbstractUser {
+public abstract class AbstractUser implements Comparable<AbstractUser> {
     //User personal data and credentials
     protected String email;
     protected String password;
@@ -20,11 +20,23 @@ public abstract class AbstractUser {
 
     //methods for the logic of followers
     protected void addFollower(AbstractUser user) {
-        this.followers.add(user);
+        this.followers.insertLast(user);
     }
 
     protected void followUser(AbstractUser user) {
-        this.following.add(user);
+        this.following.insertLast(user);
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    @Override
+    public int compareTo(AbstractUser user) {
+        return this.email.compareTo(user.email);
+    }
+
+    public void makeChef() {
+
+    }
 }
