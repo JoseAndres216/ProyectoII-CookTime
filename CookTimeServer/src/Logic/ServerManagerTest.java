@@ -1,7 +1,6 @@
 package Logic;
 
 import Logic.FileManagement.FilesLoader;
-import Logic.FileManagement.FilesWriter;
 import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
 import Logic.Users.User;
@@ -61,7 +60,7 @@ public class ServerManagerTest {
         ServerManager.getInstance().getUsers().insert(test1);
         ServerManager.getInstance().getUsers().insert(test2);
         ServerManager.getInstance().getUsers().insert(test3);
-        // ServerManager.getInstance().getUsers().insert(test4);
+        ServerManager.getInstance().getUsers().insert(test4);
         ServerManager.getInstance().getUsers().insert(test5);
 
         Assert.assertEquals(true, ServerManager.getInstance().existUser(true, "eduardo"));
@@ -81,11 +80,10 @@ public class ServerManagerTest {
         String tstUserString = gson.toJson(testUser, testUser.getClass());
         String tstUserString2 = gson.toJson(testUser2, testUser.getClass());
         String tstUserString3 = gson.toJson(testUser3, testUser.getClass());
-        System.out.println(tstUserString);
 
-        ServerManager.getInstance().createUser(tstUserString);
-        ServerManager.getInstance().createUser(tstUserString2);
-        ServerManager.getInstance().createUser(tstUserString3);
+        ServerManager.getInstance().createSubject(true, tstUserString);
+        ServerManager.getInstance().createSubject(true, tstUserString2);
+        ServerManager.getInstance().createSubject(true, tstUserString3);
 
         Assert.assertTrue(ServerManager.getInstance().existUser(true, "eduardo"));
         Assert.assertTrue(ServerManager.getInstance().existUser(true, "juan"));
@@ -96,61 +94,63 @@ public class ServerManagerTest {
     }
 
     @Test
-    public void test_verifyPasswordCorrect() {
+    public void testVerifyPasswordCorrect() {
         String password = "Patito29381";
         String encryptedPass = ServerManager.getInstance().encryptPassword(password);
         AbstractUser testUser = new User("eduardo", password);
 
         Gson gson = new Gson();
         String testUserString = gson.toJson(testUser, testUser.getClass());
-        ServerManager.getInstance().createUser(testUserString);
+        ServerManager.getInstance().createSubject(true, testUserString);
         Assert.assertTrue(ServerManager.getInstance().verifyUser("eduardo", password));
     }
 
     @Test
-    public void test_verifyUnexistantUser() {
+    public void testVerifyUnexistantUser() {
         String password = "Patito29381";
         String encryptedPass = ServerManager.getInstance().encryptPassword(password);
         AbstractUser testUser = new User("eduardo", password);
 
         Gson gson = new Gson();
         String testUserString = gson.toJson(testUser, testUser.getClass());
-        ServerManager.getInstance().createUser(testUserString);
+        ServerManager.getInstance().createSubject(true, testUserString);
 
         Assert.assertFalse(ServerManager.getInstance().verifyUser("juan", password));
     }
 
     @Test
-    public void test_verifyPasswordWrong() {
+    public void testVerifyPasswordWrong() {
         String password = "Patito29381";
         String encryptedPass = ServerManager.getInstance().encryptPassword(password);
         AbstractUser testUser = new User("eduardo", password);
 
         Gson gson = new Gson();
         String testUserString = gson.toJson(testUser, testUser.getClass());
-        ServerManager.getInstance().createUser(testUserString);
+        ServerManager.getInstance().createSubject(true, testUserString);
 
         Assert.assertFalse(ServerManager.getInstance().verifyUser("eduardo", "password"));
     }
 
     @Test
-    public void test_WriteUsers() {
+    public void testWriteUsers() {
         AbstractUser testUser = new User("eduardo", "patitoDePeluche");
-
-
+        AbstractUser testEnterprise = new Enterprise("Trevor Philips Industry", "fuck");
         Gson gson = new Gson();
-        String tstUserString = gson.toJson(testUser, testUser.getClass());
+        String tstUserString = gson.toJson(testUser, User.class);
+        String testEnterString = gson.toJson(testEnterprise, Enterprise.class);
 
-        System.out.println(tstUserString);
+        ServerManager.getInstance().createSubject(true, tstUserString);
+        ServerManager.getInstance().createSubject(false, testEnterString);
 
-        ServerManager.getInstance().createUser(tstUserString);
-
-
-        FilesWriter.updateUsers();
     }
 
     @Test
-    public void test_ReadUsers() {
+    public void testReadUsers() {
         FilesLoader.loadUsers();
+    }
+
+    @Test
+    public void testStartServer() {
+        ServerManager.getInstance();
     }
 }

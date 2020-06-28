@@ -4,7 +4,10 @@ import Logic.DataStructures.AVLTree.AVLTree;
 import Logic.DataStructures.BinarySearchTree.BST;
 import Logic.DataStructures.BinarySearchTree.Node;
 import Logic.DataStructures.SplayTree.SplayTree;
+import Logic.FileManagement.FilesLoader;
+import Logic.FileManagement.FilesWriter;
 import Logic.Users.AbstractUser;
+import Logic.Users.Enterprise;
 import Logic.Users.Recipes;
 import Logic.Users.User;
 import com.google.gson.Gson;
@@ -14,6 +17,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class ServerManager {
+    public static final String ENTERPRISES_JSON_PATH =
+            "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\Enterprises.json";
+    public static final String USERS_JSON_PATH =
+            "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\Users.json";
     private static ServerManager instance = null;
     private BST<AbstractUser> users;
     private SplayTree<AbstractUser> enterprises;
@@ -21,9 +28,9 @@ public class ServerManager {
 
     //Constructor
     private ServerManager() {
-        this.users = new BST<>();
-        this.enterprises = new SplayTree<>();
-        this.globalRecipes = new AVLTree<>();
+        this.setEnterprises(FilesLoader.loadEnterprises());
+        this.setUsers(FilesLoader.loadUsers());
+
     }
 
     //Get instance for the singleton
@@ -91,17 +98,25 @@ public class ServerManager {
     /**
      * Method for adding a user to the server
      *
-     * @param userData should be string in format json, with the attributes of user
+     * @param subjectData should be string in format json, with the attributes of user/enterprise to create
+     * @param isUser      true if want to create a user, false if a enterprise
      */
-    public void createUser(String userData) {
+    public void createSubject(boolean isUser, String subjectData) {
         Gson gson = new Gson();
-        User newUser = gson.fromJson(userData, User.class);
-        if (this.existUser(true, newUser.getEmail())) {
-            throw new IllegalArgumentException("The user already exists");
+
+        //for saving code and simplify the project.
+        if (!isUser) {
+            Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
+            newSubject.encryptPassword();
+            this.enterprises.insert(newSubject);
+            FilesWriter.updateEnterprises();
         } else {
-            newUser.encryptPassword();
-            this.users.insert(newUser);
+            User newSubject = gson.fromJson(subjectData, User.class);
+            newSubject.encryptPassword();
+            this.users.insert(newSubject);
+            FilesWriter.updateUsers();
         }
+
 
     }
 
@@ -138,6 +153,14 @@ public class ServerManager {
         return this.findUser(false, email);
     }
 
+    public AVLTree<Recipes> getGlobalRecipes() {
+        return globalRecipes;
+    }
+
+    public void setGlobalRecipes(AVLTree<Recipes> globalRecipes) {
+        this.globalRecipes = globalRecipes;
+    }
+
     /**
      * Method for setting the user as a chef
      *
@@ -151,8 +174,16 @@ public class ServerManager {
         return this.users;
     }
 
+    public void setUsers(BST<AbstractUser> users) {
+        this.users = users;
+    }
+
     public SplayTree<AbstractUser> getEnterprises() {
         return this.enterprises;
+    }
+
+    public void setEnterprises(SplayTree<AbstractUser> enterprises) {
+        this.enterprises = enterprises;
     }
 
     /**
@@ -188,4 +219,6 @@ public class ServerManager {
 
         return null;
     }
+
+
 }
