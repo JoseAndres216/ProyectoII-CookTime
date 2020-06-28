@@ -1,5 +1,7 @@
 package Logic;
 
+import Logic.FileManagement.FilesLoader;
+import Logic.FileManagement.FilesWriter;
 import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
 import Logic.Users.User;
@@ -129,5 +131,29 @@ public class ServerManagerTest {
         ServerManager.getInstance().createUser(testUserString);
 
         Assert.assertFalse(ServerManager.getInstance().verifyUser("eduardo", "password"));
+    }
+
+    @Test
+    public void test_WriteUsers() {
+        AbstractUser testUser = new User("eduardo", "patitoDePeluche");
+        AbstractUser testUser2 = new User("juan", "quesoCrema");
+        AbstractUser testUser3 = new User("carlos", "tolis");
+
+        Gson gson = new Gson();
+        String tstUserString = gson.toJson(testUser, testUser.getClass());
+        String tstUserString2 = gson.toJson(testUser2, testUser.getClass());
+        String tstUserString3 = gson.toJson(testUser3, testUser.getClass());
+        System.out.println(tstUserString);
+
+        ServerManager.getInstance().createUser(tstUserString);
+        ServerManager.getInstance().createUser(tstUserString2);
+        ServerManager.getInstance().createUser(tstUserString3);
+
+        FilesWriter.updateUsers();
+    }
+
+    @Test
+    public void test_ReadUsers() {
+        FilesLoader.loadUsers();
     }
 }
