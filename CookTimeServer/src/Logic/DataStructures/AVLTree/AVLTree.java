@@ -114,6 +114,13 @@ public class AVLTree<T extends Comparable<T>> {
         return current;
     }
 
+    @Override
+    public String toString() {
+        return "AVLTree{" +
+                "root=" + root +
+                '}';
+    }
+
     private Node<T> deleteNode(Node<T> root, T value) {
         // STEP 1: PERFORM STANDARD BST DELETE
         if (root == null)
