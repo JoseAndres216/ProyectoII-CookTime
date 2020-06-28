@@ -46,4 +46,24 @@ public class ServerManagerTest {
         Assert.assertEquals(test4, ServerManager.getInstance().getEnterprise("carlos"));
         Assert.assertEquals(test5, ServerManager.getInstance().getEnterprise("juan"));
     }
+
+    @Test
+    public void testExistsUsers() {
+        User test1 = new User("eduardo");
+        User test2 = new User("papu");
+        User test3 = new User("miguel");
+        User test4 = new User("carlos");
+        User test5 = new User("juan");
+        ServerManager.getInstance().getUsers().insert(test1);
+        ServerManager.getInstance().getUsers().insert(test2);
+        ServerManager.getInstance().getUsers().insert(test3);
+        // ServerManager.getInstance().getUsers().insert(test4);
+        ServerManager.getInstance().getUsers().insert(test5);
+
+        Assert.assertEquals(true, ServerManager.getInstance().existUser(true, "eduardo"));
+        Assert.assertEquals(true, ServerManager.getInstance().existUser(true, "papu"));
+        Assert.assertEquals(true, ServerManager.getInstance().existUser(true, "miguel"));
+        Assert.assertEquals(false, ServerManager.getInstance().existUser(true, "carlos"));
+        Assert.assertEquals(true, ServerManager.getInstance().existUser(true, "juan"));
+    }
 }

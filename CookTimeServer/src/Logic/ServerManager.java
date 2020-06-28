@@ -61,6 +61,17 @@ public class ServerManager {
 
     }
 
+    public boolean existUser(boolean user, String email) {
+        boolean exists = false;
+        try {
+            this.findUser(user, email);
+            exists = true;
+        } catch (Exception e) {
+
+        }
+        return exists;
+    }
+
     /**
      * Method for adding a user to the server
      *
