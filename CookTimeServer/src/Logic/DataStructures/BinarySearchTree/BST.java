@@ -4,7 +4,7 @@ public class BST<T extends Comparable<T>> {
 
     private Node<T> root;
 
-    public boolean find(T data) {
+    public boolean isAlready(T data) {
         Node<T> current = root;
         while (current != null) {
             if (current.getData().compareTo(data) == 0) {
@@ -16,6 +16,20 @@ public class BST<T extends Comparable<T>> {
             }
         }
         return false;
+    }
+
+    public Node<T> find(T data) {
+        Node<T> current = root;
+        while (current != null) {
+            if (current.getData().compareTo(data) == 0) {
+                break;
+            } else if (current.getData().compareTo(data) > 0) {
+                current = current.getLeft();
+            } else {
+                current = current.getRight();
+            }
+        }
+        return current;
     }
 
     public void insert(T newData) {

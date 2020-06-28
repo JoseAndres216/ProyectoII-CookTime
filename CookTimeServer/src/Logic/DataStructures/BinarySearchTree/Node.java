@@ -2,6 +2,15 @@ package Logic.DataStructures.BinarySearchTree;
 
 public class Node<T extends Comparable<T>> {
 
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    private int height = 1;
     private T data;
     private Node<T> left;
 
