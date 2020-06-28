@@ -19,9 +19,9 @@ public class User extends AbstractUser {
     public String toString() {
         return "User{" +
                 "email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
-
 
     public void makeChef() {
         this.isChef = true;

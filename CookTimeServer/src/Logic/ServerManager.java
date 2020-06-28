@@ -9,6 +9,10 @@ import Logic.Users.Recipes;
 import Logic.Users.User;
 import com.google.gson.Gson;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class ServerManager {
     private static ServerManager instance = null;
     private BST<AbstractUser> users;
@@ -96,10 +100,20 @@ public class ServerManager {
             throw new IllegalArgumentException("The user already exists");
         } else {
             newUser.encryptPassword();
-            System.out.println("New password" + newUser.getPass());
             this.users.insert(newUser);
         }
 
+    }
+
+    public boolean verifyUser(String email, String passwordNotEncrypted) {
+        String enctryptedPass = this.encryptPassword(passwordNotEncrypted);
+        try {
+            AbstractUser user = this.findUser(true, email);
+            return user.getPass().equals(enctryptedPass);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
     /**
@@ -139,5 +153,39 @@ public class ServerManager {
 
     public SplayTree<AbstractUser> getEnterprises() {
         return this.enterprises;
+    }
+
+    /**
+     * Method for encryptation the passwords
+     *
+     * @return
+     */
+    public String encryptPassword(String word) {
+        try {
+            // Static getInstance method is called with hashing MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            // digest() method is called to calculate message digest
+            //  of an input digest() return array of byte
+            byte[] messageDigest = md.digest(word.getBytes());
+
+            // Convert byte array into signum representation
+            BigInteger no = new BigInteger(1, messageDigest);
+
+            // Convert message digest into hex value
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+
+        // For specifying wrong message digest algorithms
+        catch (NoSuchAlgorithmException e) {
+            System.out.println(new NoSuchAlgorithmException(e));
+        }
+
+
+        return null;
     }
 }

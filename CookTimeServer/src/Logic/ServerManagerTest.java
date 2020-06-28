@@ -92,4 +92,42 @@ public class ServerManagerTest {
 
 
     }
+
+    @Test
+    public void test_verifyPasswordCorrect() {
+        String password = "Patito29381";
+        String encryptedPass = ServerManager.getInstance().encryptPassword(password);
+        AbstractUser testUser = new User("eduardo", password);
+
+        Gson gson = new Gson();
+        String testUserString = gson.toJson(testUser, testUser.getClass());
+        ServerManager.getInstance().createUser(testUserString);
+        Assert.assertTrue(ServerManager.getInstance().verifyUser("eduardo", password));
+    }
+
+    @Test
+    public void test_verifyUnexistantUser() {
+        String password = "Patito29381";
+        String encryptedPass = ServerManager.getInstance().encryptPassword(password);
+        AbstractUser testUser = new User("eduardo", password);
+
+        Gson gson = new Gson();
+        String testUserString = gson.toJson(testUser, testUser.getClass());
+        ServerManager.getInstance().createUser(testUserString);
+
+        Assert.assertFalse(ServerManager.getInstance().verifyUser("juan", password));
+    }
+
+    @Test
+    public void test_verifyPasswordWrong() {
+        String password = "Patito29381";
+        String encryptedPass = ServerManager.getInstance().encryptPassword(password);
+        AbstractUser testUser = new User("eduardo", password);
+
+        Gson gson = new Gson();
+        String testUserString = gson.toJson(testUser, testUser.getClass());
+        ServerManager.getInstance().createUser(testUserString);
+
+        Assert.assertFalse(ServerManager.getInstance().verifyUser("eduardo", "password"));
+    }
 }
