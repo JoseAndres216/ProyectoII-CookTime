@@ -5,7 +5,8 @@ public class Enterprise extends AbstractUser {
     private String contactInfo;
     private String schedule;
 
-    public Enterprise(String email) {
+    public Enterprise(String email, String pass) {
         this.email = email;
+        this.password = pass;
     }
 }

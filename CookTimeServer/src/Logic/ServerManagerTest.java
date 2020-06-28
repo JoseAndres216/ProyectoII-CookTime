@@ -11,11 +11,11 @@ public class ServerManagerTest {
     //test for searching users that are avaliable on the tree
     @Test
     public void testFindAvaliableUsers() {
-        User test1 = new User("eduardo");
-        User test2 = new User("papu");
-        User test3 = new User("miguel");
-        User test4 = new User("carlos");
-        User test5 = new User("juan");
+        User test1 = new User("eduardo", "password");
+        User test2 = new User("papu", "password");
+        User test3 = new User("miguel", "password");
+        User test4 = new User("carlos", "password");
+        User test5 = new User("juan", "password");
         ServerManager.getInstance().getUsers().insert(test1);
         ServerManager.getInstance().getUsers().insert(test2);
         ServerManager.getInstance().getUsers().insert(test3);
@@ -31,11 +31,11 @@ public class ServerManagerTest {
 
     @Test
     public void testFindAvaliableEnterprises() {
-        Enterprise test1 = new Enterprise("eduardo");
-        Enterprise test2 = new Enterprise("papu");
-        Enterprise test3 = new Enterprise("miguel");
-        Enterprise test4 = new Enterprise("carlos");
-        Enterprise test5 = new Enterprise("juan");
+        Enterprise test1 = new Enterprise("eduardo", "password");
+        Enterprise test2 = new Enterprise("papu", "password");
+        Enterprise test3 = new Enterprise("miguel", "password");
+        Enterprise test4 = new Enterprise("carlos", "password");
+        Enterprise test5 = new Enterprise("juan", "password");
         ServerManager.getInstance().getEnterprises().insert(test1);
         ServerManager.getInstance().getEnterprises().insert(test2);
         ServerManager.getInstance().getEnterprises().insert(test3);
@@ -51,11 +51,11 @@ public class ServerManagerTest {
 
     @Test
     public void testExistsUsers() {
-        User test1 = new User("eduardo");
-        User test2 = new User("papu");
-        User test3 = new User("miguel");
-        User test4 = new User("carlos");
-        User test5 = new User("juan");
+        User test1 = new User("eduardo", "password");
+        User test2 = new User("papu", "password");
+        User test3 = new User("miguel", "password");
+        User test4 = new User("carlos", "password");
+        User test5 = new User("juan", "password");
         ServerManager.getInstance().getUsers().insert(test1);
         ServerManager.getInstance().getUsers().insert(test2);
         ServerManager.getInstance().getUsers().insert(test3);
@@ -71,15 +71,15 @@ public class ServerManagerTest {
 
     @Test
     public void testJsonAddUser() {
-        AbstractUser testUser = new User("eduardo");
-        AbstractUser testUser2 = new User("juan");
-        AbstractUser testUser3 = new User("carlos");
+        AbstractUser testUser = new User("eduardo", "patitoDePeluche");
+        AbstractUser testUser2 = new User("juan", "quesoCrema");
+        AbstractUser testUser3 = new User("carlos", "tolis");
 
         Gson gson = new Gson();
         String tstUserString = gson.toJson(testUser, testUser.getClass());
         String tstUserString2 = gson.toJson(testUser2, testUser.getClass());
         String tstUserString3 = gson.toJson(testUser3, testUser.getClass());
-
+        System.out.println(tstUserString);
 
         ServerManager.getInstance().createUser(tstUserString);
         ServerManager.getInstance().createUser(tstUserString2);

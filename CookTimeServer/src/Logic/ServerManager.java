@@ -31,11 +31,7 @@ public class ServerManager {
     }
 
     public static void main(String[] args) {
-        ServerManager.getInstance().users.insert(new User("eduardo212792@gmail.com"));
-        ServerManager.getInstance().users.insert(new User("macfly@gmail.com"));
-        ServerManager.getInstance().users.insert(new User("rick@gmail.com"));
 
-        System.out.println(ServerManager.getInstance().getUser("macfly@gmail.com"));
     }
 
     /**
@@ -99,6 +95,8 @@ public class ServerManager {
         if (this.existUser(true, newUser.getEmail())) {
             throw new IllegalArgumentException("The user already exists");
         } else {
+            newUser.encryptPassword();
+            System.out.println("New password" + newUser.getPass());
             this.users.insert(newUser);
         }
 
