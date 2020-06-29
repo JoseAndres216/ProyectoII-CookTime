@@ -6,8 +6,8 @@
       "isChef": false,
       "rating": 0,
       "name": "Test User",
-      "email": "eduardo",
-      "password": "e16b4f60c5f8c85f14a06bab5acb1c19"
+      "email": "EDUARDO",
+      "password": "5f4dcc3b5aa765d61d8327deb882cf99"
     },
     "left": {
       "height": 1,
@@ -16,8 +16,8 @@
         "isChef": false,
         "rating": 0,
         "name": "Test User",
-        "email": "carlos",
-        "password": "7ca6bd642bb51dde50d5ed2596addc4f"
+        "email": "CARLOS",
+        "password": "5f4dcc3b5aa765d61d8327deb882cf99"
       }
     },
     "right": {
@@ -27,8 +27,30 @@
         "isChef": false,
         "rating": 0,
         "name": "Test User",
-        "email": "juan",
-        "password": "df71bdd9a59486c6343ba2888c4760aa"
+        "email": "JUAN",
+        "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+      },
+      "right": {
+        "height": 1,
+        "data": {
+          "age": 20,
+          "isChef": false,
+          "rating": 0,
+          "name": "Test User",
+          "email": "VICTOR",
+          "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+        },
+        "left": {
+          "height": 1,
+          "data": {
+            "age": 20,
+            "isChef": false,
+            "rating": 0,
+            "name": "Test User",
+            "email": "MANUEL",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+          }
+        }
       }
     }
   }

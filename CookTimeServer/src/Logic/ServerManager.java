@@ -5,7 +5,6 @@ import Logic.DataStructures.BinarySearchTree.BST;
 import Logic.DataStructures.BinarySearchTree.Node;
 import Logic.DataStructures.SplayTree.SplayTree;
 import Logic.FileManagement.FilesLoader;
-import Logic.FileManagement.FilesWriter;
 import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
 import Logic.Users.Recipes;
@@ -60,7 +59,6 @@ public class ServerManager {
         } else {
             current = this.enterprises.getRoot();
         }
-
         while (current.getLeft() != null || current.getRight() != null) {
             if (current.getData().getEmail().compareTo(email) == 0) {
                 break;
@@ -71,10 +69,9 @@ public class ServerManager {
             }
         }
         if (email.compareTo(current.getData().getEmail()) != 0) {
-            throw new NullPointerException("The user isnt registered in the server");
+            throw new NullPointerException("The user isn't registered in the server");
         }
         return current.getData();
-
     }
 
     /**
@@ -103,27 +100,23 @@ public class ServerManager {
      */
     public void createSubject(boolean isUser, String subjectData) {
         Gson gson = new Gson();
-
         //for saving code and simplify the project.
         if (!isUser) {
             Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
             newSubject.encryptPassword();
             this.enterprises.insert(newSubject);
-            FilesWriter.updateEnterprises();
         } else {
             User newSubject = gson.fromJson(subjectData, User.class);
             newSubject.encryptPassword();
             this.users.insert(newSubject);
-            FilesWriter.updateUsers();
+
         }
-
-
     }
 
-    public boolean verifyUser(String email, String passwordNotEncrypted) {
+    public boolean verifyUser(boolean isUser, String email, String passwordNotEncrypted) {
         String enctryptedPass = this.encryptPassword(passwordNotEncrypted);
         try {
-            AbstractUser user = this.findUser(true, email);
+            AbstractUser user = this.findUser(isUser, email);
             return user.getPass().equals(enctryptedPass);
         } catch (Exception e) {
             System.out.println(e.getMessage());
