@@ -1,1 +1,89 @@
-{}
+{
+  "root": {
+    "height": 1,
+    "data": {
+      "rating": 0,
+      "email": "SF",
+      "password": "fed3b61b26081849378080b34e693d2e"
+    },
+    "left": {
+      "height": 1,
+      "data": {
+        "rating": 0,
+        "email": "ASC",
+        "password": "fed3b61b26081849378080b34e693d2e"
+      },
+      "left": {
+        "height": 1,
+        "data": {
+          "rating": 0,
+          "email": "A",
+          "password": "fed3b61b26081849378080b34e693d2e"
+        }
+      },
+      "right": {
+        "height": 1,
+        "data": {
+          "rating": 0,
+          "email": "E",
+          "password": "fed3b61b26081849378080b34e693d2e"
+        },
+        "left": {
+          "height": 1,
+          "data": {
+            "rating": 0,
+            "email": "B",
+            "password": "fed3b61b26081849378080b34e693d2e"
+          },
+          "left": {
+            "height": 1,
+            "data": {
+              "rating": 0,
+              "email": "ASETEC",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+            }
+          }
+        },
+        "right": {
+          "height": 1,
+          "data": {
+            "rating": 0,
+            "email": "KK",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+          },
+          "left": {
+            "height": 1,
+            "data": {
+              "email": "KK",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+            }
+          },
+          "right": {
+            "height": 1,
+            "data": {
+              "rating": 0,
+              "email": "MUSSI",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "height": 1,
+      "data": {
+        "rating": 0,
+        "email": "SUR",
+        "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+      },
+      "right": {
+        "height": 1,
+        "data": {
+          "rating": 0,
+          "email": "TP IND.",
+          "password": "5f4dcc3b5aa765d61d8327deb882cf99"
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,3 @@
-
 module Logic.Users {
     requires junit;
     requires gson;
@@ -14,6 +13,7 @@ module Logic.Users {
     exports Logic.DataStructures.SplayTree;
     exports Logic.DataStructures.Stack;
     exports Logic.DataStructures.BinarySearchTree;
+    exports Logic.FileManagement;
     opens Logic.DataStructures.SimpleList;
     opens Logic.DataStructures.AVLTree;
     opens Logic.DataStructures.SplayTree;

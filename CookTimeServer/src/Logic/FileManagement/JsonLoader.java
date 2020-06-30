@@ -14,7 +14,7 @@ import java.util.Scanner;
 import static Logic.ServerManager.ENTERPRISES_JSON_PATH;
 import static Logic.ServerManager.USERS_JSON_PATH;
 
-public class FilesLoader {
+public class JsonLoader {
 
     public static final Type BST_TYPE = new TypeToken<BST<AbstractUser>>() {
     }.getType();

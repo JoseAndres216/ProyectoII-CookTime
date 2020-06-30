@@ -4,7 +4,7 @@ import Logic.DataStructures.AVLTree.AVLTree;
 import Logic.DataStructures.BinarySearchTree.BST;
 import Logic.DataStructures.BinarySearchTree.Node;
 import Logic.DataStructures.SplayTree.SplayTree;
-import Logic.FileManagement.FilesLoader;
+import Logic.FileManagement.JsonLoader;
 import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
 import Logic.Users.Recipes;
@@ -16,19 +16,28 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class ServerManager {
-    public static final String ENTERPRISES_JSON_PATH =
-            "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\Enterprises.json";
-    public static final String USERS_JSON_PATH =
-            "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\Users.json";
+    public static final String ENTERPRISES_JSON_PATH;
+    public static final String USERS_JSON_PATH;
     private static ServerManager instance = null;
+
+    static {
+        final String JsonEnterprises = "Enterprises.json";
+        ENTERPRISES_JSON_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\" + JsonEnterprises;
+    }
+
+    static {
+        final String JsonUsers = "Users.json";
+        USERS_JSON_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\" + JsonUsers;
+    }
+
     private BST<AbstractUser> users;
     private SplayTree<AbstractUser> enterprises;
     private AVLTree<Recipes> globalRecipes;
 
     //Constructor
     private ServerManager() {
-        this.setEnterprises(FilesLoader.loadEnterprises());
-        this.setUsers(FilesLoader.loadUsers());
+        this.setEnterprises(JsonLoader.loadEnterprises());
+        this.setUsers(JsonLoader.loadUsers());
 
     }
 
@@ -52,7 +61,7 @@ public class ServerManager {
      * @return user who has the email
      * @throws NullPointerException if not found
      */
-    public AbstractUser findUser(boolean user, String email) throws NullPointerException {
+    public AbstractUser findUser(boolean user, String email) {
         Node<AbstractUser> current;
         if (user) {
             current = this.users.getRoot();
@@ -87,7 +96,7 @@ public class ServerManager {
             this.findUser(user, email);
             exists = true;
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
         return exists;
     }
@@ -98,22 +107,26 @@ public class ServerManager {
      * @param subjectData should be string in format json, with the attributes of user/enterprise to create
      * @param isUser      true if want to create a user, false if a enterprise
      */
-    public void createSubject(boolean isUser, String subjectData) {
-        Gson gson = new Gson();
-        //for saving code and simplify the project.
-        if (!isUser) {
-            Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
-            newSubject.encryptPassword();
-            this.enterprises.insert(newSubject);
-        } else {
-            User newSubject = gson.fromJson(subjectData, User.class);
-            newSubject.encryptPassword();
-            this.users.insert(newSubject);
+    public void createSubject(boolean isUser, String subjectData) throws NoSuchAlgorithmException {
+        try {
+            Gson gson = new Gson();
+            //for saving code and simplify the project.
+            if (!isUser) {
+                Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
+                newSubject.encryptPassword();
+                this.enterprises.insert(newSubject);
+            } else {
+                User newSubject = gson.fromJson(subjectData, User.class);
+                newSubject.encryptPassword();
+                this.users.insert(newSubject);
 
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 
-    public boolean verifyUser(boolean isUser, String email, String passwordNotEncrypted) {
+    public boolean verifyUser(boolean isUser, String email, String passwordNotEncrypted) throws NoSuchAlgorithmException {
         String enctryptedPass = this.encryptPassword(passwordNotEncrypted);
         try {
             AbstractUser user = this.findUser(isUser, email);
@@ -142,7 +155,7 @@ public class ServerManager {
      * @return Enterprise object with the given email
      * @throws IllegalArgumentException if the enterprise isnt in the tree
      */
-    public AbstractUser getEnterprise(String email) throws IllegalArgumentException {
+    public AbstractUser getEnterprise(String email) {
         return this.findUser(false, email);
     }
 
@@ -184,7 +197,7 @@ public class ServerManager {
      *
      * @return
      */
-    public String encryptPassword(String word) {
+    public String encryptPassword(String word) throws NoSuchAlgorithmException {
         try {
             // Static getInstance method is called with hashing MD5
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -199,18 +212,15 @@ public class ServerManager {
             // Convert message digest into hex value
             String hashtext = no.toString(16);
             while (hashtext.length() < 32) {
-                hashtext = "0" + hashtext;
+                hashtext = new StringBuilder().append("0").append(hashtext).toString();
             }
             return hashtext;
         }
 
         // For specifying wrong message digest algorithms
         catch (NoSuchAlgorithmException e) {
-            System.out.println(new NoSuchAlgorithmException(e));
+            throw new NoSuchAlgorithmException(e);
         }
-
-
-        return null;
     }
 
 

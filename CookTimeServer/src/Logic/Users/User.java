@@ -5,7 +5,6 @@ public class User extends AbstractUser {
     public boolean isChef = false;
     public int rating;
 
-
     public User(String email, String pass) {
         this.name = "Test User";
         this.email = email;

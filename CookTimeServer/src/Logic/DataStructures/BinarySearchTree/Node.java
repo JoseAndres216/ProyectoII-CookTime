@@ -2,7 +2,7 @@ package Logic.DataStructures.BinarySearchTree;
 
 public class Node<T extends Comparable<T>> {
 
-    public Node<T> parent;
+    public transient Node<T> parent;
 
     public int getHeight() {
         return height;

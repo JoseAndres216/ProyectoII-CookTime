@@ -4,6 +4,8 @@ import Logic.DataStructures.SimpleList.SimpleList;
 import Logic.DataStructures.Stack.Stack;
 import Logic.ServerManager;
 
+import java.security.NoSuchAlgorithmException;
+
 
 public class AbstractUser implements Comparable<AbstractUser> {
     //User personal data and credentials
@@ -13,6 +15,7 @@ public class AbstractUser implements Comparable<AbstractUser> {
     //user info for UI representation
 
     protected MyMenu myMenu;
+
     //For notifications logic, UI and logical work
     protected SimpleList<AbstractUser> followers;
     protected SimpleList<AbstractUser> following;
@@ -32,7 +35,7 @@ public class AbstractUser implements Comparable<AbstractUser> {
         return this.email;
     }
 
-    @Override
+
     public int compareTo(AbstractUser user) {
         return this.email.compareTo(user.email);
     }
@@ -45,7 +48,7 @@ public class AbstractUser implements Comparable<AbstractUser> {
         return this.password;
     }
 
-    public void encryptPassword() {
+    public void encryptPassword() throws NoSuchAlgorithmException {
         this.password = ServerManager.getInstance().encryptPassword(this.password);
     }
 }

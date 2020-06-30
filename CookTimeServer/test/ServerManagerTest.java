@@ -1,24 +1,26 @@
-package Logic;
-
-import Logic.FileManagement.FilesWriter;
-import Logic.Users.AbstractUser;
+import Logic.FileManagement.JsonLoader;
+import Logic.FileManagement.JsonWriter;
+import Logic.ServerManager;
 import Logic.Users.Enterprise;
 import Logic.Users.User;
 import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.security.NoSuchAlgorithmException;
+
 public class ServerManagerTest {
+    public static final String PASSWORD = "password";
     ServerManager server = ServerManager.getInstance();
 
     //test for searching users that are avaliable on the tree
     @Test
     public void testFindAvaliableUsers() {
-        final User TEST_USER1 = new User("EDUARDO", "password");
-        final User TEST_USER2 = new User("JUAN", "password");
-        final User TEST_USER3 = new User("CARLOS", "password");
-        final User TEST_USER4 = new User("VICTOR", "password");
-        final User TEST_USER5 = new User("MANUEL", "password");
+        final User TEST_USER1 = new User("EDUARDO", PASSWORD);
+        final User TEST_USER2 = new User("JUAN", PASSWORD);
+        final User TEST_USER3 = new User("CARLOS", PASSWORD);
+        final User TEST_USER4 = new User("VICTOR", PASSWORD);
+        final User TEST_USER5 = new User("MANUEL", PASSWORD);
         try {
 
             ServerManager.getInstance().createSubject(true, new Gson().toJson(TEST_USER1));
@@ -26,7 +28,7 @@ public class ServerManagerTest {
             ServerManager.getInstance().createSubject(true, new Gson().toJson(TEST_USER3));
             ServerManager.getInstance().createSubject(true, new Gson().toJson(TEST_USER4));
             ServerManager.getInstance().createSubject(true, new Gson().toJson(TEST_USER5));
-            FilesWriter.updateUsers();
+            JsonWriter.updateUsers();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -40,11 +42,11 @@ public class ServerManagerTest {
 
     @Test
     public void testFindAvaliableEnterprises() {
-        final Enterprise TEST_ENTERPRISE1 = new Enterprise("MUSSI", "password");
-        final Enterprise TEST_ENTERPRISE2 = new Enterprise("TP IND.", "password");
-        final Enterprise TEST_ENTERPRISE3 = new Enterprise("ASETEC", "password");
-        final Enterprise TEST_ENTERPRISE4 = new Enterprise("SUR", "password");
-        final Enterprise TEST_ENTERPRISE5 = new Enterprise("KK", "password");
+        final Enterprise TEST_ENTERPRISE1 = new Enterprise("MUSSI", PASSWORD);
+        final Enterprise TEST_ENTERPRISE2 = new Enterprise("TP IND.", PASSWORD);
+        final Enterprise TEST_ENTERPRISE3 = new Enterprise("ASETEC", PASSWORD);
+        final Enterprise TEST_ENTERPRISE4 = new Enterprise("SUR", PASSWORD);
+        final Enterprise TEST_ENTERPRISE5 = new Enterprise("KK", PASSWORD);
         try {
 
             final String JsonTest = new Gson().toJson(TEST_ENTERPRISE1, Enterprise.class);
@@ -71,11 +73,11 @@ public class ServerManagerTest {
 
     @Test
     public void addEnterprises() {
-        final Enterprise TEST_ENTERPRISE6 = new Enterprise("MUSSI", "password");
-        final Enterprise TEST_ENTERPRISE7 = new Enterprise("GROOVES.", "password");
-        final Enterprise TEST_ENTERPRISE8 = new Enterprise("BALLAS", "password");
-        final Enterprise TEST_ENTERPRISE9 = new Enterprise("MARA", "password");
-        final Enterprise TEST_ENTERPRISE10 = new Enterprise("KKK", "password");
+        final Enterprise TEST_ENTERPRISE6 = new Enterprise("MUSSI", PASSWORD);
+        final Enterprise TEST_ENTERPRISE7 = new Enterprise("GROOVES.", PASSWORD);
+        final Enterprise TEST_ENTERPRISE8 = new Enterprise("BALLAS", PASSWORD);
+        final Enterprise TEST_ENTERPRISE9 = new Enterprise("MARA", PASSWORD);
+        final Enterprise TEST_ENTERPRISE10 = new Enterprise("KKK", PASSWORD);
         try {
 
             final String JsonTest = new Gson().toJson(TEST_ENTERPRISE6, Enterprise.class);
@@ -102,11 +104,11 @@ public class ServerManagerTest {
 
     @Test
     public void testExistsUsers() {
-        final User TEST_USER6 = new User("MAIKOL", "password");
-        final User TEST_USER7 = new User("MESSI", "password");
-        final User TEST_USER8 = new User("ZLATAN", "password");
-        final User TEST_USER9 = new User("CARL", "password");
-        final User TEST_USER10 = new User("JUNIOR", "password");
+        final User TEST_USER6 = new User("MAIKOL", PASSWORD);
+        final User TEST_USER7 = new User("MESSI", PASSWORD);
+        final User TEST_USER8 = new User("ZLATAN", PASSWORD);
+        final User TEST_USER9 = new User("CARL", PASSWORD);
+        final User TEST_USER10 = new User("JUNIOR", PASSWORD);
 
         try {
 
@@ -115,7 +117,7 @@ public class ServerManagerTest {
             ServerManager.getInstance().createSubject(true, new Gson().toJson(TEST_USER8));
             ServerManager.getInstance().createSubject(true, new Gson().toJson(TEST_USER9));
             ServerManager.getInstance().createSubject(true, new Gson().toJson(TEST_USER10));
-            FilesWriter.updateUsers();
+            JsonWriter.updateUsers();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -129,7 +131,7 @@ public class ServerManagerTest {
     }
 
     @Test
-    public void testVerifyPasswordCorrect() {
+    public void testVerifyPasswordCorrect() throws NoSuchAlgorithmException {
         String password = "Patito29381";
         String encryptedPass = ServerManager.getInstance().encryptPassword(password);
         final User TEST_USER11 = new User("CRISTIAN", password);
@@ -146,7 +148,7 @@ public class ServerManagerTest {
     }
 
     @Test
-    public void testVerifyUnexistantUser() {
+    public void testVerifyUnexistantUser() throws NoSuchAlgorithmException {
         String password = "Patito29381";
         String encryptedPass = ServerManager.getInstance().encryptPassword(password);
         final User TEST_USER12 = new User("MARCOS", password);
@@ -163,7 +165,7 @@ public class ServerManagerTest {
     }
 
     @Test
-    public void testVerifyPasswordWrong() {
+    public void testVerifyPasswordWrong() throws NoSuchAlgorithmException {
         String password = "Patito29381";
         String encryptedPass = ServerManager.getInstance().encryptPassword(password);
         final User TEST_USER13 = new User("CRISTIAN", password);
@@ -181,52 +183,52 @@ public class ServerManagerTest {
     }
 
     @Test
-    public void testWriteUsers() {
-        AbstractUser testUser = new User("eduardo", "patitoDePeluche");
-        AbstractUser testEnterprise = new Enterprise("Trevor Philips Industry", "fuck");
-        Gson gson = new Gson();
-        String tstUserString = gson.toJson(testUser, User.class);
-        String testEnterString = gson.toJson(testEnterprise, Enterprise.class);
-        try {
+    public void testWritingUsers() throws NoSuchAlgorithmException {
+        //Gson instance
+        Gson jsonConverter = new Gson();
+        //Test users for adding to the json files
+        String PASSWORD = "testPassword";
+        final String TEST_USER1 = jsonConverter.toJson(new User("EDUARDO", PASSWORD), User.class);
+        final String TEST_USER2 = jsonConverter.toJson(new User("JUAN", PASSWORD), User.class);
+        final String TEST_USER3 = jsonConverter.toJson(new User("CARLOS", PASSWORD), User.class);
+        final String TEST_USER4 = jsonConverter.toJson(new User("PEDRO", PASSWORD), User.class);
+        final String TEST_USER5 = jsonConverter.toJson(new User("MANUEL", PASSWORD), User.class);
+        //add the users to the tree
+        ServerManager.getInstance().createSubject(true, TEST_USER1);
+        ServerManager.getInstance().createSubject(true, TEST_USER2);
+        ServerManager.getInstance().createSubject(true, TEST_USER3);
+        ServerManager.getInstance().createSubject(true, TEST_USER4);
+        ServerManager.getInstance().createSubject(true, TEST_USER5);
 
-            ServerManager.getInstance().createSubject(true, tstUserString);
-            ServerManager.getInstance().createSubject(false, testEnterString);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        //write the files
+        ServerManager.getInstance().getUsers().print();
 
+        JsonWriter.updateUsers();
 
+        JsonLoader.loadUsers().print();
     }
 
     @Test
-    public void testWriteEnterprises() {
-        final Enterprise TEST_ENTERPRISE11 = new Enterprise("AAA", "password");
-        final Enterprise TEST_ENTERPRISE12 = new Enterprise("ASDF IND.", "password");
-        final Enterprise TEST_ENTERPRISE13 = new Enterprise("ASERWETEC", "password");
-        final Enterprise TEST_ENTERPRISE14 = new Enterprise("ADF", "password");
-        final Enterprise TEST_ENTERPRISE15 = new Enterprise("ASDF", "password");
-        try {
-            final String JsonTest = new Gson().toJson(TEST_ENTERPRISE11, Enterprise.class);
-            final String JsonTest2 = new Gson().toJson(TEST_ENTERPRISE12, Enterprise.class);
-            final String JsonTest3 = new Gson().toJson(TEST_ENTERPRISE13, Enterprise.class);
-            final String JsonTest4 = new Gson().toJson(TEST_ENTERPRISE14, Enterprise.class);
-            final String JsonTest5 = new Gson().toJson(TEST_ENTERPRISE15, Enterprise.class);
-            ServerManager.getInstance().createSubject(false, JsonTest);
-            ServerManager.getInstance().createSubject(false, JsonTest2);
-            ServerManager.getInstance().createSubject(false, JsonTest3);
-            ServerManager.getInstance().createSubject(false, JsonTest4);
-            ServerManager.getInstance().createSubject(false, JsonTest5);
-            FilesWriter.updateEnterprises();
+    public void testWritingEnterprises() throws NoSuchAlgorithmException {
+        //Gson instance
+        Gson jsonConverter = new Gson();
+        //Test users for adding to the json files
+        String PASSWORD = "testPassword";
+        final String TEST_USER1 = jsonConverter.toJson(new Enterprise("A", PASSWORD), Enterprise.class);
+        final String TEST_USER2 = jsonConverter.toJson(new Enterprise("B", PASSWORD), Enterprise.class);
+        final String TEST_USER3 = jsonConverter.toJson(new Enterprise("E", PASSWORD), Enterprise.class);
+        final String TEST_USER4 = jsonConverter.toJson(new Enterprise("ASC", PASSWORD), Enterprise.class);
+        final String TEST_USER5 = jsonConverter.toJson(new Enterprise("SF", PASSWORD), Enterprise.class);
+        //add the users to the tree
+        ServerManager.getInstance().createSubject(false, TEST_USER1);
+        ServerManager.getInstance().createSubject(false, TEST_USER2);
+        ServerManager.getInstance().createSubject(false, TEST_USER3);
+        ServerManager.getInstance().createSubject(false, TEST_USER4);
+        ServerManager.getInstance().createSubject(false, TEST_USER5);
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-
-    }
-
-    @Test
-    public void testStartServer() {
-        ServerManager.getInstance();
+        ServerManager.getInstance().getEnterprises().print();
+        //write the files
+        JsonWriter.updateEnterprises();
+        JsonLoader.loadEnterprises().print();
     }
 }
