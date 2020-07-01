@@ -1,6 +1,8 @@
 package Logic.DataStructures.AVLTree;
 
 
+import Logic.DataStructures.SimpleList.SimpleList;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -11,114 +13,126 @@ public class AVLTree<T extends Comparable<T>> {
         root = null;
     }
 
-    public T max() {
-        Node<T> local = root;
-        if (local == null)
-            return null;
-        while (local.getRight() != null)
-            local = local.getRight();
-        return local.getData();
+    public SimpleList<T> inOrder() {
+        return this.inOrder(this.root, new SimpleList<>());
     }
 
-    public T min() {
-        Node<T> local = root;
-        if (local == null)
-            return null;
-        while (local.getLeft() != null) {
-            local = local.getLeft();
+    private SimpleList<T> inOrder(Node<T> node, SimpleList<T> result) {
+        if (node == null) {
+            System.out.println("Leaf");
+
+        } else {
+            inOrder(node.getLeft(), result);
+            result.append(node.getData());
+            inOrder(node.getRight(), result);
         }
-        return local.getData();
+        return result;
     }
 
-    private int depth(Node<T> node) {
-        if (node == null)
-            return 0;
-        return node.getDepth();
+
+    public void delete(T key) {
+        root = delete(root, key);
     }
 
-    public Node<T> insert(T data) {
-        root = insert(root, data);
-        switch (balanceNumber(root)) {
-            case 1:
-                root = rotateLeft(root);
-                break;
-            case -1:
-                root = rotateRight(root);
-                break;
-            default:
-                break;
+    public void insert(T key) {
+        root = insert(root, key);
+    }
+
+    private Node<T> insert(Node<T> node, T key) {
+        if (node == null) {
+            return new Node<>(key);
+        } else if (node.getData().compareTo(key) > 0) {
+            node.setLeft(insert(node.getLeft(), key));
+        } else if (node.getData().compareTo(key) < 0) {
+            node.setRight(insert(node.getRight(), key));
+        } else {
+            throw new IllegalArgumentException("The node its already added");
         }
-        return root;
+        return rebalance(node);
     }
 
-    public Node<T> insert(Node<T> node, T data) {
-        if (node == null)
-            return new Node<>(data);
-        if (node.getData().compareTo(data) > 0) {
-            node = new Node<>(node.getData(), insert(node.getLeft(), data),
-                    node.getRight());
-        } else if (node.getData().compareTo(data) < 0) {
-            node = new Node<>(node.getData(), node.getLeft(), insert(
-                    node.getRight(), data));
+    private Node<T> delete(Node<T> node, T key) {
+        if (node == null) {
+            return node;
+        } else if (node.getData().compareTo(key) > 0) {
+            node.setLeft(delete(node.getLeft(), key));
+        } else if (node.getData().compareTo(key) < 0) {
+            node.setRight(delete(node.getRight(), key));
+        } else {
+            if (node.getLeft() == null || node.getRight() == null) {
+                node = (node.getLeft() == null) ? node.getRight() : node.getLeft();
+            } else {
+                Node<T> mostLeftChild = mostLeftChild(node.getRight());
+                node.setData(mostLeftChild.getData());
+                node.setRight(delete(node.getRight(), node.getData()));
+            }
         }
-        // After insert the new node, check and rebalance the current node if
-        // necessary.
-        switch (balanceNumber(node)) {
-            case 1:
-                node = rotateLeft(node);
-                break;
-            case -1:
-                node = rotateRight(node);
-                break;
-            default:
-                return node;
+        if (node != null) {
+            node = rebalance(node);
         }
         return node;
     }
 
-    private int balanceNumber(Node<T> node) {
-        int left = depth(node.getLeft());
-        int right = depth(node.getRight());
-        if (left - right >= 2)
-            return -1;
-        else if (left - right <= -2)
-            return 1;
-        return 0;
-    }
-
-    private Node<T> rotateLeft(Node<T> node) {
-        Node<T> q = node;
-        Node<T> p = q.getRight();
-        Node<T> c = q.getLeft();
-        Node<T> a = p.getLeft();
-        Node<T> b = p.getRight();
-        q = new Node<>(q.getData(), c, a);
-        p = new Node<>(p.getData(), q, b);
-        return p;
-    }
-
-    private Node<T> rotateRight(Node<T> node) {
-        Node<T> q = node;
-        Node<T> p = q.getLeft();
-        Node<T> c = q.getRight();
-        Node<T> a = p.getLeft();
-        Node<T> b = p.getRight();
-        q = new Node<>(q.getData(), b, c);
-        p = new Node<>(p.getData(), a, q);
-        return p;
-    }
-
-    public boolean search(T data) {
-        Node<T> local = root;
-        while (local != null) {
-            if (local.getData().compareTo(data) == 0)
-                return true;
-            else if (local.getData().compareTo(data) > 0)
-                local = local.getLeft();
-            else
-                local = local.getRight();
+    private Node<T> mostLeftChild(Node<T> node) {
+        Node<T> current = node;
+        /* loop down to find the leftmost leaf */
+        while (current.getLeft() != null) {
+            current = current.getLeft();
         }
-        return false;
+        return current;
+    }
+
+    private Node<T> rebalance(Node<T> z) {
+        updateHeight(z);
+        int balance = getBalance(z);
+        if (balance > 1) {
+            if (height(z.getRight().getRight()) > height(z.getRight().getLeft())) {
+                z = rotateLeft(z);
+            } else {
+                z.setRight(rotateRight(z.getRight()));
+                z = rotateLeft(z);
+            }
+        } else if (balance < -1) {
+            if (height(z.getLeft().getLeft()) > height(z.getLeft().getRight())) {
+                z = rotateRight(z);
+            } else {
+                z.setLeft(rotateLeft(z.getLeft()));
+                z = rotateRight(z);
+            }
+        }
+        return z;
+    }
+
+    private Node<T> rotateRight(Node<T> y) {
+        Node<T> x = y.getLeft();
+        Node<T> z = x.getRight();
+        x.setRight(y);
+        y.setLeft(z);
+        updateHeight(y);
+        updateHeight(x);
+        return x;
+    }
+
+    private Node<T> rotateLeft(Node<T> y) {
+        Node<T> x = y.getRight();
+        Node<T> z = x.getLeft();
+        x.setLeft(y);
+        y.setRight(z);
+        updateHeight(y);
+        updateHeight(x);
+        return x;
+    }
+
+    private void updateHeight(Node<T> n) {
+        n.setDepth(1 + Math.max(height(n.getLeft()), height(n.getRight())));
+    }
+
+    private int height(Node<T> n) {
+        return n == null ? -1 : n.getDepth();
+    }
+
+    private int getBalance(Node<T> n) {
+        return (n == null) ? 0 : height(n.getRight()) - height(n.getLeft());
     }
 
     @Override
@@ -148,4 +162,6 @@ public class AVLTree<T extends Comparable<T>> {
             }
         }
     }
+
+
 }

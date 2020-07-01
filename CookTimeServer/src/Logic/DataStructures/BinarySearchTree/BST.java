@@ -1,8 +1,26 @@
 package Logic.DataStructures.BinarySearchTree;
 
+import Logic.DataStructures.SimpleList.SimpleList;
+
 public class BST<T extends Comparable<T>> {
 
     private Node<T> root;
+
+    public SimpleList<T> inOrder() {
+        return this.inOrder(this.root, new SimpleList<>());
+    }
+
+    private SimpleList<T> inOrder(Node<T> node, SimpleList<T> result) {
+        if (node == null) {
+            System.out.println("Leaf");
+
+        } else {
+            inOrder(node.getLeft(), result);
+            result.append(node.getData());
+            inOrder(node.getRight(), result);
+        }
+        return result;
+    }
 
     public void insert(T newData) {
         Node<T> newNode = new Node<>(newData);

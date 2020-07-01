@@ -5,220 +5,265 @@
       "name": "Test User",
       "email": "EDUARDO",
       "password": "fed3b61b26081849378080b34e693d2e",
-      "ownedRecipes": {
-        "head": {
-          "data": {
-            "name": "Maruchan sabor Cancer 2.0",
-            "author": {
-              "name": "Test User",
-              "email": "EDUARDO",
-              "password": "fed3b61b26081849378080b34e693d2e",
-              "isChef": false
-            },
-            "type": "Moncha salva tandas",
-            "duration": 125.0,
-            "difficulty": 0,
-            "tags": {
-              "head": {
-                "next": {
+      "myMenu": {
+        "ownedRecipes": {
+          "head": {
+            "data": {
+              "name": "Maruchan sabor Cancer 2.0",
+              "author": {
+                "name": "Test User",
+                "email": "EDUARDO",
+                "password": "fed3b61b26081849378080b34e693d2e",
+                "myMenu": {},
+                "followers": {
+                  "len": 0
+                },
+                "following": {
+                  "len": 0
+                }
+              },
+              "type": "Moncha salva tandas",
+              "duration": 125.0,
+              "difficulty": 0,
+              "tags": {
+                "head": {
                   "next": {
                     "next": {
-                      "data": "rikas las de poio"
-                    },
-                    "data": "wakala las de queso"
-                  },
-                  "data": "china"
-                },
-                "data": "Cancer"
-              },
-              "tail": {
-                "data": "rikas las de poio"
-              },
-              "len": 4
-            },
-            "price": 650,
-            "rating": 0.0
-          }
-        },
-        "tail": {
-          "data": {
-            "name": "Maruchan sabor Cancer 2.0",
-            "author": {
-              "name": "Test User",
-              "email": "EDUARDO",
-              "password": "fed3b61b26081849378080b34e693d2e",
-              "ownedRecipes": {
-                "head": {
-                  "data": {
-                    "name": "Maruchan sabor Cancer 2.0",
-                    "author": {
-                      "name": "Test User",
-                      "email": "EDUARDO",
-                      "password": "fed3b61b26081849378080b34e693d2e",
-                      "isChef": false
-                    },
-                    "type": "Moncha salva tandas",
-                    "duration": 125.0,
-                    "difficulty": 0,
-                    "tags": {
-                      "head": {
-                        "next": {
-                          "next": {
-                            "next": {
-                              "data": "rikas las de poio"
-                            },
-                            "data": "wakala las de queso"
-                          },
-                          "data": "china"
-                        },
-                        "data": "Cancer"
-                      },
-                      "tail": {
+                      "next": {
                         "data": "rikas las de poio"
                       },
-                      "len": 4
+                      "data": "wakala las de queso"
                     },
-                    "price": 650,
-                    "rating": 0.0
-                  }
+                    "data": "china"
+                  },
+                  "data": "Cancer"
                 },
                 "tail": {
-                  "data": {
-                    "name": "Maruchan sabor Cancer 2.0",
-                    "author": {
-                      "name": "Test User",
-                      "email": "EDUARDO",
-                      "password": "fed3b61b26081849378080b34e693d2e",
-                      "ownedRecipes": {
-                        "head": {
-                          "data": {
-                            "name": "Maruchan sabor Cancer 2.0",
-                            "author": {
-                              "name": "Test User",
-                              "email": "EDUARDO",
-                              "password": "fed3b61b26081849378080b34e693d2e",
-                              "isChef": false
-                            },
-                            "type": "Moncha salva tandas",
-                            "duration": 125.0,
-                            "difficulty": 0,
-                            "tags": {
-                              "head": {
-                                "next": {
-                                  "next": {
-                                    "next": {
-                                      "data": "rikas las de poio"
-                                    },
-                                    "data": "wakala las de queso"
-                                  },
-                                  "data": "china"
-                                },
-                                "data": "Cancer"
-                              },
-                              "tail": {
-                                "data": "rikas las de poio"
-                              },
-                              "len": 4
-                            },
-                            "price": 650,
-                            "rating": 0.0
-                          }
-                        },
-                        "tail": {
-                          "data": {
-                            "name": "Maruchan sabor Cancer 2.0",
-                            "author": {
-                              "name": "Test User",
-                              "email": "EDUARDO",
-                              "password": "fed3b61b26081849378080b34e693d2e",
-                              "isChef": false
-                            },
-                            "type": "Moncha salva tandas",
-                            "duration": 125.0,
-                            "difficulty": 0,
-                            "tags": {
-                              "head": {
-                                "next": {
-                                  "next": {
-                                    "next": {
-                                      "data": "rikas las de poio"
-                                    },
-                                    "data": "wakala las de queso"
-                                  },
-                                  "data": "china"
-                                },
-                                "data": "Cancer"
-                              },
-                              "tail": {
-                                "data": "rikas las de poio"
-                              },
-                              "len": 4
-                            },
-                            "price": 650,
-                            "rating": 0.0
-                          }
-                        },
-                        "len": 1
-                      },
-                      "isChef": false
-                    },
-                    "type": "Moncha salva tandas",
-                    "duration": 125.0,
-                    "difficulty": 0,
-                    "tags": {
-                      "head": {
-                        "next": {
-                          "next": {
-                            "next": {
-                              "data": "rikas las de poio"
-                            },
-                            "data": "wakala las de queso"
+                  "data": "rikas las de poio"
+                },
+                "len": 4
+              },
+              "price": 650,
+              "rating": 0.0
+            }
+          },
+          "tail": {
+            "data": {
+              "name": "Maruchan sabor Cancer 2.0",
+              "author": {
+                "name": "Test User",
+                "email": "EDUARDO",
+                "password": "fed3b61b26081849378080b34e693d2e",
+                "myMenu": {
+                  "ownedRecipes": {
+                    "head": {
+                      "data": {
+                        "name": "Maruchan sabor Cancer 2.0",
+                        "author": {
+                          "name": "Test User",
+                          "email": "EDUARDO",
+                          "password": "fed3b61b26081849378080b34e693d2e",
+                          "myMenu": {},
+                          "followers": {
+                            "len": 0
                           },
-                          "data": "china"
+                          "following": {
+                            "len": 0
+                          }
                         },
-                        "data": "Cancer"
-                      },
-                      "tail": {
-                        "data": "rikas las de poio"
-                      },
-                      "len": 4
+                        "type": "Moncha salva tandas",
+                        "duration": 125.0,
+                        "difficulty": 0,
+                        "tags": {
+                          "head": {
+                            "next": {
+                              "next": {
+                                "next": {
+                                  "data": "rikas las de poio"
+                                },
+                                "data": "wakala las de queso"
+                              },
+                              "data": "china"
+                            },
+                            "data": "Cancer"
+                          },
+                          "tail": {
+                            "data": "rikas las de poio"
+                          },
+                          "len": 4
+                        },
+                        "price": 650,
+                        "rating": 0.0
+                      }
                     },
-                    "price": 650,
-                    "rating": 0.0
+                    "tail": {
+                      "data": {
+                        "name": "Maruchan sabor Cancer 2.0",
+                        "author": {
+                          "name": "Test User",
+                          "email": "EDUARDO",
+                          "password": "fed3b61b26081849378080b34e693d2e",
+                          "myMenu": {
+                            "ownedRecipes": {
+                              "head": {
+                                "data": {
+                                  "name": "Maruchan sabor Cancer 2.0",
+                                  "author": {
+                                    "name": "Test User",
+                                    "email": "EDUARDO",
+                                    "password": "fed3b61b26081849378080b34e693d2e",
+                                    "myMenu": {},
+                                    "followers": {
+                                      "len": 0
+                                    },
+                                    "following": {
+                                      "len": 0
+                                    }
+                                  },
+                                  "type": "Moncha salva tandas",
+                                  "duration": 125.0,
+                                  "difficulty": 0,
+                                  "tags": {
+                                    "head": {
+                                      "next": {
+                                        "next": {
+                                          "next": {
+                                            "data": "rikas las de poio"
+                                          },
+                                          "data": "wakala las de queso"
+                                        },
+                                        "data": "china"
+                                      },
+                                      "data": "Cancer"
+                                    },
+                                    "tail": {
+                                      "data": "rikas las de poio"
+                                    },
+                                    "len": 4
+                                  },
+                                  "price": 650,
+                                  "rating": 0.0
+                                }
+                              },
+                              "tail": {
+                                "data": {
+                                  "name": "Maruchan sabor Cancer 2.0",
+                                  "author": {
+                                    "name": "Test User",
+                                    "email": "EDUARDO",
+                                    "password": "fed3b61b26081849378080b34e693d2e",
+                                    "myMenu": {},
+                                    "followers": {
+                                      "len": 0
+                                    },
+                                    "following": {
+                                      "len": 0
+                                    }
+                                  },
+                                  "type": "Moncha salva tandas",
+                                  "duration": 125.0,
+                                  "difficulty": 0,
+                                  "tags": {
+                                    "head": {
+                                      "next": {
+                                        "next": {
+                                          "next": {
+                                            "data": "rikas las de poio"
+                                          },
+                                          "data": "wakala las de queso"
+                                        },
+                                        "data": "china"
+                                      },
+                                      "data": "Cancer"
+                                    },
+                                    "tail": {
+                                      "data": "rikas las de poio"
+                                    },
+                                    "len": 4
+                                  },
+                                  "price": 650,
+                                  "rating": 0.0
+                                }
+                              },
+                              "len": 1
+                            }
+                          },
+                          "followers": {
+                            "len": 0
+                          },
+                          "following": {
+                            "len": 0
+                          }
+                        },
+                        "type": "Moncha salva tandas",
+                        "duration": 125.0,
+                        "difficulty": 0,
+                        "tags": {
+                          "head": {
+                            "next": {
+                              "next": {
+                                "next": {
+                                  "data": "rikas las de poio"
+                                },
+                                "data": "wakala las de queso"
+                              },
+                              "data": "china"
+                            },
+                            "data": "Cancer"
+                          },
+                          "tail": {
+                            "data": "rikas las de poio"
+                          },
+                          "len": 4
+                        },
+                        "price": 650,
+                        "rating": 0.0
+                      }
+                    },
+                    "len": 2
                   }
                 },
-                "len": 2
+                "followers": {
+                  "len": 0
+                },
+                "following": {
+                  "len": 0
+                }
               },
-              "isChef": false
-            },
-            "type": "Moncha salva tandas",
-            "duration": 125.0,
-            "difficulty": 0,
-            "tags": {
-              "head": {
-                "next": {
+              "type": "Moncha salva tandas",
+              "duration": 125.0,
+              "difficulty": 0,
+              "tags": {
+                "head": {
                   "next": {
                     "next": {
-                      "data": "rikas las de poio"
+                      "next": {
+                        "data": "rikas las de poio"
+                      },
+                      "data": "wakala las de queso"
                     },
-                    "data": "wakala las de queso"
+                    "data": "china"
                   },
-                  "data": "china"
+                  "data": "Cancer"
                 },
-                "data": "Cancer"
+                "tail": {
+                  "data": "rikas las de poio"
+                },
+                "len": 4
               },
-              "tail": {
-                "data": "rikas las de poio"
-              },
-              "len": 4
-            },
-            "price": 650,
-            "rating": 0.0
-          }
-        },
-        "len": 3
+              "price": 650,
+              "rating": 0.0
+            }
+          },
+          "len": 3
+        }
       },
-      "isChef": false
+      "followers": {
+        "len": 0
+      },
+      "following": {
+        "len": 0
+      }
     }
   }
 }

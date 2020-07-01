@@ -4,15 +4,11 @@ import Logic.DataStructures.SimpleList.SimpleList;
 
 import java.util.Objects;
 
+import static Logic.ServerManager.*;
+
 
 public class Recipe implements Comparable<Recipe> {
-    //Constant notification messages
-    //nofication for rated the recipe, add username at front, and qualification at end.
-    public static final String NOTIFICATION_RATED_MESSAGE = " rated the recipe with: ";
-    //Notification for shared the recipe, add user name at front
-    public static final String NOTIFICATION_SHARED_MESSAGE = " shared the recipe.";
-    //Notification for comments, add username at front, message at end.
-    public static final String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe ";
+
     //Atributes of the recipes
     private String name;
     private AbstractUser author;

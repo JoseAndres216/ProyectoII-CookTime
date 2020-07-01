@@ -1,6 +1,7 @@
 package Logic.DataStructures.SplayTree;
 
 import Logic.DataStructures.BinarySearchTree.Node;
+import Logic.DataStructures.SimpleList.SimpleList;
 
 public class SplayTree<T extends Comparable<T>> {
     private Node<T> root;
@@ -186,22 +187,20 @@ public class SplayTree<T extends Comparable<T>> {
         }
     }
 
-    // Pre-Order traversal
-    // Node->Left Subtree->Right Subtree
-    public void preorder() {
-        preOrderHelper(this.root);
+    public SimpleList<T> inOrder() {
+        return this.inOrder(this.root, new SimpleList<>());
     }
 
-    // In-Order traversal
-    // Left Subtree -> Node -> Right Subtree
-    public void inorder() {
-        inOrderHelper(this.root);
-    }
+    private SimpleList<T> inOrder(Node<T> node, SimpleList<T> result) {
+        if (node == null) {
+            System.out.println("Leaf");
 
-    // Post-Order traversal
-    // Left Subtree -> Right Subtree -> Node
-    public void postorder() {
-        postOrderHelper(this.root);
+        } else {
+            inOrder(node.getLeft(), result);
+            result.append(node.getData());
+            inOrder(node.getRight(), result);
+        }
+        return result;
     }
 
     // search the tree for the key k

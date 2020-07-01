@@ -29,9 +29,17 @@ public class ServerManager {
     public static final String ENTERPRISES_JSON_PATH;
     public static final String USERS_JSON_PATH;
     public static final String RECIPES_JSON_PATH;
-    private static ServerManager instance = null;
-
+    //Constant notification messages
+    //nofication for rated the recipe, add username at front, and qualification at end.
+    public static final String NOTIFICATION_RATED_MESSAGE = " rated the recipe with: ";
+    //Notification for shared the recipe, add user name at front
+    public static final String NOTIFICATION_SHARED_MESSAGE = " shared the recipe.";
+    //Notification for comments, add username at front, message at end.
+    public static final String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe ";
+    //Notification for added a recipe, should add the name at the beggining
+    public static final String NOTIFICATION_ADDED_RECIPE = " added a new recipe!";
     public static final String DATA_BASE_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\";
+    private static ServerManager instance = null;
 
     static {
         final String JsonEnterprises = "Enterprises.json";
@@ -181,15 +189,6 @@ public class ServerManager {
 
     public void setGlobalRecipes(AVLTree<Recipe> globalRecipes) {
         this.globalRecipes = globalRecipes;
-    }
-
-    /**
-     * Method for setting the user as a chef
-     *
-     * @param email key of the user to be chef
-     */
-    public void makeChef(String email) {
-        this.getUser(email).makeChef();
     }
 
     public BST<AbstractUser> getUsers() {

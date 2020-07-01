@@ -265,6 +265,7 @@ public class ServerManagerTest {
         testUser.addRecipe(jsonRecipe);
         JsonWriter.updateRecipes();
         JsonWriter.updateUsers();
+        System.out.println(ServerManager.getInstance().getGlobalRecipes().inOrder());
 
     }
 }

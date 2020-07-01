@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 
 import java.security.NoSuchAlgorithmException;
 
+import static Logic.ServerManager.NOTIFICATION_ADDED_RECIPE;
 import static Logic.ServerManager.RECIPE_TYPE;
 
 
@@ -17,15 +18,15 @@ public class AbstractUser implements Comparable<AbstractUser> {
     protected String password;
     //user info for UI representation
 
-    protected MyMenu myMenu;
+    protected MyMenu myMenu = new MyMenu();
 
     //For notifications logic, UI and logical work
-    protected SimpleList<AbstractUser> followers;
-    protected SimpleList<AbstractUser> following;
-    protected SimpleList<Recipe> ownedRecipes;
+    protected SimpleList<AbstractUser> followers = new SimpleList<>();
+    protected SimpleList<AbstractUser> following = new SimpleList<>();
+
     protected Stack<String> notifications;
     protected Stack<Recipe> newsFeed;
-    private boolean isChef = false;
+
 
     //methods for the logic of followers
     protected void addFollower(AbstractUser user) {
@@ -60,10 +61,6 @@ public class AbstractUser implements Comparable<AbstractUser> {
         return super.toString();
     }
 
-    public void makeChef() {
-        this.isChef = true;
-    }
-
     public String getPass() {
         return this.password;
     }
@@ -77,14 +74,17 @@ public class AbstractUser implements Comparable<AbstractUser> {
     }
 
     public void addRecipe(String jsonRecipe) {
-        //create the object
+        this.myMenu.addRecipe(jsonRecipe);
         Recipe newRecipe = new Gson().fromJson(jsonRecipe, RECIPE_TYPE);
-        //add recipe to the global repository
-        ServerManager.getInstance().addRecipe(newRecipe);
-        //add ther recipe to the local repository
-        if (this.ownedRecipes == null) {
-            this.ownedRecipes = new SimpleList<>();
+        //add the new notification and the recipe to the feed of the followers
+        for (int i = 0; i < this.followers.len(); i++) {
+            this.followers.indexElement(i).updateFeed(newRecipe);
         }
-        this.ownedRecipes.append(newRecipe);
+    }
+
+    private void updateFeed(Recipe newRecipe) {
+        this.newsFeed.push(newRecipe);
+        this.addNotification(this.name + NOTIFICATION_ADDED_RECIPE);
+
     }
 }
