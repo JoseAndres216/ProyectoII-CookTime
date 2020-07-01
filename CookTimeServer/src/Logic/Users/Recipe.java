@@ -3,17 +3,16 @@ package Logic.Users;
 import Logic.DataStructures.SimpleList.SimpleList;
 
 
-public class Recipes implements Comparable<Recipes> {
+public class Recipe implements Comparable<Recipe> {
     //Constant notification messages
     //nofication for rated the recipe, add username at front, and qualification at end.
     public static final String NOTIFICATION_RATED_MESSAGE = " rated the recipe with: ";
     //Notification for shared the recipe, add user name at front
     public static final String NOTIFICATION_SHARED_MESSAGE = " shared the recipe.";
-    //Atributes of the recipes
-    private String name;
     //Notification for comments, add username at front, message at end.
     public static final String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe ";
-
+    //Atributes of the recipes
+    private String name;
     private AbstractUser author;
     private String type;
     private float duration;
@@ -81,14 +80,14 @@ public class Recipes implements Comparable<Recipes> {
     }
 
     /**
-     * Method for givin a rate to a recipe
+     * Method for given a rate to a recipe
      *
      * @param rating int value of the rating to give
      * @param user   user who gave the rating
      */
     public void rate(int rating, AbstractUser user) {
         this.rating += rating;
-        // this.author.addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
+        this.author.addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
     }
 
     /**
@@ -98,8 +97,23 @@ public class Recipes implements Comparable<Recipes> {
      * @param user    user who commented
      */
     public void addComment(String comment, AbstractUser user) {
-        this.comments.insertLast(comment);
-        //  this.author.addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this);
+        this.comments.append(comment);
+        this.author.addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this);
+    }
+
+    /**
+     * Method for sharing the recipe, notifies the owner (adds a notification message that
+     * needs to be processed by the mobile client
+     *
+     * @param user user who shared the recipe
+     */
+    public void shareRecipe(AbstractUser user) {
+        this.author.addNotification(user.name + NOTIFICATION_SHARED_MESSAGE);
+    }
+
+    @Override
+    public int compareTo(Recipe recipe) {
+        return this.name.compareTo(recipe.name);
     }
 
     @Override
@@ -108,20 +122,5 @@ public class Recipes implements Comparable<Recipes> {
                 "name='" + name + '\'' +
                 ", author=" + author +
                 '}';
-    }
-
-    /**
-     * Method for sharing the recipe, notifies the owner (adds a notification message that
-     * needs to be processed by the mobile clien)
-     *
-     * @param user user who shared the recipe
-     */
-    public void shareRecipe(AbstractUser user) {
-        //this.author.addNotification(user.name + NOTIFICATION_SHARED_MESSAGE);
-    }
-
-    @Override
-    public int compareTo(Recipes recipes) {
-        return this.name.compareTo(recipes.name);
     }
 }

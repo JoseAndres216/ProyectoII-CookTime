@@ -1,117 +1,124 @@
 package Logic.DataStructures.AVLTree;
 
 
-import Logic.DataStructures.BinarySearchTree.Node;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class AVLTree<T extends Comparable<T>> {
-    private Node<T> root;
+    Node<T> root;
 
-    private int height(Node<T> node) {
+    public AVLTree() {
+        root = null;
+    }
+
+    public T max() {
+        Node<T> local = root;
+        if (local == null)
+            return null;
+        while (local.getRight() != null)
+            local = local.getRight();
+        return local.getData();
+    }
+
+    public T min() {
+        Node<T> local = root;
+        if (local == null)
+            return null;
+        while (local.getLeft() != null) {
+            local = local.getLeft();
+        }
+        return local.getData();
+    }
+
+    private int depth(Node<T> node) {
         if (node == null)
             return 0;
-
-        return node.getHeight();
+        return node.getDepth();
     }
 
-    public void insert(T newData) {
-        this.insert(this.root, newData);
+    public Node<T> insert(T data) {
+        root = insert(root, data);
+        switch (balanceNumber(root)) {
+            case 1:
+                root = rotateLeft(root);
+                break;
+            case -1:
+                root = rotateRight(root);
+                break;
+            default:
+                break;
+        }
+        return root;
     }
 
-    private Node<T> insert(Node<T> node, T value) {
-        /* 1.  Perform the normal BST rotation */
-        if (node == null) {
-            return (new Node<>(value));
+    public Node<T> insert(Node<T> node, T data) {
+        if (node == null)
+            return new Node<>(data);
+        if (node.getData().compareTo(data) > 0) {
+            node = new Node<>(node.getData(), insert(node.getLeft(), data),
+                    node.getRight());
+        } else if (node.getData().compareTo(data) < 0) {
+            node = new Node<>(node.getData(), node.getLeft(), insert(
+                    node.getRight(), data));
         }
-        if (value.compareTo(node.getData()) < 0) {
-            node.setLeft(insert(node.getLeft(), value));
-        } else {
-            node.setRight(insert(node.getRight(), value));
+        // After insert the new node, check and rebalance the current node if
+        // necessary.
+        switch (balanceNumber(node)) {
+            case 1:
+                node = rotateLeft(node);
+                break;
+            case -1:
+                node = rotateRight(node);
+                break;
+            default:
+                return node;
         }
-        /* 2. Update height of this ancestor node */
-        node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1);
-        /* 3. Get the balance factor of this ancestor node to check whether
-           this node became unbalanced */
-        int balance = getBalance(node);
-
-        // If this node becomes unbalanced, then there are 4 cases
-
-        // Left Left Case
-        if (balance > 1 && value.compareTo(node.getLeft().getData()) < 0)
-            return rightRotate(node);
-
-        // Right Right Case
-        if (balance < -1 && value.compareTo(node.getRight().getData()) > 0)
-            return leftRotate(node);
-
-        // Left Right Case
-        if (balance > 1 && value.compareTo(node.getLeft().getData()) > 0) {
-            node.setLeft(leftRotate(node.getLeft()));
-            return rightRotate(node);
-        }
-
-        // Right Left Case
-        if (balance < -1 && value.compareTo(node.getRight().getData()) < 0) {
-            node.setRight(rightRotate(node.getRight()));
-            return leftRotate(node);
-        }
-
-        /* return the (unchanged) node pointer */
         return node;
     }
 
-    private Node<T> rightRotate(Node<T> node) {
-        Node<T> x = node.getLeft();
-        Node<T> temp = x.getRight();
-
-        // Perform rotation
-        x.setRight(node);
-        node.setLeft(temp);
-
-        // Update heights
-        node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1);
-        x.setHeight(Math.max(height(x.getLeft()), height(x.getRight())) + 1);
-
-        // Return new root
-        return x;
+    private int balanceNumber(Node<T> node) {
+        int left = depth(node.getLeft());
+        int right = depth(node.getRight());
+        if (left - right >= 2)
+            return -1;
+        else if (left - right <= -2)
+            return 1;
+        return 0;
     }
 
-    private Node<T> leftRotate(Node<T> node) {
-        Node<T> y = node.getRight();
-        Node<T> temp = y.getLeft();
-
-        // Perform rotation
-        y.setLeft(node);
-        node.setRight(temp);
-
-        //  Update heights
-        node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1);
-        y.setHeight(Math.max(height(y.getLeft()), height(y.getRight())) + 1);
-
-        // Return new root
-        return y;
+    private Node<T> rotateLeft(Node<T> node) {
+        Node<T> q = node;
+        Node<T> p = q.getRight();
+        Node<T> c = q.getLeft();
+        Node<T> a = p.getLeft();
+        Node<T> b = p.getRight();
+        q = new Node<>(q.getData(), c, a);
+        p = new Node<>(p.getData(), q, b);
+        return p;
     }
 
-    // Get Balance factor of node N
-    private int getBalance(Node<T> node) {
-        if (node == null)
-            return 0;
-        return height(node.getLeft()) - height(node.getRight());
+    private Node<T> rotateRight(Node<T> node) {
+        Node<T> q = node;
+        Node<T> p = q.getLeft();
+        Node<T> c = q.getRight();
+        Node<T> a = p.getLeft();
+        Node<T> b = p.getRight();
+        q = new Node<>(q.getData(), b, c);
+        p = new Node<>(p.getData(), a, q);
+        return p;
     }
 
-    public void preOrder(Node<T> root) {
-        if (root != null) {
-            preOrder(root.getLeft());
-            System.out.printf(root.getData().toString());
-            preOrder(root.getRight());
+    public boolean search(T data) {
+        Node<T> local = root;
+        while (local != null) {
+            if (local.getData().compareTo(data) == 0)
+                return true;
+            else if (local.getData().compareTo(data) > 0)
+                local = local.getLeft();
+            else
+                local = local.getRight();
         }
-    }
-
-    private Node<T> minValueNode(Node<T> node) {
-        Node<T> current = node;
-        /* loop down to find the leftmost leaf */
-        while (current.getLeft() != null)
-            current = current.getLeft();
-        return current;
+        return false;
     }
 
     @Override
@@ -121,97 +128,24 @@ public class AVLTree<T extends Comparable<T>> {
                 '}';
     }
 
-    private Node<T> deleteNode(Node<T> root, T value) {
-        // STEP 1: PERFORM STANDARD BST DELETE
-        if (root == null)
-            return null;
-
-        if (value.compareTo(root.getData()) < 0)
-            root.setLeft(deleteNode(root.getLeft(), value));
-
-        else if (value.compareTo(root.getData()) > 0)
-            root.setRight(deleteNode(root.getRight(), value));
-            // if value is same as root's value
-
-        else {
-            // root with only one child or no child
-            if ((root.getLeft() == null) || (root.getRight() == null)) {
-                Node<T> temp;
-                if (root.getLeft() != null)
-                    temp = root.getLeft();
-                else
-                    temp = root.getRight();
-                root = temp;
-            } else {
-                // node with two children: Get the inorder successor (smallest in the right subtree)
-                Node<T> temp = minValueNode(root.getRight());
-                // Copy the inorder successor's data to this node
-                root.setData(temp.getData());
-                // Delete the inorder successor
-                root.setRight(deleteNode(root.getRight(), temp.getData()));
+    public void show() {
+        root.level = 0;
+        Queue<Node<T>> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node<T> node = queue.poll();
+            System.out.println(node);
+            int level = node.level;
+            Node<T> left = node.getLeft();
+            Node<T> right = node.getRight();
+            if (left != null) {
+                left.level = level + 1;
+                queue.add(left);
+            }
+            if (right != null) {
+                right.level = level + 1;
+                queue.add(right);
             }
         }
-
-        // If the tree had only one node then return
-        if (root == null)
-            return null;
-
-        // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
-        root.setHeight(Math.max(height(root.getLeft()), height(root.getRight())) + 1);
-
-        // STEP 3: GET THE BALANCE FACTOR OF THIS NODE (to check whetherd
-        int balance = getBalance(root);
-
-        // If this node becomes unbalanced, then there are 4 cases
-
-        // Left Left Case
-        if (balance > 1 && getBalance(root.getLeft()) >= 0)
-            return rightRotate(root);
-
-        // Left Right Case
-        if (balance > 1 && getBalance(root.getLeft()) < 0) {
-            root.setLeft(leftRotate(root.getLeft()));
-            return rightRotate(root);
-        }
-
-        // Right Right Case
-        if (balance < -1 && getBalance(root.getRight()) <= 0)
-            return leftRotate(root);
-
-        // Right Left Case
-        if (balance < -1 && getBalance(root.getRight()) > 0) {
-            root.setRight(rightRotate(root.getRight()));
-            return leftRotate(root);
-        }
-
-        return root;
-    }
-
-    public void delete(T value) {
-        this.deleteNode(this.root, value);
-    }
-
-
-    private void printHelper(Node<T> currPtr, String indent, boolean last) {
-        // print the tree structure on the screen
-        if (currPtr != null) {
-            System.out.print(indent);
-            if (last) {
-                System.out.print("R----");
-                indent += "     ";
-            } else {
-                System.out.print("L----");
-                indent += "|    ";
-            }
-
-            System.out.println(currPtr.getData());
-
-            printHelper(currPtr.getLeft(), indent, false);
-            printHelper(currPtr.getRight(), indent, true);
-        }
-    }
-
-    public void print() {
-        this.printHelper(this.root, "  ", true);
     }
 }

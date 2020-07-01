@@ -6,10 +6,7 @@ import com.google.gson.Gson;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static Logic.FileManagement.JsonLoader.BST_TYPE;
-import static Logic.FileManagement.JsonLoader.SPLAY_TYPE;
-import static Logic.ServerManager.ENTERPRISES_JSON_PATH;
-import static Logic.ServerManager.USERS_JSON_PATH;
+import static Logic.ServerManager.*;
 
 public abstract class JsonWriter {
     private static Gson gson = new Gson();
@@ -40,4 +37,16 @@ public abstract class JsonWriter {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void updateRecipes() {
+        String jsonRecipes = gson.toJson(ServerManager.getInstance().getGlobalRecipes(), AVL_TYPE);
+        System.out.println(jsonRecipes);
+        try (FileWriter file = new FileWriter(RECIPES_JSON_PATH)) {
+            file.write(jsonRecipes);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

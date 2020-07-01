@@ -1,7 +1,9 @@
+import Logic.DataStructures.SimpleList.SimpleList;
 import Logic.FileManagement.JsonLoader;
 import Logic.FileManagement.JsonWriter;
 import Logic.ServerManager;
 import Logic.Users.Enterprise;
+import Logic.Users.Recipe;
 import Logic.Users.User;
 import com.google.gson.Gson;
 import org.junit.Assert;
@@ -48,7 +50,6 @@ public class ServerManagerTest {
         final Enterprise TEST_ENTERPRISE4 = new Enterprise("SUR", PASSWORD);
         final Enterprise TEST_ENTERPRISE5 = new Enterprise("KK", PASSWORD);
         try {
-
             final String JsonTest = new Gson().toJson(TEST_ENTERPRISE1, Enterprise.class);
             final String JsonTest2 = new Gson().toJson(TEST_ENTERPRISE2, Enterprise.class);
             final String JsonTest3 = new Gson().toJson(TEST_ENTERPRISE3, Enterprise.class);
@@ -64,11 +65,7 @@ public class ServerManagerTest {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        Assert.assertTrue(ServerManager.getInstance().existUser(false, TEST_ENTERPRISE1.getEmail()));
-        Assert.assertTrue(ServerManager.getInstance().existUser(false, TEST_ENTERPRISE2.getEmail()));
-        Assert.assertTrue(ServerManager.getInstance().existUser(false, TEST_ENTERPRISE3.getEmail()));
-        Assert.assertTrue(ServerManager.getInstance().existUser(false, TEST_ENTERPRISE4.getEmail()));
-        Assert.assertTrue(ServerManager.getInstance().existUser(false, TEST_ENTERPRISE5.getEmail()));
+
     }
 
     @Test
@@ -230,5 +227,36 @@ public class ServerManagerTest {
         //write the files
         JsonWriter.updateEnterprises();
         JsonLoader.loadEnterprises().print();
+    }
+
+    @Test
+    public void addRecipe() {
+        //Gson instance
+        Gson jsonConverter = new Gson();
+        //Test users for adding to the json files
+        String PASSWORD = "testPassword";
+        final User TEST_USER1 = new User("EDUARDO", PASSWORD);
+
+        //recipe
+        Recipe testRecipe = new Recipe();
+        testRecipe.setName("Maruchan sabor Cancer 2.0");
+        testRecipe.setType("Moncha salva tandas");
+        testRecipe.setPrice(650);
+        testRecipe.setDuration(125);
+        testRecipe.setAuthor(new User("Eduardo", "jajaja"));
+        testRecipe.setDifficulty(0);
+        SimpleList<String> tags = new SimpleList<>();
+        tags.append("Cancer");
+        tags.append("china");
+        tags.append("wakala las de queso");
+        tags.append("rikas las de poio");
+        testRecipe.setTags(tags);
+
+
+        final String jsonRecipe = jsonConverter.toJson(testRecipe);
+
+        TEST_USER1.addRecipe(jsonRecipe);
+        JsonWriter.updateRecipes();
+
     }
 }

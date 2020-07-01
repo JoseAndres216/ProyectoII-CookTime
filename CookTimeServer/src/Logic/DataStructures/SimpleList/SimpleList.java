@@ -19,10 +19,6 @@ public class SimpleList<T> {
         return this.tail;
     }
 
-    public void emptyList() {
-        this.head = this.tail = null;
-    }
-
     public int len() {
         return this.len;
     }
@@ -31,7 +27,7 @@ public class SimpleList<T> {
         return this.head == null;
     }
 
-    public void insertLast(T data) {
+    public void append(T data) {
         Node<T> newNode = new Node<>(data);
         if (isEmpty()) {
             this.head = this.tail = newNode;
@@ -42,8 +38,7 @@ public class SimpleList<T> {
         this.len++;
     }
 
-
-    public T getElement(int i) {
+    public T indexElement(int i) {
         if (i > (len - 1)) {
             throw new IllegalArgumentException("Index out of range, max: " + (this.len - 1) + "given :" + i);
 
@@ -75,17 +70,16 @@ public class SimpleList<T> {
         return stringBuilder.toString();
     }
 
-    public boolean booleanSearch(T data) {
-        boolean is = false;
+    public void deleteLast() {
+        if (this.len == 0) {
+            return;
+        }
         Node<T> temp = this.head;
-        while (temp != null) {
-            if (temp.getData() == data) {
-                is = true;
-                break;
-            }
+        while (temp.getNext() != this.tail) {
             temp = temp.getNext();
         }
-        return is;
+        temp.setNext(null);
+        this.tail = temp;
+        this.len--;
     }
-
 }

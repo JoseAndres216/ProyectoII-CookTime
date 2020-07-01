@@ -7,38 +7,53 @@ import Logic.DataStructures.SplayTree.SplayTree;
 import Logic.FileManagement.JsonLoader;
 import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
-import Logic.Users.Recipes;
+import Logic.Users.Recipe;
 import Logic.Users.User;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class ServerManager {
+    public static final Type BST_TYPE = new TypeToken<BST<AbstractUser>>() {
+    }.getType();
+    public static final Type SPLAY_TYPE = new TypeToken<SplayTree<AbstractUser>>() {
+    }.getType();
+    public static final Type AVL_TYPE = new TypeToken<AVLTree<Recipe>>() {
+    }.getType();
+    public static final Type RECIPE_TYPE = new TypeToken<Recipe>() {
+    }.getType();
     public static final String ENTERPRISES_JSON_PATH;
     public static final String USERS_JSON_PATH;
+    public static final String RECIPES_JSON_PATH;
     private static ServerManager instance = null;
+
+    public static final String DATA_BASE_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\";
 
     static {
         final String JsonEnterprises = "Enterprises.json";
-        ENTERPRISES_JSON_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\" + JsonEnterprises;
-    }
+        ENTERPRISES_JSON_PATH = DATA_BASE_PATH + JsonEnterprises;
 
-    static {
         final String JsonUsers = "Users.json";
-        USERS_JSON_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\Logic\\FileManagement\\DataBase\\" + JsonUsers;
+        USERS_JSON_PATH = DATA_BASE_PATH + JsonUsers;
+
+        final String JsonRecipes = "Recipes.json";
+        RECIPES_JSON_PATH = DATA_BASE_PATH + JsonRecipes;
+
     }
 
     private BST<AbstractUser> users;
     private SplayTree<AbstractUser> enterprises;
-    private AVLTree<Recipes> globalRecipes;
+    private AVLTree<Recipe> globalRecipes;
 
     //Constructor
     private ServerManager() {
         this.setEnterprises(JsonLoader.loadEnterprises());
         this.setUsers(JsonLoader.loadUsers());
-
+        this.setGlobalRecipes(JsonLoader.loadGlobalRecipes());
     }
 
     //Get instance for the singleton
@@ -81,6 +96,10 @@ public class ServerManager {
             throw new NullPointerException("The user isn't registered in the server");
         }
         return current.getData();
+    }
+
+    public void addRecipe(Recipe newRecipe) {
+        this.globalRecipes.insert(newRecipe);
     }
 
     /**
@@ -159,11 +178,11 @@ public class ServerManager {
         return this.findUser(false, email);
     }
 
-    public AVLTree<Recipes> getGlobalRecipes() {
+    public AVLTree<Recipe> getGlobalRecipes() {
         return globalRecipes;
     }
 
-    public void setGlobalRecipes(AVLTree<Recipes> globalRecipes) {
+    public void setGlobalRecipes(AVLTree<Recipe> globalRecipes) {
         this.globalRecipes = globalRecipes;
     }
 
