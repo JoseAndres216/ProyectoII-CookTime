@@ -15,14 +15,15 @@ import static Logic.ServerManager.*;
 
 public abstract class JsonLoader {
 
+    private JsonLoader() {
+    }
 
     public static BST<AbstractUser> loadUsers() {
         BST<AbstractUser> users;
-        try {
-            Scanner sc = new Scanner(new File(USERS_JSON_PATH));
+        try (Scanner sc = new Scanner(new File(USERS_JSON_PATH));) {
+
             String line = sc.nextLine();
             users = new Gson().fromJson(line, BST_TYPE);
-            sc.close();
             return users;
             //close the file
         } catch (IOException e) {
@@ -32,12 +33,11 @@ public abstract class JsonLoader {
     }
 
     public static SplayTree<AbstractUser> loadEnterprises() {
-        try {
-            Scanner sc = new Scanner(new File(ENTERPRISES_JSON_PATH));
+        try (Scanner sc = new Scanner(new File(ENTERPRISES_JSON_PATH));) {
+
 
             String line = sc.nextLine();
             SplayTree<AbstractUser> enterprises = new Gson().fromJson(line, SPLAY_TYPE);
-            sc.close();
             return enterprises;
 
         } catch (IOException e) {
@@ -47,11 +47,10 @@ public abstract class JsonLoader {
     }
 
     public static AVLTree<Recipe> loadGlobalRecipes() {
-        try {
-            Scanner sc = new Scanner(new File(RECIPES_JSON_PATH));
+        try (Scanner sc = new Scanner(new File(RECIPES_JSON_PATH));) {
+
             String line = sc.nextLine();
             AVLTree<Recipe> globalRecipes = new Gson().fromJson(line, AVL_TYPE);
-            sc.close();
             return globalRecipes;
 
         } catch (IOException e) {

@@ -1,5 +1,7 @@
 package Logic.DataStructures.AVLTree;
 
+import java.util.Objects;
+
 public class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
 
     private T data;
@@ -68,6 +70,16 @@ public class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
     @Override
     public int compareTo(Node<T> o) {
         return this.data.compareTo(o.data);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data, left, right, level, depth);
     }
 
     @Override

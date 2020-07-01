@@ -2,7 +2,7 @@ package Logic.Users;
 
 public class User extends AbstractUser {
     public int age;
-    public boolean isChef = false;
+
     public int rating;
 
     public User(String email, String pass) {
@@ -22,7 +22,5 @@ public class User extends AbstractUser {
                 '}';
     }
 
-    public void makeChef() {
-        this.isChef = true;
-    }
+    
 }

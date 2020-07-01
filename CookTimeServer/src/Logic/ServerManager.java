@@ -64,9 +64,6 @@ public class ServerManager {
         return instance;
     }
 
-    public static void main(String[] args) {
-
-    }
 
     /**
      * Main method for finding users/enterprises

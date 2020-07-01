@@ -2,6 +2,8 @@ package Logic.Users;
 
 import Logic.DataStructures.SimpleList.SimpleList;
 
+import java.util.Objects;
+
 
 public class Recipe implements Comparable<Recipe> {
     //Constant notification messages
@@ -114,6 +116,16 @@ public class Recipe implements Comparable<Recipe> {
     @Override
     public int compareTo(Recipe recipe) {
         return this.name.compareTo(recipe.name);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, author, type, duration, difficulty, tags, price, rating, comments);
     }
 
     @Override

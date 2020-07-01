@@ -19,4 +19,5 @@ module Logic.Users {
     opens Logic.DataStructures.SplayTree;
     opens Logic.DataStructures.Stack;
     opens Logic.DataStructures.BinarySearchTree;
+
 }
