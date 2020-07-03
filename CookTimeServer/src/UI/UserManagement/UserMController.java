@@ -1,6 +1,7 @@
 package UI.UserManagement;
 
 
+import Logic.ServerManager;
 import UI.Startview.StartController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,5 +15,9 @@ public class UserMController {
 
     public void pressedBackButton() {
         StartController.mainMenuAcces(START_VIEW, backMenuButton);
+    }
+
+    public void pressedRefreshButton() {
+        System.out.println(ServerManager.getInstance().getUsers().inOrder());
     }
 }

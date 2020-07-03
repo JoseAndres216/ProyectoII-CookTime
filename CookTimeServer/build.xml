@@ -1,0 +1,12 @@
+<project>
+    <path id="classpath">
+        <fileset dir="src" includes="gson-2.8.2.jar"/>
+    </path>
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" classpathref="classpath"/>
+    </target>
+</project>
