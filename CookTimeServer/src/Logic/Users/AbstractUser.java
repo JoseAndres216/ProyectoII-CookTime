@@ -2,7 +2,7 @@ package Logic.Users;
 
 import Logic.DataStructures.SimpleList.SimpleList;
 import Logic.DataStructures.Stack.Stack;
-import Logic.ServerManager;
+import Logic.Encrypter;
 import com.google.gson.Gson;
 
 import java.security.NoSuchAlgorithmException;
@@ -58,7 +58,10 @@ public class AbstractUser implements Comparable<AbstractUser> {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "AbstractUser{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     public String getPass() {
@@ -66,7 +69,7 @@ public class AbstractUser implements Comparable<AbstractUser> {
     }
 
     public void encryptPassword() throws NoSuchAlgorithmException {
-        this.password = ServerManager.getInstance().encryptPassword(this.password);
+        this.password = Encrypter.encryptPassword(this.password);
     }
 
     public void addNotification(String notification) {

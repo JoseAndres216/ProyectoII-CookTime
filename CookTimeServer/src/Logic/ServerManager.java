@@ -13,8 +13,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class ServerManager {
@@ -151,7 +149,7 @@ public class ServerManager {
     }
 
     public boolean verifyUser(boolean isUser, String email, String passwordNotEncrypted) throws NoSuchAlgorithmException {
-        String enctryptedPass = this.encryptPassword(passwordNotEncrypted);
+        String enctryptedPass = Encrypter.encryptPassword(passwordNotEncrypted);
         try {
             AbstractUser user = this.findUser(isUser, email);
             return user.getPass().equals(enctryptedPass);
@@ -205,37 +203,6 @@ public class ServerManager {
 
     public void setEnterprises(SplayTree<AbstractUser> enterprises) {
         this.enterprises = enterprises;
-    }
-
-    /**
-     * Method for encryptation the passwords
-     *
-     * @return
-     */
-    public String encryptPassword(String word) throws NoSuchAlgorithmException {
-        try {
-            // Static getInstance method is called with hashing MD5
-            MessageDigest md = MessageDigest.getInstance("MD5");
-
-            // digest() method is called to calculate message digest
-            //  of an input digest() return array of byte
-            byte[] messageDigest = md.digest(word.getBytes());
-
-            // Convert byte array into signum representation
-            BigInteger no = new BigInteger(1, messageDigest);
-
-            // Convert message digest into hex value
-            String hashtext = no.toString(16);
-            while (hashtext.length() < 32) {
-                hashtext = new StringBuilder().append("0").append(hashtext).toString();
-            }
-            return hashtext;
-        }
-
-        // For specifying wrong message digest algorithms
-        catch (NoSuchAlgorithmException e) {
-            throw new NoSuchAlgorithmException(e);
-        }
     }
 
 

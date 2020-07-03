@@ -193,7 +193,7 @@ public class SplayTree<T extends Comparable<T>> {
 
     private SimpleList<T> inOrder(Node<T> node, SimpleList<T> result) {
         if (node == null) {
-            System.out.println("Leaf");
+
 
         } else {
             inOrder(node.getLeft(), result);

@@ -1,4 +1,5 @@
 import Logic.DataStructures.SimpleList.SimpleList;
+import Logic.Encrypter;
 import Logic.FileManagement.JsonLoader;
 import Logic.FileManagement.JsonWriter;
 import Logic.ServerManager;
@@ -134,7 +135,7 @@ public class ServerManagerTest {
     @Test
     public void testVerifyPasswordCorrect() throws NoSuchAlgorithmException {
         String password = "Patito29381";
-        String encryptedPass = ServerManager.getInstance().encryptPassword(password);
+        String encryptedPass = Encrypter.encryptPassword(password);
         final User TEST_USER11 = new User("CRISTIAN", password);
 
         Gson gson = new Gson();
@@ -151,7 +152,7 @@ public class ServerManagerTest {
     @Test
     public void testVerifyUnexistantUser() throws NoSuchAlgorithmException {
         String password = "Patito29381";
-        String encryptedPass = ServerManager.getInstance().encryptPassword(password);
+        String encryptedPass = Encrypter.encryptPassword(password);
         final User TEST_USER12 = new User("MARCOS", password);
 
         Gson gson = new Gson();
@@ -168,7 +169,7 @@ public class ServerManagerTest {
     @Test
     public void testVerifyPasswordWrong() throws NoSuchAlgorithmException {
         String password = "Patito29381";
-        String encryptedPass = ServerManager.getInstance().encryptPassword(password);
+        String encryptedPass = Encrypter.encryptPassword(password);
         final User TEST_USER13 = new User("CRISTIAN", password);
 
         Gson gson = new Gson();
@@ -262,10 +263,21 @@ public class ServerManagerTest {
 
         final String jsonRecipe = jsonConverter.toJson(testRecipe);
 
-        testUser.addRecipe(jsonRecipe);
-        JsonWriter.updateRecipes();
-        JsonWriter.updateUsers();
+        try {
+            testUser.addRecipe(jsonRecipe);
+            JsonWriter.updateRecipes();
+            JsonWriter.updateUsers();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println(ServerManager.getInstance().getGlobalRecipes().inOrder());
 
+    }
+
+    @Test
+    public void printTrees() {
+        System.out.println(ServerManager.getInstance().getGlobalRecipes().inOrder());
+        System.out.println(ServerManager.getInstance().getUsers().inOrder());
+        System.out.println(ServerManager.getInstance().getEnterprises().inOrder());
     }
 }

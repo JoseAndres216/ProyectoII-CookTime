@@ -1,7 +1,7 @@
 module Logic.Users {
     requires junit;
     requires gson;
-    requires json.simple;
+
     requires javafx.graphics;
     requires javafx.fxml;
     requires javafx.controls;
@@ -19,5 +19,15 @@ module Logic.Users {
     opens Logic.DataStructures.SplayTree;
     opens Logic.DataStructures.Stack;
     opens Logic.DataStructures.BinarySearchTree;
+    exports UI;
 
+    exports UI.logIn;
+    exports UI.ChefRequest;
+    exports UI.Startview;
+    exports UI.UserManagement;
+
+    opens UI.logIn;
+    opens UI.ChefRequest;
+    opens UI.Startview;
+    opens UI.UserManagement;
 }
