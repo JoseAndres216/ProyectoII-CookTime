@@ -1,16 +1,44 @@
 
-NLogic.DataStructures.AVLTree.Node#getLeft()LLogic/DataStructures/AVLTree/Node;w
-mC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/AVLTree/Node.java( (("1*‚
-1w
-mC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/AVLTree/Node.java) )(Ü
-Ù
-w
-mC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/AVLTree/Node.java) )('
-%0!Logic.DataStructures.AVLTree.Node"__id*/*-#
-!Logic.DataStructures.AVLTree.Node"
-left"¤
-w
-mC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/AVLTree/Node.java) )()
-'
-%0!Logic.DataStructures.AVLTree.NodeB%#
-!Logic.DataStructures.AVLTree.Node
+6logic.structures.TreeNode#toString()Ljava/lang/String;o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaV V("1*°	
+1o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaW W(ÑÎ
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaW W($	
+%0int"%logic.structures.TreeNode#getLevel()I*
+logic.structures.TreeNode2
+getLevel()¯
+¬
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaW W($
+%1java.lang.String"__concat*
+
+Level *
+	
+%0int¸
+µ
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaW W(+
+%2java.lang.String"__concat*
+
+%1java.lang.String*
+: ¬
+©
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaW. W(2
+%3T"__id*'*%
+logic.structures.TreeNode"
+data»
+¸
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaW W(2
+%4java.lang.String"__concat*
+
+%2java.lang.String*	
+
+%3T"‹
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaW W(3
+
+%4java.lang.StringB
+logic.structures.TreeNode

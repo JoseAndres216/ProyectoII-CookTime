@@ -1,14 +1,16 @@
 
-$Logic.Users.AbstractUser#hashCode()In
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java7 7("1*î
-1n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java8 8(§
-°
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java8 8(	
-%0int"java.lang.Object#hashCode()I*
-"""x
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java8 8( 
-""B
-Logic.Users.AbstractUser
+9logic.structures.avl.AVLTree#toString()Ljava/lang/String;t
+hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/avl/AVLTree.javaã ã("1*∞
+1t
+hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/avl/AVLTree.javaå å(¥
+±
+t
+hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/avl/AVLTree.javaå ç(
+%0java.lang.String"__concat*
+
+AVLTree{*	
+root="~
+t
+hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/avl/AVLTree.javaå é(
+""B 
+logic.structures.avl.AVLTree

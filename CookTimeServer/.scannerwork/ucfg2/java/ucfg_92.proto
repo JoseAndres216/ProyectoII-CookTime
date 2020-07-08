@@ -1,37 +1,17 @@
 
-Logic.Users.Recipe#hashCode()Ih
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java{ {("1*è
-1h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java| |(­
-ª
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java| |( 
-%0java.lang.String"__id* *
-Logic.Users.Recipe"
-name­
-ª
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java|* |(.
-%1java.lang.String"__id* *
-Logic.Users.Recipe"
-type¤
-¡
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java| |(d
-%2",java.util.Objects#hash([Ljava/lang/Object;)I*"
-java.util.Objects*
+4logic.users.AbstractUser#getPass()Ljava/lang/String;n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaC C("1*À
+1n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaD D(½
+º
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaD D(
+%0java.lang.String"__id***(
+logic.users.AbstractUser"
+
+password"Š
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaD D(
 
-%0java.lang.String*
-""*
-
-%1java.lang.String*
-""*
-""*
-""*
-""*
-""*
-"""r
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java| |(e
-""B
-Logic.Users.Recipe
+%0java.lang.StringB
+logic.users.AbstractUser

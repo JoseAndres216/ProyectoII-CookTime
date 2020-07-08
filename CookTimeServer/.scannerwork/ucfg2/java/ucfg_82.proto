@@ -1,16 +1,21 @@
 
-.Logic.Users.Recipe#getType()Ljava/lang/String;h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java( (("1*§
-1h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java) )(≠
-™
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java) )(
-%0java.lang.String"__id* *
-Logic.Users.Recipe"
-type"Ñ
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.java) )(
-
-%0java.lang.StringB
-Logic.Users.Recipe
+3logic.ServerManager#existUser(ZLjava/lang/String;)Zi
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javat t("5*à
+5i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaw w(íè
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaw w(&
+%0"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
+logic.ServerManager*
+""*
+
+emailjava.lang.String2findUser(ZLjava/lang/String;)*
+1*„
+1i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java| |("s
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java| |(
+"":
+"":
+emailjava.lang.StringB
+logic.ServerManager

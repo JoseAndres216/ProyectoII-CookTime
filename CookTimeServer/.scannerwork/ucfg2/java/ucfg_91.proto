@@ -1,34 +1,73 @@
 
-.Logic.Users.Recipe#equals(Ljava/lang/Object;)Zh
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javav v("startingBlock*Ò
-startingBlockh
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javav v(%²
-¯
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javau u(
-%1"
-__annotate*
-java.lang.Override*
-
-objjava.lang.Objectœ
-™
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javav! v($
-objjava.lang.Object"__annotation*
-
-%1*
-1*±
-1h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javaw w(Í
-Ê
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javaw w( 
-%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
-""*
-
-objjava.lang.Object"r
-h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javaw w(!
-"":
-objjava.lang.ObjectB
-Logic.Users.Recipe
+5logic.users.AbstractUser#toString()Ljava/lang/String;n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java< <("1*¿
+1n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= =(µ
+²
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= >(
+%0java.lang.String"__concat*
+AbstractUser{*	
+email='º
+·
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java> >(!
+%1java.lang.String"__id*'*%
+logic.users.AbstractUser"
+emailÉ
+Æ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= >(!
+%2java.lang.String"__concat*
+
+%0java.lang.String*
+
+%1java.lang.String·
+´
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= >((
+%3java.lang.String"__concat*
+
+%2java.lang.String*
+""Á
+¾
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= ?(
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+, password='½
+º
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java?! ?()
+%5java.lang.String"__id***(
+logic.users.AbstractUser"
+
+passwordÉ
+Æ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= ?()
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String·
+´
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= ?(0
+%7java.lang.String"__concat*
+
+%6java.lang.String*
+""·
+´
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= @(
+%8java.lang.String"__concat*
+
+%7java.lang.String*
+"""Š
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java= @(
+
+%8java.lang.StringB
+logic.users.AbstractUser

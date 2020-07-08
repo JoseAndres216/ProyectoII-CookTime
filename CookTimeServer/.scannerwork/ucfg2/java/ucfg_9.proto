@@ -1,16 +1,40 @@
 
-TLogic.DataStructures.SimpleList.Node#getNext()LLogic/DataStructures/SimpleList/Node;z
-pC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/Node.java ("1*î
-1z
-pC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/Node.java (Â
-‚
-z
-pC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/Node.java (*
-%0$Logic.DataStructures.SimpleList.Node"__id*2*0&
-$Logic.DataStructures.SimpleList.Node"
-next"™
-z
-pC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/Node.java (,
-*
-%0$Logic.DataStructures.SimpleList.NodeB(&
-$Logic.DataStructures.SimpleList.Node
+2logic.users.Enterprise#equals(Ljava/lang/Object;)Zl
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java	 	("startingBlock*ﬁ
+startingBlockl
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java	 	(%∂
+≥
+l
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java (
+%1"
+__annotate*
+java.lang.Override*
+
+objjava.lang.Object†
+ù
+l
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java	! 	($
+objjava.lang.Object"__annotation*
+
+%1*
+1*Ω
+1l
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java
+ 
+(—
+Œ
+l
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java
+ 
+( 
+%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
+""*
+
+objjava.lang.Object"v
+l
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java
+ 
+(!
+"":
+objjava.lang.ObjectB
+logic.users.Enterprise
