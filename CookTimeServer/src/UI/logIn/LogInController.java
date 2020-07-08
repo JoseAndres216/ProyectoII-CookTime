@@ -1,6 +1,6 @@
 package UI.logIn;
 
-import Logic.Encrypter;
+import Logic.Tools.Encrypter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

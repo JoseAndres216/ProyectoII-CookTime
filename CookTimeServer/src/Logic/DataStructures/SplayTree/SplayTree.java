@@ -1,16 +1,18 @@
 package Logic.DataStructures.SplayTree;
 
-import Logic.DataStructures.BinarySearchTree.Node;
 import Logic.DataStructures.SimpleList.SimpleList;
+import Logic.DataStructures.TreeNode;
+import com.google.gson.annotations.Expose;
 
 public class SplayTree<T extends Comparable<T>> {
-    private Node<T> root;
+    @Expose
+    private TreeNode<T> root;
 
     public SplayTree() {
         root = null;
     }
 
-    private void printHelper(Node<T> currPtr, String indent, boolean last) {
+    private void printHelper(TreeNode<T> currPtr, String indent, boolean last) {
         // print the tree structure on the screen
         if (currPtr != null) {
             System.out.print(indent);
@@ -29,7 +31,7 @@ public class SplayTree<T extends Comparable<T>> {
         }
     }
 
-    private Node<T> searchTreeHelper(Node<T> node, T key) {
+    private TreeNode<T> searchTreeHelper(TreeNode<T> node, T key) {
         if (node == null || 0 == node.getData().compareTo(key)) {
             return node;
         }
@@ -40,10 +42,10 @@ public class SplayTree<T extends Comparable<T>> {
         return searchTreeHelper(node.getRight(), key);
     }
 
-    private void deleteNodeHelper(Node<T> node, T key) {
-        Node<T> x = null;
-        Node<T> t;
-        Node<T> s;
+    private void deleteNodeHelper(TreeNode<T> node, T key) {
+        TreeNode<T> x = null;
+        TreeNode<T> t;
+        TreeNode<T> s;
         while (node != null) {
             if (node.getData().compareTo(key) == 0) {
                 x = node;
@@ -64,7 +66,7 @@ public class SplayTree<T extends Comparable<T>> {
         splay(x);
         if (x.getRight() != null) {
             t = x.getRight();
-            t.parent = null;
+            t.setParent(null);
         } else {
             t = null;
         }
@@ -73,82 +75,82 @@ public class SplayTree<T extends Comparable<T>> {
 
         // join operation
         if (s.getLeft() != null) { // remove x
-            s.getLeft().parent = null;
+            s.getLeft().setParent(null);
         }
         root = join(s.getLeft(), t);
     }
 
     // rotate left at node x
-    private void leftRotate(Node<T> x) {
-        Node<T> y = x.getRight();
+    private void leftRotate(TreeNode<T> x) {
+        TreeNode<T> y = x.getRight();
         x.setRight(y.getLeft());
         if (y.getLeft() != null) {
-            y.getLeft().parent = x;
+            y.getLeft().setParent(x);
         }
-        y.parent = x.parent;
-        if (x.parent == null) {
+        y.setParent(x.getParent());
+        if (x.getParent() == null) {
             this.root = y;
-        } else if (x == x.parent.getLeft()) {
-            x.parent.setLeft(y);
+        } else if (x == x.getParent().getLeft()) {
+            x.getParent().setLeft(y);
         } else {
-            x.parent.setRight(y);
+            x.getParent().setRight(y);
         }
         y.setLeft(x);
-        x.parent = y;
+        x.setParent(y);
     }
 
     // rotate right at node x
-    private void rightRotate(Node<T> x) {
-        Node<T> y = x.getLeft();
+    private void rightRotate(TreeNode<T> x) {
+        TreeNode<T> y = x.getLeft();
         x.setLeft(y.getRight());
         if (y.getRight() != null) {
-            y.getRight().parent = x;
+            y.getRight().setParent(x);
         }
-        y.parent = x.parent;
-        if (x.parent == null) {
+        y.setParent(x.getParent());
+        if (x.getParent() == null) {
             this.root = y;
-        } else if (x == x.parent.getRight()) {
-            x.parent.setRight(y);
+        } else if (x == x.getParent().getRight()) {
+            x.getParent().setRight(y);
         } else {
-            x.parent.setLeft(y);
+            x.getParent().setLeft(y);
         }
         y.setRight(x);
-        x.parent = y;
+        x.setParent(y);
     }
 
     // Splaying operation. It moves x to the root of the tree
-    private void splay(Node<T> x) {
-        while (x.parent != null) {
-            if (x.parent.parent == null) {
-                if (x == x.parent.getLeft()) {
+    private void splay(TreeNode<T> x) {
+        while (x.getParent() != null) {
+            if (x.getParent().getParent() == null) {
+                if (x == x.getParent().getLeft()) {
                     // zig rotation
-                    rightRotate(x.parent);
+                    rightRotate(x.getParent());
                 } else {
                     // zag rotation
-                    leftRotate(x.parent);
+                    leftRotate(x.getParent());
                 }
-            } else if (x == x.parent.getLeft() && x.parent == x.parent.parent.getLeft()) {
+            } else if (x == x.getParent().getLeft() && x.getParent() == x.getParent().getParent().getLeft()) {
                 // zig-zig rotation
-                rightRotate(x.parent.parent);
-                rightRotate(x.parent);
-            } else if (x == x.parent.getRight() && x.parent == x.parent.parent.getRight()) {
+                rightRotate(x.getParent().getParent());
+                rightRotate(x.getParent());
+            } else if (x == x.getParent().getRight() && x.getParent() == x.getParent().getParent().getRight()) {
                 // zag-zag rotation
-                leftRotate(x.parent.parent);
-                leftRotate(x.parent);
-            } else if (x == x.parent.getRight() && x.parent == x.parent.parent.getLeft()) {
+                leftRotate(x.getParent().getParent());
+                leftRotate(x.getParent());
+            } else if (x == x.getParent().getRight() && x.getParent() == x.getParent().getParent().getLeft()) {
                 // zig-zag rotation
-                leftRotate(x.parent);
-                rightRotate(x.parent);
+                leftRotate(x.getParent());
+                rightRotate(x.getParent());
             } else {
                 // zag-zig rotation
-                rightRotate(x.parent);
-                leftRotate(x.parent);
+                rightRotate(x.getParent());
+                leftRotate(x.getParent());
             }
         }
     }
 
     // joins two trees s and t
-    private Node<T> join(Node<T> s, Node<T> t) {
+    private TreeNode<T> join(TreeNode<T> s, TreeNode<T> t) {
         if (s == null) {
             return t;
         }
@@ -156,14 +158,14 @@ public class SplayTree<T extends Comparable<T>> {
         if (t == null) {
             return s;
         }
-        Node<T> x = maximum(s);
+        TreeNode<T> x = maximum(s);
         splay(x);
         x.setRight(t);
-        t.parent = x;
+        t.setParent(x);
         return x;
     }
 
-    private void preOrderHelper(Node<T> node) {
+    private void preOrderHelper(TreeNode<T> node) {
         if (node != null) {
             System.out.print(node.getData() + " ");
             preOrderHelper(node.getLeft());
@@ -171,7 +173,7 @@ public class SplayTree<T extends Comparable<T>> {
         }
     }
 
-    private void inOrderHelper(Node<T> node) {
+    private void inOrderHelper(TreeNode<T> node) {
         if (node != null) {
             inOrderHelper(node.getLeft());
             System.out.print(node.getData() + " ");
@@ -179,7 +181,7 @@ public class SplayTree<T extends Comparable<T>> {
         }
     }
 
-    private void postOrderHelper(Node<T> node) {
+    private void postOrderHelper(TreeNode<T> node) {
         if (node != null) {
             postOrderHelper(node.getLeft());
             postOrderHelper(node.getRight());
@@ -191,9 +193,9 @@ public class SplayTree<T extends Comparable<T>> {
         return this.inOrder(this.root, new SimpleList<>());
     }
 
-    private SimpleList<T> inOrder(Node<T> node, SimpleList<T> result) {
+    private SimpleList<T> inOrder(TreeNode<T> node, SimpleList<T> result) {
         if (node == null) {
-
+            return new SimpleList<>();
 
         } else {
             inOrder(node.getLeft(), result);
@@ -205,8 +207,8 @@ public class SplayTree<T extends Comparable<T>> {
 
     // search the tree for the key k
     // and return the corresponding node
-    public Node<T> searchTree(T k) {
-        Node<T> x = searchTreeHelper(root, k);
+    public TreeNode<T> searchTree(T k) {
+        TreeNode<T> x = searchTreeHelper(root, k);
         if (x != null) {
             splay(x);
         }
@@ -214,7 +216,7 @@ public class SplayTree<T extends Comparable<T>> {
     }
 
     // find the node with the minimum key
-    public Node<T> minimum(Node<T> node) {
+    public TreeNode<T> minimum(TreeNode<T> node) {
         while (node.getLeft() != null) {
             node = node.getLeft();
         }
@@ -222,7 +224,7 @@ public class SplayTree<T extends Comparable<T>> {
     }
 
     // find the node with the maximum key
-    public Node<T> maximum(Node<T> node) {
+    public TreeNode<T> maximum(TreeNode<T> node) {
         while (node.getRight() != null) {
             node = node.getRight();
         }
@@ -230,7 +232,7 @@ public class SplayTree<T extends Comparable<T>> {
     }
 
     // find the successor of a given node
-    public Node<T> successor(Node<T> x) {
+    public TreeNode<T> successor(TreeNode<T> x) {
         // if the right subtree is not null,
         // the successor is the leftmost node in the
         // right subtree
@@ -240,16 +242,16 @@ public class SplayTree<T extends Comparable<T>> {
 
         // else it is the lowest ancestor of x whose
         // left child is also an ancestor of x.
-        Node<T> y = x.parent;
+        TreeNode<T> y = x.getParent();
         while (y != null && x == y.getRight()) {
             x = y;
-            y = y.parent;
+            y = y.getParent();
         }
         return y;
     }
 
     // find the predecessor of a given node
-    public Node<T> predecessor(Node<T> x) {
+    public TreeNode<T> predecessor(TreeNode<T> x) {
         // if the left subtree is not null,
         // the predecessor is the rightmost node in the
         // left subtree
@@ -257,10 +259,10 @@ public class SplayTree<T extends Comparable<T>> {
             return maximum(x.getLeft());
         }
 
-        Node<T> y = x.parent;
+        TreeNode<T> y = x.getParent();
         while (y != null && x == y.getLeft()) {
             x = y;
-            y = y.parent;
+            y = y.getParent();
         }
 
         return y;
@@ -268,9 +270,9 @@ public class SplayTree<T extends Comparable<T>> {
 
     // insert the key to the tree in its appropriate position
     public void insert(T key) {
-        Node<T> node = new Node<>(key);
-        Node<T> y = null;
-        Node<T> x = this.root;
+        TreeNode<T> node = new TreeNode<>(key);
+        TreeNode<T> y = null;
+        TreeNode<T> x = this.root;
 
         while (x != null) {
             y = x;
@@ -282,7 +284,7 @@ public class SplayTree<T extends Comparable<T>> {
         }
 
         // y is parent of x
-        node.parent = y;
+        node.setParent(y);
         if (y == null) {
             root = node;
         } else if (node.getData().compareTo(y.getData()) < 0) {
@@ -306,7 +308,7 @@ public class SplayTree<T extends Comparable<T>> {
     }
 
 
-    public Node<T> getRoot() {
+    public TreeNode<T> getRoot() {
         return this.root;
     }
 }

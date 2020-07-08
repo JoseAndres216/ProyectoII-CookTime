@@ -1,4 +1,13 @@
-<project>
+<project xmlns:sonar="antlib:org.sonar.ant" name="CookTime server" default="compile" basedir=".">
+    <property name="sonar.host.url" value="https://sonarcloud.io"/>
+    <property name="sonar.organization" value="eduardo2108"/>
+    <property name="sonar.projectKey" value="CookTime"/>
+    <property name="sonar.projectName" value="CookTime server"/>
+    <property name="sonar.projectVersion" value="1.0"/>
+    <property name="sonar.sources" value="src"/>
+    <property name="sonar.java.binaries" value="build"/>
+    <property name="sonar.login" value="ef9eec1ad9f631d22b47d285517d035943893070"/>
+
     <path id="classpath">
         <fileset dir="src" includes="gson-2.8.2.jar"/>
     </path>
@@ -9,4 +18,11 @@
         <mkdir dir="build/classes"/>
         <javac srcdir="src" destdir="build/classes" classpathref="classpath"/>
     </target>
+    <target name="sonar">
+        <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+            <classpath path="sonarqube-ant-task-2.7.0.1612.jar"/>
+        </taskdef>
+        <sonar:sonar/>
+    </target>
+
 </project>

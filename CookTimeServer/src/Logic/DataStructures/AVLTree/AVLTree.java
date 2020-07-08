@@ -2,12 +2,13 @@ package Logic.DataStructures.AVLTree;
 
 
 import Logic.DataStructures.SimpleList.SimpleList;
+import Logic.DataStructures.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class AVLTree<T extends Comparable<T>> {
-    Node<T> root;
+    TreeNode<T> root;
 
     public AVLTree() {
         root = null;
@@ -17,13 +18,13 @@ public class AVLTree<T extends Comparable<T>> {
         return this.inOrder(this.root, new SimpleList<>());
     }
 
-    private SimpleList<T> inOrder(Node<T> node, SimpleList<T> result) {
-        if (node == null) {
-
+    private SimpleList<T> inOrder(TreeNode<T> treeNode, SimpleList<T> result) {
+        if (treeNode != null) {
+            return new SimpleList<>();
         } else {
-            inOrder(node.getLeft(), result);
-            result.append(node.getData());
-            inOrder(node.getRight(), result);
+            inOrder(treeNode.getLeft(), result);
+            result.append(treeNode.getData());
+            inOrder(treeNode.getRight(), result);
         }
         return result;
     }
@@ -37,43 +38,43 @@ public class AVLTree<T extends Comparable<T>> {
         root = insert(root, key);
     }
 
-    private Node<T> insert(Node<T> node, T key) {
-        if (node == null) {
-            return new Node<>(key);
-        } else if (node.getData().compareTo(key) > 0) {
-            node.setLeft(insert(node.getLeft(), key));
-        } else if (node.getData().compareTo(key) < 0) {
-            node.setRight(insert(node.getRight(), key));
+    private TreeNode<T> insert(TreeNode<T> treeNode, T key) {
+        if (treeNode == null) {
+            return new TreeNode<>(key);
+        } else if (treeNode.getData().compareTo(key) > 0) {
+            treeNode.setLeft(insert(treeNode.getLeft(), key));
+        } else if (treeNode.getData().compareTo(key) < 0) {
+            treeNode.setRight(insert(treeNode.getRight(), key));
         } else {
             throw new IllegalArgumentException("The node its already added");
         }
-        return rebalance(node);
+        return rebalance(treeNode);
     }
 
-    private Node<T> delete(Node<T> node, T key) {
-        if (node == null) {
-            return node;
-        } else if (node.getData().compareTo(key) > 0) {
-            node.setLeft(delete(node.getLeft(), key));
-        } else if (node.getData().compareTo(key) < 0) {
-            node.setRight(delete(node.getRight(), key));
+    private TreeNode<T> delete(TreeNode<T> treeNode, T key) {
+        if (treeNode == null) {
+            return treeNode;
+        } else if (treeNode.getData().compareTo(key) > 0) {
+            treeNode.setLeft(delete(treeNode.getLeft(), key));
+        } else if (treeNode.getData().compareTo(key) < 0) {
+            treeNode.setRight(delete(treeNode.getRight(), key));
         } else {
-            if (node.getLeft() == null || node.getRight() == null) {
-                node = (node.getLeft() == null) ? node.getRight() : node.getLeft();
+            if (treeNode.getLeft() == null || treeNode.getRight() == null) {
+                treeNode = (treeNode.getLeft() == null) ? treeNode.getRight() : treeNode.getLeft();
             } else {
-                Node<T> mostLeftChild = mostLeftChild(node.getRight());
-                node.setData(mostLeftChild.getData());
-                node.setRight(delete(node.getRight(), node.getData()));
+                TreeNode<T> mostLeftChild = mostLeftChild(treeNode.getRight());
+                treeNode.setData(mostLeftChild.getData());
+                treeNode.setRight(delete(treeNode.getRight(), treeNode.getData()));
             }
         }
-        if (node != null) {
-            node = rebalance(node);
+        if (treeNode != null) {
+            treeNode = rebalance(treeNode);
         }
-        return node;
+        return treeNode;
     }
 
-    private Node<T> mostLeftChild(Node<T> node) {
-        Node<T> current = node;
+    private TreeNode<T> mostLeftChild(TreeNode<T> treeNode) {
+        TreeNode<T> current = treeNode;
         /* loop down to find the leftmost leaf */
         while (current.getLeft() != null) {
             current = current.getLeft();
@@ -81,7 +82,7 @@ public class AVLTree<T extends Comparable<T>> {
         return current;
     }
 
-    private Node<T> rebalance(Node<T> z) {
+    private TreeNode<T> rebalance(TreeNode<T> z) {
         updateHeight(z);
         int balance = getBalance(z);
         if (balance > 1) {
@@ -102,9 +103,9 @@ public class AVLTree<T extends Comparable<T>> {
         return z;
     }
 
-    private Node<T> rotateRight(Node<T> y) {
-        Node<T> x = y.getLeft();
-        Node<T> z = x.getRight();
+    private TreeNode<T> rotateRight(TreeNode<T> y) {
+        TreeNode<T> x = y.getLeft();
+        TreeNode<T> z = x.getRight();
         x.setRight(y);
         y.setLeft(z);
         updateHeight(y);
@@ -112,9 +113,9 @@ public class AVLTree<T extends Comparable<T>> {
         return x;
     }
 
-    private Node<T> rotateLeft(Node<T> y) {
-        Node<T> x = y.getRight();
-        Node<T> z = x.getLeft();
+    private TreeNode<T> rotateLeft(TreeNode<T> y) {
+        TreeNode<T> x = y.getRight();
+        TreeNode<T> z = x.getLeft();
         x.setLeft(y);
         y.setRight(z);
         updateHeight(y);
@@ -122,15 +123,15 @@ public class AVLTree<T extends Comparable<T>> {
         return x;
     }
 
-    private void updateHeight(Node<T> n) {
+    private void updateHeight(TreeNode<T> n) {
         n.setDepth(1 + Math.max(height(n.getLeft()), height(n.getRight())));
     }
 
-    private int height(Node<T> n) {
+    private int height(TreeNode<T> n) {
         return n == null ? -1 : n.getDepth();
     }
 
-    private int getBalance(Node<T> n) {
+    private int getBalance(TreeNode<T> n) {
         return (n == null) ? 0 : height(n.getRight()) - height(n.getLeft());
     }
 
@@ -142,25 +143,28 @@ public class AVLTree<T extends Comparable<T>> {
     }
 
     public void show() {
-        root.level = 0;
-        Queue<Node<T>> queue = new LinkedList<>();
+        root.setLevel(0);
+        Queue<TreeNode<T>> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            Node<T> node = queue.poll();
-            System.out.println(node);
-            int level = node.level;
-            Node<T> left = node.getLeft();
-            Node<T> right = node.getRight();
+            TreeNode<T> treeNode = queue.poll();
+            System.out.println(treeNode);
+            int level = treeNode.getLevel();
+            TreeNode<T> left = treeNode.getLeft();
+            TreeNode<T> right = treeNode.getRight();
             if (left != null) {
-                left.level = level + 1;
+                left.setLevel(level + 1);
                 queue.add(left);
             }
             if (right != null) {
-                right.level = level + 1;
+                right.setLevel(level + 1);
                 queue.add(right);
             }
         }
     }
 
 
+    public TreeNode<T> getRoot() {
+        return this.root;
+    }
 }

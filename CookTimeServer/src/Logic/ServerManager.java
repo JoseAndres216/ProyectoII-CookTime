@@ -2,9 +2,10 @@ package Logic;
 
 import Logic.DataStructures.AVLTree.AVLTree;
 import Logic.DataStructures.BinarySearchTree.BST;
-import Logic.DataStructures.BinarySearchTree.Node;
 import Logic.DataStructures.SplayTree.SplayTree;
+import Logic.DataStructures.TreeNode;
 import Logic.FileManagement.JsonLoader;
+import Logic.Tools.Encrypter;
 import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
 import Logic.Users.Recipe;
@@ -80,7 +81,7 @@ public class ServerManager {
      * @throws NullPointerException if not found
      */
     public AbstractUser findUser(boolean user, String email) {
-        Node<AbstractUser> current;
+        TreeNode<AbstractUser> current;
         if (user) {
             current = this.users.getRoot();
         } else {

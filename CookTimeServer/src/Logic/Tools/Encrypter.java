@@ -1,16 +1,18 @@
-package Logic;
+package Logic.Tools;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public abstract class Encrypter {
+public interface Encrypter {
+
+
     /**
      * Method for encryptation the passwords
      *
      * @return
      */
-    public static String encryptPassword(String word) throws NoSuchAlgorithmException {
+    static String encryptPassword(String word) throws NoSuchAlgorithmException {
         try {
             // Static getInstance method is called with hashing MD5
             MessageDigest md = MessageDigest.getInstance("MD5");

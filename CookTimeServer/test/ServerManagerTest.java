@@ -1,8 +1,8 @@
 import Logic.DataStructures.SimpleList.SimpleList;
-import Logic.Encrypter;
 import Logic.FileManagement.JsonLoader;
 import Logic.FileManagement.JsonWriter;
 import Logic.ServerManager;
+import Logic.Tools.Encrypter;
 import Logic.Users.AbstractUser;
 import Logic.Users.Enterprise;
 import Logic.Users.Recipe;
@@ -20,7 +20,6 @@ public class ServerManagerTest {
     public static final String TEST_PASSWORD = "testPassword";
     ServerManager server = ServerManager.getInstance();
 
-    //test for searching users that are avaliable on the tree
     @Test
     public void testFindAvaliableUsers() {
         final User tUser1 = new User(NAME1, PASSWORD);

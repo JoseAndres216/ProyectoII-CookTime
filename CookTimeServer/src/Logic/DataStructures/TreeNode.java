@@ -1,21 +1,21 @@
-package Logic.DataStructures.AVLTree;
+package Logic.DataStructures;
 
 import java.util.Objects;
 
-public class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
+public class TreeNode<T extends Comparable<T>> implements Comparable<TreeNode<T>> {
 
     private T data;
-    private Node<T> left;
-    private Node<T> right;
-    public int level;
+    private transient TreeNode<T> left;
+    private transient TreeNode<T> right;
+    private int level;
     private int depth;
+    private transient TreeNode<T> parent;
 
-    public Node(T data) {
+    public TreeNode(T data) {
         this(data, null, null);
     }
 
-    public Node(T data, Node<T> left, Node<T> right) {
-        super();
+    public TreeNode(T data, TreeNode<T> left, TreeNode<T> right) {
         this.data = data;
         this.left = left;
         this.right = right;
@@ -37,19 +37,19 @@ public class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
         this.data = data;
     }
 
-    public Node<T> getLeft() {
+    public TreeNode<T> getLeft() {
         return left;
     }
 
-    public void setLeft(Node<T> left) {
+    public void setLeft(TreeNode<T> left) {
         this.left = left;
     }
 
-    public Node<T> getRight() {
+    public TreeNode<T> getRight() {
         return right;
     }
 
-    public void setRight(Node<T> right) {
+    public void setRight(TreeNode<T> right) {
         this.right = right;
     }
 
@@ -68,7 +68,7 @@ public class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
     }
 
     @Override
-    public int compareTo(Node<T> o) {
+    public int compareTo(TreeNode<T> o) {
         return this.data.compareTo(o.data);
     }
 
@@ -79,12 +79,27 @@ public class Node<T extends Comparable<T>> implements Comparable<Node<T>> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, left, right, level, depth);
+        return Objects.hash(data, left, right, getLevel(), depth);
     }
 
     @Override
     public String toString() {
-        return "Level " + level + ": " + data;
+        return "Level " + getLevel() + ": " + data;
     }
 
+    public TreeNode<T> getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode<T> parent) {
+        this.parent = parent;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 }

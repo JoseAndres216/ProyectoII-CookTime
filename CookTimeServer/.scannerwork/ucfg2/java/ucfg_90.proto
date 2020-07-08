@@ -1,0 +1,47 @@
+
+3Logic.Users.Recipe#compareTo(LLogic/Users/Recipe;)Ih
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javaq q("startingBlock*Ü
+startingBlockh
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javaq q('·
+´
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javap p(
+%3"
+__annotate*
+java.lang.Override*
+
+recipeLogic.Users.Recipe¡
+ž
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javaq  q(&
+recipeLogic.Users.Recipe"__annotation*
+
+%3*
+1*È
+1h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javar r(­
+ª
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javar r(
+%0java.lang.String"__id* *
+Logic.Users.Recipe"
+nameµ
+²
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javar# r(.
+%1java.lang.String"__id*(*&
+
+recipeLogic.Users.Recipe"
+nameüù
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javar r(/	
+%2int"/java.lang.String#compareTo(Ljava/lang/String;)I*
+
+%0java.lang.String*
+
+%1java.lang.String2compareTo(Ljava/lang/String;)"r
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/Recipe.javar r(0
+"":
+recipeLogic.Users.RecipeB
+Logic.Users.Recipe

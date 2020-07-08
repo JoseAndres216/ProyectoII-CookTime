@@ -13,10 +13,7 @@ import java.util.Scanner;
 
 import static Logic.ServerManager.*;
 
-public abstract class JsonLoader {
-
-    private JsonLoader() {
-    }
+public interface JsonLoader {
 
     public static BST<AbstractUser> loadUsers() {
         BST<AbstractUser> users;
@@ -37,9 +34,8 @@ public abstract class JsonLoader {
 
 
             String line = sc.nextLine();
-            SplayTree<AbstractUser> enterprises = new Gson().fromJson(line, SPLAY_TYPE);
-            return enterprises;
 
+            return new Gson().fromJson(line, SPLAY_TYPE);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,8 +46,8 @@ public abstract class JsonLoader {
         try (Scanner sc = new Scanner(new File(RECIPES_JSON_PATH));) {
 
             String line = sc.nextLine();
-            AVLTree<Recipe> globalRecipes = new Gson().fromJson(line, AVL_TYPE);
-            return globalRecipes;
+
+            return new Gson().fromJson(line, AVL_TYPE);
 
         } catch (IOException e) {
             e.printStackTrace();

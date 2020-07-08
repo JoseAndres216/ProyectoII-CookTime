@@ -1,0 +1,80 @@
+
+GLogic.DataStructures.BinarySearchTree.Node#toString()Ljava/lang/String;Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java. .("1*‰
+1Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ /(æ
+ª
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 0(
+%0java.lang.String"__concat*	
+Node{*	
+data=œ
+Ã
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java0 0(
+%1T"__id*8*6,
+*Logic.DataStructures.BinarySearchTree.Node"
+dataÕ
+ 
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 0(
+%2java.lang.String"__concat*
+
+%0java.lang.String*	
+
+%1Tœ
+Ã
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 1(
+%3java.lang.String"__concat*
+
+%2java.lang.String*	
+, left=¯
+ı
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java1 1( 0
+%4*Logic.DataStructures.BinarySearchTree.Node"__id*8*6,
+*Logic.DataStructures.BinarySearchTree.Node"
+leftˆ
+Û
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 1( 
+%5java.lang.String"__concat*
+
+%3java.lang.String*2
+0
+%4*Logic.DataStructures.BinarySearchTree.Node–
+Õ
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 2(
+%6java.lang.String"__concat*
+
+%5java.lang.String*
+
+, right=˘
+ˆ
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java2 2("0
+%7*Logic.DataStructures.BinarySearchTree.Node"__id*9*7,
+*Logic.DataStructures.BinarySearchTree.Node"
+rightˆ
+Û
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 2("
+%8java.lang.String"__concat*
+
+%6java.lang.String*2
+0
+%7*Logic.DataStructures.BinarySearchTree.Node 
+«
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 3(
+%9java.lang.String"__concat*
+
+%8java.lang.String*
+"""ù
+Ä
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/BinarySearchTree/Node.java/ 3(
+
+%9java.lang.StringB.,
+*Logic.DataStructures.BinarySearchTree.Node

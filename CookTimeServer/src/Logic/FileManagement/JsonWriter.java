@@ -25,19 +25,14 @@ public abstract class JsonWriter {
             e.printStackTrace();
         }
     }
-
     public static void updateEnterprises() {
         String enterprises = gson.toJson(ServerManager.getInstance().getEnterprises(), SPLAY_TYPE);
-
         try (FileWriter file = new FileWriter(ENTERPRISES_JSON_PATH)) {
-
             file.write(enterprises);
-
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
-
     public static void updateRecipes() {
         String jsonRecipes = gson.toJson(ServerManager.getInstance().getGlobalRecipes(), AVL_TYPE);
         System.out.println(jsonRecipes);

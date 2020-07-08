@@ -1,0 +1,63 @@
+
+GLogic.DataStructures.SimpleList.SimpleList#toString()Ljava/lang/String;€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.java: :("4"5*ÿ
+2€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.javaA A(©¦
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.javaA A(;
+%2"Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;**
+(
+stringBuilderjava.lang.StringBuilder*
+""2append(Ljava/lang/Object;)Â¿
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.javaB B(&
+%3java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;**
+(
+stringBuilderjava.lang.StringBuilder*
+, 2append(Ljava/lang/String;)*
+2
+1*–
+4€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.java>8 >(<¾»
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.java>* >(7
+%0java.lang.StringBuilder"java.lang.StringBuilderê
+ç
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.java>& >(=
+%1"3java.lang.StringBuilder#<init>(Ljava/lang/String;)V*
+
+%0java.lang.StringBuilder*
+[ ×
+Ô
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.java> >(>(
+stringBuilderjava.lang.StringBuilder"__id*
+
+%0java.lang.StringBuilder*
+2
+1*”
+5€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.java< <("‹
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.java< <(
+[]*ú
+1€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.javaE E(Â¿
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.javaE E("
+%4java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;**
+(
+stringBuilderjava.lang.StringBuilder*
+ ]2append(Ljava/lang/String;)Œ‰
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.javaF F('
+%5java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;**
+(
+stringBuilderjava.lang.StringBuilder2
+toString()"
+€
+vC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/DataStructures/SimpleList/SimpleList.javaF F((
+
+%5java.lang.StringB.,
+*Logic.DataStructures.SimpleList.SimpleList

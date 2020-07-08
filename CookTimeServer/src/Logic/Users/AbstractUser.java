@@ -2,7 +2,7 @@ package Logic.Users;
 
 import Logic.DataStructures.SimpleList.SimpleList;
 import Logic.DataStructures.Stack.Stack;
-import Logic.Encrypter;
+import Logic.Tools.Encrypter;
 import com.google.gson.Gson;
 
 import java.security.NoSuchAlgorithmException;

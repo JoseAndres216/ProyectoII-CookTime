@@ -1,0 +1,73 @@
+
+5Logic.Users.AbstractUser#toString()Ljava/lang/String;n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java< <("1*¿
+1n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= =(µ
+²
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= >(
+%0java.lang.String"__concat*
+AbstractUser{*	
+email='º
+·
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java> >(!
+%1java.lang.String"__id*'*%
+Logic.Users.AbstractUser"
+emailÉ
+Æ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= >(!
+%2java.lang.String"__concat*
+
+%0java.lang.String*
+
+%1java.lang.String·
+´
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= >((
+%3java.lang.String"__concat*
+
+%2java.lang.String*
+""Á
+¾
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= ?(
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+, password='½
+º
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java?! ?()
+%5java.lang.String"__id***(
+Logic.Users.AbstractUser"
+
+passwordÉ
+Æ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= ?()
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String·
+´
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= ?(0
+%7java.lang.String"__concat*
+
+%6java.lang.String*
+""·
+´
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= @(
+%8java.lang.String"__concat*
+
+%7java.lang.String*
+"""Š
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/Logic/Users/AbstractUser.java= @(
+
+%8java.lang.StringB
+Logic.Users.AbstractUser

@@ -1,17 +1,19 @@
 package Logic.DataStructures.BinarySearchTree;
 
 import Logic.DataStructures.SimpleList.SimpleList;
+import Logic.DataStructures.TreeNode;
 
 public class BST<T extends Comparable<T>> {
 
-    private Node<T> root;
+    private TreeNode<T> root;
 
     public SimpleList<T> inOrder() {
         return this.inOrder(this.root, new SimpleList<>());
     }
 
-    private SimpleList<T> inOrder(Node<T> node, SimpleList<T> result) {
+    private SimpleList<T> inOrder(TreeNode<T> node, SimpleList<T> result) {
         if (node == null) {
+            return new SimpleList<>();
         } else {
             inOrder(node.getLeft(), result);
             result.append(node.getData());
@@ -21,13 +23,13 @@ public class BST<T extends Comparable<T>> {
     }
 
     public void insert(T newData) {
-        Node<T> newNode = new Node<>(newData);
+        TreeNode<T> newNode = new TreeNode<>(newData);
         //Caso en que el arbol esta vacio
         if (root == null) {
             root = newNode;
             return;
         }
-        Node<T> temp = root;
+        TreeNode<T> temp = root;
         boolean inserted = false;
 
         while (!inserted) {
@@ -60,8 +62,8 @@ public class BST<T extends Comparable<T>> {
     }
 
     public void delete(T data) {
-        Node<T> parent = root;
-        Node<T> current = root;
+        TreeNode<T> parent = root;
+        TreeNode<T> current = root;
         boolean isLeftChild = false;
         while (current.getData().compareTo(data) != 0) {
             parent = current;
@@ -110,7 +112,7 @@ public class BST<T extends Comparable<T>> {
         //case 3 node has two children
         else if (current.getLeft() != null && current.getRight() != null) {
 //now we have found the minimum element in the right sub tree
-            Node<T> successor = getSuccessor(current);
+            TreeNode<T> successor = getSuccessor(current);
             if (current == root) {
                 root = successor;
             } else if (isLeftChild) {
@@ -125,10 +127,10 @@ public class BST<T extends Comparable<T>> {
     }
 
     //returns the successor for the delete method
-    public Node<T> getSuccessor(Node<T> deleleNode) {
-        Node<T> successsor = null;
-        Node<T> successsorParent = null;
-        Node<T> current = deleleNode.getRight();
+    public TreeNode<T> getSuccessor(TreeNode<T> deleleNode) {
+        TreeNode<T> successsor = null;
+        TreeNode<T> successsorParent = null;
+        TreeNode<T> current = deleleNode.getRight();
         while (current != null) {
             successsorParent = successsor;
             successsor = current;
@@ -143,7 +145,7 @@ public class BST<T extends Comparable<T>> {
         return successsor;
     }
 
-    private void printHelper(Node<T> currPtr, String indent, boolean last) {
+    private void printHelper(TreeNode<T> currPtr, String indent, boolean last) {
         // print the tree structure on the screen
         if (currPtr != null) {
             System.out.print(indent);
@@ -166,7 +168,7 @@ public class BST<T extends Comparable<T>> {
         this.printHelper(this.root, "  ", true);
     }
 
-    public Node<T> getRoot() {
+    public TreeNode<T> getRoot() {
         return this.root;
     }
 }

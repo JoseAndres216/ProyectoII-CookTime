@@ -27,7 +27,7 @@ public class SimpleList<T> {
         return this.head == null;
     }
 
-    public void append(T data) {
+    public SimpleList<T> append(T data) {
         Node<T> newNode = new Node<>(data);
         if (isEmpty()) {
             this.head = this.tail = newNode;
@@ -36,6 +36,18 @@ public class SimpleList<T> {
             this.tail = newNode;
         }
         this.len++;
+        return this;
+    }
+
+    public SimpleList<T> addFirst(T data) {
+        Node<T> newNode = new Node<>(data);
+
+        if (this.head != null) {
+            newNode.setNext(this.head);
+        }
+        this.head = newNode;
+        this.len++;
+        return this;
     }
 
     public T indexElement(int i) {

@@ -18,6 +18,11 @@ public class Recipe implements Comparable<Recipe> {
     private SimpleList<String> tags;
     private int price;
     private float rating;
+
+    public float getRating() {
+        return rating;
+    }
+
     private SimpleList<String> comments;
 
 

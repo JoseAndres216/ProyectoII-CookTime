@@ -5,6 +5,11 @@ public class Enterprise extends AbstractUser {
     private String contactInfo;
     private String schedule;
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     public int getRating() {
         return rating;
     }

@@ -1,15 +1,15 @@
 package Logic.Users;
 
 public class User extends AbstractUser {
-    public int age;
+    private int age;
 
-    public int rating;
+    private int rating;
 
     public User(String email, String pass) {
         this.name = "Test User";
         this.email = email;
         this.password = pass;
-        this.age = 20;
+        this.setAge(20);
 
 
     }
@@ -22,5 +22,20 @@ public class User extends AbstractUser {
                 '}';
     }
 
-    
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 }

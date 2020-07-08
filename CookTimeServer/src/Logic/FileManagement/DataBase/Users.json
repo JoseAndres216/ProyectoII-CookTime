@@ -1,6 +1,5 @@
 {
   "root": {
-    "height": 1,
     "data": {
       "name": "Test User",
       "email": "MARCOS",
@@ -14,7 +13,6 @@
       }
     },
     "left": {
-      "height": 1,
       "data": {
         "name": "Test User",
         "email": "EDUARDO",
@@ -112,7 +110,6 @@
         }
       },
       "left": {
-        "height": 1,
         "data": {
           "name": "Test User",
           "email": "CARLOS",
@@ -126,7 +123,6 @@
           }
         },
         "left": {
-          "height": 1,
           "data": {
             "name": "Test User",
             "email": "CARL",
@@ -138,10 +134,11 @@
             "following": {
               "len": 0
             }
-          }
+          },
+          "level": 0,
+          "depth": 0
         },
         "right": {
-          "height": 1,
           "data": {
             "name": "Test User",
             "email": "CRISTIAN",
@@ -153,11 +150,14 @@
             "following": {
               "len": 0
             }
-          }
-        }
+          },
+          "level": 0,
+          "depth": 0
+        },
+        "level": 0,
+        "depth": 0
       },
       "right": {
-        "height": 1,
         "data": {
           "name": "Test User",
           "email": "JUAN",
@@ -171,7 +171,6 @@
           }
         },
         "right": {
-          "height": 1,
           "data": {
             "name": "Test User",
             "email": "MANUEL",
@@ -185,7 +184,6 @@
             }
           },
           "left": {
-            "height": 1,
             "data": {
               "name": "Test User",
               "email": "MAIKOL",
@@ -199,7 +197,6 @@
               }
             },
             "left": {
-              "height": 1,
               "data": {
                 "name": "Test User",
                 "email": "JUNIOR",
@@ -211,14 +208,23 @@
                 "following": {
                   "len": 0
                 }
-              }
-            }
-          }
-        }
-      }
+              },
+              "level": 0,
+              "depth": 0
+            },
+            "level": 0,
+            "depth": 0
+          },
+          "level": 0,
+          "depth": 0
+        },
+        "level": 0,
+        "depth": 0
+      },
+      "level": 0,
+      "depth": 0
     },
     "right": {
-      "height": 1,
       "data": {
         "name": "Test User",
         "email": "PEDRO",
@@ -232,7 +238,6 @@
         }
       },
       "left": {
-        "height": 1,
         "data": {
           "name": "Test User",
           "email": "MESSI",
@@ -244,10 +249,11 @@
           "following": {
             "len": 0
           }
-        }
+        },
+        "level": 0,
+        "depth": 0
       },
       "right": {
-        "height": 1,
         "data": {
           "name": "Test User",
           "email": "VICTOR",
@@ -261,7 +267,6 @@
           }
         },
         "right": {
-          "height": 1,
           "data": {
             "name": "Test User",
             "email": "ZLATAN",
@@ -273,9 +278,17 @@
             "following": {
               "len": 0
             }
-          }
-        }
-      }
-    }
+          },
+          "level": 0,
+          "depth": 0
+        },
+        "level": 0,
+        "depth": 0
+      },
+      "level": 0,
+      "depth": 0
+    },
+    "level": 0,
+    "depth": 0
   }
 }
