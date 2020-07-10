@@ -1,6 +1,7 @@
 package logic.structures.simplelist;
 
 public class Node<T> {
+
     private Node<T> next;
     private T data;
     private Node<T> prev;

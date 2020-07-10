@@ -2,6 +2,7 @@ package logic;
 
 import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
+import logic.structures.simplelist.SimpleList;
 import logic.structures.splay.SplayTree;
 import logic.structures.TreeNode;
 import logic.files.JsonLoader;
@@ -12,6 +13,7 @@ import logic.users.Recipe;
 import logic.users.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import logic.utilities.Searcher;
 
 import java.lang.reflect.Type;
 import java.security.NoSuchAlgorithmException;
@@ -24,6 +26,10 @@ public class ServerManager {
     public static final Type AVL_TYPE = new TypeToken<AVLTree<Recipe>>() {
     }.getType();
     public static final Type RECIPE_TYPE = new TypeToken<Recipe>() {
+    }.getType();
+    public static final Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<Recipe>>() {
+    }.getType();
+    public static final Type USER_LIST_TYPE = new TypeToken<SimpleList<AbstractUser>>() {
     }.getType();
     public static final String ENTERPRISES_JSON_PATH;
     public static final String USERS_JSON_PATH;
@@ -71,7 +77,6 @@ public class ServerManager {
         return instance;
     }
 
-
     /**
      * Main method for finding users/enterprises
      *
@@ -80,7 +85,7 @@ public class ServerManager {
      * @return user who has the email
      * @throws NullPointerException if not found
      */
-    public AbstractUser findUser(boolean user, String email) {
+    private AbstractUser findUser(boolean user, String email) {
         TreeNode<AbstractUser> current;
         if (user) {
             current = this.users.getRoot();
@@ -170,6 +175,9 @@ public class ServerManager {
     public AbstractUser getUser(String email) {
         return this.findUser(true, email);
     }
+    public String getUserJson(String email) {
+        return new Gson().toJson((this.findUser(true, email)), AbstractUser.class);
+    }
 
     /**
      * Method for getting a Enterprise object, given an email
@@ -193,7 +201,6 @@ public class ServerManager {
     public BST<AbstractUser> getUsers() {
         return this.users;
     }
-
     public void setUsers(BST<AbstractUser> users) {
         this.users = users;
     }
@@ -206,5 +213,17 @@ public class ServerManager {
         this.enterprises = enterprises;
     }
 
+    /**
+     * Method for searching on the recipes, returns 15 results max
+     * @param key String for searching on the recipes, its compared with the recipes' name
+     *            and using regular expressions
+     * @return json converted simple linked list with recipes
+     */
+    public String searchRecipes(String key ){
+        return Searcher.findRecipes(key);
+    }
+    public String searchSubject(String key, boolean isUser){
+        return Searcher.findUsers(key,isUser);
+    }
 
 }

@@ -1,6 +1,7 @@
 package logic.structures.simplelist;
 
 public class SimpleList<T> {
+
     private Node<T> head = null;
     private Node<T> tail = null;
     private int len = 0;
