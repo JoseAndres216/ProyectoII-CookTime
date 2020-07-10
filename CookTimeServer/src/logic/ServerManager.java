@@ -1,18 +1,19 @@
 package logic;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import logic.files.JsonLoader;
+import logic.files.JsonWriter;
+import logic.structures.TreeNode;
 import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
 import logic.structures.simplelist.SimpleList;
 import logic.structures.splay.SplayTree;
-import logic.structures.TreeNode;
-import logic.files.JsonLoader;
-import logic.utilities.Encrypter;
 import logic.users.AbstractUser;
 import logic.users.Enterprise;
 import logic.users.Recipe;
 import logic.users.User;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import logic.utilities.Encrypter;
 import logic.utilities.Searcher;
 
 import java.lang.reflect.Type;
@@ -64,9 +65,7 @@ public class ServerManager {
 
     //Constructor
     private ServerManager() {
-        this.setEnterprises(JsonLoader.loadEnterprises());
-        this.setUsers(JsonLoader.loadUsers());
-        this.setGlobalRecipes(JsonLoader.loadGlobalRecipes());
+        loadServer();
     }
 
     //Get instance for the singleton
@@ -75,6 +74,18 @@ public class ServerManager {
             instance = new ServerManager();
         }
         return instance;
+    }
+
+    private void loadServer() {
+        this.setEnterprises(JsonLoader.loadEnterprises());
+        this.setUsers(JsonLoader.loadUsers());
+        this.setGlobalRecipes(JsonLoader.loadGlobalRecipes());
+    }
+
+    public void saveInfo() {
+        JsonWriter.updateUsers();
+        JsonWriter.updateEnterprises();
+        JsonWriter.updateRecipes();
     }
 
     /**
@@ -102,13 +113,64 @@ public class ServerManager {
             }
         }
         if (email.compareTo(current.getData().getEmail()) != 0) {
-            throw new NullPointerException("The user isn't registered in the server");
+            return null;
         }
         return current.getData();
     }
 
+    /**
+     * Intern method for getting a recipe from the global recipes, can be used for commenting the recipe
+     * or rating it
+     * @param name name of the recipe to be searched
+     * @return Recipe, or null if not found
+     */
+    private Recipe findRecipe(String name){
+        TreeNode<Recipe> current = this.globalRecipes.getRoot();
+        while (current.getLeft() != null || current.getRight() != null) {
+            if (current.getData().getName().compareTo(name) == 0) {
+                break;
+            } else if (current.getData().getName().compareTo(name) > 0) {
+                current = current.getLeft();
+            } else {
+                current = current.getRight();
+            }
+        }
+        if (name.compareTo(current.getData().getName()) != 0) {
+            return null;
+        }
+        return current.getData();
+    }
+
+    /**
+     * Method for adding a comment to a recipe
+     * @param name name of the recipe
+     * @param comment comment made by the user, REMEMBER SPACES AND \n
+     * @param commenterEmail email of the user that made the comment
+     * @param isUser true if the commenter is user, false if enterprise
+     * @return true if done the comment, false if the recipe or user dint exist
+     */
+    public boolean commentRecipe(String name, String comment, String commenterEmail, boolean isUser){
+        Recipe recipe = this.findRecipe(name);
+        AbstractUser user = this.findUser(isUser,commenterEmail);
+        if(recipe != null || user != null){
+            assert recipe != null;
+            recipe.addComment(comment, this.getUser(commenterEmail));
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+    /**
+     * Driver method for adding a recipe to the global recipes and then saving it
+     * to the json file.
+     * !!!RECIPE MUST BE ADDED IN THE USER'S MYMENU AND FOLLOWERS FEED!!!
+     * @param newRecipe json file for the new recipe
+     */
     public void addRecipe(Recipe newRecipe) {
         this.globalRecipes.insert(newRecipe);
+        this.saveInfo();
     }
 
     /**
@@ -135,25 +197,33 @@ public class ServerManager {
      * @param subjectData should be string in format json, with the attributes of user/enterprise to create
      * @param isUser      true if want to create a user, false if a enterprise
      */
-    public void createSubject(boolean isUser, String subjectData) throws NoSuchAlgorithmException {
-        try {
-            Gson gson = new Gson();
-            //for saving code and simplify the project.
-            if (!isUser) {
-                Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
-                newSubject.encryptPassword();
-                this.enterprises.insert(newSubject);
-            } else {
-                User newSubject = gson.fromJson(subjectData, User.class);
-                newSubject.encryptPassword();
-                this.users.insert(newSubject);
+    public void createSubject(boolean isUser, String subjectData) throws NoSuchAlgorithmException, IllegalArgumentException {
+        Gson gson = new Gson();
+        //for saving code and simplify the project.
+        if (!isUser) {
+            Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
+            newSubject.encryptPassword();
+            System.out.println("Enterprise created: " + newSubject.getEmail());
+            this.enterprises.insert(newSubject);
+        } else {
+            User newSubject = gson.fromJson(subjectData, User.class);
+            newSubject.encryptPassword();
+            this.users.insert(newSubject);
+            System.out.println("User created: " + newSubject.getEmail());
 
-            }
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
         }
+        this.saveInfo();
     }
 
+    /**
+     * Method for verifying the existence of a user on the server,
+     *
+     * @param isUser               boolean, true if the type is an user, false if enterprise
+     * @param email                email of the user
+     * @param passwordNotEncrypted password of the user/enterprise
+     * @return true if the user exists and the password is right
+     * @throws NoSuchAlgorithmException from the encrypter
+     */
     public boolean verifyUser(boolean isUser, String email, String passwordNotEncrypted) throws NoSuchAlgorithmException {
         String enctryptedPass = Encrypter.encryptPassword(passwordNotEncrypted);
         try {
@@ -175,6 +245,13 @@ public class ServerManager {
     public AbstractUser getUser(String email) {
         return this.findUser(true, email);
     }
+
+    /**
+     * Driver method for findUser()
+     *
+     * @param email email of the user to get
+     * @return json format of the user, if found
+     */
     public String getUserJson(String email) {
         return new Gson().toJson((this.findUser(true, email)), AbstractUser.class);
     }
@@ -190,10 +267,20 @@ public class ServerManager {
         return this.findUser(false, email);
     }
 
+    /**
+     * Getter
+     *
+     * @return AVL tree, containing the global recipes
+     */
     public AVLTree<Recipe> getGlobalRecipes() {
         return globalRecipes;
     }
 
+    /**
+     * Setter for changing the gobal recipes field, used for loading the recipes from the server
+     *
+     * @param globalRecipes new avl tree with updated recipes
+     */
     public void setGlobalRecipes(AVLTree<Recipe> globalRecipes) {
         this.globalRecipes = globalRecipes;
     }
@@ -201,6 +288,7 @@ public class ServerManager {
     public BST<AbstractUser> getUsers() {
         return this.users;
     }
+
     public void setUsers(BST<AbstractUser> users) {
         this.users = users;
     }
@@ -215,15 +303,25 @@ public class ServerManager {
 
     /**
      * Method for searching on the recipes, returns 15 results max
+     *
      * @param key String for searching on the recipes, its compared with the recipes' name
      *            and using regular expressions
      * @return json converted simple linked list with recipes
      */
-    public String searchRecipes(String key ){
+    public String searchRecipes(String key) {
         return Searcher.findRecipes(key);
     }
-    public String searchSubject(String key, boolean isUser){
-        return Searcher.findUsers(key,isUser);
+
+    /**
+     * Method for searching on the recipes, returns 15 results max
+     *
+     * @param key String for searching on the recipes, its compared with the recipes' name
+     *            and using regular expressions
+     * @param isUser true if the type is user, false if its enterprise
+     * @return json converted simple linked list with users
+     */
+    public String searchSubject(String key, boolean isUser) {
+        return Searcher.findUsers(key, isUser);
     }
 
 }

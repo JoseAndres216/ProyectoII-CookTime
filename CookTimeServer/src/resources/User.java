@@ -13,21 +13,25 @@ import java.security.NoSuchAlgorithmException;
  */
 @Path("/user")
 public class User {
-    /**
+    /**TESTED, ERROR NULL ON AVL TREE
      * For adding a recipe on the server, must come on json format
      * and the user email for adding the recipe, wont come verified, cause it already verified on the
      * filter
      *
      * @param recipe json-format recipe
      * @param user   user's email
+     * @return message
      */
     @PUT
     @Path("/create/recipe")
-    public void createRecipe(@QueryParam("recipe") String recipe,
-                             @QueryParam("user") String user) {
-
-        ServerManager.getInstance().getUser(user).addRecipe(recipe);
-
+    public String createRecipe(@QueryParam("recipe") String recipe,
+                               @QueryParam("user") String user) {
+        logic.users.AbstractUser userObjct = ServerManager.getInstance().getUser(user);
+        if (userObjct == null) {
+            return "User not found";
+        }
+        userObjct.addRecipe(recipe);
+        return "Recipe added";
     }
 
     /**
@@ -42,7 +46,7 @@ public class User {
     public void commentRecipe(@QueryParam("recipe") String recipeName,
                               @QueryParam("comment") String comment,
                               @QueryParam("user") String email) {
-        /*
+         /*
         create method for getting a recipe on the server and comment it, the method on class Recipe its done,
         missing the access from serverManager
          */
@@ -92,9 +96,8 @@ public class User {
         return ServerManager.getInstance().getUser(user).getSerializedNotifications();
     }
 
-    /**
+    /**TESTED
      * Method for getting the user's followers list
-     *
      * @param user user email
      * @return json format of the simple linked list with the users
      */
@@ -104,6 +107,28 @@ public class User {
 
         return ServerManager.getInstance().getUser(user).getSerializedFollowers();
 
+        /*
+        method for getting the followers of an user.
+         */
+
+    }
+
+    /**TESTED
+     * Method for getting the user's followers list
+     * @param user user email
+     * @return message of status of request
+     */
+    @POST
+    @Path("/followers")
+    public String addFollower(@QueryParam("user") String user, @QueryParam("newFollower") String follower) {
+
+        try {
+            ServerManager.getInstance().getUser(user).addFollower(follower);
+            return "Follower added";
+        } catch (Exception e) {
+
+            return "follower not added";
+        }
         /*
         method for getting the followers of an user.
          */
@@ -126,6 +151,7 @@ public class User {
 
     /**
      * Method for handling requests to be chef
+     *
      * @param user user email
      */
     @PUT
@@ -136,10 +162,13 @@ public class User {
         ServerManager.getInstance().chefR(user)
          */
     }
+
     /**
+     * TESTED
      * used for the login of the user, the client Will try to get the user info, it'll be verified and
      * if the username and the password matches, then a json with user info will be sent.
-     * @param email user email, this is the unique identifier on the system
+     *
+     * @param email    user email, this is the unique identifier on the system
      * @param password user password, unencrypted
      * @return Json format string with the user's data, or null if not found.
      * @throws NoSuchAlgorithmException from the encrypter
@@ -147,29 +176,38 @@ public class User {
     @Path("/verify")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String verifyUser(@QueryParam("name") String email,
-                             @QueryParam("name") String password) throws NoSuchAlgorithmException {
+    public String verifyUser(@QueryParam("email") String email,
+                             @QueryParam("pwrd") String password) throws NoSuchAlgorithmException {
         String result = null;
-        if(ServerManager.getInstance().verifyUser(true,email, password)){
-            Response.ok();
+        System.out.println(email + "**" + password);
+        if (ServerManager.getInstance().verifyUser(true, email, password)) {
             result = ServerManager.getInstance().getUserJson(email);
+            System.out.println(result);
+        } else {
+            System.out.println("no se pudo verificar al usuario");
         }
-        else{
-            System.out.println("Error con el usuario dado para verificar [login/getInfo");
-        }
-        return  result;
+        return result;
     }
+
     /**
+     * TESTED
      * Method for adding a user on the server, the verification of the existence of the server
      * happens at logic level on the server.
+     *
      * @param json json format object with all the users propertys
+     * @return
      */
     @PUT
     @Path("/create")
-    public void createUser(@QueryParam("info") String json) {
-        /*
-        crear el usuario con el json dado en la clase ServerManager.createUser
-         */
+    public Response.ResponseBuilder createUser(@QueryParam("info") String json) throws NoSuchAlgorithmException {
+        try {
+            ServerManager.getInstance().createSubject(true, json);
+            return Response.status(Response.Status.CREATED);
+
+        } catch (NoSuchAlgorithmException | IllegalArgumentException e) {
+            return Response.status(Response.Status.NOT_ACCEPTABLE);
+        }
+
 
     }
 }

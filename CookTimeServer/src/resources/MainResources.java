@@ -17,6 +17,8 @@ public class MainResources extends javax.ws.rs.core.Application {
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> classes = new HashSet<>();
         classes.add(Searches.class);
+        classes.add(User.class);
+        classes.add(Enterprises.class);
         return classes;
     }
 

@@ -1,12 +1,14 @@
 package logic.users;
 
 import com.google.gson.Gson;
+import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 import logic.structures.stack.Stack;
 import logic.utilities.Encrypter;
 
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
+import java.util.zip.GZIPOutputStream;
 
 import static logic.ServerManager.NOTIFICATION_ADDED_RECIPE;
 import static logic.ServerManager.RECIPE_TYPE;
@@ -18,23 +20,27 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     protected String email;
     protected String password;
 
-    protected transient Stack<Recipe> newsFeed;
+    protected   Stack<Recipe> newsFeed;
     //For notifications logic, UI and logical work
-    protected transient SimpleList<AbstractUser> followers = new SimpleList<>();
-    protected transient SimpleList<AbstractUser> following = new SimpleList<>();
+    protected   SimpleList<AbstractUser> followers = new SimpleList<>();
+    protected   SimpleList<AbstractUser> following = new SimpleList<>();
     //user info for UI representation
 
-    protected transient MyMenu myMenu = new MyMenu();
+    protected  MyMenu myMenu = new MyMenu();
 
-    protected transient Stack<String> notifications;
+    protected   Stack<String> notifications;
 
 
     //methods for the logic of followers
-    protected void addFollower(AbstractUser user) {
+    public void addFollower(String jsonUser) {
+        AbstractUser user = new Gson().fromJson(jsonUser, AbstractUser.class);
+        user.followUser(new Gson().toJson(this, this.getClass()));
         this.followers.append(user);
     }
 
-    protected void followUser(AbstractUser user) {
+    public void followUser(String jsonUser) {
+        AbstractUser user = new Gson().fromJson(jsonUser, AbstractUser.class);
+        this.followers.append(user);
         this.following.append(user);
     }
 
@@ -78,12 +84,14 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     }
 
     public void addRecipe(String jsonRecipe) {
+        System.out.println(this + "added a recipe: " + jsonRecipe);
         this.myMenu.addRecipe(jsonRecipe);
         Recipe newRecipe = new Gson().fromJson(jsonRecipe, RECIPE_TYPE);
         //add the new notification and the recipe to the feed of the followers
         for (int i = 0; i < this.followers.len(); i++) {
             this.followers.indexElement(i).updateFeed(newRecipe);
         }
+            ServerManager.getInstance().saveInfo();
     }
 
     private void updateFeed(Recipe newRecipe) {

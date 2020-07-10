@@ -150,7 +150,8 @@ public class Enterprises {
      * happens at logic level on the server.
      * @param json json format object with all the enterprises propertys
      */
-    public void createEnterprise(@QueryParam("info") String json){
+    public void createEnterprise(@QueryParam("info") String json) throws NoSuchAlgorithmException {
+        ServerManager.getInstance().createSubject(false, json);
                 /*
         crear el usuario con el json dado en la clase ServerManager.createEnterprise
          */

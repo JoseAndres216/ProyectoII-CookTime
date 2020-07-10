@@ -22,7 +22,7 @@ public class BST<T extends Comparable<T>> {
         return result;
     }
 
-    public void insert(T newData) {
+    public void insert(T newData) throws IllegalArgumentException {
         TreeNode<T> newNode = new TreeNode<>(newData);
         //Caso en que el arbol esta vacio
         if (root == null) {
