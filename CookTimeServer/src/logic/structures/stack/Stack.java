@@ -2,7 +2,9 @@ package logic.structures.stack;
 
 import logic.structures.simplelist.SimpleList;
 
-public class Stack<T> {
+import java.io.Serializable;
+
+public class Stack<T> implements Serializable {
     private SimpleList<T> elements = new SimpleList<>();
 
     public void push(T data) {

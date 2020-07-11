@@ -1,11 +1,8 @@
 package logic.structures.avl;
 
 
-import logic.structures.simplelist.SimpleList;
 import logic.structures.TreeNode;
-
-import java.util.LinkedList;
-import java.util.Queue;
+import logic.structures.simplelist.SimpleList;
 
 public class AVLTree<T extends Comparable<T>> {
     TreeNode<T> root;
@@ -19,7 +16,7 @@ public class AVLTree<T extends Comparable<T>> {
     }
 
     private SimpleList<T> inOrder(TreeNode<T> treeNode, SimpleList<T> result) {
-        if (treeNode != null) {
+        if (treeNode == null) {
             return new SimpleList<>();
         } else {
             inOrder(treeNode.getLeft(), result);
@@ -29,10 +26,6 @@ public class AVLTree<T extends Comparable<T>> {
         return result;
     }
 
-
-    public void delete(T key) {
-        root = delete(root, key);
-    }
 
     public void insert(T key) {
         root = insert(root, key);
@@ -86,19 +79,15 @@ public class AVLTree<T extends Comparable<T>> {
         updateHeight(z);
         int balance = getBalance(z);
         if (balance > 1) {
-            if (height(z.getRight().getRight()) > height(z.getRight().getLeft())) {
-                z = rotateLeft(z);
-            } else {
+            if (height(z.getRight().getRight()) <= height(z.getRight().getLeft())) {
                 z.setRight(rotateRight(z.getRight()));
-                z = rotateLeft(z);
             }
+            z = rotateLeft(z);
         } else if (balance < -1) {
-            if (height(z.getLeft().getLeft()) > height(z.getLeft().getRight())) {
-                z = rotateRight(z);
-            } else {
+            if (height(z.getLeft().getLeft()) <= height(z.getLeft().getRight())) {
                 z.setLeft(rotateLeft(z.getLeft()));
-                z = rotateRight(z);
             }
+            z = rotateRight(z);
         }
         return z;
     }
@@ -141,28 +130,6 @@ public class AVLTree<T extends Comparable<T>> {
                 "root=" + root +
                 '}';
     }
-
-    public void show() {
-        root.setLevel(0);
-        Queue<TreeNode<T>> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode<T> treeNode = queue.poll();
-            System.out.println(treeNode);
-            int level = treeNode.getLevel();
-            TreeNode<T> left = treeNode.getLeft();
-            TreeNode<T> right = treeNode.getRight();
-            if (left != null) {
-                left.setLevel(level + 1);
-                queue.add(left);
-            }
-            if (right != null) {
-                right.setLevel(level + 1);
-                queue.add(right);
-            }
-        }
-    }
-
 
     public TreeNode<T> getRoot() {
         return this.root;

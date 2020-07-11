@@ -20,7 +20,7 @@ public class User {
      * happens at logic level on the server.
      *
      * @param json json format object with all the users propertys
-     * @return
+     * @return server http response code
      */
     @PUT
     @Path("/create")
@@ -75,7 +75,7 @@ public class User {
     @Path("/create/recipe")
     public String createRecipe(@QueryParam("recipe") String recipe,
                                @QueryParam("user") String user) {
-        logic.users.AbstractUser userObjct = ServerManager.getInstance().getUser(user);
+        AbstractUser userObjct = ServerManager.getInstance().getUser(user);
         if (userObjct == null) {
             return "User not found";
         }
@@ -83,13 +83,13 @@ public class User {
         return "Recipe added";
     }
 
-    /**
+    /**TESTED
      * Method for commenting a recipe on the server
      *
      * @param recipeName the name of the recipe to be commented, as its the unique identifier on the tree
      * @param comment    the message to be commented
      * @param email      the user that commented, for the notification
-     * @return
+     * @return true if commented, false if there was an error.
      */
     @POST
     @Path("/comment/recipe")
@@ -103,21 +103,6 @@ public class User {
          */
     }
 
-    /**
-     * Method for delete a recipe
-     *
-     * @param recipe recipe's name, should be searched on the tree and deleted
-     *               and also on the users' feed.
-     */
-    @DELETE
-    @Path("/delete/recipe")
-    public void deleteRecipe(@QueryParam("recipe") String recipe) {
-        /*
-        Implement the method deleteRecipe on the serverManager,
-        must delete the recipe on the user's myMenu, the user's feed
-        ?????????????????????????????????????????????????????????????
-         */
-    }
 
     /**
      * Method for getting the MyMenu section, by recient first
@@ -165,7 +150,8 @@ public class User {
         return null;
     }
 
-    /**TESTED
+    /**
+     * TESTED
      * Method for getting the notifications stack, ideal for notifying the user of iteractions with it's profile
      *
      * @param user user that owns the notifications stack
@@ -217,7 +203,7 @@ public class User {
             System.out.println("New follower" + newfollower);
             System.out.println("Followed" + followed);
 
-            if (newfollower != null && followed!= null) {
+            if (newfollower != null && followed != null) {
                 followed.addFollower(newfollower);
                 return true;
             }

@@ -2,8 +2,8 @@ import logic.structures.simplelist.SimpleList;
 import logic.files.JsonLoader;
 import logic.files.JsonWriter;
 import logic.ServerManager;
-import logic.utilities.Encrypter;
 import logic.users.AbstractUser;
+import logic.utilities.Encrypter;
 import logic.users.Enterprise;
 import logic.users.Recipe;
 import logic.users.User;
@@ -250,7 +250,7 @@ public class ServerManagerTest {
         testRecipe.setType("Moncha salva tandas");
         testRecipe.setPrice(650);
         testRecipe.setDuration(125);
-        testRecipe.setAuthor(testUser);
+        testRecipe.setAuthor(testUser.getEmail());
         testRecipe.setDifficulty(0);
         SimpleList<String> tags = new SimpleList<>();
         tags.append("Cancer");

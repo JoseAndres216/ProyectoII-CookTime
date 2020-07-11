@@ -21,15 +21,11 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
 
     protected Stack<Recipe> newsFeed;
     //For notifications logic, UI and logical work
-
-    protected SimpleList<AbstractUser> followers = new SimpleList<>();
-
-
-    //user info for UI representation
-
-    protected MyMenu myMenu = new MyMenu();
-
     protected Stack<String> notifications;
+    //user's mymenu, for sorting algorithms.
+    protected MyMenu myMenu = new MyMenu();
+    //user's followers
+    protected SimpleList<AbstractUser> followers = new SimpleList<>();
 
 
     //methods for the logic of followers
@@ -37,7 +33,6 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         if (this.followers == null) {
             this.followers = new SimpleList<>();
         }
-
         this.followers.append(user);
         ServerManager.getInstance().saveInfo();
     }
@@ -91,10 +86,9 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
             this.myMenu = new MyMenu();
         }
         Recipe newRecipe = new Gson().fromJson(jsonRecipe, RECIPE_TYPE);
-        newRecipe.setAuthor(this);
+        newRecipe.setAuthor(this.email);
 
         this.myMenu.addRecipe(new Gson().toJson(newRecipe));
-        ServerManager.getInstance().saveInfo();
         //add the new notification and the recipe to the feed of the followers
         if (this.followers == null) {
             this.followers = new SimpleList<>();
@@ -103,9 +97,13 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
             this.followers.indexElement(i).updateFeed(newRecipe);
         }
 
+        ServerManager.getInstance().saveInfo();
     }
 
     private void updateFeed(Recipe newRecipe) {
+        if(this.newsFeed == null){
+            this.newsFeed = new Stack<>();
+        }
         this.newsFeed.push(newRecipe);
         this.addNotification(this.name + NOTIFICATION_ADDED_RECIPE);
 
@@ -115,6 +113,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         return
                 new Gson().toJson(this.followers, SimpleList.class);
     }
+
     public String getSerializedNotifications() {
         if (this.notifications == null) {
             this.notifications = new Stack<>();
@@ -122,6 +121,11 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         return new Gson().toJson(this.notifications, Stack.class);
     }
 
+    /**
+     * Method for getting a json-format of the news feed stack
+     *
+     * @return String of json formatted news feed.
+     */
     public String getSerializedNewsFeed() {
         return new Gson().toJson(this.newsFeed, Stack.class);
     }

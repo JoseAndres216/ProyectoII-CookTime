@@ -13,7 +13,7 @@ public class Recipe implements Comparable<Recipe> {
 
     //Atributes of the recipes
     private String name;
-    private AbstractUser author;
+    private String author;
     private String type;
     private float duration;
     private int difficulty;
@@ -36,11 +36,11 @@ public class Recipe implements Comparable<Recipe> {
         this.name = name;
     }
 
-    public AbstractUser getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(AbstractUser author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -92,7 +92,7 @@ public class Recipe implements Comparable<Recipe> {
      */
     public void rate(int rating, AbstractUser user) {
         this.rating += rating;
-        this.author.addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
+        ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
     }
 
     /**
@@ -106,7 +106,7 @@ public class Recipe implements Comparable<Recipe> {
             this.comments = new SimpleList<>();
         }
         this.comments.append(comment);
-        ServerManager.getInstance().getUser(this.author.email).addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this.name);
+        ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this.name);
         ServerManager.getInstance().saveInfo();
     }
 
@@ -119,7 +119,7 @@ public class Recipe implements Comparable<Recipe> {
     public void shareRecipe(AbstractUser user) {
 
         user.myMenu.addRecipe(new Gson().toJson(this));
-        this.author.addNotification(user.name + NOTIFICATION_SHARED_MESSAGE);
+        ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_SHARED_MESSAGE);
     }
 
     @Override
@@ -139,9 +139,6 @@ public class Recipe implements Comparable<Recipe> {
 
     @Override
     public String toString() {
-        return "Recipes{" +
-                "name='" + name + '\'' +
-                ", author=" + author +
-                '}';
+        return this.name;
     }
 }

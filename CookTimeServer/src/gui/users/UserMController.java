@@ -1,6 +1,7 @@
 package gui.users;
 
 
+import logic.files.JsonLoader;
 import logic.structures.simplelist.SimpleList;
 import logic.ServerManager;
 import logic.users.AbstractUser;
@@ -23,7 +24,8 @@ public class UserMController {
     }
 
     public void pressedRefreshButton() {
-        SimpleList<AbstractUser> list = ServerManager.getInstance().getUsers().inOrder();
+        SimpleList<AbstractUser> list = JsonLoader.loadUsers().inOrder();
+        this.usersList.getItems().removeAll();
         for (int i = 0; i < list.len(); i++) {
             this.usersList.getItems().add(list.indexElement(i).getEmail());
 
