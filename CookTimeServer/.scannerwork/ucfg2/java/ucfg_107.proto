@@ -1,15 +1,48 @@
 
--logic.users.User#toString()Ljava/lang/String;f
-\C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/User.java ("1*…
-1f
-\C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/User.java (¥
-¢
-f
-\C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/User.java (
-%0java.lang.String"__concat*	
-User{*	
-email='"p
-f
-\C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/User.java (
-""B
-logic.users.User
+Lresources.Enterprises#getNotifications(Ljava/lang/String;)Ljava/lang/String;k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java[ [(""startingBlock*º
+startingBlockk
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java[" [(C§
+¤
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaY Y(
+%0"
+__annotate*
+GET*
+
+userjava.lang.String¨
+¥
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaZ Z(
+%1"
+__annotate*
+Path*
+
+userjava.lang.String®
+«
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java[# [(6
+%2"
+__annotate*
+
+QueryParam*
+
+userjava.lang.String°
+­
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java[> [(B
+userjava.lang.String"__annotation*
+
+%0*
+
+%1*
+
+%2*
+1*ç
+1k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java\ \("u
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java\ \(\
+"":
+userjava.lang.StringB
+resources.Enterprises

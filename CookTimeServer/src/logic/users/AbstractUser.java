@@ -8,7 +8,6 @@ import logic.utilities.Encrypter;
 
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
-import java.util.zip.GZIPOutputStream;
 
 import static logic.ServerManager.NOTIFICATION_ADDED_RECIPE;
 import static logic.ServerManager.RECIPE_TYPE;
@@ -20,28 +19,27 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     protected String email;
     protected String password;
 
-    protected   Stack<Recipe> newsFeed;
+    protected Stack<Recipe> newsFeed;
     //For notifications logic, UI and logical work
-    protected   SimpleList<AbstractUser> followers = new SimpleList<>();
-    protected   SimpleList<AbstractUser> following = new SimpleList<>();
+
+    protected SimpleList<AbstractUser> followers = new SimpleList<>();
+
+
     //user info for UI representation
 
-    protected  MyMenu myMenu = new MyMenu();
+    protected MyMenu myMenu = new MyMenu();
 
-    protected   Stack<String> notifications;
+    protected Stack<String> notifications;
 
 
     //methods for the logic of followers
-    public void addFollower(String jsonUser) {
-        AbstractUser user = new Gson().fromJson(jsonUser, AbstractUser.class);
-        user.followUser(new Gson().toJson(this, this.getClass()));
-        this.followers.append(user);
-    }
+    public void addFollower(AbstractUser user) {
+        if (this.followers == null) {
+            this.followers = new SimpleList<>();
+        }
 
-    public void followUser(String jsonUser) {
-        AbstractUser user = new Gson().fromJson(jsonUser, AbstractUser.class);
         this.followers.append(user);
-        this.following.append(user);
+        ServerManager.getInstance().saveInfo();
     }
 
     public String getEmail() {
@@ -80,18 +78,31 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     }
 
     public void addNotification(String notification) {
+        if (this.notifications == null) {
+            this.notifications = new Stack<>();
+        }
         this.notifications.push(notification);
+        ServerManager.getInstance().saveInfo();
     }
 
     public void addRecipe(String jsonRecipe) {
         System.out.println(this + "added a recipe: " + jsonRecipe);
-        this.myMenu.addRecipe(jsonRecipe);
+        if (this.myMenu == null) {
+            this.myMenu = new MyMenu();
+        }
         Recipe newRecipe = new Gson().fromJson(jsonRecipe, RECIPE_TYPE);
+        newRecipe.setAuthor(this);
+
+        this.myMenu.addRecipe(new Gson().toJson(newRecipe));
+        ServerManager.getInstance().saveInfo();
         //add the new notification and the recipe to the feed of the followers
+        if (this.followers == null) {
+            this.followers = new SimpleList<>();
+        }
         for (int i = 0; i < this.followers.len(); i++) {
             this.followers.indexElement(i).updateFeed(newRecipe);
         }
-            ServerManager.getInstance().saveInfo();
+
     }
 
     private void updateFeed(Recipe newRecipe) {
@@ -104,18 +115,23 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         return
                 new Gson().toJson(this.followers, SimpleList.class);
     }
+    public String getSerializedNotifications() {
+        if (this.notifications == null) {
+            this.notifications = new Stack<>();
+        }
+        return new Gson().toJson(this.notifications, Stack.class);
+    }
 
-    public String getSerializedFollowing() {
-        return
-                new Gson().toJson(this.following, SimpleList.class);
+    public String getSerializedNewsFeed() {
+        return new Gson().toJson(this.newsFeed, Stack.class);
     }
-    public String getSerializedNotifications(){
-        return new Gson().toJson(this.notifications,Stack.class);
+
+    public String getSerializedMyMenu() {
+        return new Gson().toJson(this.myMenu, MyMenu.class);
     }
-    public String getSerializedNewsFeed(){
-        return new Gson().toJson(this.newsFeed,Stack.class);
+
+    public String getName() {
+        return this.name;
     }
-    public String getSerializedMyMenu(){
-        return new Gson().toJson(this.myMenu,MyMenu.class);
-    }
+
 }

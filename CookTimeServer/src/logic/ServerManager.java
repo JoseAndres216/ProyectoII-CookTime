@@ -41,7 +41,7 @@ public class ServerManager {
     //Notification for shared the recipe, add user name at front
     public static final String NOTIFICATION_SHARED_MESSAGE = " shared the recipe.";
     //Notification for comments, add username at front, message at end.
-    public static final String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe ";
+    public static final String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe: ";
     //Notification for added a recipe, should add the name at the beggining
     public static final String NOTIFICATION_ADDED_RECIPE = " added a new recipe!";
     public static final String DATA_BASE_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\logic\\files\\database\\";
@@ -121,10 +121,11 @@ public class ServerManager {
     /**
      * Intern method for getting a recipe from the global recipes, can be used for commenting the recipe
      * or rating it
+     *
      * @param name name of the recipe to be searched
      * @return Recipe, or null if not found
      */
-    private Recipe findRecipe(String name){
+    private Recipe findRecipe(String name) {
         TreeNode<Recipe> current = this.globalRecipes.getRoot();
         while (current.getLeft() != null || current.getRight() != null) {
             if (current.getData().getName().compareTo(name) == 0) {
@@ -143,29 +144,31 @@ public class ServerManager {
 
     /**
      * Method for adding a comment to a recipe
-     * @param name name of the recipe
-     * @param comment comment made by the user, REMEMBER SPACES AND \n
+     *
+     * @param name           name of the recipe
+     * @param comment        comment made by the user, REMEMBER SPACES AND \n
      * @param commenterEmail email of the user that made the comment
-     * @param isUser true if the commenter is user, false if enterprise
+     * @param isUser         true if the commenter is user, false if enterprise
      * @return true if done the comment, false if the recipe or user dint exist
      */
-    public boolean commentRecipe(String name, String comment, String commenterEmail, boolean isUser){
+    public boolean commentRecipe(String name, String comment, String commenterEmail, boolean isUser) {
         Recipe recipe = this.findRecipe(name);
-        AbstractUser user = this.findUser(isUser,commenterEmail);
-        if(recipe != null || user != null){
+        AbstractUser user = this.findUser(isUser, commenterEmail);
+        if (recipe != null || user != null) {
             assert recipe != null;
             recipe.addComment(comment, this.getUser(commenterEmail));
             return true;
-        }
-        else{
+        } else {
             return false;
         }
 
     }
+
     /**
      * Driver method for adding a recipe to the global recipes and then saving it
      * to the json file.
      * !!!RECIPE MUST BE ADDED IN THE USER'S MYMENU AND FOLLOWERS FEED!!!
+     *
      * @param newRecipe json file for the new recipe
      */
     public void addRecipe(Recipe newRecipe) {
@@ -214,6 +217,7 @@ public class ServerManager {
         }
         this.saveInfo();
     }
+
 
     /**
      * Method for verifying the existence of a user on the server,
@@ -315,8 +319,8 @@ public class ServerManager {
     /**
      * Method for searching on the recipes, returns 15 results max
      *
-     * @param key String for searching on the recipes, its compared with the recipes' name
-     *            and using regular expressions
+     * @param key    String for searching on the recipes, its compared with the recipes' name
+     *               and using regular expressions
      * @param isUser true if the type is user, false if its enterprise
      * @return json converted simple linked list with users
      */

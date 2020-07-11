@@ -1,21 +1,48 @@
 
-3logic.ServerManager#existUser(ZLjava/lang/String;)Zi
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javat t("5*à
-5i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaw w(íè
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaw w(&
-%0"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
-logic.ServerManager*
-""*
-
-emailjava.lang.String2findUser(ZLjava/lang/String;)*
-1*„
-1i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java| |("s
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java| |(
-"":
-"":
-emailjava.lang.StringB
-logic.ServerManager
+Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java† †( "startingBlock*°
+startingBlockf
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java†  †(A¢
+ü
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaû û(
+%0"
+__annotate*
+GET*
+
+userjava.lang.String£
+†
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaü ü(
+%1"
+__annotate*
+Path*
+
+userjava.lang.String©
+¶
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java†! †(4
+%2"
+__annotate*
+
+QueryParam*
+
+userjava.lang.String´
+®
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java†< †(@
+userjava.lang.String"__annotation*
+
+%0*
+
+%1*
+
+%2*
+1*›
+1f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java• •("p
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java• •(
+"":
+userjava.lang.StringB
+resources.User

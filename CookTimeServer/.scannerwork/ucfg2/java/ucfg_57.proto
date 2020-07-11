@@ -1,10 +1,9 @@
 
-klogic.structures.simplelist.SimpleList#addFirst(Ljava/lang/Object;)Llogic/structures/simplelist/SimpleList;|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java* *(!"1*®
+1logic.structures.simplelist.SimpleList#isEmpty()Z|
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java ("1*Š
 1|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java0 0("ª
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java ("†
 |
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java2 2(*(
-&logic.structures.simplelist.SimpleList:	
-dataTB*(
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java (!
+""B*(
 &logic.structures.simplelist.SimpleList

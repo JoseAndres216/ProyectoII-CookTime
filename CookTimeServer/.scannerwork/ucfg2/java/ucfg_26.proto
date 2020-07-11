@@ -1,9 +1,16 @@
 
-!logic.users.Recipe#getDuration()Fh
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java5 5("1*á
+.logic.users.Recipe#getType()Ljava/lang/String;h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java/ /("1*¤
 1h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java6 6("r
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java0 0(­
+ª
 h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java6 6(
-""B
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java0 0(
+%0java.lang.String"__id* *
+logic.users.Recipe"
+type"„
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java0 0(
+
+%0java.lang.StringB
 logic.users.Recipe

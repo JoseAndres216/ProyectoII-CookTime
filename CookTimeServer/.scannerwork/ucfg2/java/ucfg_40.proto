@@ -1,16 +1,16 @@
 
->logic.structures.TreeNode#getLeft()Llogic/structures/TreeNode;o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java( (("1*Ò
+9logic.structures.TreeNode#getData()Ljava/lang/Comparable;o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java# #("1*¡
 1o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java) )(Ä
-Á
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java$ $(¬
+©
 o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java) )(
-%0logic.structures.TreeNode"__id*'*%
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java$ $(
+%0T"__id*'*%
 logic.structures.TreeNode"
-left"”
+data"|
 o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java) )(!
-
-%0logic.structures.TreeNodeB
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java$ $(	
+
+%0TB
 logic.structures.TreeNode

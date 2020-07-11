@@ -1,34 +1,15 @@
 
-4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zn
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java2 2("startingBlock*ä
-startingBlockn
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java2 2(%¸
-µ
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java1 1(
-%1"
-__annotate*
-java.lang.Override*
-
-objjava.lang.Object¢
-Ÿ
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java2! 2($
-objjava.lang.Object"__annotation*
-
-%1*
-1*Ã
+5logic.structures.bst.BST#toString()Ljava/lang/String;n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java: :("1*š
 1n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3(Ó
-Ð
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java; ;(ª
+§
 n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3( 
-%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
-""*
-
-objjava.lang.Object"x
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java; <(
+%0java.lang.String"__concat*
+BST{*	
+root="x
 n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3(!
-"":
-objjava.lang.ObjectB
-logic.users.AbstractUser
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java; =(
+""B
+logic.structures.bst.BST

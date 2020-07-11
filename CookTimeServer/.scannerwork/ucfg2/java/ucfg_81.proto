@@ -1,48 +1,48 @@
 
-6logic.ServerManager#getInstance()Llogic/ServerManager;i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaC- C(8"3*Ä
-2i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaE E(*ûõ
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaE E((
-%1logic.ServerManager"logic.ServerManager∞
-≠
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaE E(*
-%2"logic.ServerManager#<init>()V*
-
-%1logic.ServerManager∂
-≥
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaE E(*#
-logic.ServerManager"
+Bresources.User#getMymenuDiff(Ljava/lang/String;)Ljava/lang/String;f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaë ë("startingBlock*°
+startingBlockf
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaë ë(@¢
+ü
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaè è(
+%0"
+__annotate*
+GET*
+
+userjava.lang.String£
+†
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaê ê(
+%1"
+__annotate*
+Path*
+
+userjava.lang.String©
+¶
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaë  ë(3
+%2"
+__annotate*
 
-instance"__id*
-
-%1logic.ServerManager*
-1*Ø
-3i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaD D(∂
-≥
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaD D(
-%0logic.ServerManager"__id*%*#
-logic.ServerManager"
-
-instance*
-2
-1*≤
-1i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaG G(∂
-≥
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaG G(
-%3logic.ServerManager"__id*%*#
-logic.ServerManager"
-
-instance"à
-i
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaG G(
-
-%3logic.ServerManagerB"
-logic.ServerManager
+QueryParam*
+
+userjava.lang.String´
+®
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaë; ë(?
+userjava.lang.String"__annotation*
+
+%0*
+
+%1*
+
+%2*
+1*›
+1f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaï ï("p
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaï ï(
+"":
+userjava.lang.StringB
+resources.User

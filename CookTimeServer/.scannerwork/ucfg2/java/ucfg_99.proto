@@ -1,147 +1,31 @@
 
-Ologic.utilities.Encrypter#encryptPassword(Ljava/lang/String;)Ljava/lang/String;o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (!"16*©
-13o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (>£
- 
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (>
-messageDigestbyte[]"__id*
-
-%2byte[]¦£
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java  (*
-%3java.math.BigInteger"java.math.BigIntegerÜ
-Ù
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (<
-%4"!java.math.BigInteger#<init>(I[B)V*
-
-%3java.math.BigInteger*2*
-
-messageDigestbyte[]*
-12*ë
-14o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java# (=íê
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java# (=
-%2byte[]"(java.security.MessageDigest#digest([B)[B*#
-!
-mdjava.security.MessageDigest*
-
-%1byte[]2
-digest([B)*
-13*Œ
-15o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (@Â
-¿
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (@!
-mdjava.security.MessageDigest"__id*#
-!
-%0java.security.MessageDigestÉÆ
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java- (<
-%1byte[]"java.lang.String#getBytes()[B*
-
-wordjava.lang.String2
-getBytes()*
-14*™
-16o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (,›
-˜
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (?!
-%0java.security.MessageDigest"Xjava.security.MessageDigest#getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;*"
-java.security.MessageDigest*
-MD5*
-15*ˆ
-3o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java   ("‘
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java   (
-
-hashtextjava.lang.String*°
-4o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (V³
-°
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (V
-hashtextjava.lang.String"__id*
-
-%11java.lang.String*
-10*í
-5o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (Vñî
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (V
-%11java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;* 
-
-%10java.lang.StringBuilder2
-toString()*
-4*º
-6o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.javaB (J¾»
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (K
-%10java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
-
-%9java.lang.StringBuilder*
-
-hashtextjava.lang.String2append(Ljava/lang/String;)*
-5* 
-7o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java6 (9¤¡
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (:
-%9java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
-
-%7java.lang.StringBuilder*
-02append(Ljava/lang/String;)*
-6*é
-8o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (.¬©
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (,
-%7java.lang.StringBuilder"java.lang.StringBuilder¾
-»
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (.
-%8"!java.lang.StringBuilder#<init>()V*
-
-%7java.lang.StringBuilder*
-7*Å
-10o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (ÅÂ
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java ($	
-%6int"java.lang.String#length()I*
-
-hashtextjava.lang.String2length()*
-3
-8*°
-11o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (.²
-¯
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (.
-hashtextjava.lang.String"__id*
-
-%5java.lang.String*
-10*¦
-12o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (=´
-±
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (=
-nojava.math.BigInteger"__id*
-
-%3java.math.BigIntegerñî
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Encrypter.java (-
-%5java.lang.String"2java.math.BigInteger#toString(I)Ljava/lang/String;*
-
-nojava.math.BigInteger*22toString(I)*
-11:
-wordjava.lang.StringB"
-logic.utilities.Encrypter
+Flogic.ServerManager#verifyUser(ZLjava/lang/String;Ljava/lang/String;)Zk
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaä ä("8*ç
+4k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaè è(9"u
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaè è(9
+""*í
+7k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaç  ç($õ
+ò
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaç  ç(<
+%0"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
+logic.ServerManager*
+""*
+
+emailjava.lang.String*
+4*š
+8k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaå  å()¢
+Ÿ
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaå å(P"
+enctryptedPassjava.lang.String"__id*
+""*
+7:
+"":
+emailjava.lang.String:(
+passwordNotEncryptedjava.lang.StringB
+logic.ServerManager

@@ -109,17 +109,6 @@ public class Enterprises {
     }
 
     /**
-     * Method for getting the user's followed list
-     *
-     * @param user user email
-     * @return json format of the simple linked list with the users
-     */
-    @GET
-    @Path("/followed")
-    public String getFollowed(@QueryParam("user") String user) {
-        return ServerManager.getInstance().getEnterprise(user).getSerializedFollowing();
-    }
-    /**
      * used for the login of the enterprise, the client Will try to get the enterprise info, it'll be verified and
      * if the username and the password matches, then a json with user info will be sent.
      * @param email enterprise email, this is the unique identifier on the system

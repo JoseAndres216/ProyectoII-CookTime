@@ -1,9 +1,48 @@
 
-logic.users.User#getAge()If
-\C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/User.java ("1*Ý
-1f
-\C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/User.java ("p
-f
-\C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/User.java (
-""B
-logic.users.User
+Hresources.Enterprises#getFollowers(Ljava/lang/String;)Ljava/lang/String;k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag g("startingBlock*º
+startingBlockk
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag g(?§
+¤
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javae e(
+%0"
+__annotate*
+GET*
+
+userjava.lang.String¨
+¥
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaf f(
+%1"
+__annotate*
+Path*
+
+userjava.lang.String®
+«
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag g(2
+%2"
+__annotate*
+
+QueryParam*
+
+userjava.lang.String°
+­
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag: g(>
+userjava.lang.String"__annotation*
+
+%0*
+
+%1*
+
+%2*
+1*ç
+1k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javai i("u
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javai i(X
+"":
+userjava.lang.StringB
+resources.Enterprises

@@ -1,90 +1,43 @@
 
-;gui.login.LogInController#getLoginSets()[Ljava/lang/String;o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java$ $(!"9*Ø
-2o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java) )(#≥
-∞
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java) )(#
-arrayjava.lang.String[]"__id*
+[logic.ServerManager#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Zk
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaò ò( "4*˚
+2k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaú ú(ëé
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaù' ù(C
+%2"=logic.ServerManager#getUser(Ljava/lang/String;)LAbstractUser;*
+logic.ServerManager*$
+"
+commenterEmailjava.lang.String2getUser(Ljava/lang/String;)"u
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaû û(
+""*„
+4k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaô ô(Á
+‰
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaô ô(-
+%0":logic.ServerManager#findRecipe(Ljava/lang/String;)LRecipe;*
+logic.ServerManager*
 
-%6java.lang.String[]*
-1*∏
-5o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java( ((1Æ
-´
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java( ((1
-linejava.lang.String"__id*
-
-%5java.lang.Stringãà
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java) )(#
-%6java.lang.String[]"=java.lang.String#split(Ljava/lang/String;)[Ljava/lang/String;*
-
-linejava.lang.String*
-#2split(Ljava/lang/String;)*
-2*¢
-6o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java' '(E∑
-¥
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java' '(E 
-fileScannerjava.util.Scanner"__id*
-
-%3java.util.ScannerÏÈ
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java( ((0
-%5java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*"
- 
-fileScannerjava.util.Scanner2
-nextLine()*
-5*ı
-7o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java'# '(E†ù
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java'' '(.
-%3java.util.Scanner"java.util.Scanner÷
-”
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java'# '(E
-%4")java.util.Scanner#<init>(Ljava/io/File;)V*
-
-%3java.util.Scanner*
-
-%1java.io.File*
-6*Ü
-8o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java'8 '(Cö
-ó
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java'8 '(C
-%0java.lang.String"__id*
-""ñì
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java'3 '(7
-%1java.io.File"java.io.File‘
-—
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java'/ '(D
-%2"(java.io.File#<init>(Ljava/lang/String;)V*
-
-%1java.io.File*
-
-%0java.lang.String*
-7*õ
-9o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java& &(ü
-ú
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java& &(
-arrayjava.lang.String[]"__id*
-""*
-8*á
-1o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java. .("ê
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/gui/login/LogInController.java. .(
-
-arrayjava.lang.String[]B
-gui.login.LogInController
+namejava.lang.String˛
+˚
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaö ö(@
+%1"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
+logic.ServerManager*
+""*$
+"
+commenterEmailjava.lang.String*
+2
+1*Á
+1k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java° °("u
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java° °(
+"":
+namejava.lang.String:
+commentjava.lang.String:"
+commenterEmailjava.lang.String:
+""B
+logic.ServerManager

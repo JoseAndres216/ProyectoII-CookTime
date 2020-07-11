@@ -275,8 +275,9 @@ public class ServerManagerTest {
 
     @Test
     public void printTrees() {
-        System.out.println(ServerManager.getInstance().getGlobalRecipes().inOrder());
+        ServerManager.getInstance().getUsers().print();
+       /* System.out.println(ServerManager.getInstance().getGlobalRecipes().inOrder());
         System.out.println(ServerManager.getInstance().getUsers().inOrder());
-        System.out.println(ServerManager.getInstance().getEnterprises().inOrder());
+        System.out.println(ServerManager.getInstance().getEnterprises().inOrder());*/
     }
 }

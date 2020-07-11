@@ -1,15 +1,90 @@
 
-5logic.structures.bst.BST#toString()Ljava/lang/String;n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java: :("1*š
-1n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java; ;(ª
-§
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java; <(
-%0java.lang.String"__concat*
-BST{*	
-root="x
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/bst/BST.java; =(
-""B
-logic.structures.bst.BST
+Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaL L("startingBlock*å
+2d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaP P(#"z
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaP P($
+User not found*¿
+startingBlockd
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaL M(?¢
+Ÿ
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaJ J(
+%0"
+__annotate*
+PUT*
+
+recipejava.lang.String£
+ 
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaK K(
+%1"
+__annotate*
+Path*
+
+recipejava.lang.String©
+¦
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaL L(4
+%2"
+__annotate*
+
+QueryParam*
+
+recipejava.lang.String«
+¨
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaL< L(B
+recipejava.lang.String"__annotation*
+
+%0*
+
+%1*
+
+%2 
+
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaJ J(
+%3"
+__annotate*
+PUT*
+
+userjava.lang.String¡
+ž
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaK K(
+%4"
+__annotate*
+Path*
+
+userjava.lang.String§
+¤
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaM M(2
+%5"
+__annotate*
+
+QueryParam*
+
+userjava.lang.String©
+¦
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaM: M(>
+userjava.lang.String"__annotation*
+
+%3*
+
+%4*
+
+%5*
+2
+1*ã
+1d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaR R("x
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaS S(
+Recipe added:
+recipejava.lang.String:
+userjava.lang.StringB
+resources.User

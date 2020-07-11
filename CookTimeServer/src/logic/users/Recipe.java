@@ -1,6 +1,7 @@
 package logic.users;
 
 import com.google.gson.Gson;
+import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 
 import java.util.Objects;
@@ -20,6 +21,7 @@ public class Recipe implements Comparable<Recipe> {
     private int price;
     private float rating;
     private SimpleList<String> comments;
+    private int servings;
 
 
      public float getRating() {
@@ -100,8 +102,12 @@ public class Recipe implements Comparable<Recipe> {
      * @param user    user who commented
      */
     public void addComment(String comment, AbstractUser user) {
+        if(this.comments == null){
+            this.comments = new SimpleList<>();
+        }
         this.comments.append(comment);
-        this.author.addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this);
+        ServerManager.getInstance().getUser(this.author.email).addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this.name);
+        ServerManager.getInstance().saveInfo();
     }
 
     /**
@@ -111,9 +117,7 @@ public class Recipe implements Comparable<Recipe> {
      * @param user user who shared the recipe
      */
     public void shareRecipe(AbstractUser user) {
-        /*
-        Agregar la receta compartida al feed de que la compartio
-         */
+
         user.myMenu.addRecipe(new Gson().toJson(this));
         this.author.addNotification(user.name + NOTIFICATION_SHARED_MESSAGE);
     }
