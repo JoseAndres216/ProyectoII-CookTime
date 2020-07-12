@@ -20,11 +20,13 @@ public class Recipe implements Comparable<Recipe> {
     private SimpleList<String> tags;
     private int price;
     private float rating;
+    private float ratingsTotal;
+    private int timesRated;
     private SimpleList<String> comments;
     private int servings;
 
 
-     public float getRating() {
+    public float getRating() {
         return rating;
     }
 
@@ -96,13 +98,24 @@ public class Recipe implements Comparable<Recipe> {
     }
 
     /**
+     * method for testing the sorting of recipes
+     *
+     * @param rating integer of ratings... only from one to five
+     */
+    public void rate(int rating) {
+         this.timesRated ++;
+         this.ratingsTotal+= rating;
+         this.rating = (ratingsTotal/timesRated);
+     }
+
+    /**
      * Method for commentig a recipe
      *
      * @param comment comment to post
      * @param user    user who commented
      */
     public void addComment(String comment, AbstractUser user) {
-        if(this.comments == null){
+        if (this.comments == null) {
             this.comments = new SimpleList<>();
         }
         this.comments.append(comment);
@@ -139,6 +152,11 @@ public class Recipe implements Comparable<Recipe> {
 
     @Override
     public String toString() {
-        return this.name;
+        final StringBuilder sb = new StringBuilder("Recipe{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", difficulty=").append(difficulty);
+        sb.append('}');
+        return sb.toString();
     }
+
 }

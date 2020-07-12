@@ -53,7 +53,7 @@ public class User {
     public String verifyUser(@QueryParam("email") String email,
                              @QueryParam("pwrd") String password) throws NoSuchAlgorithmException {
         String result = null;
-        System.out.println(email + "**" + password);
+        System.out.println(email + "*<>*" + password);
         if (ServerManager.getInstance().verifyUser(true, email, password)) {
             result = ServerManager.getInstance().getUserJson(email);
             System.out.println(result);
