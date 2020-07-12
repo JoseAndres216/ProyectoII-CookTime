@@ -28,9 +28,9 @@ public class ServerManager {
     }.getType();
     public static final Type RECIPE_TYPE = new TypeToken<Recipe>() {
     }.getType();
-    public static final Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<Recipe>>() {
+    public static final Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<String>>() {
     }.getType();
-    public static final Type USER_LIST_TYPE = new TypeToken<SimpleList<AbstractUser>>() {
+    public static final Type USER_LIST_TYPE = new TypeToken<SimpleList<String>>() {
     }.getType();
     public static final String ENTERPRISES_JSON_PATH;
     public static final String USERS_JSON_PATH;
@@ -125,7 +125,7 @@ public class ServerManager {
      * @param name name of the recipe to be searched
      * @return Recipe, or null if not found
      */
-    private Recipe findRecipe(String name) {
+    public Recipe findRecipe(String name) {
         TreeNode<Recipe> current = this.globalRecipes.getRoot();
         while (current.getLeft() != null || current.getRight() != null) {
             if (current.getData().getName().compareTo(name) == 0) {
@@ -145,18 +145,14 @@ public class ServerManager {
     /**
      * Method for adding a comment to a recipe
      *
-     * @param name           name of the recipe
-     * @param comment        comment made by the user, REMEMBER SPACES AND \n
-     * @param commenterEmail email of the user that made the comment
-     * @param isUser         true if the commenter is user, false if enterprise
+     * @param recipe  name of the recipe
+     * @param comment comment made by the user, REMEMBER SPACES AND \n
+     * @param user    email of the user that made the comment
      * @return true if done the comment, false if the recipe or user dint exist
      */
-    public boolean commentRecipe(String name, String comment, String commenterEmail, boolean isUser) {
-        Recipe recipe = this.findRecipe(name);
-        AbstractUser user = this.findUser(isUser, commenterEmail);
-        if (recipe != null || user != null) {
-            assert recipe != null;
-            recipe.addComment(comment, this.getUser(commenterEmail));
+    public boolean commentRecipe(Recipe recipe, String comment, AbstractUser user) {
+        if (recipe != null && user != null) {
+            recipe.addComment(comment, user);
             return true;
         } else {
             return false;
@@ -200,7 +196,7 @@ public class ServerManager {
      * @param subjectData should be string in format json, with the attributes of user/enterprise to create
      * @param isUser      true if want to create a user, false if a enterprise
      */
-    public void createSubject(boolean isUser, String subjectData) throws NoSuchAlgorithmException, IllegalArgumentException {
+    public void createSubject(boolean isUser, String subjectData) throws NoSuchAlgorithmException {
         Gson gson = new Gson();
         //for saving code and simplify the project.
         if (!isUser) {
@@ -232,6 +228,7 @@ public class ServerManager {
         String enctryptedPass = Encrypter.encryptPassword(passwordNotEncrypted);
         try {
             AbstractUser user = this.findUser(isUser, email);
+            assert user != null;
             return user.getPass().equals(enctryptedPass);
         } catch (Exception e) {
             System.out.println(e.getMessage());

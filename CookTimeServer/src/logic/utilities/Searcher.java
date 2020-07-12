@@ -42,9 +42,9 @@ public abstract class Searcher {
      * @param key     string for searching in recipes name
      * @return Simple list with all matches
      */
-    static SimpleList<Recipe> findRecipesAux(TreeNode<Recipe> root, int counter, String key) {
+    static SimpleList<String> findRecipesAux(TreeNode<Recipe> root, int counter, String key) {
         //lista para agregar los matches
-        SimpleList<Recipe> results = new SimpleList<>();
+        SimpleList<String> results = new SimpleList<>();
         //cola para recorrer el arbol por niveles
         Queue<TreeNode<Recipe>> cola = new LinkedList<>();
         cola.add(root);
@@ -54,7 +54,7 @@ public abstract class Searcher {
             if (node != null) {
                 // if the actual node matches, adds it to the list, and
                 if (node.getData().getName().contains(key)) {
-                    results.append(node.getData());
+                    results.append(node.getData().getName());
                     counter--;
                 }
                 cola.remove();
@@ -99,9 +99,9 @@ public abstract class Searcher {
      * @param key     string for searching in recipes name
      * @return Simple list with all matches
      */
-    static SimpleList<AbstractUser> findUsersAux(TreeNode<AbstractUser> root, int counter, String key) {
+    static SimpleList<String> findUsersAux(TreeNode<AbstractUser> root, int counter, String key) {
         //lista para agregar los matches
-        SimpleList<AbstractUser> results = new SimpleList<>();
+        SimpleList<String> results = new SimpleList<>();
         //cola para recorrer el arbol por niveles
         Queue<TreeNode<AbstractUser>> cola = new LinkedList<>();
         cola.add(root);
@@ -111,7 +111,7 @@ public abstract class Searcher {
             if (node != null) {
                  // if the actual node matches, adds it to the list, and
                 if (node.getData().getEmail().contains(key)) {
-                    results.append(node.getData());
+                    results.append(node.getData().getEmail());
                     counter--;
                 }
                 cola.remove();

@@ -2,6 +2,7 @@ package resources;
 
 import logic.ServerManager;
 import logic.users.AbstractUser;
+import logic.users.Recipe;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -28,6 +29,7 @@ public class User {
     public Response.ResponseBuilder createUser(@QueryParam("info") String json) throws NoSuchAlgorithmException {
         try {
             ServerManager.getInstance().createSubject(true, json);
+            System.out.println("Created user: " + json);
             return Response.status(Response.Status.CREATED);
 
         } catch (NoSuchAlgorithmException | IllegalArgumentException e) {
@@ -74,7 +76,7 @@ public class User {
     @PUT
     @Path("/create/recipe")
     public String createRecipe(@QueryParam("recipe") String recipe,
-                               @QueryParam("user") String user) {
+                               @QueryParam("email") String user) {
         AbstractUser userObjct = ServerManager.getInstance().getUser(user);
         if (userObjct == null) {
             return "User not found";
@@ -95,8 +97,16 @@ public class User {
     @Path("/comment/recipe")
     public boolean commentRecipe(@QueryParam("recipe") String recipeName,
                                  @QueryParam("comment") String comment,
-                                 @QueryParam("user") String email) {
-        return ServerManager.getInstance().commentRecipe(recipeName, comment, email, true);
+                                 @QueryParam("email") String email) {
+        try{
+            Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
+            AbstractUser user = ServerManager.getInstance().getUser(email);
+            return ServerManager.getInstance().commentRecipe(recipe, comment, user);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
          /*
         create method for getting a recipe on the server and comment it, the method on class Recipe its done,
         missing the access from serverManager
@@ -112,7 +122,7 @@ public class User {
      */
     @GET
     @Path("/mymenu/recientFirst")
-    public String getMymenuRecient(@QueryParam("user") String user) {
+    public String getMymenuRecient(@QueryParam("email") String user) {
          /*
          make method for getting serialized my menu lists
           */
@@ -127,7 +137,7 @@ public class User {
      */
     @GET
     @Path("/mymenu/difficulty")
-    public String getMymenuDiff(@QueryParam("user") String user) {
+    public String getMymenuDiff(@QueryParam("email") String user) {
         /*
          make method for getting serialized my menu lists
          */
@@ -142,7 +152,7 @@ public class User {
      */
     @GET
     @Path("/mymenu/rated")
-    public String getMymenuRated(@QueryParam("user") String user) {
+    public String getMymenuRated(@QueryParam("email") String user) {
         /*
         Getter for the mymenu
 
@@ -159,7 +169,7 @@ public class User {
      */
     @GET
     @Path("/notifications")
-    public String getNotifications(@QueryParam("user") String user) {
+    public String getNotifications(@QueryParam("email") String user) {
         if (ServerManager.getInstance().getUser(user) == null) {
             return null;
         }
@@ -175,7 +185,7 @@ public class User {
      */
     @GET
     @Path("/followers")
-    public String getFollowers(@QueryParam("user") String user) {
+    public String getFollowers(@QueryParam("email") String user) {
 
         return ServerManager.getInstance().getUser(user).getSerializedFollowers();
 
@@ -194,7 +204,7 @@ public class User {
      */
     @POST
     @Path("/followers")
-    public boolean addFollower(@QueryParam("user") String user, @QueryParam("newFollower") String follower) {
+    public boolean addFollower(@QueryParam("email") String user, @QueryParam("newFollower") String follower) {
 
         try {
             AbstractUser newfollower = ServerManager.getInstance().getUser(follower);
@@ -225,7 +235,7 @@ public class User {
      */
     @PUT
     @Path("/request/chef")
-    public void chefRequest(@QueryParam("user") String user) {
+    public void chefRequest(@QueryParam("email") String user) {
         /*
         hacer un stack de usuarios que hicieron request para ponerlo en la gui.
         ServerManager.getInstance().chefR(user)

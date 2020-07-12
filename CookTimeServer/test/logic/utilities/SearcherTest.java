@@ -7,7 +7,7 @@ public class SearcherTest {
 
     @Test
     public void findUsers() {
-        System.out.println((ServerManager.getInstance().searchSubject("EDUARDO", true)));
+        System.out.println((ServerManager.getInstance().searchSubject("MESSI", true)));
     }
 
 }
