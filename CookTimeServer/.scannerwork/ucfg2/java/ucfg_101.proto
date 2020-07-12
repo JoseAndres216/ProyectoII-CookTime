@@ -1,10 +1,18 @@
 
-Glogic.ServerManager#searchRecipes(Ljava/lang/String;)Ljava/lang/String;k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java∏ ∏("1*Á
+Elogic.ServerManager#getUserJson(Ljava/lang/String;)Ljava/lang/String;k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÄ Ä("1*ﬂ
 1k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaπ π("u
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÅ Å(ı
+Ú
 k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaπ π()
-"":
-keyjava.lang.StringB
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÅ" Å(<
+%0"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
+logic.ServerManager*
+""*
+
+emailjava.lang.String"u
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÅ Å(S
+"":
+emailjava.lang.StringB
 logic.ServerManager

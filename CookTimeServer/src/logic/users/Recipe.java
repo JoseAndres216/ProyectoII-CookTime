@@ -97,6 +97,15 @@ public class Recipe implements Comparable<Recipe> {
         ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Recipe{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", duration=").append(duration);
+        sb.append('}');
+        return sb.toString();
+    }
+
     /**
      * method for testing the sorting of recipes
      *
@@ -148,15 +157,6 @@ public class Recipe implements Comparable<Recipe> {
     @Override
     public int hashCode() {
         return Objects.hash(name, author, type, duration, difficulty, tags, price, rating, comments);
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Recipe{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", difficulty=").append(difficulty);
-        sb.append('}');
-        return sb.toString();
     }
 
 }

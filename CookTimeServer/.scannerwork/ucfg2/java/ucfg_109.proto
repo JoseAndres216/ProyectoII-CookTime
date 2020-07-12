@@ -1,11 +1,11 @@
 
-Gresources.Enterprises#getFollowed(Ljava/lang/String;)Ljava/lang/String;k
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaw w("startingBlock*º
+Hresources.Enterprises#getFollowers(Ljava/lang/String;)Ljava/lang/String;k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag g("startingBlock*º
 startingBlockk
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaw w(>§
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag g(?§
 ¤
 k
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javau u(
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javae e(
 %0"
 __annotate*
 GET*
@@ -13,7 +13,7 @@ __annotate*
 userjava.lang.String¨
 ¥
 k
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javav v(
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaf f(
 %1"
 __annotate*
 Path*
@@ -21,7 +21,7 @@ __annotate*
 userjava.lang.String®
 «
 k
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaw w(1
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag g(2
 %2"
 __annotate*
 
@@ -30,7 +30,7 @@ QueryParam*
 userjava.lang.String°
 ­
 k
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaw9 w(=
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javag: g(>
 userjava.lang.String"__annotation*
 
 %0*
@@ -40,9 +40,9 @@ aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resource
 %2*
 1*ç
 1k
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javax x("u
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javai i("u
 k
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javax x(X
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javai i(X
 "":
 userjava.lang.StringB
 resources.Enterprises

@@ -1,9 +1,44 @@
 
-%logic.structures.TreeNode#getLevel()Io
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javae e("1*ï
+6logic.structures.TreeNode#toString()Ljava/lang/String;o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaY Y("1*°	
 1o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaf f("y
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(ÑÎ
 o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaf f(
-""B
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z($	
+%0int"%logic.structures.TreeNode#getLevel()I*
+logic.structures.TreeNode2
+getLevel()¯
+¬
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z($
+%1java.lang.String"__concat*
+
+Level *
+	
+%0int¸
+µ
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(+
+%2java.lang.String"__concat*
+
+%1java.lang.String*
+: ¬
+©
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ. Z(2
+%3T"__id*'*%
+logic.structures.TreeNode"
+data»
+¸
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(2
+%4java.lang.String"__concat*
+
+%2java.lang.String*	
+
+%3T"‹
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(3
+
+%4java.lang.StringB
 logic.structures.TreeNode

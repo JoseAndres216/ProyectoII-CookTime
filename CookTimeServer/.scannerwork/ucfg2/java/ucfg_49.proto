@@ -1,34 +1,9 @@
 
-5logic.structures.TreeNode#equals(Ljava/lang/Object;)Zo
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaO O("startingBlock*ç
-startingBlocko
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaO O(%¹
-¶
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaN N(
-%1"
-__annotate*
-java.lang.Override*
-
-objjava.lang.Object£
- 
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaO! O($
-objjava.lang.Object"__annotation*
-
-%1*
-1*Æ
+%logic.structures.TreeNode#getDepth()Io
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java> >("1*ï
 1o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaP P(Ô
-Ñ
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java? ?("y
 o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaP P( 
-%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
-""*
-
-objjava.lang.Object"y
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaP P(!
-"":
-objjava.lang.ObjectB
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java? ?(
+""B
 logic.structures.TreeNode

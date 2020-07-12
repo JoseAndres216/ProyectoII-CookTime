@@ -3,5 +3,5 @@ projectKey=CookTime
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.9563
 dashboardUrl=https://sonarcloud.io/dashboard?id=CookTime
-ceTaskId=AXM8QuFm4CSlDUbhUfRm
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXM8QuFm4CSlDUbhUfRm
+ceTaskId=AXNBu_PPseXQSCC-AuU1
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXNBu_PPseXQSCC-AuU1

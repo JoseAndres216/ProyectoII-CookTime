@@ -1,54 +1,48 @@
 
-Eresources.User#getNotifications(Ljava/lang/String;)Ljava/lang/String;f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java∞ ∞(""startingBlock*›
-2f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java≤ ≤("p
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java≤ ≤(
-""*§
-startingBlockf
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java∞" ∞(C¢
-ü
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÆ Æ(
+Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java} }(""startingBlock*ó
+startingBlockd
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java}" }(D†
+ù
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java{ {(
 %0"
 __annotate*
 GET*
 
-userjava.lang.String£
-†
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaØ Ø(
+userjava.lang.String°
+û
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java| |(!
 %1"
 __annotate*
 Path*
 
-userjava.lang.String©
-¶
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java∞# ∞(6
+userjava.lang.Stringß
+§
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java}# }(7
 %2"
 __annotate*
 
 QueryParam*
 
-userjava.lang.String´
-®
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java∞> ∞(B
+userjava.lang.String©
+¶
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java}? }(C
 userjava.lang.String"__annotation*
 
 %0*
 
 %1*
 
-%2*
-2
+%2*
 1*›
 1f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¥ ¥("p
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÅ Å("p
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¥ ¥(V
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÅ Å(
 "":
 userjava.lang.StringB
 resources.User

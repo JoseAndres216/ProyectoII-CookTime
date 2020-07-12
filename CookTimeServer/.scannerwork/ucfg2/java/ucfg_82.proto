@@ -1,48 +1,125 @@
 
-Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java   ( "startingBlock*¡
-startingBlockf
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java    (A¢
-Ÿ
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaž ž(
-%0"
-__annotate*
-GET*
-
-userjava.lang.String£
- 
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaŸ Ÿ(
-%1"
+Uresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zd
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javab b( "startingBlock*€
+startingBlockd
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javab  d(C§
+¤
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java` `(	
+%3"
 __annotate*
-Path*
-
-userjava.lang.String©
-¦
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java !  (4
-%2"
+POST* 
+
+
+recipeNamejava.lang.String§
+¤
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaa a(
+%4"
+__annotate*
+Path* 
+
+
+recipeNamejava.lang.String­
+ª
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javab! b(6
+%5"
 __annotate*
 
-QueryParam*
-
-userjava.lang.String«
-¨
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java <  (@
-userjava.lang.String"__annotation*
+QueryParam* 
+
+
+recipeNamejava.lang.String¯
+¬
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javab> b(H
+
+recipeNamejava.lang.String"__annotation*
 
-%0*
+%3*
 
-%1*
+%4*
 
-%2*
-1*Ý
-1f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¥ ¥("p
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¥ ¥(
-"":
-userjava.lang.StringB
+%5¤
+¡
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java` `(	
+%6"
+__annotate*
+POST*
+
+commentjava.lang.String¤
+¡
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaa a(
+%7"
+__annotate*
+Path*
+
+commentjava.lang.Stringª
+§
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javac! c(7
+%8"
+__annotate*
+
+QueryParam*
+
+commentjava.lang.String¬
+©
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javac? c(F
+commentjava.lang.String"__annotation*
+
+%6*
+
+%7*
+
+%8¢
+Ÿ
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java` `(	
+%9"
+__annotate*
+POST*
+
+emailjava.lang.String£
+ 
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaa a(
+%10"
+__annotate*
+Path*
+
+emailjava.lang.String©
+¦
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javad! d(5
+%11"
+__annotate*
+
+QueryParam*
+
+emailjava.lang.String¬
+©
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javad= d(B
+emailjava.lang.String"__annotation*
+
+%9*
+
+%10*
+
+%11*
+4*Ù
+4d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javah h(T"n
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javah h(T
+"":
+
+recipeNamejava.lang.String:
+commentjava.lang.String:
+emailjava.lang.StringB
 resources.User

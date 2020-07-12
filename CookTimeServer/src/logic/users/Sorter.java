@@ -129,7 +129,7 @@ public abstract class Sorter {
                 //for each recipe, sort it based on the last digit of the difficult
                 Recipe actual = source.indexElement(i);
                 int actualDifficult = actual.getDifficulty();
-                int digit = ((int)(actualDifficult % Math.pow(10, counter)))/(int)(Math.pow(10,counter-1));
+                int digit = ((int) (actualDifficult % Math.pow(10, counter))) / (int) (Math.pow(10, counter - 1));
                 //add the recipes to the corresponding bucket on the buckets list.
 
                 buckets.get(digit).add(actual);
@@ -148,6 +148,27 @@ public abstract class Sorter {
             counter++;
         }
         return temp;
+    }
+
+    /**
+     * Method for ordering the source of recipes, uses selection sort, based on difficulty
+     * @param source simple linked source of recipes
+     * @return source of recipes, from easiest to hardest.
+     */
+    public static SimpleList<Recipe> byDuration(SimpleList<Recipe> source) {
+
+        for (Node<Recipe> first = source.getHead(); first.getNext() != null; first = first.getNext()) {
+            Node<Recipe> smaller = first;
+            Node<Recipe> temp = smaller.getNext();
+            while (temp != null) {
+                if (temp.getData().getDuration() < smaller.getData().getDuration()) {
+                    smaller = temp;
+                }
+                temp = temp.getNext();
+            }
+            source.swap(first, smaller);
+        }
+        return source;
     }
 
 }

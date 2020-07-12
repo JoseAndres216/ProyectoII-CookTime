@@ -249,15 +249,15 @@ getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
 <init>(Ljava/lang/String;)/java.io.IOException#<init>(Ljava/lang/String;)Vw
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.io.IOException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VS
 <init>(Ljava/lang/Throwable;)2java.io.IOException#<init>(Ljava/lang/Throwable;)V(
-java.lang.Comparablejava.lang.ObjectÒ
+java.lang.Comparablejava.lang.ObjectÒ	
 logic.users.Recipejava.lang.Comparablejava.lang.ObjectN
 setName(Ljava/lang/String;)/logic.users.Recipe#setName(Ljava/lang/String;)V5
 	getTags()(logic.users.Recipe#getTags()LSimpleList;L
 equals(Ljava/lang/Object;).logic.users.Recipe#equals(Ljava/lang/Object;)Z8
 setDifficulty(I)$logic.users.Recipe#setDifficulty(I)V=
 
-toString()/logic.users.Recipe#toString()Ljava/lang/String;;
-getAuthor(),logic.users.Recipe#getAuthor()LAbstractUser;4
+toString()/logic.users.Recipe#toString()Ljava/lang/String;?
+getAuthor()0logic.users.Recipe#getAuthor()Ljava/lang/String;4
 setDuration(F)"logic.users.Recipe#setDuration(F)V.
 setPrice(I)logic.users.Recipe#setPrice(I)V2
 getDuration()!logic.users.Recipe#getDuration()F6
@@ -265,9 +265,11 @@ toString()/logic.users.Recipe#toString()Ljava/lang/String;;
 
 hashCode()logic.users.Recipe#hashCode()I,
 
-getPrice()logic.users.Recipe#getPrice()I;
+getPrice()logic.users.Recipe#getPrice()IR
+setAuthor(Ljava/lang/String;)1logic.users.Recipe#setAuthor(Ljava/lang/String;)V;
 	getName().logic.users.Recipe#getName()Ljava/lang/String;(
-<init>()logic.users.Recipe#<init>()VN
+<init>()logic.users.Recipe#<init>()V&
+rate(I)logic.users.Recipe#rate(I)VN
 setType(Ljava/lang/String;)/logic.users.Recipe#setType(Ljava/lang/String;)V;
 	getType().logic.users.Recipe#getType()Ljava/lang/String;.
 getRating()logic.users.Recipe#getRating()FV
@@ -393,7 +395,127 @@ Ccompare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Vjava.util.
 isNull(Ljava/lang/Object;)-java.util.Objects#isNull(Ljava/lang/Object;)Zw
 0deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Cjava.util.Objects#deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Zo
 ,equals(Ljava/lang/Object;Ljava/lang/Object;)?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Zl
-"requireNonNull(Ljava/lang/Object;)Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;Í
+"requireNonNull(Ljava/lang/Object;)Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;œ*
+java.lang.AbstractStringBuilderjava.lang.CharSequencejava.lang.Appendablejava.lang.Object?
+setCharAt(IC).java.lang.AbstractStringBuilder#setCharAt(IC)VW
+ensureCapacityInternal(I):java.lang.AbstractStringBuilder#ensureCapacityInternal(I)V7
+	<init>(I)*java.lang.AbstractStringBuilder#<init>(I)V5
+length())java.lang.AbstractStringBuilder#length()IC
+hugeCapacity(I)0java.lang.AbstractStringBuilder#hugeCapacity(I)IW
+	append(I)Jjava.lang.AbstractStringBuilder#append(I)Ljava/lang/AbstractStringBuilder;N
+substring(I)>java.lang.AbstractStringBuilder#substring(I)Ljava/lang/String;_
+insert(I[CII)Njava.lang.AbstractStringBuilder#insert(I[CII)Ljava/lang/AbstractStringBuilder;5
+<init>())java.lang.AbstractStringBuilder#<init>()VY
+
+delete(II)Kjava.lang.AbstractStringBuilder#delete(II)Ljava/lang/AbstractStringBuilder;Y
+
+insert(II)Kjava.lang.AbstractStringBuilder#insert(II)Ljava/lang/AbstractStringBuilder;I
+codePointCount(II)3java.lang.AbstractStringBuilder#codePointCount(II)IW
+	append(Z)Jjava.lang.AbstractStringBuilder#append(Z)Ljava/lang/AbstractStringBuilder;y
+append(Ljava/lang/Object;)[java.lang.AbstractStringBuilder#append(Ljava/lang/Object;)Ljava/lang/AbstractStringBuilder;[
+indexOf(Ljava/lang/String;)<java.lang.AbstractStringBuilder#indexOf(Ljava/lang/String;)I]
+indexOf(Ljava/lang/String;I)=java.lang.AbstractStringBuilder#indexOf(Ljava/lang/String;I)I7
+	charAt(I)*java.lang.AbstractStringBuilder#charAt(I)C]
+append([CII)Mjava.lang.AbstractStringBuilder#append([CII)Ljava/lang/AbstractStringBuilder;c
+reverseAllValidSurrogatePairs()@java.lang.AbstractStringBuilder#reverseAllValidSurrogatePairs()VW
+	reverse()Jjava.lang.AbstractStringBuilder#reverse()Ljava/lang/AbstractStringBuilder;y
+append(Ljava/lang/String;)[java.lang.AbstractStringBuilder#append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;Y
+
+insert(IZ)Kjava.lang.AbstractStringBuilder#insert(IZ)Ljava/lang/AbstractStringBuilder;W
+	append(J)Jjava.lang.AbstractStringBuilder#append(J)Ljava/lang/AbstractStringBuilder;=
+trimToSize()-java.lang.AbstractStringBuilder#trimToSize()VW
+	append(F)Jjava.lang.AbstractStringBuilder#append(F)Ljava/lang/AbstractStringBuilder;i
+appendCodePoint(I)Sjava.lang.AbstractStringBuilder#appendCodePoint(I)Ljava/lang/AbstractStringBuilder;Ö
+ append(Ljava/lang/CharSequence;)ajava.lang.AbstractStringBuilder#append(Ljava/lang/CharSequence;)Ljava/lang/AbstractStringBuilder;c
+lastIndexOf(Ljava/lang/String;)@java.lang.AbstractStringBuilder#lastIndexOf(Ljava/lang/String;)IY
+
+append([C)Kjava.lang.AbstractStringBuilder#append([C)Ljava/lang/AbstractStringBuilder;C
+getChars(II[CI)0java.lang.AbstractStringBuilder#getChars(II[CI)Vâ
+"append(Ljava/lang/CharSequence;II)cjava.lang.AbstractStringBuilder#append(Ljava/lang/CharSequence;II)Ljava/lang/AbstractStringBuilder;[
+insert(I[C)Ljava.lang.AbstractStringBuilder#insert(I[C)Ljava/lang/AbstractStringBuilder;9
+
+capacity()+java.lang.AbstractStringBuilder#capacity()IY
+
+insert(IJ)Kjava.lang.AbstractStringBuilder#insert(IJ)Ljava/lang/AbstractStringBuilder;A
+newCapacity(I)/java.lang.AbstractStringBuilder#newCapacity(I)IY
+
+insert(IF)Kjava.lang.AbstractStringBuilder#insert(IF)Ljava/lang/AbstractStringBuilder;G
+ensureCapacity(I)2java.lang.AbstractStringBuilder#ensureCapacity(I)VÖ
+ append(Ljava/lang/StringBuffer;)ajava.lang.AbstractStringBuilder#append(Ljava/lang/StringBuffer;)Ljava/lang/AbstractStringBuilder;W
+	append(C)Jjava.lang.AbstractStringBuilder#append(C)Ljava/lang/AbstractStringBuilder;á
+!insert(ILjava/lang/CharSequence;)bjava.lang.AbstractStringBuilder#insert(ILjava/lang/CharSequence;)Ljava/lang/AbstractStringBuilder;I
+codePointBefore(I)3java.lang.AbstractStringBuilder#codePointBefore(I)I
+replace(IILjava/lang/String;)^java.lang.AbstractStringBuilder#replace(IILjava/lang/String;)Ljava/lang/AbstractStringBuilder;Y
+
+insert(IC)Kjava.lang.AbstractStringBuilder#insert(IC)Ljava/lang/AbstractStringBuilder;e
+ lastIndexOf(Ljava/lang/String;I)Ajava.lang.AbstractStringBuilder#lastIndexOf(Ljava/lang/String;I)IA
+codePointAt(I)/java.lang.AbstractStringBuilder#codePointAt(I)I{
+insert(ILjava/lang/Object;)\java.lang.AbstractStringBuilder#insert(ILjava/lang/Object;)Ljava/lang/AbstractStringBuilder;:
+
+getValue(),java.lang.AbstractStringBuilder#getValue()[C{
+insert(ILjava/lang/String;)\java.lang.AbstractStringBuilder#insert(ILjava/lang/String;)Ljava/lang/AbstractStringBuilder;c
+deleteCharAt(I)Pjava.lang.AbstractStringBuilder#deleteCharAt(I)Ljava/lang/AbstractStringBuilder;]
+appendNull()Mjava.lang.AbstractStringBuilder#appendNull()Ljava/lang/AbstractStringBuilder;W
+	append(D)Jjava.lang.AbstractStringBuilder#append(D)Ljava/lang/AbstractStringBuilder;P
+substring(II)?java.lang.AbstractStringBuilder#substring(II)Ljava/lang/String;Z
+subSequence(II)Gjava.lang.AbstractStringBuilder#subSequence(II)Ljava/lang/CharSequence;ó
+)append(Ljava/lang/AbstractStringBuilder;)jjava.lang.AbstractStringBuilder#append(Ljava/lang/AbstractStringBuilder;)Ljava/lang/AbstractStringBuilder;=
+setLength(I)-java.lang.AbstractStringBuilder#setLength(I)Vã
+#insert(ILjava/lang/CharSequence;II)djava.lang.AbstractStringBuilder#insert(ILjava/lang/CharSequence;II)Ljava/lang/AbstractStringBuilder;Q
+offsetByCodePoints(II)7java.lang.AbstractStringBuilder#offsetByCodePoints(II)IY
+
+insert(ID)Kjava.lang.AbstractStringBuilder#insert(ID)Ljava/lang/AbstractStringBuilder;¯
+java.lang.StringBuilderjava.lang.CharSequencejava.lang.AbstractStringBuilderjava.io.Serializable/
+	<init>(I)"java.lang.StringBuilder#<init>(I)VG
+	append(I):java.lang.StringBuilder#append(I)Ljava/lang/StringBuilder;u
+ append(Ljava/lang/StringBuffer;)Qjava.lang.StringBuilder#append(Ljava/lang/StringBuffer;)Ljava/lang/StringBuilder;O
+insert(I[CII)>java.lang.StringBuilder#insert(I[CII)Ljava/lang/StringBuilder;-
+<init>()!java.lang.StringBuilder#<init>()VI
+
+delete(II);java.lang.StringBuilder#delete(II)Ljava/lang/StringBuilder;G
+	append(C):java.lang.StringBuilder#append(C)Ljava/lang/StringBuilder;w
+!insert(ILjava/lang/CharSequence;)Rjava.lang.StringBuilder#insert(ILjava/lang/CharSequence;)Ljava/lang/StringBuilder;k
+'readObject(Ljava/io/ObjectInputStream;)@java.lang.StringBuilder#readObject(Ljava/io/ObjectInputStream;)VI
+
+insert(II);java.lang.StringBuilder#insert(II)Ljava/lang/StringBuilder;Q
+<init>(Ljava/lang/String;)3java.lang.StringBuilder#<init>(Ljava/lang/String;)VG
+	append(Z):java.lang.StringBuilder#append(Z)Ljava/lang/StringBuilder;i
+append(Ljava/lang/Object;)Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;o
+replace(IILjava/lang/String;)Njava.lang.StringBuilder#replace(IILjava/lang/String;)Ljava/lang/StringBuilder;S
+indexOf(Ljava/lang/String;)4java.lang.StringBuilder#indexOf(Ljava/lang/String;)IU
+indexOf(Ljava/lang/String;I)5java.lang.StringBuilder#indexOf(Ljava/lang/String;I)IM
+append([CII)=java.lang.StringBuilder#append([CII)Ljava/lang/StringBuilder;I
+
+insert(IC);java.lang.StringBuilder#insert(IC)Ljava/lang/StringBuilder;]
+ lastIndexOf(Ljava/lang/String;I)9java.lang.StringBuilder#lastIndexOf(Ljava/lang/String;I)IB
+
+toString()4java.lang.StringBuilder#toString()Ljava/lang/String;G
+	reverse():java.lang.StringBuilder#reverse()Ljava/lang/StringBuilder;k
+insert(ILjava/lang/Object;)Ljava.lang.StringBuilder#insert(ILjava/lang/Object;)Ljava/lang/StringBuilder;i
+append(Ljava/lang/String;)Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;I
+
+insert(IZ);java.lang.StringBuilder#insert(IZ)Ljava/lang/StringBuilder;k
+insert(ILjava/lang/String;)Ljava.lang.StringBuilder#insert(ILjava/lang/String;)Ljava/lang/StringBuilder;S
+deleteCharAt(I)@java.lang.StringBuilder#deleteCharAt(I)Ljava/lang/StringBuilder;G
+	append(J):java.lang.StringBuilder#append(J)Ljava/lang/StringBuilder;G
+	append(F):java.lang.StringBuilder#append(F)Ljava/lang/StringBuilder;Y
+appendCodePoint(I)Cjava.lang.StringBuilder#appendCodePoint(I)Ljava/lang/StringBuilder;u
+ append(Ljava/lang/CharSequence;)Qjava.lang.StringBuilder#append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;[
+lastIndexOf(Ljava/lang/String;)8java.lang.StringBuilder#lastIndexOf(Ljava/lang/String;)IG
+	append(D):java.lang.StringBuilder#append(D)Ljava/lang/StringBuilder;I
+
+append([C);java.lang.StringBuilder#append([C)Ljava/lang/StringBuilder;y
+"append(Ljava/lang/CharSequence;II)Sjava.lang.StringBuilder#append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;K
+insert(I[C)<java.lang.StringBuilder#insert(I[C)Ljava/lang/StringBuilder;{
+#insert(ILjava/lang/CharSequence;II)Tjava.lang.StringBuilder#insert(ILjava/lang/CharSequence;II)Ljava/lang/StringBuilder;I
+
+insert(IJ);java.lang.StringBuilder#insert(IJ)Ljava/lang/StringBuilder;]
+ <init>(Ljava/lang/CharSequence;)9java.lang.StringBuilder#<init>(Ljava/lang/CharSequence;)VI
+
+insert(ID);java.lang.StringBuilder#insert(ID)Ljava/lang/StringBuilder;o
+)writeObject(Ljava/io/ObjectOutputStream;)Bjava.lang.StringBuilder#writeObject(Ljava/io/ObjectOutputStream;)VI
+
+insert(IF);java.lang.StringBuilder#insert(IF)Ljava/lang/StringBuilder;Í
 logic.structures.TreeNodejava.lang.Comparablejava.lang.Objectjava.io.SerializableS
 equals(Ljava/lang/Object;)5logic.structures.TreeNode#equals(Ljava/lang/Object;)ZO
 getParent()@logic.structures.TreeNode#getParent()Llogic/structures/TreeNode;k
@@ -517,133 +639,13 @@ toString()Clogic.structures.simplelist.SimpleList#toString()Ljava/lang/String;
 <init>(),java.lang.IllegalArgumentException#<init>()V\
 <init>(Ljava/lang/String;)>java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)VÜ
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Sjava.lang.IllegalArgumentException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)Vb
-<init>(Ljava/lang/Throwable;)Ajava.lang.IllegalArgumentException#<init>(Ljava/lang/Throwable;)Vœ*
-java.lang.AbstractStringBuilderjava.lang.CharSequencejava.lang.Appendablejava.lang.Object?
-setCharAt(IC).java.lang.AbstractStringBuilder#setCharAt(IC)VW
-ensureCapacityInternal(I):java.lang.AbstractStringBuilder#ensureCapacityInternal(I)V7
-	<init>(I)*java.lang.AbstractStringBuilder#<init>(I)V5
-length())java.lang.AbstractStringBuilder#length()IC
-hugeCapacity(I)0java.lang.AbstractStringBuilder#hugeCapacity(I)IW
-	append(I)Jjava.lang.AbstractStringBuilder#append(I)Ljava/lang/AbstractStringBuilder;N
-substring(I)>java.lang.AbstractStringBuilder#substring(I)Ljava/lang/String;_
-insert(I[CII)Njava.lang.AbstractStringBuilder#insert(I[CII)Ljava/lang/AbstractStringBuilder;5
-<init>())java.lang.AbstractStringBuilder#<init>()VY
-
-delete(II)Kjava.lang.AbstractStringBuilder#delete(II)Ljava/lang/AbstractStringBuilder;Y
-
-insert(II)Kjava.lang.AbstractStringBuilder#insert(II)Ljava/lang/AbstractStringBuilder;I
-codePointCount(II)3java.lang.AbstractStringBuilder#codePointCount(II)IW
-	append(Z)Jjava.lang.AbstractStringBuilder#append(Z)Ljava/lang/AbstractStringBuilder;y
-append(Ljava/lang/Object;)[java.lang.AbstractStringBuilder#append(Ljava/lang/Object;)Ljava/lang/AbstractStringBuilder;[
-indexOf(Ljava/lang/String;)<java.lang.AbstractStringBuilder#indexOf(Ljava/lang/String;)I]
-indexOf(Ljava/lang/String;I)=java.lang.AbstractStringBuilder#indexOf(Ljava/lang/String;I)I7
-	charAt(I)*java.lang.AbstractStringBuilder#charAt(I)C]
-append([CII)Mjava.lang.AbstractStringBuilder#append([CII)Ljava/lang/AbstractStringBuilder;c
-reverseAllValidSurrogatePairs()@java.lang.AbstractStringBuilder#reverseAllValidSurrogatePairs()VW
-	reverse()Jjava.lang.AbstractStringBuilder#reverse()Ljava/lang/AbstractStringBuilder;y
-append(Ljava/lang/String;)[java.lang.AbstractStringBuilder#append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;Y
-
-insert(IZ)Kjava.lang.AbstractStringBuilder#insert(IZ)Ljava/lang/AbstractStringBuilder;W
-	append(J)Jjava.lang.AbstractStringBuilder#append(J)Ljava/lang/AbstractStringBuilder;=
-trimToSize()-java.lang.AbstractStringBuilder#trimToSize()VW
-	append(F)Jjava.lang.AbstractStringBuilder#append(F)Ljava/lang/AbstractStringBuilder;i
-appendCodePoint(I)Sjava.lang.AbstractStringBuilder#appendCodePoint(I)Ljava/lang/AbstractStringBuilder;Ö
- append(Ljava/lang/CharSequence;)ajava.lang.AbstractStringBuilder#append(Ljava/lang/CharSequence;)Ljava/lang/AbstractStringBuilder;c
-lastIndexOf(Ljava/lang/String;)@java.lang.AbstractStringBuilder#lastIndexOf(Ljava/lang/String;)IY
-
-append([C)Kjava.lang.AbstractStringBuilder#append([C)Ljava/lang/AbstractStringBuilder;C
-getChars(II[CI)0java.lang.AbstractStringBuilder#getChars(II[CI)Vâ
-"append(Ljava/lang/CharSequence;II)cjava.lang.AbstractStringBuilder#append(Ljava/lang/CharSequence;II)Ljava/lang/AbstractStringBuilder;[
-insert(I[C)Ljava.lang.AbstractStringBuilder#insert(I[C)Ljava/lang/AbstractStringBuilder;9
-
-capacity()+java.lang.AbstractStringBuilder#capacity()IY
-
-insert(IJ)Kjava.lang.AbstractStringBuilder#insert(IJ)Ljava/lang/AbstractStringBuilder;A
-newCapacity(I)/java.lang.AbstractStringBuilder#newCapacity(I)IY
-
-insert(IF)Kjava.lang.AbstractStringBuilder#insert(IF)Ljava/lang/AbstractStringBuilder;G
-ensureCapacity(I)2java.lang.AbstractStringBuilder#ensureCapacity(I)VÖ
- append(Ljava/lang/StringBuffer;)ajava.lang.AbstractStringBuilder#append(Ljava/lang/StringBuffer;)Ljava/lang/AbstractStringBuilder;W
-	append(C)Jjava.lang.AbstractStringBuilder#append(C)Ljava/lang/AbstractStringBuilder;á
-!insert(ILjava/lang/CharSequence;)bjava.lang.AbstractStringBuilder#insert(ILjava/lang/CharSequence;)Ljava/lang/AbstractStringBuilder;I
-codePointBefore(I)3java.lang.AbstractStringBuilder#codePointBefore(I)I
-replace(IILjava/lang/String;)^java.lang.AbstractStringBuilder#replace(IILjava/lang/String;)Ljava/lang/AbstractStringBuilder;Y
-
-insert(IC)Kjava.lang.AbstractStringBuilder#insert(IC)Ljava/lang/AbstractStringBuilder;e
- lastIndexOf(Ljava/lang/String;I)Ajava.lang.AbstractStringBuilder#lastIndexOf(Ljava/lang/String;I)IA
-codePointAt(I)/java.lang.AbstractStringBuilder#codePointAt(I)I{
-insert(ILjava/lang/Object;)\java.lang.AbstractStringBuilder#insert(ILjava/lang/Object;)Ljava/lang/AbstractStringBuilder;:
-
-getValue(),java.lang.AbstractStringBuilder#getValue()[C{
-insert(ILjava/lang/String;)\java.lang.AbstractStringBuilder#insert(ILjava/lang/String;)Ljava/lang/AbstractStringBuilder;c
-deleteCharAt(I)Pjava.lang.AbstractStringBuilder#deleteCharAt(I)Ljava/lang/AbstractStringBuilder;]
-appendNull()Mjava.lang.AbstractStringBuilder#appendNull()Ljava/lang/AbstractStringBuilder;W
-	append(D)Jjava.lang.AbstractStringBuilder#append(D)Ljava/lang/AbstractStringBuilder;P
-substring(II)?java.lang.AbstractStringBuilder#substring(II)Ljava/lang/String;Z
-subSequence(II)Gjava.lang.AbstractStringBuilder#subSequence(II)Ljava/lang/CharSequence;ó
-)append(Ljava/lang/AbstractStringBuilder;)jjava.lang.AbstractStringBuilder#append(Ljava/lang/AbstractStringBuilder;)Ljava/lang/AbstractStringBuilder;=
-setLength(I)-java.lang.AbstractStringBuilder#setLength(I)Vã
-#insert(ILjava/lang/CharSequence;II)djava.lang.AbstractStringBuilder#insert(ILjava/lang/CharSequence;II)Ljava/lang/AbstractStringBuilder;Q
-offsetByCodePoints(II)7java.lang.AbstractStringBuilder#offsetByCodePoints(II)IY
-
-insert(ID)Kjava.lang.AbstractStringBuilder#insert(ID)Ljava/lang/AbstractStringBuilder;¯
-java.lang.StringBuilderjava.lang.CharSequencejava.lang.AbstractStringBuilderjava.io.Serializable/
-	<init>(I)"java.lang.StringBuilder#<init>(I)VG
-	append(I):java.lang.StringBuilder#append(I)Ljava/lang/StringBuilder;u
- append(Ljava/lang/StringBuffer;)Qjava.lang.StringBuilder#append(Ljava/lang/StringBuffer;)Ljava/lang/StringBuilder;O
-insert(I[CII)>java.lang.StringBuilder#insert(I[CII)Ljava/lang/StringBuilder;-
-<init>()!java.lang.StringBuilder#<init>()VI
-
-delete(II);java.lang.StringBuilder#delete(II)Ljava/lang/StringBuilder;G
-	append(C):java.lang.StringBuilder#append(C)Ljava/lang/StringBuilder;w
-!insert(ILjava/lang/CharSequence;)Rjava.lang.StringBuilder#insert(ILjava/lang/CharSequence;)Ljava/lang/StringBuilder;k
-'readObject(Ljava/io/ObjectInputStream;)@java.lang.StringBuilder#readObject(Ljava/io/ObjectInputStream;)VI
-
-insert(II);java.lang.StringBuilder#insert(II)Ljava/lang/StringBuilder;Q
-<init>(Ljava/lang/String;)3java.lang.StringBuilder#<init>(Ljava/lang/String;)VG
-	append(Z):java.lang.StringBuilder#append(Z)Ljava/lang/StringBuilder;i
-append(Ljava/lang/Object;)Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;o
-replace(IILjava/lang/String;)Njava.lang.StringBuilder#replace(IILjava/lang/String;)Ljava/lang/StringBuilder;S
-indexOf(Ljava/lang/String;)4java.lang.StringBuilder#indexOf(Ljava/lang/String;)IU
-indexOf(Ljava/lang/String;I)5java.lang.StringBuilder#indexOf(Ljava/lang/String;I)IM
-append([CII)=java.lang.StringBuilder#append([CII)Ljava/lang/StringBuilder;I
-
-insert(IC);java.lang.StringBuilder#insert(IC)Ljava/lang/StringBuilder;]
- lastIndexOf(Ljava/lang/String;I)9java.lang.StringBuilder#lastIndexOf(Ljava/lang/String;I)IB
-
-toString()4java.lang.StringBuilder#toString()Ljava/lang/String;G
-	reverse():java.lang.StringBuilder#reverse()Ljava/lang/StringBuilder;k
-insert(ILjava/lang/Object;)Ljava.lang.StringBuilder#insert(ILjava/lang/Object;)Ljava/lang/StringBuilder;i
-append(Ljava/lang/String;)Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;I
-
-insert(IZ);java.lang.StringBuilder#insert(IZ)Ljava/lang/StringBuilder;k
-insert(ILjava/lang/String;)Ljava.lang.StringBuilder#insert(ILjava/lang/String;)Ljava/lang/StringBuilder;S
-deleteCharAt(I)@java.lang.StringBuilder#deleteCharAt(I)Ljava/lang/StringBuilder;G
-	append(J):java.lang.StringBuilder#append(J)Ljava/lang/StringBuilder;G
-	append(F):java.lang.StringBuilder#append(F)Ljava/lang/StringBuilder;Y
-appendCodePoint(I)Cjava.lang.StringBuilder#appendCodePoint(I)Ljava/lang/StringBuilder;u
- append(Ljava/lang/CharSequence;)Qjava.lang.StringBuilder#append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;[
-lastIndexOf(Ljava/lang/String;)8java.lang.StringBuilder#lastIndexOf(Ljava/lang/String;)IG
-	append(D):java.lang.StringBuilder#append(D)Ljava/lang/StringBuilder;I
-
-append([C);java.lang.StringBuilder#append([C)Ljava/lang/StringBuilder;y
-"append(Ljava/lang/CharSequence;II)Sjava.lang.StringBuilder#append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;K
-insert(I[C)<java.lang.StringBuilder#insert(I[C)Ljava/lang/StringBuilder;{
-#insert(ILjava/lang/CharSequence;II)Tjava.lang.StringBuilder#insert(ILjava/lang/CharSequence;II)Ljava/lang/StringBuilder;I
-
-insert(IJ);java.lang.StringBuilder#insert(IJ)Ljava/lang/StringBuilder;]
- <init>(Ljava/lang/CharSequence;)9java.lang.StringBuilder#<init>(Ljava/lang/CharSequence;)VI
-
-insert(ID);java.lang.StringBuilder#insert(ID)Ljava/lang/StringBuilder;o
-)writeObject(Ljava/io/ObjectOutputStream;)Bjava.lang.StringBuilder#writeObject(Ljava/io/ObjectOutputStream;)VI
-
-insert(IF);java.lang.StringBuilder#insert(IF)Ljava/lang/StringBuilder;ü
+<init>(Ljava/lang/Throwable;)Ajava.lang.IllegalArgumentException#<init>(Ljava/lang/Throwable;)Vü
 gui.start.StartControllerjava.lang.Object?
 pressedChefReq()+gui.start.StartController#pressedChefReq()V9
 pressedExit()(gui.start.StartController#pressedExit()V/
 <init>()#gui.start.StartController#<init>()VC
-pressedUserAdmin()-gui.start.StartController#pressedUserAdmin()V
-logic.structures.stack.Stackjava.lang.Object?
+pressedUserAdmin()-gui.start.StartController#pressedUserAdmin()VÜ
+logic.structures.stack.Stackjava.lang.Objectjava.io.Serializable?
 peek()5logic.structures.stack.Stack#peek()Ljava/lang/Object;2
 <init>()&logic.structures.stack.Stack#<init>()VG
 
@@ -653,13 +655,13 @@ toString()9logic.structures.stack.Stack#toString()Ljava/lang/String;,
 Applicationjava.lang.ObjectÇ
 gui.SMProtoApplication!
 <init>()gui.SMProto#<init>()VC
-main([Ljava/lang/String;)&gui.SMProto#main([Ljava/lang/String;)V(
-logic.ServerSettingsjava.lang.ObjectÁ
-logic.users.MyMenujava.lang.Object;
-difficulty()+logic.users.MyMenu#difficulty()LSimpleList;?
+main([Ljava/lang/String;)&gui.SMProto#main([Ljava/lang/String;)VP
+logic.users.Sorterjava.lang.Object(
+<init>()logic.users.Sorter#<init>()V(
+logic.ServerSettingsjava.lang.ObjectÂ
+logic.users.MyMenujava.lang.Object?
 recientFirst()-logic.users.MyMenu#recientFirst()LSimpleList;(
-<init>()logic.users.MyMenu#<init>()VC
-highRatedFirst()/logic.users.MyMenu#highRatedFirst()LSimpleList;R
+<init>()logic.users.MyMenu#<init>()VR
 addRecipe(Ljava/lang/String;)1logic.users.MyMenu#addRecipe(Ljava/lang/String;)VÔ
  logic.structures.splay.SplayTreejava.lang.ObjectC
 	inOrder()6logic.structures.splay.SplayTree#inOrder()LSimpleList;4
@@ -668,22 +670,21 @@ toString()9logic.structures.stack.Stack#toString()Ljava/lang/String;,
 	getRoot()4logic.structures.splay.SplayTree#getRoot()LTreeNode;j
 "deleteNode(Ljava/lang/Comparable;)Dlogic.structures.splay.SplayTree#deleteNode(Ljava/lang/Comparable;)Vb
 insert(Ljava/lang/Comparable;)@logic.structures.splay.SplayTree#insert(Ljava/lang/Comparable;)Vs
-"searchTree(Ljava/lang/Comparable;)Mlogic.structures.splay.SplayTree#searchTree(Ljava/lang/Comparable;)LTreeNode;à
-resources.Userjava.lang.Objectû
+"searchTree(Ljava/lang/Comparable;)Mlogic.structures.splay.SplayTree#searchTree(Ljava/lang/Comparable;)LTreeNode;Õ
+
+resources.Userjava.lang.Objectv
+1addFollower(Ljava/lang/String;Ljava/lang/String;)Aresources.User#addFollower(Ljava/lang/String;Ljava/lang/String;)Zû
 EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Uresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zm
-$getMymenuRecient(Ljava/lang/String;)Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;i
-"getMymenuRated(Ljava/lang/String;)Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;m
+$getMymenuRecient(Ljava/lang/String;)Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;e
+ getFollowers(Ljava/lang/String;)Aresources.User#getFollowers(Ljava/lang/String;)Ljava/lang/String;i
+"getMymenuRated(Ljava/lang/String;)Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;$
+<init>()resources.User#<init>()VR
+chefRequest(Ljava/lang/String;)/resources.User#chefRequest(Ljava/lang/String;)Vi
+createUser(Ljava/lang/String;)Gresources.User#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;m
 $getNotifications(Ljava/lang/String;)Eresources.User#getNotifications(Ljava/lang/String;)Ljava/lang/String;g
 !getMymenuDiff(Ljava/lang/String;)Bresources.User#getMymenuDiff(Ljava/lang/String;)Ljava/lang/String;Ö
 0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;â
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;v
-1addFollower(Ljava/lang/String;Ljava/lang/String;)Aresources.User#addFollower(Ljava/lang/String;Ljava/lang/String;)Ze
- getFollowers(Ljava/lang/String;)Aresources.User#getFollowers(Ljava/lang/String;)Ljava/lang/String;T
- deleteRecipe(Ljava/lang/String;)0resources.User#deleteRecipe(Ljava/lang/String;)V$
-<init>()resources.User#<init>()VR
-chefRequest(Ljava/lang/String;)/resources.User#chefRequest(Ljava/lang/String;)Vi
-createUser(Ljava/lang/String;)Gresources.User#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;c
-getFollowed(Ljava/lang/String;)@resources.User#getFollowed(Ljava/lang/String;)Ljava/lang/String;ˇ
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;ˇ
 logic.structures.bst.BSTjava.lang.ObjectZ
 delete(Ljava/lang/Comparable;)8logic.structures.bst.BST#delete(Ljava/lang/Comparable;)V;
 	inOrder().logic.structures.bst.BST#inOrder()LSimpleList;,
@@ -692,10 +693,9 @@ $getNotifications(Ljava/lang/String;)Eresources.User#getNotifications(Ljava/lan
 
 toString()5logic.structures.bst.BST#toString()Ljava/lang/String;9
 	getRoot(),logic.structures.bst.BST#getRoot()LTreeNode;Z
-insert(Ljava/lang/Comparable;)8logic.structures.bst.BST#insert(Ljava/lang/Comparable;)VÁ
+insert(Ljava/lang/Comparable;)8logic.structures.bst.BST#insert(Ljava/lang/Comparable;)Vø
 logic.ServerManagerjava.lang.Objecth
-!getEnterprise(Ljava/lang/String;)Clogic.ServerManager#getEnterprise(Ljava/lang/String;)LAbstractUser;•
-FcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)[logic.ServerManager#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)ZG
+!getEnterprise(Ljava/lang/String;)Clogic.ServerManager#getEnterprise(Ljava/lang/String;)LAbstractUser;G
 getInstance()6logic.ServerManager#getInstance()Llogic/ServerManager;C
 getEnterprises()/logic.ServerManager#getEnterprises()LSplayTree;h
 getUserJson(Ljava/lang/String;)Elogic.ServerManager#getUserJson(Ljava/lang/String;)Ljava/lang/String;l
@@ -720,7 +720,7 @@ getUsers()#logic.ServerManager#getUsers()LBST;{
 Llogic/ServerManager$899;	TypeToken&
 Llogic/ServerManager$996;	TypeToken'
 Llogic/ServerManager$1090;	TypeToken'
-Llogic/ServerManager$1193;	TypeTokenî	
+Llogic/ServerManager$1193;	TypeToken®
 resources.Enterprisesjava.lang.Objectò
 6verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)^resources.Enterprises#verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;•
 EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)\resources.Enterprises#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Vl
@@ -730,26 +730,25 @@ EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)\resource
 $getNotifications(Ljava/lang/String;)Lresources.Enterprises#getNotifications(Ljava/lang/String;)Ljava/lang/String;f
 getMymenu(Ljava/lang/String;)Eresources.Enterprises#getMymenu(Ljava/lang/String;)Ljava/lang/String;c
 $createEnterprise(Ljava/lang/String;);resources.Enterprises#createEnterprise(Ljava/lang/String;)V
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)Vj
-getFollowed(Ljava/lang/String;)Gresources.Enterprises#getFollowed(Ljava/lang/String;)Ljava/lang/String;Ë
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)V˛
+
 logic.users.AbstractUserjava.lang.Comparablejava.lang.Objectjava.io.SerializableR
-equals(Ljava/lang/Object;)4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zd
+equals(Ljava/lang/Object;)4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zl
+'addFollower(Llogic/users/AbstractUser;)Alogic.users.AbstractUser#addFollower(Llogic/users/AbstractUser;)Vd
 #addNotification(Ljava/lang/String;)=logic.users.AbstractUser#addNotification(Ljava/lang/String;)V]
-getSerializedNewsFeed()Blogic.users.AbstractUser#getSerializedNewsFeed()Ljava/lang/String;_
-getSerializedFollowing()Clogic.users.AbstractUser#getSerializedFollowing()Ljava/lang/String;C
+getSerializedNewsFeed()Blogic.users.AbstractUser#getSerializedNewsFeed()Ljava/lang/String;C
 
 toString()5logic.users.AbstractUser#toString()Ljava/lang/String;A
-	getPass()4logic.users.AbstractUser#getPass()Ljava/lang/String;Z
-followUser(Ljava/lang/String;)8logic.users.AbstractUser#followUser(Ljava/lang/String;)VC
+	getPass()4logic.users.AbstractUser#getPass()Ljava/lang/String;C
 
 getEmail()5logic.users.AbstractUser#getEmail()Ljava/lang/String;2
 
 hashCode()$logic.users.AbstractUser#hashCode()I@
 encryptPassword()+logic.users.AbstractUser#encryptPassword()Vg
-getSerializedNotifications()Glogic.users.AbstractUser#getSerializedNotifications()Ljava/lang/String;.
+getSerializedNotifications()Glogic.users.AbstractUser#getSerializedNotifications()Ljava/lang/String;A
+	getName()4logic.users.AbstractUser#getName()Ljava/lang/String;.
 <init>()"logic.users.AbstractUser#<init>()VY
-getSerializedMyMenu()@logic.users.AbstractUser#getSerializedMyMenu()Ljava/lang/String;\
-addFollower(Ljava/lang/String;)9logic.users.AbstractUser#addFollower(Ljava/lang/String;)Vh
+getSerializedMyMenu()@logic.users.AbstractUser#getSerializedMyMenu()Ljava/lang/String;h
 %compareTo(Llogic/users/AbstractUser;)?logic.users.AbstractUser#compareTo(Llogic/users/AbstractUser;)I_
 getSerializedFollowers()Clogic.users.AbstractUser#getSerializedFollowers()Ljava/lang/String;X
 addRecipe(Ljava/lang/String;)7logic.users.AbstractUser#addRecipe(Ljava/lang/String;)Ví
@@ -1409,86 +1408,14 @@ valueOf(J)5java.math.BigInteger#valueOf(J)Ljava/math/BigInteger;“
 <init>()resources.Searches#<init>()Vg
 searchUsers(Ljava/lang/String;)Dresources.Searches#searchUsers(Ljava/lang/String;)Ljava/lang/String;k
 !searchRecipes(Ljava/lang/String;)Fresources.Searches#searchRecipes(Ljava/lang/String;)Ljava/lang/String;s
-%searchEnterprises(Ljava/lang/String;)Jresources.Searches#searchEnterprises(Ljava/lang/String;)Ljava/lang/String;ù
-logic.structures.avl.AVLTreejava.lang.Object^
-delete(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#delete(Ljava/lang/Comparable;)V?
+%searchEnterprises(Ljava/lang/String;)Jresources.Searches#searchEnterprises(Ljava/lang/String;)Ljava/lang/String;ç
+logic.structures.avl.AVLTreejava.lang.Object?
 	inOrder()2logic.structures.avl.AVLTree#inOrder()LSimpleList;2
-<init>()&logic.structures.avl.AVLTree#<init>()V.
-show()$logic.structures.avl.AVLTree#show()VG
+<init>()&logic.structures.avl.AVLTree#<init>()VG
 
 toString()9logic.structures.avl.AVLTree#toString()Ljava/lang/String;=
 	getRoot()0logic.structures.avl.AVLTree#getRoot()LTreeNode;^
-insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)V~
-java.util.Listjava.util.Collectionjava.lang.ObjectD
-spliterator()3java.util.List#spliterator()Ljava/util/Spliterator;9
-java.util.Queuejava.util.Collectionjava.lang.Object4
-java.util.Dequejava.lang.Objectjava.util.Queueí
-java.util.AbstractListjava.util.Listjava.util.AbstractCollectionP
-equals(Ljava/lang/Object;)2java.util.AbstractList#equals(Ljava/lang/Object;)Z:
-removeRange(II)'java.util.AbstractList#removeRange(II)VA
-subList(II)2java.util.AbstractList#subList(II)Ljava/util/List;O
-listIterator()=java.util.AbstractList#listIterator()Ljava/util/ListIterator;Z
-lastIndexOf(Ljava/lang/Object;)7java.util.AbstractList#lastIndexOf(Ljava/lang/Object;)I?
-	remove(I)2java.util.AbstractList#remove(I)Ljava/lang/Object;R
-indexOf(Ljava/lang/Object;)3java.util.AbstractList#indexOf(Ljava/lang/Object;)I0
-
-hashCode()"java.util.AbstractList#hashCode()IC
-
-iterator()5java.util.AbstractList#iterator()Ljava/util/Iterator;,
-<init>() java.util.AbstractList#<init>()VQ
-listIterator(I)>java.util.AbstractList#listIterator(I)Ljava/util/ListIterator;B
-rangeCheckForAdd(I)+java.util.AbstractList#rangeCheckForAdd(I)VO
-outOfBoundsMsg(I):java.util.AbstractList#outOfBoundsMsg(I)Ljava/lang/String;*
-clear()java.util.AbstractList#clear()V—
- java.util.AbstractSequentialListjava.util.AbstractListM
-
-iterator()?java.util.AbstractSequentialList#iterator()Ljava/util/Iterator;6
-<init>()*java.util.AbstractSequentialList#<init>()VC
-get(I)9java.util.AbstractSequentialList#get(I)Ljava/lang/Object;I
-	remove(I)<java.util.AbstractSequentialList#remove(I)Ljava/lang/Object;Ó
-java.util.LinkedListjava.util.Listjava.lang.Cloneablejava.util.Deque java.util.AbstractSequentialListjava.io.Serializable7
-peek()-java.util.LinkedList#peek()Ljava/lang/Object;N
-remove(Ljava/lang/Object;)0java.util.LinkedList#remove(Ljava/lang/Object;)Z>
-	toArray()1java.util.LinkedList#toArray()[Ljava/lang/Object;?
-
-getFirst()1java.util.LinkedList#getFirst()Ljava/lang/Object;d
-toArray([Ljava/lang/Object;)Djava.util.LinkedList#toArray([Ljava/lang/Object;)[Ljava/lang/Object;=
-	remove(I)0java.util.LinkedList#remove(I)Ljava/lang/Object;R
-contains(Ljava/lang/Object;)2java.util.LinkedList#contains(Ljava/lang/Object;)Z5
-pop(),java.util.LinkedList#pop()Ljava/lang/Object;A
-pollFirst()2java.util.LinkedList#pollFirst()Ljava/lang/Object;A
-peekFirst()2java.util.LinkedList#peekFirst()Ljava/lang/Object;*
-<init>()java.util.LinkedList#<init>()V7
-get(I)-java.util.LinkedList#get(I)Ljava/lang/Object;h
-'readObject(Ljava/io/ObjectInputStream;)=java.util.LinkedList#readObject(Ljava/io/ObjectInputStream;)VO
-listIterator(I)<java.util.LinkedList#listIterator(I)Ljava/util/ListIterator;l
-)removeFirstOccurrence(Ljava/lang/Object;)?java.util.LinkedList#removeFirstOccurrence(Ljava/lang/Object;)Z?
-
-pollLast()1java.util.LinkedList#pollLast()Ljava/lang/Object;M
-outOfBoundsMsg(I)8java.util.LinkedList#outOfBoundsMsg(I)Ljava/lang/String;C
-removeLast()3java.util.LinkedList#removeLast()Ljava/lang/Object;(
-clear()java.util.LinkedList#clear()VB
-node(I)7java.util.LinkedList#node(I)Ljava/util/LinkedList$Node;=
-	getLast()0java.util.LinkedList#getLast()Ljava/lang/Object;U
-descendingIterator()=java.util.LinkedList#descendingIterator()Ljava/util/Iterator;X
-lastIndexOf(Ljava/lang/Object;)5java.util.LinkedList#lastIndexOf(Ljava/lang/Object;)I=
-	element()0java.util.LinkedList#element()Ljava/lang/Object;E
-removeFirst()4java.util.LinkedList#removeFirst()Ljava/lang/Object;;
-remove()/java.util.LinkedList#remove()Ljava/lang/Object;P
-indexOf(Ljava/lang/Object;)1java.util.LinkedList#indexOf(Ljava/lang/Object;)I7
-poll()-java.util.LinkedList#poll()Ljava/lang/Object;B
-checkElementIndex(I)*java.util.LinkedList#checkElementIndex(I)VG
-superClone()7java.util.LinkedList#superClone()Ljava/util/LinkedList;J
-spliterator()9java.util.LinkedList#spliterator()Ljava/util/Spliterator;j
-(removeLastOccurrence(Ljava/lang/Object;)>java.util.LinkedList#removeLastOccurrence(Ljava/lang/Object;)Z?
-
-peekLast()1java.util.LinkedList#peekLast()Ljava/lang/Object;9
-clone().java.util.LinkedList#clone()Ljava/lang/Object;D
-checkPositionIndex(I)+java.util.LinkedList#checkPositionIndex(I)V<
-isElementIndex(I)'java.util.LinkedList#isElementIndex(I)Zl
-)writeObject(Ljava/io/ObjectOutputStream;)?java.util.LinkedList#writeObject(Ljava/io/ObjectOutputStream;)V&
-size()java.util.LinkedList#size()I>
-isPositionIndex(I)(java.util.LinkedList#isPositionIndex(I)Z∏
+insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)V∏
 logic.utilities.Searcherjava.lang.Objectk
 findUsers(Ljava/lang/String;Z)Ilogic.utilities.Searcher#findUsers(Ljava/lang/String;Z)Ljava/lang/String;.
 <init>()"logic.utilities.Searcher#<init>()Vm

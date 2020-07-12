@@ -1,63 +1,17 @@
 
-Clogic.structures.simplelist.SimpleList#toString()Ljava/lang/String;|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaG G("4"5*ð
-2|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaN N(¤¡
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaN N(;
-%2"Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;**
-(
-stringBuilderjava.lang.StringBuilder*
-""2append(Ljava/lang/Object;)½º
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaO O(&
-%3java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;**
-(
-stringBuilderjava.lang.StringBuilder*
-, 2append(Ljava/lang/String;)*
-2
-1*‚
+ilogic.structures.simplelist.SimpleList#append(Ljava/lang/Object;)Llogic/structures/simplelist/SimpleList;|
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java ("4*ƒ
 4|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaK8 K(<¹¶
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java %  ()ú÷
 |
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaK* K(7
-%0java.lang.StringBuilder"java.lang.StringBuilderå
-â
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaK& K(=
-%1"3java.lang.StringBuilder#<init>(Ljava/lang/String;)V*
-
-%0java.lang.StringBuilder*
-[ Ò
-Ï
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaK K(>(
-stringBuilderjava.lang.StringBuilder"__id*
-
-%0java.lang.StringBuilder*
-2
-1*Š
-5|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaI I("†
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaI I(
-[]*æ
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java! !(
+%0boolean"1logic.structures.simplelist.SimpleList#isEmpty()Z**(
+&logic.structures.simplelist.SimpleList2	isEmpty()*
+1*®
 1|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaR R(½º
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java' '("ª
 |
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaR R("
-%4java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;**
-(
-stringBuilderjava.lang.StringBuilder*
- ]2append(Ljava/lang/String;)‡„
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaS S('
-%5java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;**
-(
-stringBuilderjava.lang.StringBuilder2
-toString()"˜
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.javaS S((
-
-%5java.lang.StringB*(
+rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java( ((*(
+&logic.structures.simplelist.SimpleList:	
+dataTB*(
 &logic.structures.simplelist.SimpleList
