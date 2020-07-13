@@ -86,6 +86,15 @@ public class Recipe implements Comparable<Recipe> {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Recipe{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", rating=").append(rating);
+        sb.append('}');
+        return sb.toString();
+    }
+
     /**
      * Method for given a rate to a recipe
      *
@@ -95,15 +104,6 @@ public class Recipe implements Comparable<Recipe> {
     public void rate(int rating, AbstractUser user) {
         this.rating += rating;
         ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Recipe{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", duration=").append(duration);
-        sb.append('}');
-        return sb.toString();
     }
 
     /**

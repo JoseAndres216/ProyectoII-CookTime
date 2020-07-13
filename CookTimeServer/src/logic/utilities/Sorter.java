@@ -1,7 +1,9 @@
-package logic.users;
+package logic.utilities;
 
+import logic.ServerManager;
 import logic.structures.simplelist.Node;
 import logic.structures.simplelist.SimpleList;
+import logic.users.Recipe;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -83,7 +85,7 @@ public abstract class Sorter {
      * @param source simple linked list with recipes
      * @return source, sorted from best rated, to worst rated
      */
-    public static SimpleList<Recipe> highRated(SimpleList<Recipe> source) {
+    public static SimpleList<Recipe> byhighRated(SimpleList<Recipe> source) {
 
         quickSort(source.getHead(), source.getTail());
         return source;
@@ -96,7 +98,7 @@ public abstract class Sorter {
      *
      * @return simple linked list
      */
-    public static SimpleList<Recipe> difficulty(SimpleList<Recipe> source) {
+    public static SimpleList<Recipe> bydifficulty(SimpleList<Recipe> source) {
         SimpleList<Recipe> temp = source;
         int counter = 1;
         while (counter <= MAX_DIGITS_RADIX) {
@@ -152,6 +154,7 @@ public abstract class Sorter {
 
     /**
      * Method for ordering the source of recipes, uses selection sort, based on difficulty
+     *
      * @param source simple linked source of recipes
      * @return source of recipes, from easiest to hardest.
      */
@@ -170,5 +173,21 @@ public abstract class Sorter {
         }
         return source;
     }
+
+    /**
+     * Method for getting a recomendation of recipes based on the global ranking
+     *
+     * @return list with the highest ranked recipes in the server.
+     */
+    public static SimpleList<Recipe> recipesRatedSugests() {
+        SimpleList<Recipe> globalRecipes = ServerManager.getInstance().getGlobalRecipes().inOrder();
+        return byhighRated(globalRecipes);
+        /*
+        convertir el arbol de recetas a in order, y luego ordenar la lista con byhighRated
+        enviar la lista de recetas calificadas.
+         */
+
+    }
+
 
 }
