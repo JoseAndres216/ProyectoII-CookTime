@@ -3,8 +3,6 @@ package logic.users;
 public class User extends AbstractUser {
     private int age;
 
-    private int rating;
-
     public User(String email, String pass) {
         this.name = "Test User";
         this.email = email;
@@ -31,11 +29,4 @@ public class User extends AbstractUser {
         this.age = age;
     }
 
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
 }

@@ -1,7 +1,5 @@
 package logic.utilities;
 
-import logic.ServerManager;
-import logic.structures.TreeNode;
 import logic.structures.simplelist.Node;
 import logic.structures.simplelist.SimpleList;
 import logic.users.Recipe;
@@ -15,7 +13,6 @@ import java.util.Queue;
 public abstract class Sorter {
 
     public static final int MAX_DIGITS_RADIX = 2;
-    public static final int MAX_RESULTS_SUGGESTS = 18;
 
     private Sorter() {
     }
@@ -175,66 +172,4 @@ public abstract class Sorter {
         return source;
     }
 
-    /**
-     * Method for getting a recomendation of recipes based on the global ranking
-     *
-     * @return list with the highest ranked recipes in the server.
-     */
-    public static SimpleList<Recipe> recipesRatedSugests() {
-        SimpleList<Recipe> globalRecipes = ServerManager.getInstance().getGlobalRecipes().inOrder();
-        return byhighRated(globalRecipes);
-        /*
-        convertir el arbol de recetas a in order, y luego ordenar la lista con byhighRated
-        enviar la lista de recetas calificadas.
-         */
-
-    }
-
-    /**
-     * Method for getting random recipes suggests
-     *
-     * @return list with random recipes
-     */
-    public static SimpleList<Recipe> randomSugest() {
-
-        return randomRecipesAux(ServerManager.getInstance().getGlobalRecipes().getRoot());
-    }
-
-    /**
-     * Aux method for randomSugest(), uses iteration for getting random recipes from the recipes tree
-     *
-     * @param root first node of the tree
-     * @return Simple list with all random recipes
-     */
-    private static SimpleList<Recipe> randomRecipesAux(TreeNode<Recipe> root) {
-        //lista para agregar los matches
-        int counter = MAX_RESULTS_SUGGESTS;
-        SimpleList<Recipe> results = new SimpleList<>();
-        //cola para recorrer el arbol por niveles
-        Queue<TreeNode<Recipe>> cola = new LinkedList<>();
-        cola.add(root);
-        //mientras aun hayan elementos por agregar y el arbol no se haya acabado
-        while (counter != 0 && !cola.isEmpty()) {
-            double randomInt = Math.random();
-            TreeNode<Recipe> node = cola.peek();
-            System.out.println("Recipe analized: " + node.getData());
-            if (node != null) {
-                // if the actual node matches, adds it to the list, and
-                if (randomInt % 2 == 0) {
-                    System.out.println("Recipe added: " + node.getData());
-                    results.append(node.getData());
-                    counter--;
-                }
-                cola.remove();
-                //add the nodes children to que queue to compare on next recursion.
-                if (node.getLeft() != null) {
-                    cola.add(node.getLeft());
-                }
-                if (node.getRight() != null) {
-                    cola.add(node.getRight());
-                }
-            }
-        }
-        return results;
-    }
 }

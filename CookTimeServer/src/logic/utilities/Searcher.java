@@ -1,25 +1,31 @@
 package logic.utilities;
 
 import com.google.gson.Gson;
-import logic.structures.simplelist.SimpleList;
-import logic.structures.TreeNode;
 import logic.ServerManager;
+import logic.structures.TreeNode;
+import logic.structures.simplelist.Node;
+import logic.structures.simplelist.SimpleList;
 import logic.users.AbstractUser;
 import logic.users.Recipe;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
+
+import static logic.utilities.Sorter.byhighRated;
 
 /**
  * Class for the search management in the data structures.
  */
 public abstract class Searcher {
-    private Searcher() {
-    }
 
-    static Gson gson = new Gson();
+    public static final int MAX_RESULTS_SUGGESTS = 18;
     //cantidad de elementos en la lista de resultados para agregar a la lista de matches
     static final int MAX_RESULTS = 15;
+    static Gson gson = new Gson();
+
+    private Searcher() {
+    }
 
     /**
      * Method for getting matches, using a key and the recipes tree, the search works
@@ -109,7 +115,7 @@ public abstract class Searcher {
         while (counter != 0 && !cola.isEmpty()) {
             TreeNode<AbstractUser> node = cola.peek();
             if (node != null) {
-                 // if the actual node matches, adds it to the list, and
+                // if the actual node matches, adds it to the list, and
                 if (node.getData().getEmail().contains(key)) {
                     results.append(node.getData().getEmail());
                     counter--;
@@ -125,6 +131,153 @@ public abstract class Searcher {
             }
         }
         return results;
+    }
+
+    /**
+     * Method for getting a recomendation of recipes based on the global ranking
+     *
+     * @return list with the highest ranked recipes in the server.
+     */
+    public static SimpleList<Recipe> recipesRatedSugests() {
+        SimpleList<Recipe> globalRecipes = ServerManager.getInstance().getGlobalRecipes().inOrder();
+        return byhighRated(globalRecipes);
+        /*
+        convertir el arbol de recetas a in order, y luego ordenar la lista con byhighRated
+        enviar la lista de recetas calificadas.
+         */
+
+    }
+
+    /**
+     * Method for getting random recipes suggests
+     *
+     * @return list with random recipes
+     */
+    public static SimpleList<Recipe> randomSugest() {
+        TreeNode<Recipe> root = ServerManager.getInstance().getGlobalRecipes().getRoot();
+        //lista para agregar los matches
+        int counter = MAX_RESULTS_SUGGESTS;
+        SimpleList<Recipe> results = new SimpleList<>();
+        //cola para recorrer el arbol por niveles
+        Queue<TreeNode<Recipe>> cola = new LinkedList<>();
+        cola.add(root);
+        //mientras aun hayan elementos por agregar y el arbol no se haya acabado
+        while (counter != 0 && !cola.isEmpty()) {
+            int randomInt = (new Random().nextInt(5));
+            TreeNode<Recipe> node = cola.peek();
+            if (node != null) {
+                System.out.println("Recipe analized: " + node.getData());
+                System.out.println(randomInt);
+                // if the actual node matches, adds it to the list, and
+                if (randomInt % 2 == 0) {
+                    System.out.println("Recipe added: " + node.getData());
+                    results.append(node.getData());
+                    counter--;
+                }
+                cola.remove();
+                //add the nodes children to que queue to compare on next recursion.
+                if (node.getLeft() != null) {
+                    cola.add(node.getLeft());
+                }
+                if (node.getRight() != null) {
+                    cola.add(node.getRight());
+                }
+            }
+        }
+        return results;
+    }
+
+    /**
+     * Method for getting a random recomendations of abstract users, can be both, users or enterprises
+     *
+     * @param users true if suggest are about users,false if enterprises
+     * @return simple list, with the random users/enterprises selected
+     */
+    private static SimpleList<AbstractUser> sugestRandomUsers(boolean users) {
+        TreeNode<AbstractUser> root;
+        root = ServerManager.getInstance().getUsers().getRoot();
+        if (!users) {
+            root = ServerManager.getInstance().getEnterprises().getRoot();
+        }
+        //lista para agregar los matches
+        int counter = MAX_RESULTS_SUGGESTS;
+        SimpleList<AbstractUser> results = new SimpleList<>();
+        //cola para recorrer el arbol por niveles
+        Queue<TreeNode<AbstractUser>> cola = new LinkedList<>();
+        cola.add(root);
+        //mientras aun hayan elementos por agregar y el arbol no se haya acabado
+        while (counter != 0 && !cola.isEmpty()) {
+            int randomInt = (new Random().nextInt(5));
+            TreeNode<AbstractUser> node = cola.peek();
+            if (node != null) {
+                System.out.println("User analized: " + node.getData());
+                // if the actual node matches, adds it to the list, and
+                if (randomInt % 2 == 0) {
+                    System.out.println("Users added: " + node.getData());
+                    results.append(node.getData());
+                    counter--;
+                }
+                cola.remove();
+                //add the nodes children to que queue to compare on next recursion.
+                if (node.getLeft() != null) {
+                    cola.add(node.getLeft());
+                }
+                if (node.getRight() != null) {
+                    cola.add(node.getRight());
+                }
+            }
+        }
+        return results;
+    }
+
+    /**
+     * Driver method for searching random users on the server
+     *
+     * @return list with randomly picked users
+     */
+    public static SimpleList<AbstractUser> randomSuggestUsers() {
+        return sugestRandomUsers(true);
+    }
+
+    /**
+     * Driver method for searching random enterprises on the server
+     *
+     * @return list with randomly picked enterprises
+     */
+    public static SimpleList<AbstractUser> randomSuggestEnterprise() {
+        return sugestRandomUsers(false);
+    }
+
+    private static SimpleList<AbstractUser> ratedSubjectSuggest(boolean user) {
+        //Select the corresponding list
+        SimpleList<AbstractUser> source = ServerManager.getInstance().getUsers().inOrder();
+        if (!user) {
+            source = ServerManager.getInstance().getEnterprises().inOrder();
+        }
+        //apply selection sort to the list.
+        for (Node<AbstractUser> first = source.getHead(); first.getNext() != null; first = first.getNext()) {
+            Node<AbstractUser> smaller = first;
+            Node<AbstractUser> temp = smaller.getNext();
+            while (temp != null) {
+                if (temp.getData().getRating() > smaller.getData().getRating()) {
+                    smaller = temp;
+                }
+                temp = temp.getNext();
+            }
+            source.swap(first, smaller);
+        }
+        //return the sorted list.
+        return source;
+
+    }
+
+
+    public static SimpleList<AbstractUser> sugestRatedUsers() {
+        return Searcher.ratedSubjectSuggest(true);
+    }
+
+    public static SimpleList<AbstractUser> sugestRatedEnterprises() {
+        return Searcher.ratedSubjectSuggest(false);
     }
 }
 

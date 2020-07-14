@@ -26,6 +26,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     protected MyMenu myMenu = new MyMenu();
     //user's followers
     protected SimpleList<AbstractUser> followers = new SimpleList<>();
+    private int rating;
 
 
     //methods for the logic of followers
@@ -138,4 +139,12 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         return this.name;
     }
 
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 }
