@@ -10,15 +10,13 @@ import java.util.Queue;
 /**
  * This interface its for sorting the data collections for the cookTime server
  */
-public abstract class Sorter {
+public interface Sorter {
 
-    public static final int MAX_DIGITS_RADIX = 2;
+    int MAX_DIGITS_RADIX = 2;
 
-    private Sorter() {
-    }
 
     // Auxiliar method for quick sort for recipes, using rating
-    private static Node<Recipe> quicksortAux(Node<Recipe> start, Node<Recipe> end) {
+    static Node<Recipe> quicksortAux(Node<Recipe> start, Node<Recipe> end) {
         if (start == end ||
                 start == null || end == null)
             return start;
@@ -55,7 +53,7 @@ public abstract class Sorter {
     }
 
     //main quick sort method for recipes, using rating
-    private static void quickSort(Node<Recipe> start, Node<Recipe> end) {
+    static void quickSort(Node<Recipe> start, Node<Recipe> end) {
         if (start == end)
             return;
 
@@ -84,7 +82,7 @@ public abstract class Sorter {
      * @param source simple linked list with recipes
      * @return source, sorted from best rated, to worst rated
      */
-    public static SimpleList<Recipe> byhighRated(SimpleList<Recipe> source) {
+    static SimpleList<Recipe> byhighRated(SimpleList<Recipe> source) {
 
         quickSort(source.getHead(), source.getTail());
         return source;
@@ -97,7 +95,7 @@ public abstract class Sorter {
      *
      * @return simple linked list
      */
-    public static SimpleList<Recipe> bydifficulty(SimpleList<Recipe> source) {
+    static SimpleList<Recipe> bydifficulty(SimpleList<Recipe> source) {
         SimpleList<Recipe> temp = source;
         int counter = 1;
         while (counter <= MAX_DIGITS_RADIX) {
@@ -156,7 +154,7 @@ public abstract class Sorter {
      * @param source simple linked source of recipes
      * @return source of recipes, from easiest to hardest.
      */
-    public static SimpleList<Recipe> byDuration(SimpleList<Recipe> source) {
+    static SimpleList<Recipe> byDuration(SimpleList<Recipe> source) {
 
         for (Node<Recipe> first = source.getHead(); first.getNext() != null; first = first.getNext()) {
             Node<Recipe> smaller = first;

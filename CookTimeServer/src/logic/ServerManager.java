@@ -1,13 +1,11 @@
 package logic;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import logic.files.JsonLoader;
-import logic.files.JsonWriter;
+import logic.utilities.JsonLoader;
+import logic.utilities.JsonWriter;
 import logic.structures.TreeNode;
 import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
-import logic.structures.simplelist.SimpleList;
 import logic.structures.splay.SplayTree;
 import logic.users.AbstractUser;
 import logic.users.Enterprise;
@@ -16,49 +14,10 @@ import logic.users.User;
 import logic.utilities.Encrypter;
 import logic.utilities.Searcher;
 
-import java.lang.reflect.Type;
 import java.security.NoSuchAlgorithmException;
 
 public class ServerManager {
-    public static final Type BST_TYPE = new TypeToken<BST<AbstractUser>>() {
-    }.getType();
-    public static final Type SPLAY_TYPE = new TypeToken<SplayTree<AbstractUser>>() {
-    }.getType();
-    public static final Type AVL_TYPE = new TypeToken<AVLTree<Recipe>>() {
-    }.getType();
-    public static final Type RECIPE_TYPE = new TypeToken<Recipe>() {
-    }.getType();
-    public static final Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<String>>() {
-    }.getType();
-    public static final Type USER_LIST_TYPE = new TypeToken<SimpleList<String>>() {
-    }.getType();
-    public static final String ENTERPRISES_JSON_PATH;
-    public static final String USERS_JSON_PATH;
-    public static final String RECIPES_JSON_PATH;
-    //Constant notification messages
-    //nofication for rated the recipe, add username at front, and qualification at end.
-    public static final String NOTIFICATION_RATED_MESSAGE = " rated the recipe with: ";
-    //Notification for shared the recipe, add user name at front
-    public static final String NOTIFICATION_SHARED_MESSAGE = " shared the recipe.";
-    //Notification for comments, add username at front, message at end.
-    public static final String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe: ";
-    //Notification for added a recipe, should add the name at the beggining
-    public static final String NOTIFICATION_ADDED_RECIPE = " added a new recipe!";
-    public static final String DATA_BASE_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\logic\\files\\database\\";
     private static ServerManager instance = null;
-
-    static {
-        final String JsonEnterprises = "Enterprises.json";
-        ENTERPRISES_JSON_PATH = DATA_BASE_PATH + JsonEnterprises;
-
-        final String JsonUsers = "Users.json";
-        USERS_JSON_PATH = DATA_BASE_PATH + JsonUsers;
-
-        final String JsonRecipes = "Recipes.json";
-        RECIPES_JSON_PATH = DATA_BASE_PATH + JsonRecipes;
-
-    }
-
     private BST<AbstractUser> users;
     private SplayTree<AbstractUser> enterprises;
     private AVLTree<Recipe> globalRecipes;

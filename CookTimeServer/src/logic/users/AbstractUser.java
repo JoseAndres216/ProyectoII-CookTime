@@ -9,8 +9,8 @@ import logic.utilities.Encrypter;
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 
-import static logic.ServerManager.NOTIFICATION_ADDED_RECIPE;
-import static logic.ServerManager.RECIPE_TYPE;
+import static logic.ServerSettings.NOTIFICATION_ADDED_RECIPE;
+import static logic.ServerSettings.RECIPE_TYPE;
 
 
 public class AbstractUser implements Comparable<AbstractUser>, Serializable {
@@ -27,6 +27,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     //user's followers
     protected SimpleList<AbstractUser> followers = new SimpleList<>();
     private int rating;
+    private boolean isChef;
 
 
     //methods for the logic of followers
@@ -146,5 +147,9 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public boolean isChef() {
+        return this.isChef;
     }
 }

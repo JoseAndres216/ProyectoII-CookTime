@@ -12,20 +12,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 
+import static logic.ServerSettings.MAX_RESULTS;
+import static logic.ServerSettings.RECIPES_LIST_TYPE;
 import static logic.utilities.Sorter.byhighRated;
 
 /**
  * Class for the search management in the data structures.
  */
-public abstract class Searcher {
+public interface Searcher {
 
-    public static final int MAX_RESULTS_SUGGESTS = 18;
-    //cantidad de elementos en la lista de resultados para agregar a la lista de matches
-    static final int MAX_RESULTS = 15;
-    static Gson gson = new Gson();
-
-    private Searcher() {
-    }
+    Gson gson = new Gson();
 
     /**
      * Method for getting matches, using a key and the recipes tree, the search works
@@ -34,10 +30,9 @@ public abstract class Searcher {
      * @param key the key is given by the user, its compared with the recipes name.
      * @return list with all possible matches.
      */
-    public static String findRecipes(String key) {
+    static String findRecipes(String key) {
         TreeNode<Recipe> root = ServerManager.getInstance().getGlobalRecipes().getRoot();
-
-        return gson.toJson(findRecipesAux(root, MAX_RESULTS, key), ServerManager.RECIPES_LIST_TYPE);
+        return gson.toJson(findRecipesAux(root, MAX_RESULTS, key), RECIPES_LIST_TYPE);
     }
 
     /**
@@ -78,27 +73,29 @@ public abstract class Searcher {
 
     /**
      * Method for getting matches, using a key and the recipes tree, the search works
-     * with regular expressions.
+     * with regular expressions. When finds an chef, adds it to the front fo results, but doesn't care if didn't find
+     * all the possible three chefs.
      *
      * @param key    the key is given by the user, its compared with the recipes name.
      * @param isUser boolean to say if the search is in the users tree (true), or in the
-     *               enterprises tree (false)
+     *               enterprises tree (false).
      * @return list with all possible matches.
      */
-    public static String findUsers(String key, boolean isUser) {
+    static String findUsers(String key, boolean isUser) {
         TreeNode<AbstractUser> root;
         if (isUser) {
             root = ServerManager.getInstance().getUsers().getRoot();
         } else {
             root = ServerManager.getInstance().getEnterprises().getRoot();
         }
-        return gson.toJson(findUsersAux(root, MAX_RESULTS, key), ServerManager.RECIPES_LIST_TYPE);
+        return gson.toJson(findUsersAux(root, MAX_RESULTS, key), RECIPES_LIST_TYPE);
 
 
     }
 
     /**
      * Aux method for findRecipes(), uses iteration for searching on the tree, level by level.
+     * The algorithm should find the chefs and add it to the front of the list, but still don't find all chefs
      *
      * @param root    first node of the tree
      * @param counter amount of possible results
@@ -117,17 +114,21 @@ public abstract class Searcher {
             if (node != null) {
                 // if the actual node matches, adds it to the list, and
                 if (node.getData().getEmail().contains(key)) {
+                    if (node.getData().isChef()) {
+                        results.addFirst(node.getData().getEmail());
+                        counter--;
+                        continue;
+                    }
                     results.append(node.getData().getEmail());
                     counter--;
                 }
                 cola.remove();
                 //add the nodes children to que queue to compare on next recursion.
-                if (node.getLeft() != null) {
-                    cola.add(node.getLeft());
-                }
-                if (node.getRight() != null) {
-                    cola.add(node.getRight());
-                }
+                //doesn't matter if the nodes are null, cause the while will take out all null elements.
+                cola.add(node.getLeft());
+                cola.add(node.getRight());
+            } else {
+                cola.remove();
             }
         }
         return results;
@@ -138,7 +139,7 @@ public abstract class Searcher {
      *
      * @return list with the highest ranked recipes in the server.
      */
-    public static SimpleList<Recipe> recipesRatedSugests() {
+    static SimpleList<Recipe> recipesRatedSugests() {
         SimpleList<Recipe> globalRecipes = ServerManager.getInstance().getGlobalRecipes().inOrder();
         return byhighRated(globalRecipes);
         /*
@@ -153,10 +154,10 @@ public abstract class Searcher {
      *
      * @return list with random recipes
      */
-    public static SimpleList<Recipe> randomSugest() {
+    static SimpleList<Recipe> randomSugest() {
         TreeNode<Recipe> root = ServerManager.getInstance().getGlobalRecipes().getRoot();
         //lista para agregar los matches
-        int counter = MAX_RESULTS_SUGGESTS;
+        int counter = MAX_RESULTS;
         SimpleList<Recipe> results = new SimpleList<>();
         //cola para recorrer el arbol por niveles
         Queue<TreeNode<Recipe>> cola = new LinkedList<>();
@@ -193,14 +194,14 @@ public abstract class Searcher {
      * @param users true if suggest are about users,false if enterprises
      * @return simple list, with the random users/enterprises selected
      */
-    private static SimpleList<AbstractUser> sugestRandomUsers(boolean users) {
+    static SimpleList<AbstractUser> sugestRandomUsers(boolean users) {
         TreeNode<AbstractUser> root;
         root = ServerManager.getInstance().getUsers().getRoot();
         if (!users) {
             root = ServerManager.getInstance().getEnterprises().getRoot();
         }
         //lista para agregar los matches
-        int counter = MAX_RESULTS_SUGGESTS;
+        int counter = MAX_RESULTS;
         SimpleList<AbstractUser> results = new SimpleList<>();
         //cola para recorrer el arbol por niveles
         Queue<TreeNode<AbstractUser>> cola = new LinkedList<>();
@@ -235,7 +236,7 @@ public abstract class Searcher {
      *
      * @return list with randomly picked users
      */
-    public static SimpleList<AbstractUser> randomSuggestUsers() {
+    static SimpleList<AbstractUser> randomSuggestUsers() {
         return sugestRandomUsers(true);
     }
 
@@ -244,11 +245,17 @@ public abstract class Searcher {
      *
      * @return list with randomly picked enterprises
      */
-    public static SimpleList<AbstractUser> randomSuggestEnterprise() {
+    static SimpleList<AbstractUser> randomSuggestEnterprise() {
         return sugestRandomUsers(false);
     }
 
-    private static SimpleList<AbstractUser> ratedSubjectSuggest(boolean user) {
+    /**
+     * Method for getting suggest based on the ratings of users/enterprises
+     *
+     * @param user boolean, true if users, false if enterprises
+     * @return simple list, with the result.
+     */
+    static SimpleList<AbstractUser> ratedSubjectSuggest(boolean user) {
         //Select the corresponding list
         SimpleList<AbstractUser> source = ServerManager.getInstance().getUsers().inOrder();
         if (!user) {
@@ -271,12 +278,11 @@ public abstract class Searcher {
 
     }
 
-
-    public static SimpleList<AbstractUser> sugestRatedUsers() {
+    static SimpleList<AbstractUser> sugestRatedUsers() {
         return Searcher.ratedSubjectSuggest(true);
     }
 
-    public static SimpleList<AbstractUser> sugestRatedEnterprises() {
+    static SimpleList<AbstractUser> sugestRatedEnterprises() {
         return Searcher.ratedSubjectSuggest(false);
     }
 }

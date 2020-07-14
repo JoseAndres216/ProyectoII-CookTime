@@ -1,6 +1,6 @@
 import logic.structures.simplelist.SimpleList;
-import logic.files.JsonLoader;
-import logic.files.JsonWriter;
+import logic.utilities.JsonLoader;
+import logic.utilities.JsonWriter;
 import logic.ServerManager;
 import logic.users.AbstractUser;
 import logic.utilities.Encrypter;
@@ -12,6 +12,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class ServerManagerTest {
     public static final String PASSWORD = "password";
@@ -275,8 +277,11 @@ public class ServerManagerTest {
 
     @Test
     public void printTrees() {
-        ServerManager.getInstance().getUsers().print();
-       /* System.out.println(ServerManager.getInstance().getGlobalRecipes().inOrder());
+        Queue<AbstractUser> test = new LinkedList<>();
+        test.add(null);
+        System.out.println(test.peek());
+        /*  ServerManager.getInstance().getUsers().print();
+         *//* System.out.println(ServerManager.getInstance().getGlobalRecipes().inOrder());
         System.out.println(ServerManager.getInstance().getUsers().inOrder());
         System.out.println(ServerManager.getInstance().getEnterprises().inOrder());*/
     }

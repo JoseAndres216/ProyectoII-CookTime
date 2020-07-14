@@ -4,7 +4,8 @@ import com.google.gson.Gson;
 import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 
-import static logic.ServerManager.RECIPE_TYPE;
+import static logic.ServerSettings.RECIPE_TYPE;
+
 
 public class MyMenu {
 

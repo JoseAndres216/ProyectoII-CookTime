@@ -1,4 +1,4 @@
-package logic.files;
+package logic.utilities;
 
 import com.google.gson.Gson;
 import logic.ServerManager;
@@ -7,8 +7,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import static logic.ServerManager.*;
+import static logic.ServerSettings.*;
 
-public abstract interface JsonWriter {
+public interface JsonWriter {
     Gson gson = new Gson();
 
 

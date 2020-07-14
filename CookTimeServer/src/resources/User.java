@@ -26,7 +26,7 @@ public class User {
     @PUT
     @Path("/create")
     @Consumes(MediaType.TEXT_PLAIN)
-    public Response.ResponseBuilder createUser(@QueryParam("info") String json) throws NoSuchAlgorithmException {
+    public Response.ResponseBuilder createUser(@QueryParam("info") String json) {
         try {
             ServerManager.getInstance().createSubject(true, json);
             System.out.println("Created user: " + json);

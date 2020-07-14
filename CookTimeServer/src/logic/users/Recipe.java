@@ -7,6 +7,7 @@ import logic.structures.simplelist.SimpleList;
 import java.util.Objects;
 
 import static logic.ServerManager.*;
+import static logic.ServerSettings.*;
 
 
 public class Recipe implements Comparable<Recipe> {

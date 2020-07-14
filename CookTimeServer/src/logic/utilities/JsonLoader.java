@@ -1,4 +1,4 @@
-package logic.files;
+package logic.utilities;
 
 import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
@@ -12,12 +12,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static logic.ServerManager.*;
+import static logic.ServerSettings.*;
 
 public interface JsonLoader {
 
-    public static BST<AbstractUser> loadUsers() {
+    static BST<AbstractUser> loadUsers() {
         BST<AbstractUser> users;
-        try (Scanner sc = new Scanner(new File(USERS_JSON_PATH));) {
+        try (Scanner sc = new Scanner(new File(USERS_JSON_PATH))) {
 
             String line = sc.nextLine();
             users = new Gson().fromJson(line, BST_TYPE);
@@ -29,8 +30,8 @@ public interface JsonLoader {
         return null;
     }
 
-    public static SplayTree<AbstractUser> loadEnterprises() {
-        try (Scanner sc = new Scanner(new File(ENTERPRISES_JSON_PATH));) {
+    static SplayTree<AbstractUser> loadEnterprises() {
+        try (Scanner sc = new Scanner(new File(ENTERPRISES_JSON_PATH))) {
 
 
             String line = sc.nextLine();
@@ -42,8 +43,8 @@ public interface JsonLoader {
         return null;
     }
 
-    public static AVLTree<Recipe> loadGlobalRecipes() {
-        try (Scanner sc = new Scanner(new File(RECIPES_JSON_PATH));) {
+    static AVLTree<Recipe> loadGlobalRecipes() {
+        try (Scanner sc = new Scanner(new File(RECIPES_JSON_PATH))) {
 
             String line = sc.nextLine();
 

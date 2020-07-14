@@ -1,9 +1,8 @@
 package gui.users;
 
 
-import logic.files.JsonLoader;
+import logic.utilities.JsonLoader;
 import logic.structures.simplelist.SimpleList;
-import logic.ServerManager;
 import logic.users.AbstractUser;
 import gui.start.StartController;
 import javafx.fxml.FXML;
