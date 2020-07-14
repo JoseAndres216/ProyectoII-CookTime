@@ -3,7 +3,9 @@ package logic.users;
 import com.google.gson.Gson;
 import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
+import logic.utilities.Sorter;
 
+import static logic.ServerSettings.RECIPES_LIST_TYPE;
 import static logic.ServerSettings.RECIPE_TYPE;
 
 
@@ -35,11 +37,31 @@ public class MyMenu {
      *
      * @return simple list of recipes.
      */
-    public SimpleList<Recipe> recientFirst() {
-        return this.ownedRecipes;
+    public String byRecentFirst() {
+        return new Gson().toJson(this.ownedRecipes, RECIPES_LIST_TYPE);
     }
 
+    /**
+     * Method for getting the my menu ordered by difficulty, uses the sorter tool
+     *
+     * @return simple list with the recipes, ordered by difficult.
+     */
+    public String byDifficulty() {
+        SimpleList<Recipe> temp = this.ownedRecipes;
+        return new Gson().toJson(Sorter.bydifficulty(temp), RECIPES_LIST_TYPE);
 
+    }
+
+    /**
+     * Method for getting the my menu list ordered by rating, uses the sorter tool
+     *
+     * @return simple list with recipes ordered by rating.
+     */
+    public String byRating() {
+        SimpleList<Recipe> temp = this.ownedRecipes;
+        return new Gson().toJson(Sorter.bydifficulty(temp), RECIPES_LIST_TYPE);
+
+    }
 
 
 }

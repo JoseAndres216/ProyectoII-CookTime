@@ -31,7 +31,6 @@ public class User {
             ServerManager.getInstance().createSubject(true, json);
             System.out.println("Created user: " + json);
             return Response.status(Response.Status.CREATED);
-
         } catch (NoSuchAlgorithmException | IllegalArgumentException e) {
             return Response.status(Response.Status.NOT_ACCEPTABLE);
         }
@@ -85,7 +84,8 @@ public class User {
         return "Recipe added";
     }
 
-    /**TESTED
+    /**
+     * TESTED
      * Method for commenting a recipe on the server
      *
      * @param recipeName the name of the recipe to be commented, as its the unique identifier on the tree
@@ -98,12 +98,11 @@ public class User {
     public boolean commentRecipe(@QueryParam("recipe") String recipeName,
                                  @QueryParam("comment") String comment,
                                  @QueryParam("email") String email) {
-        try{
+        try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
             return ServerManager.getInstance().commentRecipe(recipe, comment, user);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return false;
         }

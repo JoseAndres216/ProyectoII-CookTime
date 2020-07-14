@@ -55,4 +55,11 @@ public class Searches {
         // Return some cliched textual content
         return ServerManager.getInstance().searchSubject(key, false);
     }
+
+    /*
+    @GET para:
+                recomendaciones de usuarios random y rated
+                recomendaciones de empresas rated y random
+                recomendaciones de recetas rated y random.
+     */
 }

@@ -278,10 +278,20 @@ public interface Searcher {
 
     }
 
+    /**
+     * Method for getting suggests of best rated users
+     *
+     * @return simple list of users.
+     */
     static SimpleList<AbstractUser> sugestRatedUsers() {
         return Searcher.ratedSubjectSuggest(true);
     }
 
+    /**
+     * Method for getting suggests of best rated enterprises
+     *
+     * @return simple list of enterprises.
+     */
     static SimpleList<AbstractUser> sugestRatedEnterprises() {
         return Searcher.ratedSubjectSuggest(false);
     }
