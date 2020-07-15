@@ -49,8 +49,8 @@ public class User {
     @Path("/verify")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String verifyUser(@QueryParam("email") String email,
-                             @QueryParam("pwrd") String password) throws NoSuchAlgorithmException {
+    public String verifyUser(@QueryParam("user") String email,
+                             @QueryParam("pass") String password) throws NoSuchAlgorithmException {
         String result = null;
         System.out.println(email + "*<>*" + password);
         if (ServerManager.getInstance().verifyUser(true, email, password)) {
@@ -76,7 +76,7 @@ public class User {
     @Path("/recipe")
     @Produces(MediaType.APPLICATION_JSON)
     public String createRecipe(@QueryParam("recipe") String recipe,
-                               @QueryParam("email") String user) {
+                               @QueryParam("user") String user) {
         AbstractUser userObjct = ServerManager.getInstance().getUser(user);
         if (userObjct == null) {
             return "User not found";
@@ -98,7 +98,7 @@ public class User {
     @Path("/recipe/comment")
     public boolean commentRecipe(@QueryParam("recipe") String recipeName,
                                  @QueryParam("comment") String comment,
-                                 @QueryParam("email") String email) {
+                                 @QueryParam("user") String email) {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
@@ -116,9 +116,9 @@ public class User {
      * @return json format of the mymenu list object.
      */
     @GET
-    @Path("/mymenu/recientFirst")
+    @Path("/menu/recent")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getMymenuRecient(@QueryParam("email") String user) {
+    public String getMymenuRecient(@QueryParam("user") String user) {
         try {
             return ServerManager.getInstance().getUser(user).myMenuRecients();
 
@@ -135,9 +135,9 @@ public class User {
      * @return json format of the mymenu object.
      */
     @GET
-    @Path("/mymenu/difficulty")
+    @Path("/menu/difficulty")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getMymenuDiff(@QueryParam("email") String user) {
+    public String getMymenuDiff(@QueryParam("user") String user) {
 
         try {
             return ServerManager.getInstance().getUser(user).myMenuDifficulty();
@@ -155,9 +155,9 @@ public class User {
      * @return json format of the mymenu object.
      */
     @GET
-    @Path("/mymenu/rated")
+    @Path("/menu/ranked")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getMymenuRated(@QueryParam("email") String user) {
+    public String getMymenuRated(@QueryParam("user") String user) {
         try {
             return ServerManager.getInstance().getUser(user).myMenuRated();
         } catch (Exception e) {
@@ -176,7 +176,7 @@ public class User {
     @GET
     @Path("/notifications")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getNotifications(@QueryParam("email") String user) {
+    public String getNotifications(@QueryParam("user") String user) {
         if (ServerManager.getInstance().getUser(user) == null) {
             return null;
         }
@@ -193,7 +193,7 @@ public class User {
     @GET
     @Path("/followers")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getFollowers(@QueryParam("email") String user) {
+    public String getFollowers(@QueryParam("user") String user) {
         return ServerManager.getInstance().getUser(user).getSerializedFollowers();
     }
 
@@ -206,7 +206,7 @@ public class User {
      */
     @POST
     @Path("/followers")
-    public boolean addFollower(@QueryParam("email") String user, @QueryParam("newFollower") String follower) {
+    public boolean addFollower(@QueryParam("user") String user, @QueryParam("newFollower") String follower) {
 
         try {
             AbstractUser newfollower = ServerManager.getInstance().getUser(follower);
@@ -237,7 +237,7 @@ public class User {
      */
     @PUT
     @Path("/request/chef")
-    public void chefRequest(@QueryParam("email") String user) {
+    public void chefRequest(@QueryParam("user") String user) {
         try {
             ServerManager.getInstance().addChefRequest(user);
         } catch (Exception e) {

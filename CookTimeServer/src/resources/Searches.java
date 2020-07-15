@@ -1,6 +1,7 @@
 package resources;
 
 import logic.ServerManager;
+import logic.utilities.Searcher;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -29,6 +30,30 @@ public class Searches {
     }
 
     /**
+     * Method for sending random recipes requests
+     *
+     * @return json format string with recipes' data.
+     */
+    @GET
+    @Path("/recipes/random")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String randomRecipes() {
+        return Searcher.recipesRandomSuggests();
+    }
+
+    /**
+     * Method for sending best rated recipes requests
+     *
+     * @return json format string with recipes' data.
+     */
+    @GET
+    @Path("/recipes/ranked")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String ratedRecipes() {
+        return Searcher.recipesRatedSuggests();
+    }
+
+    /**
      * Method for searching users on the server for users
      *
      * @param key String key to be compared with the users name, using regular expressions
@@ -38,8 +63,31 @@ public class Searches {
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public String searchUsers(@QueryParam("key") String key) {
-        // Return some cliched textual content
         return ServerManager.getInstance().searchSubject(key, true);
+    }
+
+    /**
+     * Method for sending random users requests
+     *
+     * @return json format string with recipes' data.
+     */
+    @GET
+    @Path("/users/random")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String randomUsers() {
+        return Searcher.randomSuggestUsers();
+    }
+
+    /**
+     * Method for sending best rated users requests
+     *
+     * @return json format string with recipes' data.
+     */
+    @GET
+    @Path("/users/ranked")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String ratedUsers() {
+        return Searcher.sugestRatedUsers();
     }
 
     /**
@@ -56,10 +104,27 @@ public class Searches {
         return ServerManager.getInstance().searchSubject(key, false);
     }
 
-    /*
-    @GET para:
-                recomendaciones de usuarios random y rated
-                recomendaciones de empresas rated y random
-                recomendaciones de recetas rated y random.
+    /**
+     * Method for sending random enterprises requests
+     *
+     * @return json format string with recipes' data.
      */
+    @GET
+    @Path("/enterprises/random")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String randomEnterprises() {
+        return Searcher.randomSuggestEnterprise();
+    }
+
+    /**
+     * Method for sending best rated enterprises requests
+     *
+     * @return json format string with recipes' data.
+     */
+    @GET
+    @Path("/users/ranked")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String ratedEnterprises() {
+        return Searcher.sugestRatedEnterprises();
+    }
 }

@@ -12,8 +12,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 
-import static logic.ServerSettings.MAX_RESULTS;
-import static logic.ServerSettings.RECIPES_LIST_TYPE;
+import static logic.ServerSettings.*;
 import static logic.utilities.Sorter.byhighRated;
 
 /**
@@ -139,9 +138,11 @@ public interface Searcher {
      *
      * @return list with the highest ranked recipes in the server.
      */
-    static SimpleList<Recipe> recipesRatedSugests() {
+    static String recipesRatedSuggests() {
         SimpleList<Recipe> globalRecipes = ServerManager.getInstance().getGlobalRecipes().inOrder();
-        return byhighRated(globalRecipes);
+        return new Gson().toJson(byhighRated(globalRecipes), RECIPES_LIST_TYPE);
+
+
         /*
         convertir el arbol de recetas a in order, y luego ordenar la lista con byhighRated
         enviar la lista de recetas calificadas.
@@ -152,9 +153,9 @@ public interface Searcher {
     /**
      * Method for getting random recipes suggests
      *
-     * @return list with random recipes
+     * @return list with random recipes, in json format.
      */
-    static SimpleList<Recipe> randomSugest() {
+    static String recipesRandomSuggests() {
         TreeNode<Recipe> root = ServerManager.getInstance().getGlobalRecipes().getRoot();
         //lista para agregar los matches
         int counter = MAX_RESULTS;
@@ -185,7 +186,7 @@ public interface Searcher {
                 }
             }
         }
-        return results;
+        return new Gson().toJson(results, RECIPES_LIST_TYPE);
     }
 
     /**
@@ -194,7 +195,7 @@ public interface Searcher {
      * @param users true if suggest are about users,false if enterprises
      * @return simple list, with the random users/enterprises selected
      */
-    static SimpleList<AbstractUser> sugestRandomUsers(boolean users) {
+    static String usersRandomSuggest(boolean users) {
         TreeNode<AbstractUser> root;
         root = ServerManager.getInstance().getUsers().getRoot();
         if (!users) {
@@ -228,7 +229,9 @@ public interface Searcher {
                 }
             }
         }
-        return results;
+        return new Gson().toJson(results, USER_LIST_TYPE);
+
+
     }
 
     /**
@@ -236,8 +239,8 @@ public interface Searcher {
      *
      * @return list with randomly picked users
      */
-    static SimpleList<AbstractUser> randomSuggestUsers() {
-        return sugestRandomUsers(true);
+    static String randomSuggestUsers() {
+        return usersRandomSuggest(true);
     }
 
     /**
@@ -245,8 +248,8 @@ public interface Searcher {
      *
      * @return list with randomly picked enterprises
      */
-    static SimpleList<AbstractUser> randomSuggestEnterprise() {
-        return sugestRandomUsers(false);
+    static String randomSuggestEnterprise() {
+        return usersRandomSuggest(false);
     }
 
     /**
@@ -255,7 +258,7 @@ public interface Searcher {
      * @param user boolean, true if users, false if enterprises
      * @return simple list, with the result.
      */
-    static SimpleList<AbstractUser> ratedSubjectSuggest(boolean user) {
+    static String ratedSubjectSuggest(boolean user) {
         //Select the corresponding list
         SimpleList<AbstractUser> source = ServerManager.getInstance().getUsers().inOrder();
         if (!user) {
@@ -274,7 +277,7 @@ public interface Searcher {
             source.swap(first, smaller);
         }
         //return the sorted list.
-        return source;
+        return new Gson().toJson(source, USER_LIST_TYPE);
 
     }
 
@@ -283,7 +286,7 @@ public interface Searcher {
      *
      * @return simple list of users.
      */
-    static SimpleList<AbstractUser> sugestRatedUsers() {
+    static String sugestRatedUsers() {
         return Searcher.ratedSubjectSuggest(true);
     }
 
@@ -292,7 +295,7 @@ public interface Searcher {
      *
      * @return simple list of enterprises.
      */
-    static SimpleList<AbstractUser> sugestRatedEnterprises() {
+    static String sugestRatedEnterprises() {
         return Searcher.ratedSubjectSuggest(false);
     }
 }
