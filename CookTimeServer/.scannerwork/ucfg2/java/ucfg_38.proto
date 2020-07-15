@@ -1,34 +1,47 @@
 
-.logic.users.Recipe#equals(Ljava/lang/Object;)Zj
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaê ê("startingBlock*ÿ
+3logic.users.Recipe#compareTo(Llogic/users/Recipe;)Ij
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaï ï("startingBlock*‚
 startingBlockj
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaê ê(%¥
-±
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaï ï('π
+∂
 j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaè è(
-%1"
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaî î(
+%3"
 __annotate*
-java.lang.Override*
-
-objjava.lang.Objectû
-õ
+java.lang.Override*
+
+recipelogic.users.Recipe£
+†
 j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaê! ê($
-objjava.lang.Object"__annotation*
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaï  ï(&
+recipelogic.users.Recipe"__annotation*
 
-%1*
-1*∑
+%3*
+1*“
 1j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaë ë(œ
-Ã
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javañ ñ(Ø
+¨
 j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaë ë( 
-%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
-""*
-
-objjava.lang.Object"t
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javañ ñ(
+%0java.lang.String"__id* *
+logic.users.Recipe"
+name∑
+¥
 j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaë ë(!
-"":
-objjava.lang.ObjectB
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javañ# ñ(.
+%1java.lang.String"__id*(*&
+
+recipelogic.users.Recipe"
+name˛˚
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javañ ñ(/	
+%2int"/java.lang.String#compareTo(Ljava/lang/String;)I*
+
+%0java.lang.String*
+
+%1java.lang.String2compareTo(Ljava/lang/String;)"t
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javañ ñ(0
+"":
+recipelogic.users.RecipeB
 logic.users.Recipe

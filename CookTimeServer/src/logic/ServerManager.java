@@ -1,17 +1,18 @@
 package logic;
 
 import com.google.gson.Gson;
-import logic.utilities.JsonLoader;
-import logic.utilities.JsonWriter;
 import logic.structures.TreeNode;
 import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
+import logic.structures.simplelist.SimpleList;
 import logic.structures.splay.SplayTree;
 import logic.users.AbstractUser;
 import logic.users.Enterprise;
 import logic.users.Recipe;
 import logic.users.User;
 import logic.utilities.Encrypter;
+import logic.utilities.JsonLoader;
+import logic.utilities.JsonWriter;
 import logic.utilities.Searcher;
 
 import java.security.NoSuchAlgorithmException;
@@ -21,6 +22,7 @@ public class ServerManager {
     private BST<AbstractUser> users;
     private SplayTree<AbstractUser> enterprises;
     private AVLTree<Recipe> globalRecipes;
+    private SimpleList<AbstractUser> chefRequest;
 
     //Constructor
     private ServerManager() {
@@ -33,6 +35,24 @@ public class ServerManager {
             instance = new ServerManager();
         }
         return instance;
+    }
+
+    public SimpleList<AbstractUser> getChefRequest() {
+        return chefRequest;
+    }
+
+    /**
+     * Method for processing the API REST request for adding a chef request to the server
+     *
+     * @param email email of the user to add to the chef requests.
+     */
+    public void addChefRequest(String email) {
+        try {
+            AbstractUser user = this.getUser(email);
+            this.chefRequest.append(user);
+        } catch (Exception e) {
+            System.out.println("user not found");
+        }
     }
 
     private void loadServer() {
@@ -172,7 +192,6 @@ public class ServerManager {
         }
         this.saveInfo();
     }
-
 
     /**
      * Method for verifying the existence of a user on the server,

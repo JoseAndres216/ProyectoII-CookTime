@@ -101,11 +101,11 @@ iterator()0java.util.HashSet#iterator()Ljava/util/Iterator;'
 <init>(Ljava/util/Collection;)1java.util.HashSet#<init>(Ljava/util/Collection;)Vi
 )writeObject(Ljava/io/ObjectOutputStream;)<java.util.HashSet#writeObject(Ljava/io/ObjectOutputStream;)V#
 size()java.util.HashSet#size()I%
-clear()java.util.HashSet#clear()V‚
-logic.files.JsonWriterjava.lang.Object6
-updateUsers()%logic.files.JsonWriter#updateUsers()V:
-updateRecipes()'logic.files.JsonWriter#updateRecipes()VB
-updateEnterprises()+logic.files.JsonWriter#updateEnterprises()V(
+clear()java.util.HashSet#clear()VÚ
+logic.utilities.JsonWriterjava.lang.Object:
+updateUsers())logic.utilities.JsonWriter#updateUsers()V>
+updateRecipes()+logic.utilities.JsonWriter#updateRecipes()VF
+updateEnterprises()/logic.utilities.JsonWriter#updateEnterprises()V(
 java.lang.Appendablejava.lang.Object+
 java.lang.AutoCloseablejava.lang.Object>
 java.io.Closeablejava.lang.Objectjava.lang.AutoCloseable%
@@ -276,126 +276,7 @@ getPrice()logic.users.Recipe#getPrice()IR
 compareTo(Llogic/users/Recipe;)3logic.users.Recipe#compareTo(Llogic/users/Recipe;)I¬
 java.lang.CharSequencejava.lang.ObjectE
 chars():java.lang.CharSequence#chars()Ljava/util/stream/IntStream;O
-codePoints()?java.lang.CharSequence#codePoints()Ljava/util/stream/IntStream;¯7
-java.lang.Stringjava.lang.CharSequencejava.lang.Comparablejava.lang.Objectjava.io.SerializableJ
-equals(Ljava/lang/Object;),java.lang.String#equals(Ljava/lang/Object;)Z4
-lastIndexOf(II)!java.lang.String#lastIndexOf(II)I;
-
-valueOf(D)-java.lang.String#valueOf(D)Ljava/lang/String;.
-<init>([III)java.lang.String#<init>([III)V,
-<init>([BI)java.lang.String#<init>([BI)Vã
-2join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ujava.lang.String#join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;]
-valueOf(Ljava/lang/Object;)>java.lang.String#valueOf(Ljava/lang/Object;)Ljava/lang/String;R
-startsWith(Ljava/lang/String;)0java.lang.String#startsWith(Ljava/lang/String;)ZB
-lastIndexOf([CII[CIII)(java.lang.String#lastIndexOf([CII[CIII)I+
-
-getBytes()java.lang.String#getBytes()[B&
-length()java.lang.String#length()I?
-substring(I)/java.lang.String#substring(I)Ljava/lang/String;d
-'contentEquals(Ljava/lang/StringBuffer;)9java.lang.String#contentEquals(Ljava/lang/StringBuffer;)Z.
-<init>([BII)java.lang.String#<init>([BII)V&
-<init>()java.lang.String#<init>()V[
-concat(Ljava/lang/String;)=java.lang.String#concat(Ljava/lang/String;)Ljava/lang/String;8
-checkBounds([BII)#java.lang.String#checkBounds([BII)VP
-compareTo(Ljava/lang/String;)/java.lang.String#compareTo(Ljava/lang/String;)I:
-codePointCount(II)$java.lang.String#codePointCount(II)IA
-valueOf([CII)0java.lang.String#valueOf([CII)Ljava/lang/String;e
-toLowerCase(Ljava/util/Locale;)Bjava.lang.String#toLowerCase(Ljava/util/Locale;)Ljava/lang/String;L
-indexOf(Ljava/lang/String;)-java.lang.String#indexOf(Ljava/lang/String;)IN
-endsWith(Ljava/lang/String;).java.lang.String#endsWith(Ljava/lang/String;)ZN
-indexOf(Ljava/lang/String;I).java.lang.String#indexOf(Ljava/lang/String;I)I*
-
-indexOf(I)java.lang.String#indexOf(I)I(
-	charAt(I)java.lang.String#charAt(I)CF
-indexOfSupplementary(II)*java.lang.String#indexOfSupplementary(II)I(
-	isEmpty()java.lang.String#isEmpty()Ze
-toUpperCase(Ljava/util/Locale;)Bjava.lang.String#toUpperCase(Ljava/util/Locale;)Ljava/lang/String;;
-
-toString()-java.lang.String#toString()Ljava/lang/String;;
-
-valueOf(C)-java.lang.String#valueOf(C)Ljava/lang/String;A
-toLowerCase()0java.lang.String#toLowerCase()Ljava/lang/String;Z
-"contains(Ljava/lang/CharSequence;)4java.lang.String#contains(Ljava/lang/CharSequence;)Z•
-?format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)bjava.lang.String#format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;T
-lastIndexOf(Ljava/lang/String;)1java.lang.String#lastIndexOf(Ljava/lang/String;)I,
-<init>([CZ)java.lang.String#<init>([CZ)V4
-getChars(II[CI)!java.lang.String#getChars(II[CI)V.
-<init>([CII)java.lang.String#<init>([CII)V=
-valueOf([C).java.lang.String#valueOf([C)Ljava/lang/String;E
-copyValueOf([C)2java.lang.String#copyValueOf([C)Ljava/lang/String;0
-getChars([CI)java.lang.String#getChars([CI)V;
-
-valueOf(F)-java.lang.String#valueOf(F)Ljava/lang/String;ã
-2replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ujava.lang.String#replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;b
-&<init>([BIILjava/nio/charset/Charset;)8java.lang.String#<init>([BIILjava/nio/charset/Charset;)Vá
-0replaceAll(Ljava/lang/String;Ljava/lang/String;)Sjava.lang.String#replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;_
-$getBytes(Ljava/nio/charset/Charset;)7java.lang.String#getBytes(Ljava/nio/charset/Charset;)[B3
-trim())java.lang.String#trim()Ljava/lang/String;^
-$lastIndexOf([CIILjava/lang/String;I)6java.lang.String#lastIndexOf([CIILjava/lang/String;I)I:
-indexOf([CII[CIII)$java.lang.String#indexOf([CII[CIII)I*
-
-<init>([C)java.lang.String#<init>([C)V4
-getBytes(II[BI)!java.lang.String#getBytes(II[BI)V*
-
-hashCode()java.lang.String#hashCode()IZ
-split(Ljava/lang/String;)=java.lang.String#split(Ljava/lang/String;)[Ljava/lang/String;V
- indexOf([CIILjava/lang/String;I)2java.lang.String#indexOf([CIILjava/lang/String;I)IO
-getBytes(Ljava/lang/String;)/java.lang.String#getBytes(Ljava/lang/String;)[B1
-toCharArray() java.lang.String#toCharArray()[C0
-<init>([BIII)java.lang.String#<init>([BIII)VJ
-<init>(Ljava/lang/String;),java.lang.String#<init>(Ljava/lang/String;)VÅ
--format(Ljava/lang/String;[Ljava/lang/Object;)Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;=
-replace(CC).java.lang.String#replace(CC)Ljava/lang/String;:
-codePointBefore(I)$java.lang.String#codePointBefore(I)IA
-toUpperCase()0java.lang.String#toUpperCase()Ljava/lang/String;^
-$equalsIgnoreCase(Ljava/lang/String;)6java.lang.String#equalsIgnoreCase(Ljava/lang/String;)Z^
-$<init>([BLjava/nio/charset/Charset;)6java.lang.String#<init>([BLjava/nio/charset/Charset;)VN
-lastIndexOfSupplementary(II).java.lang.String#lastIndexOfSupplementary(II)I;
-
-valueOf(I)-java.lang.String#valueOf(I)Ljava/lang/String;2
-lastIndexOf(I) java.lang.String#lastIndexOf(I)IV
- lastIndexOf(Ljava/lang/String;I)2java.lang.String#lastIndexOf(Ljava/lang/String;I)Iï
-7join(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Zjava.lang.String#join(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/String;2
-codePointAt(I) java.lang.String#codePointAt(I)IV
- <init>(Ljava/lang/StringBuffer;)2java.lang.String#<init>(Ljava/lang/StringBuffer;)VN
-<init>([BLjava/lang/String;).java.lang.String#<init>([BLjava/lang/String;)VL
-matches(Ljava/lang/String;)-java.lang.String#matches(Ljava/lang/String;)Z*
-
-<init>([B)java.lang.String#<init>([B)V7
-intern()+java.lang.String#intern()Ljava/lang/String;;
-
-valueOf(Z)-java.lang.String#valueOf(Z)Ljava/lang/String;T
-startsWith(Ljava/lang/String;I)1java.lang.String#startsWith(Ljava/lang/String;I)Z^
-$regionMatches(ILjava/lang/String;II)6java.lang.String#regionMatches(ILjava/lang/String;II)Zd
-'contentEquals(Ljava/lang/CharSequence;)9java.lang.String#contentEquals(Ljava/lang/CharSequence;)ZI
-copyValueOf([CII)4java.lang.String#copyValueOf([CII)Ljava/lang/String;A
-substring(II)0java.lang.String#substring(II)Ljava/lang/String;K
-subSequence(II)8java.lang.String#subSequence(II)Ljava/lang/CharSequence;,
-indexOf(II)java.lang.String#indexOf(II)I\
-split(Ljava/lang/String;I)>java.lang.String#split(Ljava/lang/String;I)[Ljava/lang/String;d
-'compareToIgnoreCase(Ljava/lang/String;)9java.lang.String#compareToIgnoreCase(Ljava/lang/String;)Iô
-9replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)\java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;Ñ
-7nonSyncContentEquals(Ljava/lang/AbstractStringBuilder;)Ijava.lang.String#nonSyncContentEquals(Ljava/lang/AbstractStringBuilder;)ZR
-<init>([BIILjava/lang/String;)0java.lang.String#<init>([BIILjava/lang/String;)VB
-offsetByCodePoints(II)(java.lang.String#offsetByCodePoints(II)I;
-
-valueOf(J)-java.lang.String#valueOf(J)Ljava/lang/String;X
-!<init>(Ljava/lang/StringBuilder;)3java.lang.String#<init>(Ljava/lang/StringBuilder;)V`
-%regionMatches(ZILjava/lang/String;II)7java.lang.String#regionMatches(ZILjava/lang/String;II)Z£
-java.util.Objectsjava.lang.Objectê
-4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Xjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;`
-toString(Ljava/lang/Object;)@java.util.Objects#toString(Ljava/lang/Object;)Ljava/lang/String;¶
-?requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)cjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;M
-nonNull(Ljava/lang/Object;).java.util.Objects#nonNull(Ljava/lang/Object;)ZO
-hashCode(Ljava/lang/Object;)/java.util.Objects#hashCode(Ljava/lang/Object;)IÑ
-.toString(Ljava/lang/Object;Ljava/lang/String;)Rjava.util.Objects#toString(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;I
-hash([Ljava/lang/Object;),java.util.Objects#hash([Ljava/lang/Object;)I'
-<init>()java.util.Objects#<init>()Vù
-Ccompare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Vjava.util.Objects#compare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)IK
-isNull(Ljava/lang/Object;)-java.util.Objects#isNull(Ljava/lang/Object;)Zw
-0deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Cjava.util.Objects#deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Zo
-,equals(Ljava/lang/Object;Ljava/lang/Object;)?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Zl
-"requireNonNull(Ljava/lang/Object;)Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;œ*
+codePoints()?java.lang.CharSequence#codePoints()Ljava/util/stream/IntStream;œ*
 java.lang.AbstractStringBuilderjava.lang.CharSequencejava.lang.Appendablejava.lang.Object?
 setCharAt(IC).java.lang.AbstractStringBuilder#setCharAt(IC)VW
 ensureCapacityInternal(I):java.lang.AbstractStringBuilder#ensureCapacityInternal(I)V7
@@ -515,7 +396,126 @@ insert(IJ);java.lang.StringBuilder#insert(IJ)Ljava/lang/StringBuilder;]
 insert(ID);java.lang.StringBuilder#insert(ID)Ljava/lang/StringBuilder;o
 )writeObject(Ljava/io/ObjectOutputStream;)Bjava.lang.StringBuilder#writeObject(Ljava/io/ObjectOutputStream;)VI
 
-insert(IF);java.lang.StringBuilder#insert(IF)Ljava/lang/StringBuilder;Í
+insert(IF);java.lang.StringBuilder#insert(IF)Ljava/lang/StringBuilder;¯7
+java.lang.Stringjava.lang.CharSequencejava.lang.Comparablejava.lang.Objectjava.io.SerializableJ
+equals(Ljava/lang/Object;),java.lang.String#equals(Ljava/lang/Object;)Z4
+lastIndexOf(II)!java.lang.String#lastIndexOf(II)I;
+
+valueOf(D)-java.lang.String#valueOf(D)Ljava/lang/String;.
+<init>([III)java.lang.String#<init>([III)V,
+<init>([BI)java.lang.String#<init>([BI)Vã
+2join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ujava.lang.String#join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;]
+valueOf(Ljava/lang/Object;)>java.lang.String#valueOf(Ljava/lang/Object;)Ljava/lang/String;R
+startsWith(Ljava/lang/String;)0java.lang.String#startsWith(Ljava/lang/String;)ZB
+lastIndexOf([CII[CIII)(java.lang.String#lastIndexOf([CII[CIII)I+
+
+getBytes()java.lang.String#getBytes()[B&
+length()java.lang.String#length()I?
+substring(I)/java.lang.String#substring(I)Ljava/lang/String;d
+'contentEquals(Ljava/lang/StringBuffer;)9java.lang.String#contentEquals(Ljava/lang/StringBuffer;)Z.
+<init>([BII)java.lang.String#<init>([BII)V&
+<init>()java.lang.String#<init>()V[
+concat(Ljava/lang/String;)=java.lang.String#concat(Ljava/lang/String;)Ljava/lang/String;8
+checkBounds([BII)#java.lang.String#checkBounds([BII)VP
+compareTo(Ljava/lang/String;)/java.lang.String#compareTo(Ljava/lang/String;)I:
+codePointCount(II)$java.lang.String#codePointCount(II)IA
+valueOf([CII)0java.lang.String#valueOf([CII)Ljava/lang/String;e
+toLowerCase(Ljava/util/Locale;)Bjava.lang.String#toLowerCase(Ljava/util/Locale;)Ljava/lang/String;L
+indexOf(Ljava/lang/String;)-java.lang.String#indexOf(Ljava/lang/String;)IN
+endsWith(Ljava/lang/String;).java.lang.String#endsWith(Ljava/lang/String;)ZN
+indexOf(Ljava/lang/String;I).java.lang.String#indexOf(Ljava/lang/String;I)I*
+
+indexOf(I)java.lang.String#indexOf(I)I(
+	charAt(I)java.lang.String#charAt(I)CF
+indexOfSupplementary(II)*java.lang.String#indexOfSupplementary(II)I(
+	isEmpty()java.lang.String#isEmpty()Ze
+toUpperCase(Ljava/util/Locale;)Bjava.lang.String#toUpperCase(Ljava/util/Locale;)Ljava/lang/String;;
+
+toString()-java.lang.String#toString()Ljava/lang/String;;
+
+valueOf(C)-java.lang.String#valueOf(C)Ljava/lang/String;A
+toLowerCase()0java.lang.String#toLowerCase()Ljava/lang/String;Z
+"contains(Ljava/lang/CharSequence;)4java.lang.String#contains(Ljava/lang/CharSequence;)Z•
+?format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)bjava.lang.String#format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;T
+lastIndexOf(Ljava/lang/String;)1java.lang.String#lastIndexOf(Ljava/lang/String;)I,
+<init>([CZ)java.lang.String#<init>([CZ)V4
+getChars(II[CI)!java.lang.String#getChars(II[CI)V.
+<init>([CII)java.lang.String#<init>([CII)V=
+valueOf([C).java.lang.String#valueOf([C)Ljava/lang/String;E
+copyValueOf([C)2java.lang.String#copyValueOf([C)Ljava/lang/String;0
+getChars([CI)java.lang.String#getChars([CI)V;
+
+valueOf(F)-java.lang.String#valueOf(F)Ljava/lang/String;ã
+2replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ujava.lang.String#replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;b
+&<init>([BIILjava/nio/charset/Charset;)8java.lang.String#<init>([BIILjava/nio/charset/Charset;)Vá
+0replaceAll(Ljava/lang/String;Ljava/lang/String;)Sjava.lang.String#replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;_
+$getBytes(Ljava/nio/charset/Charset;)7java.lang.String#getBytes(Ljava/nio/charset/Charset;)[B3
+trim())java.lang.String#trim()Ljava/lang/String;^
+$lastIndexOf([CIILjava/lang/String;I)6java.lang.String#lastIndexOf([CIILjava/lang/String;I)I:
+indexOf([CII[CIII)$java.lang.String#indexOf([CII[CIII)I*
+
+<init>([C)java.lang.String#<init>([C)V4
+getBytes(II[BI)!java.lang.String#getBytes(II[BI)V*
+
+hashCode()java.lang.String#hashCode()IZ
+split(Ljava/lang/String;)=java.lang.String#split(Ljava/lang/String;)[Ljava/lang/String;V
+ indexOf([CIILjava/lang/String;I)2java.lang.String#indexOf([CIILjava/lang/String;I)IO
+getBytes(Ljava/lang/String;)/java.lang.String#getBytes(Ljava/lang/String;)[B1
+toCharArray() java.lang.String#toCharArray()[C0
+<init>([BIII)java.lang.String#<init>([BIII)VJ
+<init>(Ljava/lang/String;),java.lang.String#<init>(Ljava/lang/String;)VÅ
+-format(Ljava/lang/String;[Ljava/lang/Object;)Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;=
+replace(CC).java.lang.String#replace(CC)Ljava/lang/String;:
+codePointBefore(I)$java.lang.String#codePointBefore(I)IA
+toUpperCase()0java.lang.String#toUpperCase()Ljava/lang/String;^
+$equalsIgnoreCase(Ljava/lang/String;)6java.lang.String#equalsIgnoreCase(Ljava/lang/String;)Z^
+$<init>([BLjava/nio/charset/Charset;)6java.lang.String#<init>([BLjava/nio/charset/Charset;)VN
+lastIndexOfSupplementary(II).java.lang.String#lastIndexOfSupplementary(II)I;
+
+valueOf(I)-java.lang.String#valueOf(I)Ljava/lang/String;2
+lastIndexOf(I) java.lang.String#lastIndexOf(I)IV
+ lastIndexOf(Ljava/lang/String;I)2java.lang.String#lastIndexOf(Ljava/lang/String;I)Iï
+7join(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Zjava.lang.String#join(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/String;2
+codePointAt(I) java.lang.String#codePointAt(I)IV
+ <init>(Ljava/lang/StringBuffer;)2java.lang.String#<init>(Ljava/lang/StringBuffer;)VN
+<init>([BLjava/lang/String;).java.lang.String#<init>([BLjava/lang/String;)VL
+matches(Ljava/lang/String;)-java.lang.String#matches(Ljava/lang/String;)Z*
+
+<init>([B)java.lang.String#<init>([B)V7
+intern()+java.lang.String#intern()Ljava/lang/String;;
+
+valueOf(Z)-java.lang.String#valueOf(Z)Ljava/lang/String;T
+startsWith(Ljava/lang/String;I)1java.lang.String#startsWith(Ljava/lang/String;I)Z^
+$regionMatches(ILjava/lang/String;II)6java.lang.String#regionMatches(ILjava/lang/String;II)Zd
+'contentEquals(Ljava/lang/CharSequence;)9java.lang.String#contentEquals(Ljava/lang/CharSequence;)ZI
+copyValueOf([CII)4java.lang.String#copyValueOf([CII)Ljava/lang/String;A
+substring(II)0java.lang.String#substring(II)Ljava/lang/String;K
+subSequence(II)8java.lang.String#subSequence(II)Ljava/lang/CharSequence;,
+indexOf(II)java.lang.String#indexOf(II)I\
+split(Ljava/lang/String;I)>java.lang.String#split(Ljava/lang/String;I)[Ljava/lang/String;d
+'compareToIgnoreCase(Ljava/lang/String;)9java.lang.String#compareToIgnoreCase(Ljava/lang/String;)Iô
+9replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)\java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;Ñ
+7nonSyncContentEquals(Ljava/lang/AbstractStringBuilder;)Ijava.lang.String#nonSyncContentEquals(Ljava/lang/AbstractStringBuilder;)ZR
+<init>([BIILjava/lang/String;)0java.lang.String#<init>([BIILjava/lang/String;)VB
+offsetByCodePoints(II)(java.lang.String#offsetByCodePoints(II)I;
+
+valueOf(J)-java.lang.String#valueOf(J)Ljava/lang/String;X
+!<init>(Ljava/lang/StringBuilder;)3java.lang.String#<init>(Ljava/lang/StringBuilder;)V`
+%regionMatches(ZILjava/lang/String;II)7java.lang.String#regionMatches(ZILjava/lang/String;II)Z£
+java.util.Objectsjava.lang.Objectê
+4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Xjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;`
+toString(Ljava/lang/Object;)@java.util.Objects#toString(Ljava/lang/Object;)Ljava/lang/String;¶
+?requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)cjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;M
+nonNull(Ljava/lang/Object;).java.util.Objects#nonNull(Ljava/lang/Object;)ZO
+hashCode(Ljava/lang/Object;)/java.util.Objects#hashCode(Ljava/lang/Object;)IÑ
+.toString(Ljava/lang/Object;Ljava/lang/String;)Rjava.util.Objects#toString(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;I
+hash([Ljava/lang/Object;),java.util.Objects#hash([Ljava/lang/Object;)I'
+<init>()java.util.Objects#<init>()Vù
+Ccompare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Vjava.util.Objects#compare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)IK
+isNull(Ljava/lang/Object;)-java.util.Objects#isNull(Ljava/lang/Object;)Zw
+0deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Cjava.util.Objects#deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Zo
+,equals(Ljava/lang/Object;Ljava/lang/Object;)?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Zl
+"requireNonNull(Ljava/lang/Object;)Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;Í
 logic.structures.TreeNodejava.lang.Comparablejava.lang.Objectjava.io.SerializableS
 equals(Ljava/lang/Object;)5logic.structures.TreeNode#equals(Ljava/lang/Object;)ZO
 getParent()@logic.structures.TreeNode#getParent()Llogic/structures/TreeNode;k
@@ -655,13 +655,22 @@ toString()9logic.structures.stack.Stack#toString()Ljava/lang/String;,
 Applicationjava.lang.ObjectÇ
 gui.SMProtoApplication!
 <init>()gui.SMProto#<init>()VC
-main([Ljava/lang/String;)&gui.SMProto#main([Ljava/lang/String;)VP
-logic.users.Sorterjava.lang.Object(
-<init>()logic.users.Sorter#<init>()V(
-logic.ServerSettingsjava.lang.ObjectÂ
-logic.users.MyMenujava.lang.Object?
-recientFirst()-logic.users.MyMenu#recientFirst()LSimpleList;(
-<init>()logic.users.MyMenu#<init>()VR
+main([Ljava/lang/String;)&gui.SMProto#main([Ljava/lang/String;)V*
+logic.utilities.Sorterjava.lang.Object(
+logic.ServerSettingsjava.lang.Object
+	TypeTokenjava.lang.Object'
+Llogic/ServerSettings$485;	TypeToken'
+Llogic/ServerSettings$563;	TypeToken'
+Llogic/ServerSettings$645;	TypeToken'
+Llogic/ServerSettings$722;	TypeToken'
+Llogic/ServerSettings$796;	TypeToken'
+Llogic/ServerSettings$879;	TypeTokenÛ
+logic.users.MyMenujava.lang.Object(
+<init>()logic.users.MyMenu#<init>()VG
+byRecentFirst()4logic.users.MyMenu#byRecentFirst()Ljava/lang/String;=
+
+byRating()/logic.users.MyMenu#byRating()Ljava/lang/String;E
+byDifficulty()3logic.users.MyMenu#byDifficulty()Ljava/lang/String;R
 addRecipe(Ljava/lang/String;)1logic.users.MyMenu#addRecipe(Ljava/lang/String;)VÔ
  logic.structures.splay.SplayTreejava.lang.ObjectC
 	inOrder()6logic.structures.splay.SplayTree#inOrder()LSimpleList;4
@@ -684,7 +693,11 @@ $getMymenuRecient(Ljava/lang/String;)Eresources.User#getMymenuRecient(Ljava/lan
 $getNotifications(Ljava/lang/String;)Eresources.User#getNotifications(Ljava/lang/String;)Ljava/lang/String;g
 !getMymenuDiff(Ljava/lang/String;)Bresources.User#getMymenuDiff(Ljava/lang/String;)Ljava/lang/String;Ö
 0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;â
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;ˇ
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;à
+logic.utilities.JsonLoaderjava.lang.ObjectN
+loadGlobalRecipes()7logic.utilities.JsonLoader#loadGlobalRecipes()LAVLTree;:
+loadUsers()+logic.utilities.JsonLoader#loadUsers()LBST;L
+loadEnterprises()7logic.utilities.JsonLoader#loadEnterprises()LSplayTree;ˇ
 logic.structures.bst.BSTjava.lang.ObjectZ
 delete(Ljava/lang/Comparable;)8logic.structures.bst.BST#delete(Ljava/lang/Comparable;)V;
 	inOrder().logic.structures.bst.BST#inOrder()LSimpleList;,
@@ -713,14 +726,7 @@ saveInfo()logic.ServerManager#saveInfo()V`
 findUser(ZLjava/lang/String;)?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;1
 
 getUsers()#logic.ServerManager#getUsers()LBST;{
-1verifyUser(ZLjava/lang/String;Ljava/lang/String;)Flogic.ServerManager#verifyUser(ZLjava/lang/String;Ljava/lang/String;)Z
-	TypeTokenjava.lang.Object&
-Llogic/ServerManager$699;	TypeToken&
-Llogic/ServerManager$797;	TypeToken&
-Llogic/ServerManager$899;	TypeToken&
-Llogic/ServerManager$996;	TypeToken'
-Llogic/ServerManager$1090;	TypeToken'
-Llogic/ServerManager$1193;	TypeToken®
+1verifyUser(ZLjava/lang/String;Ljava/lang/String;)Flogic.ServerManager#verifyUser(ZLjava/lang/String;Ljava/lang/String;)Z®
 resources.Enterprisesjava.lang.Objectò
 6verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)^resources.Enterprises#verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;•
 EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)\resources.Enterprises#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Vl
@@ -730,9 +736,9 @@ EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)\resource
 $getNotifications(Ljava/lang/String;)Lresources.Enterprises#getNotifications(Ljava/lang/String;)Ljava/lang/String;f
 getMymenu(Ljava/lang/String;)Eresources.Enterprises#getMymenu(Ljava/lang/String;)Ljava/lang/String;c
 $createEnterprise(Ljava/lang/String;);resources.Enterprises#createEnterprise(Ljava/lang/String;)V
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)V˛
-
-logic.users.AbstractUserjava.lang.Comparablejava.lang.Objectjava.io.SerializableR
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)V∫
+logic.users.AbstractUserjava.lang.Comparablejava.lang.Object6
+setRating(I)&logic.users.AbstractUser#setRating(I)VR
 equals(Ljava/lang/Object;)4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zl
 'addFollower(Llogic/users/AbstractUser;)Alogic.users.AbstractUser#addFollower(Llogic/users/AbstractUser;)Vd
 #addNotification(Ljava/lang/String;)=logic.users.AbstractUser#addNotification(Ljava/lang/String;)V]
@@ -745,12 +751,16 @@ getEmail()5logic.users.AbstractUser#getEmail()Ljava/lang/String;2
 
 hashCode()$logic.users.AbstractUser#hashCode()I@
 encryptPassword()+logic.users.AbstractUser#encryptPassword()Vg
-getSerializedNotifications()Glogic.users.AbstractUser#getSerializedNotifications()Ljava/lang/String;A
+getSerializedNotifications()Glogic.users.AbstractUser#getSerializedNotifications()Ljava/lang/String;2
+
+makeChef()$logic.users.AbstractUser#makeChef()V.
+isChef()"logic.users.AbstractUser#isChef()ZA
 	getName()4logic.users.AbstractUser#getName()Ljava/lang/String;.
 <init>()"logic.users.AbstractUser#<init>()VY
 getSerializedMyMenu()@logic.users.AbstractUser#getSerializedMyMenu()Ljava/lang/String;h
 %compareTo(Llogic/users/AbstractUser;)?logic.users.AbstractUser#compareTo(Llogic/users/AbstractUser;)I_
-getSerializedFollowers()Clogic.users.AbstractUser#getSerializedFollowers()Ljava/lang/String;X
+getSerializedFollowers()Clogic.users.AbstractUser#getSerializedFollowers()Ljava/lang/String;4
+getRating()%logic.users.AbstractUser#getRating()IX
 addRecipe(Ljava/lang/String;)7logic.users.AbstractUser#addRecipe(Ljava/lang/String;)Ví
 gui.login.LogInControllerjava.lang.Object;
 pressedLogIn())gui.login.LogInController#pressedLogIn()V•
@@ -1415,23 +1425,25 @@ valueOf(J)5java.math.BigInteger#valueOf(J)Ljava/math/BigInteger;“
 
 toString()9logic.structures.avl.AVLTree#toString()Ljava/lang/String;=
 	getRoot()0logic.structures.avl.AVLTree#getRoot()LTreeNode;^
-insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)V∏
+insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)V®
 logic.utilities.Searcherjava.lang.Objectk
-findUsers(Ljava/lang/String;Z)Ilogic.utilities.Searcher#findUsers(Ljava/lang/String;Z)Ljava/lang/String;.
-<init>()"logic.utilities.Searcher#<init>()Vm
-findRecipes(Ljava/lang/String;)Jlogic.utilities.Searcher#findRecipes(Ljava/lang/String;)Ljava/lang/String;•
-gui.chefs.ChefRControllerjava.lang.Object/
+findUsers(Ljava/lang/String;Z)Ilogic.utilities.Searcher#findUsers(Ljava/lang/String;Z)Ljava/lang/String;Y
+sugestRatedEnterprises()=logic.utilities.Searcher#sugestRatedEnterprises()LSimpleList;Q
+sugestRandomUsers(Z)9logic.utilities.Searcher#sugestRandomUsers(Z)LSimpleList;E
+randomSugest()3logic.utilities.Searcher#randomSugest()LSimpleList;Q
+randomSuggestUsers()9logic.utilities.Searcher#randomSuggestUsers()LSimpleList;m
+findRecipes(Ljava/lang/String;)Jlogic.utilities.Searcher#findRecipes(Ljava/lang/String;)Ljava/lang/String;[
+randomSuggestEnterprise()>logic.utilities.Searcher#randomSuggestEnterprise()LSimpleList;S
+recipesRatedSugests():logic.utilities.Searcher#recipesRatedSugests()LSimpleList;U
+ratedSubjectSuggest(Z);logic.utilities.Searcher#ratedSubjectSuggest(Z)LSimpleList;M
+sugestRatedUsers()7logic.utilities.Searcher#sugestRatedUsers()LSimpleList;Ú
+gui.chefs.ChefRControllerjava.lang.ObjectK
+pressedRefreshButton()1gui.chefs.ChefRController#pressedRefreshButton()V/
 <init>()#gui.chefs.ChefRController#<init>()VE
-pressedBackButton().gui.chefs.ChefRController#pressedBackButton()V˝
-logic.users.UserAbstractUser.
-setRating(I)logic.users.User#setRating(I)V;
+pressedBackButton().gui.chefs.ChefRController#pressedBackButton()Vü
+logic.users.UserAbstractUser;
 
 toString()-logic.users.User#toString()Ljava/lang/String;(
 	setAge(I)logic.users.User#setAge(I)Vn
-,<init>(Ljava/lang/String;Ljava/lang/String;)>logic.users.User#<init>(Ljava/lang/String;Ljava/lang/String;)V,
-getRating()logic.users.User#getRating()I&
-getAge()logic.users.User#getAge()I¯
-logic.files.JsonLoaderjava.lang.ObjectJ
-loadGlobalRecipes()3logic.files.JsonLoader#loadGlobalRecipes()LAVLTree;6
-loadUsers()'logic.files.JsonLoader#loadUsers()LBST;H
-loadEnterprises()3logic.files.JsonLoader#loadEnterprises()LSplayTree;
+,<init>(Ljava/lang/String;Ljava/lang/String;)>logic.users.User#<init>(Ljava/lang/String;Ljava/lang/String;)V&
+getAge()logic.users.User#getAge()I

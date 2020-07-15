@@ -4,10 +4,13 @@ import gui.start.StartController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 import logic.users.AbstractUser;
 import logic.utilities.JsonLoader;
 import logic.utilities.JsonWriter;
+
+import java.io.Serializable;
 
 import static gui.login.LogInController.START_VIEW;
 
@@ -25,7 +28,7 @@ public class ChefRController {
 
     public void pressedRefreshButton() {
         this.usersList.getItems().clear();
-        SimpleList<AbstractUser> list = JsonLoader.loadUsers().inOrder();
+        SimpleList<AbstractUser> list = ServerManager.getInstance().getChefRequest();
         for (int i = 0; i < list.len(); i++) {
             if (!list.indexElement(i).isChef()) {
                 Button tempButton = new Button();

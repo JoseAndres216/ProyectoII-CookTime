@@ -1,44 +1,34 @@
 
-logic.users.Recipe#hashCode()Ij
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java• •("1*¸
+.logic.users.Recipe#equals(Ljava/lang/Object;)Zj
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaš š("startingBlock*Ø
+startingBlockj
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaš š(%´
+±
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java™ ™(
+%1"
+__annotate*
+java.lang.Override*
+
+objjava.lang.Objectž
+›
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaš! š($
+objjava.lang.Object"__annotation*
+
+%1*
+1*·
 1j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java– –(¯
-¬
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java› ›(Ï
+Ì
 j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java– –( 
-%0java.lang.String"__id* *
-logic.users.Recipe"
-name±
-®
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java› ›( 
+%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
+""*
+
+objjava.lang.Object"t
 j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java–" –((
-%1java.lang.String"__id*"* 
-logic.users.Recipe"
-author¯
-¬
-j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java–* –(.
-%2java.lang.String"__id* *
-logic.users.Recipe"
-type¸
-µ
-j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java– –(d
-%3",java.util.Objects#hash([Ljava/lang/Object;)I*"
-java.util.Objects*
-
-%0java.lang.String*
-
-%1java.lang.String*
-
-%2java.lang.String*
-""*
-""*
-""*
-""*
-""*
-"""t
-j
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java– –(e
-""B
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java› ›(!
+"":
+objjava.lang.ObjectB
 logic.users.Recipe

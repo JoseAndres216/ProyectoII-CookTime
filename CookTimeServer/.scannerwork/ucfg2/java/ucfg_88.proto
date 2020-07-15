@@ -1,28 +1,33 @@
 
-Aresources.User#addFollower(Ljava/lang/String;Ljava/lang/String;)Zf
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÏ Ï("startingBlock*Ú
-startingBlockf
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÏ Ï(l£
- 
+Eresources.User#getNotifications(Ljava/lang/String;)Ljava/lang/String;f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java« «(""startingBlock*Ý
+2f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java­ ­("p
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÍ Í(	
-%5"
-__annotate*
-POST*
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java­ ­(
+""*¤
+startingBlockf
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java«" «(D¢
+Ÿ
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java© ©(
+%0"
+__annotate*
+GET*
 
 userjava.lang.String£
  
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÎ Î(
-%6"
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaª ª(
+%1"
 __annotate*
 Path*
 
 userjava.lang.String©
 ¦
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÏ Ï(3
-%7"
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java«# «(7
+%2"
 __annotate*
 
 QueryParam*
@@ -30,89 +35,20 @@ QueryParam*
 userjava.lang.String«
 ¨
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÏ; Ï(?
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java«? «(C
 userjava.lang.String"__annotation*
 
-%5*
+%0*
 
-%6*
+%1*
 
-%7§
-¤
+%2*
+2
+1*Ý
+1f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¯ ¯("p
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÍ Í(	
-%8"
-__annotate*
-POST*
-
-followerjava.lang.String§
-¤
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÎ Î(
-%9"
-__annotate*
-Path*
-
-followerjava.lang.String®
-«
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÏA Ï([
-%10"
-__annotate*
-
-QueryParam*
-
-followerjava.lang.String°
-­
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÏc Ï(k
-followerjava.lang.String"__annotation*
-
-%8*
-
-%9*
-
-%10*
-9*Ý
-3f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÜ Ü("p
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÜ Ü(
-""*Ý
-4f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÚ Ú("p
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÚ Ú(
-""*Ò
-8f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÖ Ö(”
-‘
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÖ Ö(
-%2java.io.PrintStream"__id*
-""ÅÂ
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÖ Ö(5
-%3" java.io.PrintStream#println([C)V*
-
-%2java.io.PrintStream*
-""2println([C)*
-3
-4*Ï
-9f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÓ Ó(N”
-‘
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÕ Õ(
-%0java.io.PrintStream"__id*
-""ÅÂ
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÕ Õ(<
-%1" java.io.PrintStream#println([C)V*
-
-%0java.io.PrintStream*
-""2println([C)*
-8:
-userjava.lang.String:
-followerjava.lang.StringB
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¯ ¯(V
+"":
+userjava.lang.StringB
 resources.User

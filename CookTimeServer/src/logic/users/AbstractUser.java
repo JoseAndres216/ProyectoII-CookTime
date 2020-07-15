@@ -132,8 +132,16 @@ public class AbstractUser implements Comparable<AbstractUser> {
         return new Gson().toJson(this.newsFeed, Stack.class);
     }
 
-    public String getSerializedMyMenu() {
-        return new Gson().toJson(this.myMenu, MyMenu.class);
+    public String myMenuRated() {
+        return this.myMenu.byRating();
+    }
+
+    public String myMenuDifficulty() {
+        return this.myMenu.byDifficulty();
+    }
+
+    public String myMenuRecients() {
+        return this.myMenu.byRecentFirst();
     }
 
     public String getName() {

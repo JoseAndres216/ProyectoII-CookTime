@@ -73,7 +73,8 @@ public class User {
      * @return message
      */
     @PUT
-    @Path("/create/recipe")
+    @Path("/recipe")
+    @Produces(MediaType.APPLICATION_JSON)
     public String createRecipe(@QueryParam("recipe") String recipe,
                                @QueryParam("email") String user) {
         AbstractUser userObjct = ServerManager.getInstance().getUser(user);
@@ -94,7 +95,7 @@ public class User {
      * @return true if commented, false if there was an error.
      */
     @POST
-    @Path("/comment/recipe")
+    @Path("/recipe/comment")
     public boolean commentRecipe(@QueryParam("recipe") String recipeName,
                                  @QueryParam("comment") String comment,
                                  @QueryParam("email") String email) {
@@ -106,12 +107,7 @@ public class User {
             System.out.println(e.getMessage());
             return false;
         }
-         /*
-        create method for getting a recipe on the server and comment it, the method on class Recipe its done,
-        missing the access from serverManager
-         */
     }
-
 
     /**
      * Method for getting the MyMenu section, by recient first
@@ -121,11 +117,15 @@ public class User {
      */
     @GET
     @Path("/mymenu/recientFirst")
+    @Produces(MediaType.APPLICATION_JSON)
     public String getMymenuRecient(@QueryParam("email") String user) {
-         /*
-         make method for getting serialized my menu lists
-          */
-        return null;
+        try {
+            return ServerManager.getInstance().getUser(user).myMenuRecients();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     /**
@@ -136,11 +136,16 @@ public class User {
      */
     @GET
     @Path("/mymenu/difficulty")
+    @Produces(MediaType.APPLICATION_JSON)
     public String getMymenuDiff(@QueryParam("email") String user) {
-        /*
-         make method for getting serialized my menu lists
-         */
-        return null;
+
+        try {
+            return ServerManager.getInstance().getUser(user).myMenuDifficulty();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     /**
@@ -151,12 +156,14 @@ public class User {
      */
     @GET
     @Path("/mymenu/rated")
+    @Produces(MediaType.APPLICATION_JSON)
     public String getMymenuRated(@QueryParam("email") String user) {
-        /*
-        Getter for the mymenu
-
-         */
-        return null;
+        try {
+            return ServerManager.getInstance().getUser(user).myMenuRated();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     /**
@@ -168,6 +175,7 @@ public class User {
      */
     @GET
     @Path("/notifications")
+    @Produces(MediaType.APPLICATION_JSON)
     public String getNotifications(@QueryParam("email") String user) {
         if (ServerManager.getInstance().getUser(user) == null) {
             return null;
@@ -184,14 +192,9 @@ public class User {
      */
     @GET
     @Path("/followers")
+    @Produces(MediaType.APPLICATION_JSON)
     public String getFollowers(@QueryParam("email") String user) {
-
         return ServerManager.getInstance().getUser(user).getSerializedFollowers();
-
-        /*
-        method for getting the followers of an user.
-         */
-
     }
 
     /**
@@ -235,9 +238,10 @@ public class User {
     @PUT
     @Path("/request/chef")
     public void chefRequest(@QueryParam("email") String user) {
-        /*
-        hacer un stack de usuarios que hicieron request para ponerlo en la gui.
-        ServerManager.getInstance().chefR(user)
-         */
+        try {
+            ServerManager.getInstance().addChefRequest(user);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
