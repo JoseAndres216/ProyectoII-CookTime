@@ -6,14 +6,14 @@ import logic.structures.simplelist.SimpleList;
 import logic.structures.stack.Stack;
 import logic.utilities.Encrypter;
 
-import java.io.Serializable;
+
 import java.security.NoSuchAlgorithmException;
 
 import static logic.ServerSettings.NOTIFICATION_ADDED_RECIPE;
 import static logic.ServerSettings.RECIPE_TYPE;
 
 
-public class AbstractUser implements Comparable<AbstractUser>, Serializable {
+public class AbstractUser implements Comparable<AbstractUser> {
     //User personal data and credentials
     protected String name;
     protected String email;
@@ -27,7 +27,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     //user's followers
     protected SimpleList<AbstractUser> followers = new SimpleList<>();
     private int rating;
-    private boolean isChef;
+    private boolean isChef = false;
 
 
     //methods for the logic of followers
@@ -151,5 +151,10 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
 
     public boolean isChef() {
         return this.isChef;
+    }
+
+    public void makeChef() {
+        System.out.println(this + " is now chef!!");
+        this.isChef = true;
     }
 }

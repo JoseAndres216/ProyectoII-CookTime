@@ -1,1 +1,308 @@
-{"root":{"data":{"name":"Usuario1","email":"RONALDO","password":"92679c0629ced0841f901ff57dcfe669","newsFeed":{"elements":{"head":{"data":{"name":"TEST2","author":"MESSI","type":"almuezo","duration":0.0,"difficulty":0,"difficultyAux":0,"price":100,"rating":0.0,"ratingsTotal":0.0,"timesRated":0,"servings":0}},"tail":{"data":{"name":"TEST2","author":"MESSI","type":"almuezo","duration":0.0,"difficulty":0,"difficultyAux":0,"price":100,"rating":0.0,"ratingsTotal":0.0,"timesRated":0,"servings":0}},"len":1}},"notifications":{"elements":{"head":{"data":"Usuario1 added a new recipe!"},"tail":{"data":"Usuario1 added a new recipe!"},"len":1}},"myMenu":{},"followers":{"len":0}},"left":{"data":{"name":"Usuario1","email":"MESSI","password":"92679c0629ced0841f901ff57dcfe669","myMenu":{"ownedRecipes":{"head":{"data":{"name":"TEST2","author":"MESSI","type":"almuezo","duration":0.0,"difficulty":0,"difficultyAux":0,"price":100,"rating":0.0,"ratingsTotal":0.0,"timesRated":0,"servings":0}},"len":1}},"followers":{"head":{"data":{"name":"Usuario1","email":"RONALDO","password":"92679c0629ced0841f901ff57dcfe669","newsFeed":{"elements":{"head":{"data":{"name":"TEST2","author":"MESSI","type":"almuezo","duration":0.0,"difficulty":0,"difficultyAux":0,"price":100,"rating":0.0,"ratingsTotal":0.0,"timesRated":0,"servings":0}},"tail":{"data":{"name":"TEST2","author":"MESSI","type":"almuezo","duration":0.0,"difficulty":0,"difficultyAux":0,"price":100,"rating":0.0,"ratingsTotal":0.0,"timesRated":0,"servings":0}},"len":1}},"notifications":{"elements":{"head":{"data":"Usuario1 added a new recipe!"},"tail":{"data":"Usuario1 added a new recipe!"},"len":1}},"myMenu":{},"followers":{"len":0}}},"tail":{"data":{"name":"Usuario1","email":"RONALDO","password":"92679c0629ced0841f901ff57dcfe669","newsFeed":{"elements":{"head":{"data":{"name":"TEST2","author":"MESSI","type":"almuezo","duration":0.0,"difficulty":0,"difficultyAux":0,"price":100,"rating":0.0,"ratingsTotal":0.0,"timesRated":0,"servings":0}},"tail":{"data":{"name":"TEST2","author":"MESSI","type":"almuezo","duration":0.0,"difficulty":0,"difficultyAux":0,"price":100,"rating":0.0,"ratingsTotal":0.0,"timesRated":0,"servings":0}},"len":1}},"notifications":{"elements":{"head":{"data":"Usuario1 added a new recipe!"},"tail":{"data":"Usuario1 added a new recipe!"},"len":1}},"myMenu":{},"followers":{"len":0}}},"len":1}},"left":{"data":{"age":20,"rating":0,"name":"Test User","email":"MARCOS","password":"fd93cd920465266feca83ace87841b5f","myMenu":{},"followers":{"len":0}},"left":{"data":{"age":20,"rating":0,"name":"Test User","email":"EDUARDO","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"age":20,"rating":0,"name":"Test User","email":"CARLOS","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"right":{"data":{"age":20,"rating":0,"name":"Test User","email":"CRISTIAN","password":"fd93cd920465266feca83ace87841b5f","myMenu":{},"followers":{"len":0}}}},"right":{"data":{"age":20,"rating":0,"name":"Test User","email":"JUAN","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"right":{"data":{"age":20,"rating":0,"name":"Test User","email":"MANUEL","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"age":20,"rating":0,"name":"Test User","email":"MAIKOL","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}}}}}}},"right":{"data":{"age":20,"rating":0,"name":"Test User","email":"PEDRO","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}}}}}}
+{
+  "root": {
+    "data": {
+      "name": "Usuario1",
+      "email": "RONALDO",
+      "password": "92679c0629ced0841f901ff57dcfe669",
+      "newsFeed": {
+        "elements": {
+          "head": {
+            "data": {
+              "name": "TEST2",
+              "author": "MESSI",
+              "type": "almuezo",
+              "duration": 0.0,
+              "difficulty": 0,
+              "price": 100,
+              "rating": 0.0,
+              "ratingsTotal": 0.0,
+              "timesRated": 0,
+              "servings": 0
+            }
+          },
+          "tail": {
+            "data": {
+              "name": "TEST2",
+              "author": "MESSI",
+              "type": "almuezo",
+              "duration": 0.0,
+              "difficulty": 0,
+              "price": 100,
+              "rating": 0.0,
+              "ratingsTotal": 0.0,
+              "timesRated": 0,
+              "servings": 0
+            }
+          },
+          "len": 1
+        }
+      },
+      "notifications": {
+        "elements": {
+          "head": {
+            "data": "Usuario1 added a new recipe!"
+          },
+          "tail": {
+            "data": "Usuario1 added a new recipe!"
+          },
+          "len": 1
+        }
+      },
+      "myMenu": {},
+      "followers": {
+        "len": 0
+      },
+      "rating": 0,
+      "isChef": false
+    },
+    "left": {
+      "data": {
+        "name": "Usuario1",
+        "email": "MESSI",
+        "password": "92679c0629ced0841f901ff57dcfe669",
+        "myMenu": {
+          "ownedRecipes": {
+            "head": {
+              "data": {
+                "name": "TEST2",
+                "author": "MESSI",
+                "type": "almuezo",
+                "duration": 0.0,
+                "difficulty": 0,
+                "price": 100,
+                "rating": 0.0,
+                "ratingsTotal": 0.0,
+                "timesRated": 0,
+                "servings": 0
+              }
+            },
+            "len": 1
+          }
+        },
+        "followers": {
+          "head": {
+            "data": {
+              "name": "Usuario1",
+              "email": "RONALDO",
+              "password": "92679c0629ced0841f901ff57dcfe669",
+              "newsFeed": {
+                "elements": {
+                  "head": {
+                    "data": {
+                      "name": "TEST2",
+                      "author": "MESSI",
+                      "type": "almuezo",
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "servings": 0
+                    }
+                  },
+                  "tail": {
+                    "data": {
+                      "name": "TEST2",
+                      "author": "MESSI",
+                      "type": "almuezo",
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "servings": 0
+                    }
+                  },
+                  "len": 1
+                }
+              },
+              "notifications": {
+                "elements": {
+                  "head": {
+                    "data": "Usuario1 added a new recipe!"
+                  },
+                  "tail": {
+                    "data": "Usuario1 added a new recipe!"
+                  },
+                  "len": 1
+                }
+              },
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            }
+          },
+          "tail": {
+            "data": {
+              "name": "Usuario1",
+              "email": "RONALDO",
+              "password": "92679c0629ced0841f901ff57dcfe669",
+              "newsFeed": {
+                "elements": {
+                  "head": {
+                    "data": {
+                      "name": "TEST2",
+                      "author": "MESSI",
+                      "type": "almuezo",
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "servings": 0
+                    }
+                  },
+                  "tail": {
+                    "data": {
+                      "name": "TEST2",
+                      "author": "MESSI",
+                      "type": "almuezo",
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "servings": 0
+                    }
+                  },
+                  "len": 1
+                }
+              },
+              "notifications": {
+                "elements": {
+                  "head": {
+                    "data": "Usuario1 added a new recipe!"
+                  },
+                  "tail": {
+                    "data": "Usuario1 added a new recipe!"
+                  },
+                  "len": 1
+                }
+              },
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            }
+          },
+          "len": 1
+        },
+        "rating": 0,
+        "isChef": false
+      },
+      "left": {
+        "data": {
+          "name": "Test User",
+          "email": "MARCOS",
+          "password": "fd93cd920465266feca83ace87841b5f",
+          "myMenu": {},
+          "followers": {
+            "len": 0
+          },
+          "rating": 0,
+          "isChef": false
+        },
+        "left": {
+          "data": {
+            "name": "Test User",
+            "email": "EDUARDO",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+            "myMenu": {},
+            "followers": {
+              "len": 0
+            },
+            "rating": 0,
+            "isChef": false
+          },
+          "left": {
+            "data": {
+              "name": "Test User",
+              "email": "CARLOS",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            },
+            "right": {
+              "data": {
+                "name": "Test User",
+                "email": "CRISTIAN",
+                "password": "fd93cd920465266feca83ace87841b5f",
+                "myMenu": {},
+                "followers": {
+                  "len": 0
+                },
+                "rating": 0,
+                "isChef": false
+              }
+            }
+          },
+          "right": {
+            "data": {
+              "name": "Test User",
+              "email": "JUAN",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            },
+            "right": {
+              "data": {
+                "name": "Test User",
+                "email": "MANUEL",
+                "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+                "myMenu": {},
+                "followers": {
+                  "len": 0
+                },
+                "rating": 0,
+                "isChef": false
+              },
+              "left": {
+                "data": {
+                  "name": "Test User",
+                  "email": "MAIKOL",
+                  "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+                  "myMenu": {},
+                  "followers": {
+                    "len": 0
+                  },
+                  "rating": 0,
+                  "isChef": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "data": {
+          "name": "Test User",
+          "email": "PEDRO",
+          "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+          "myMenu": {},
+          "followers": {
+            "len": 0
+          },
+          "rating": 0,
+          "isChef": false
+        }
+      }
+    }
+  }
+}

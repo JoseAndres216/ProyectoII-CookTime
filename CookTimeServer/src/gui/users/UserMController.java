@@ -1,13 +1,13 @@
 package gui.users;
 
 
-import logic.utilities.JsonLoader;
-import logic.structures.simplelist.SimpleList;
-import logic.users.AbstractUser;
 import gui.start.StartController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import logic.structures.simplelist.SimpleList;
+import logic.users.AbstractUser;
+import logic.utilities.JsonLoader;
 
 import static gui.login.LogInController.START_VIEW;
 

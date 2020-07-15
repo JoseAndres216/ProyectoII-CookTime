@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
-            prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="gui.chefs.ChefRController">
-   <Button fx:id="backMenuButton" layoutX="14.0" layoutY="460.0" mnemonicParsing="false"
-           onMousePressed="#pressedBackButton" text="Back to main menu"/>
-   <Text layoutX="217.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chef requests Management">
-      <font>
-         <Font size="30.0"/>
-      </font>
-   </Text>
+    <Button fx:id="backMenuButton" layoutX="14.0" layoutY="460.0" mnemonicParsing="false"
+            onMousePressed="#pressedBackButton" text="Back to main menu"/>
+    <Text layoutX="217.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chef requests Management">
+        <font>
+            <Font size="30.0"/>
+        </font>
+    </Text>
+    <ListView fx:id="usersList" layoutX="217.0" layoutY="96.0" prefHeight="308.0" prefWidth="377.0"/>
+    <Button fx:id="refreshButton" layoutX="730.0" layoutY="460.0" mnemonicParsing="false"
+            onMousePressed="#pressedRefreshButton" text="Refresh"/>
 </AnchorPane>
