@@ -42,9 +42,9 @@ public interface Searcher {
      * @param key     string for searching in recipes name
      * @return Simple list with all matches
      */
-    static SimpleList<String> findRecipesAux(TreeNode<Recipe> root, int counter, String key) {
+    static SimpleList<Recipe> findRecipesAux(TreeNode<Recipe> root, int counter, String key) {
         //lista para agregar los matches
-        SimpleList<String> results = new SimpleList<>();
+        SimpleList<Recipe> results = new SimpleList<>();
         //cola para recorrer el arbol por niveles
         Queue<TreeNode<Recipe>> cola = new LinkedList<>();
         cola.add(root);
@@ -54,7 +54,7 @@ public interface Searcher {
             if (node != null) {
                 // if the actual node matches, adds it to the list, and
                 if (node.getData().getName().contains(key)) {
-                    results.append(node.getData().getName());
+                    results.append(node.getData());
                     counter--;
                 }
                 cola.remove();

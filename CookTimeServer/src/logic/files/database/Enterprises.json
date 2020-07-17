@@ -1,1 +1,182 @@
-{"root":{"data":{"rating":0,"email":"KKK","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"rating":0,"email":"BALLAS","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"rating":0,"email":"B","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"rating":0,"email":"ASC","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"rating":0,"email":"A","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}}},"right":{"data":{"rating":0,"email":"ASETEC","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}}}}},"right":{"data":{"rating":0,"email":"KK","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"rating":0,"email":"GROOVES.","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"rating":0,"email":"E","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}}}}}},"right":{"data":{"rating":0,"email":"MARA","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"right":{"data":{"rating":0,"email":"MUSSI","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"left":{"data":{"rating":0,"email":"MUSSI","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}}},"right":{"data":{"rating":0,"email":"SF","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"right":{"data":{"rating":0,"email":"SUR","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}},"right":{"data":{"rating":0,"email":"TP IND.","password":"5f4dcc3b5aa765d61d8327deb882cf99","myMenu":{},"followers":{"len":0}}}}}}}}}
+{
+  "root": {
+    "data": {
+      "email": "KKK",
+      "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+      "myMenu": {},
+      "followers": {
+        "len": 0
+      },
+      "rating": 0,
+      "isChef": false
+    },
+    "left": {
+      "data": {
+        "email": "BALLAS",
+        "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+        "myMenu": {},
+        "followers": {
+          "len": 0
+        },
+        "rating": 0,
+        "isChef": false
+      },
+      "left": {
+        "data": {
+          "email": "B",
+          "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+          "myMenu": {},
+          "followers": {
+            "len": 0
+          },
+          "rating": 0,
+          "isChef": false
+        },
+        "left": {
+          "data": {
+            "email": "ASC",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+            "myMenu": {},
+            "followers": {
+              "len": 0
+            },
+            "rating": 0,
+            "isChef": false
+          },
+          "left": {
+            "data": {
+              "email": "A",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            }
+          },
+          "right": {
+            "data": {
+              "email": "ASETEC",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            }
+          }
+        }
+      },
+      "right": {
+        "data": {
+          "email": "KK",
+          "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+          "myMenu": {},
+          "followers": {
+            "len": 0
+          },
+          "rating": 0,
+          "isChef": false
+        },
+        "left": {
+          "data": {
+            "email": "GROOVES.",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+            "myMenu": {},
+            "followers": {
+              "len": 0
+            },
+            "rating": 0,
+            "isChef": false
+          },
+          "left": {
+            "data": {
+              "email": "E",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "data": {
+        "email": "MARA",
+        "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+        "myMenu": {},
+        "followers": {
+          "len": 0
+        },
+        "rating": 0,
+        "isChef": false
+      },
+      "right": {
+        "data": {
+          "email": "MUSSI",
+          "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+          "myMenu": {},
+          "followers": {
+            "len": 0
+          },
+          "rating": 0,
+          "isChef": false
+        },
+        "left": {
+          "data": {
+            "email": "MUSSI",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+            "myMenu": {},
+            "followers": {
+              "len": 0
+            },
+            "rating": 0,
+            "isChef": false
+          }
+        },
+        "right": {
+          "data": {
+            "email": "SF",
+            "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+            "myMenu": {},
+            "followers": {
+              "len": 0
+            },
+            "rating": 0,
+            "isChef": false
+          },
+          "right": {
+            "data": {
+              "email": "SUR",
+              "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+              "myMenu": {},
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            },
+            "right": {
+              "data": {
+                "email": "TP IND.",
+                "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+                "myMenu": {},
+                "followers": {
+                  "len": 0
+                },
+                "rating": 0,
+                "isChef": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,6 @@ import logic.structures.simplelist.SimpleList;
 
 import java.util.Objects;
 
-import static logic.ServerManager.*;
 import static logic.ServerSettings.*;
 
 
@@ -25,6 +24,7 @@ public class Recipe implements Comparable<Recipe> {
     private int timesRated;
     private SimpleList<String> comments;
     private int servings;
+    private int likes;
 
 
     public float getRating() {
@@ -103,7 +103,9 @@ public class Recipe implements Comparable<Recipe> {
      * @param user   user who gave the rating
      */
     public void rate(int rating, AbstractUser user) {
-        this.rating += rating;
+        this.timesRated++;
+        this.ratingsTotal += rating;
+        this.rating = (ratingsTotal / timesRated);
         ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
     }
 
@@ -113,10 +115,10 @@ public class Recipe implements Comparable<Recipe> {
      * @param rating integer of ratings... only from one to five
      */
     public void rate(int rating) {
-         this.timesRated ++;
-         this.ratingsTotal+= rating;
-         this.rating = (ratingsTotal/timesRated);
-     }
+        this.timesRated++;
+        this.ratingsTotal += rating;
+        this.rating = (ratingsTotal / timesRated);
+    }
 
     /**
      * Method for commentig a recipe
@@ -160,4 +162,25 @@ public class Recipe implements Comparable<Recipe> {
         return Objects.hash(name, author, type, duration, difficulty, tags, price, rating, comments);
     }
 
+    /**
+     * Method for liking a recipe
+     *
+     * @param user user that liked the recipe
+     */
+    public void addLike(AbstractUser user) {
+        this.likes++;
+    }
+
+    /**
+     * Method for liking a recipe
+     *
+     * @param user user that liked the recipe
+     */
+    public void share(AbstractUser user) {
+        try {
+            user.updateFeed(this);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

@@ -122,7 +122,7 @@ public class Searches {
      * @return json format string with recipes' data.
      */
     @GET
-    @Path("/users/ranked")
+    @Path("/enterprises/ranked")
     @Produces(MediaType.APPLICATION_JSON)
     public String ratedEnterprises() {
         return Searcher.sugestRatedEnterprises();

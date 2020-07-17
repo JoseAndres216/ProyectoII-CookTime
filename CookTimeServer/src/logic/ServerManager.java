@@ -1,6 +1,7 @@
 package logic;
 
 import com.google.gson.Gson;
+import jdk.nashorn.internal.runtime.ECMAException;
 import logic.structures.TreeNode;
 import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
@@ -56,9 +57,9 @@ public class ServerManager {
     }
 
     private void loadServer() {
-        this.setEnterprises(JsonLoader.loadEnterprises());
-        this.setUsers(JsonLoader.loadUsers());
-        this.setGlobalRecipes(JsonLoader.loadGlobalRecipes());
+        this.enterprises = JsonLoader.loadEnterprises();
+        this.users = (JsonLoader.loadUsers());
+        this.globalRecipes = (JsonLoader.loadGlobalRecipes());
     }
 
     public void saveInfo() {
@@ -138,6 +139,24 @@ public class ServerManager {
         }
 
     }
+
+    /**
+     * Method for adding a like to a recipe
+     *
+     * @param recipe name of the recipe
+     * @param user   email of the user that liked the recipe
+     * @return true if done the like, false if the recipe or user dint exist
+     */
+    public boolean likeRecipe(Recipe recipe, AbstractUser user) {
+        if (recipe != null && user != null) {
+            recipe.addLike(user);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 
     /**
      * Driver method for adding a recipe to the global recipes and then saving it
@@ -255,29 +274,12 @@ public class ServerManager {
         return globalRecipes;
     }
 
-    /**
-     * Setter for changing the gobal recipes field, used for loading the recipes from the server
-     *
-     * @param globalRecipes new avl tree with updated recipes
-     */
-    public void setGlobalRecipes(AVLTree<Recipe> globalRecipes) {
-        this.globalRecipes = globalRecipes;
-    }
-
     public BST<AbstractUser> getUsers() {
         return this.users;
     }
 
-    public void setUsers(BST<AbstractUser> users) {
-        this.users = users;
-    }
-
     public SplayTree<AbstractUser> getEnterprises() {
         return this.enterprises;
-    }
-
-    public void setEnterprises(SplayTree<AbstractUser> enterprises) {
-        this.enterprises = enterprises;
     }
 
     /**
@@ -304,4 +306,20 @@ public class ServerManager {
     }
 
 
+    public boolean shareRecipe(Recipe recipe, AbstractUser user) {
+        if (user == null || recipe == null) {
+            return false;
+        } else {
+            return user.share(recipe);
+        }
+    }
+
+    public boolean rate(Recipe recipe, AbstractUser user, int rating) {
+        try {
+            recipe.rate(rating, user);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

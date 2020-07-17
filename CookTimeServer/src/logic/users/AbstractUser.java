@@ -1,6 +1,7 @@
 package logic.users;
 
 import com.google.gson.Gson;
+import jdk.nashorn.internal.runtime.ECMAException;
 import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 import logic.structures.stack.Stack;
@@ -102,8 +103,8 @@ public class AbstractUser implements Comparable<AbstractUser> {
         ServerManager.getInstance().saveInfo();
     }
 
-    private void updateFeed(Recipe newRecipe) {
-        if(this.newsFeed == null){
+    public void updateFeed(Recipe newRecipe) {
+        if (this.newsFeed == null) {
             this.newsFeed = new Stack<>();
         }
         this.newsFeed.push(newRecipe);
@@ -164,5 +165,14 @@ public class AbstractUser implements Comparable<AbstractUser> {
     public void makeChef() {
         System.out.println(this + " is now chef!!");
         this.isChef = true;
+    }
+
+    public boolean share(Recipe recipe) {
+        try {
+            recipe.share(this);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

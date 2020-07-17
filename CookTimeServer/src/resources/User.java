@@ -74,7 +74,7 @@ public class User {
      */
     @PUT
     @Path("/recipe")
-    @Produces(MediaType.APPLICATION_JSON)
+
     public String createRecipe(@QueryParam("recipe") String recipe,
                                @QueryParam("user") String user) {
         AbstractUser userObjct = ServerManager.getInstance().getUser(user);
@@ -84,6 +84,71 @@ public class User {
         userObjct.addRecipe(recipe);
         return "Recipe added";
     }
+
+    /**
+     * Method for liking a recipe on the server
+     *
+     * @param recipeName the name of the recipe to be liked, as its the unique identifier on the tree
+     * @param email      the user that liked, for the notification
+     * @return true if commented, false if there was an error.
+     */
+    @POST
+    @Path("/recipe/like")
+    public boolean likeRecipe(@QueryParam("recipe") String recipeName,
+                              @QueryParam("user") String email) {
+        try {
+            Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
+            AbstractUser user = ServerManager.getInstance().getUser(email);
+            return ServerManager.getInstance().likeRecipe(recipe, user);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Method for liking a recipe on the server
+     *
+     * @param recipeName the name of the recipe to be liked, as its the unique identifier on the tree
+     * @param email      the user that liked, for the notification
+     * @return true if commented, false if there was an error.
+     */
+    @POST
+    @Path("/recipe/share")
+    public boolean shareRecipe(@QueryParam("recipe") String recipeName,
+                               @QueryParam("user") String email) {
+        try {
+            Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
+            AbstractUser user = ServerManager.getInstance().getUser(email);
+            return ServerManager.getInstance().shareRecipe(recipe, user);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Method for liking a recipe on the server
+     *
+     * @param recipeName the name of the recipe to be rated, as its the unique identifier on the tree
+     * @param email      the user that rated, for the notification
+     * @return true if rated, false if there was an error.
+     */
+    @POST
+    @Path("/recipe/rate")
+    public boolean rateRecipe(@QueryParam("recipe") String recipeName,
+                              @QueryParam("user") String email,
+                              @QueryParam("rating") int rating) {
+        try {
+            Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
+            AbstractUser user = ServerManager.getInstance().getUser(email);
+            return ServerManager.getInstance().rate(recipe, user, rating);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
 
     /**
      * TESTED
