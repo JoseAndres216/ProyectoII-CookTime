@@ -1,13 +1,23 @@
 package logic.users;
 
+import logic.structures.simplelist.SimpleList;
+
 public class Enterprise extends AbstractUser {
-    private int rating;
     private String contactInfo;
     private String schedule;
+    private SimpleList<AbstractUser> members;
 
+    public Enterprise(String email, String pass) {
+        this.email = email;
+        this.password = pass;
+    }
+
+    public void addMember(AbstractUser member) {
+        this.members.append(member);
+    }
 
     public int getRating() {
-        return rating;
+        return this.rating;
     }
 
     public void setRating(int rating) {
@@ -52,10 +62,5 @@ public class Enterprise extends AbstractUser {
     @Override
     public int hashCode() {
         return super.hashCode();
-    }
-
-    public Enterprise(String email, String pass) {
-        this.email = email;
-        this.password = pass;
     }
 }

@@ -1,48 +1,125 @@
 
-Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaš š( "startingBlock*¡
+Uresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zf
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¤ ¤( "startingBlock*š
 startingBlockf
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaš  š(B¢
-Ÿ
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java˜ ˜(
-%0"
-__annotate*
-GET*
-
-userjava.lang.String£
- 
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java™ ™(
-%1"
-__annotate*
-Path*
-
-userjava.lang.String©
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¤  ¦(B©
 ¦
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaš! š(5
-%2"
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¢ ¢(	
+%3"
+__annotate*
+POST* 
+
+
+recipeNamejava.lang.String©
+¦
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java£ £(
+%4"
+__annotate*
+Path* 
+
+
+recipeNamejava.lang.String¯
+¬
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¤! ¤(6
+%5"
 __annotate*
 
-QueryParam*
-
-userjava.lang.String«
+QueryParam* 
+
+
+recipeNamejava.lang.String±
+®
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¤> ¤(H
+
+recipeNamejava.lang.String"__annotation*
+
+%3*
+
+%4*
+
+%5¦
+£
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¢ ¢(	
+%6"
+__annotate*
+POST*
+
+commentjava.lang.String¦
+£
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java£ £(
+%7"
+__annotate*
+Path*
+
+commentjava.lang.String¬
+©
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¥! ¥(7
+%8"
+__annotate*
+
+QueryParam*
+
+commentjava.lang.String®
+«
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¥? ¥(F
+commentjava.lang.String"__annotation*
+
+%6*
+
+%7*
+
+%8¤
+¡
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¢ ¢(	
+%9"
+__annotate*
+POST*
+
+emailjava.lang.String¥
+¢
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java£ £(
+%10"
+__annotate*
+Path*
+
+emailjava.lang.String«
 ¨
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaš= š(A
-userjava.lang.String"__annotation*
-
-%0*
-
-%1*
-
-%2*
-1*Ý
-1f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaŸ Ÿ("p
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¦! ¦(4
+%11"
+__annotate*
+
+QueryParam*
+
+emailjava.lang.String®
+«
 f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaŸ Ÿ(
-"":
-userjava.lang.StringB
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java¦< ¦(A
+emailjava.lang.String"__annotation*
+
+%9*
+
+%10*
+
+%11*
+4*Ý
+4f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaª ª(T"p
+f
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaª ª(T
+"":
+
+recipeNamejava.lang.String:
+commentjava.lang.String:
+emailjava.lang.StringB
 resources.User

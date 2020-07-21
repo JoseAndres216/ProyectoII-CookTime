@@ -1,7 +1,6 @@
 package logic;
 
 import com.google.gson.Gson;
-import jdk.nashorn.internal.runtime.ECMAException;
 import logic.structures.TreeNode;
 import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
@@ -37,6 +36,7 @@ public class ServerManager {
         }
         return instance;
     }
+
 
     public SimpleList<AbstractUser> getChefRequest() {
         return chefRequest;
@@ -252,6 +252,10 @@ public class ServerManager {
      */
     public String getUserJson(String email) {
         return new Gson().toJson((this.findUser(true, email)), AbstractUser.class);
+    }
+
+    public String getEnterpriseJson(String email) {
+        return new Gson().toJson((this.findUser(false, email)), AbstractUser.class);
     }
 
     /**

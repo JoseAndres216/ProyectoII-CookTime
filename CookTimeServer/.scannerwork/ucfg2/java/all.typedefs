@@ -679,21 +679,23 @@ byRating()/logic.users.MyMenu#byRating()Ljava/lang/String;E
 	getRoot()4logic.structures.splay.SplayTree#getRoot()LTreeNode;j
 "deleteNode(Ljava/lang/Comparable;)Dlogic.structures.splay.SplayTree#deleteNode(Ljava/lang/Comparable;)Vb
 insert(Ljava/lang/Comparable;)@logic.structures.splay.SplayTree#insert(Ljava/lang/Comparable;)Vs
-"searchTree(Ljava/lang/Comparable;)Mlogic.structures.splay.SplayTree#searchTree(Ljava/lang/Comparable;)LTreeNode;Õ
-
+"searchTree(Ljava/lang/Comparable;)Mlogic.structures.splay.SplayTree#searchTree(Ljava/lang/Comparable;)LTreeNode;≥
 resources.Userjava.lang.Objectv
-1addFollower(Ljava/lang/String;Ljava/lang/String;)Aresources.User#addFollower(Ljava/lang/String;Ljava/lang/String;)Zû
-EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Uresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zm
-$getMymenuRecient(Ljava/lang/String;)Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;e
- getFollowers(Ljava/lang/String;)Aresources.User#getFollowers(Ljava/lang/String;)Ljava/lang/String;i
-"getMymenuRated(Ljava/lang/String;)Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;$
-<init>()resources.User#<init>()VR
-chefRequest(Ljava/lang/String;)/resources.User#chefRequest(Ljava/lang/String;)Vi
-createUser(Ljava/lang/String;)Gresources.User#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;m
+1rateRecipe(Ljava/lang/String;Ljava/lang/String;I)Aresources.User#rateRecipe(Ljava/lang/String;Ljava/lang/String;I)Zû
+EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Uresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zv
+1shareRecipe(Ljava/lang/String;Ljava/lang/String;)Aresources.User#shareRecipe(Ljava/lang/String;Ljava/lang/String;)Zm
+$getMymenuRecient(Ljava/lang/String;)Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;i
+"getMymenuRated(Ljava/lang/String;)Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;m
 $getNotifications(Ljava/lang/String;)Eresources.User#getNotifications(Ljava/lang/String;)Ljava/lang/String;g
 !getMymenuDiff(Ljava/lang/String;)Bresources.User#getMymenuDiff(Ljava/lang/String;)Ljava/lang/String;Ö
-0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;â
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;à
+0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;t
+0likeRecipe(Ljava/lang/String;Ljava/lang/String;)@resources.User#likeRecipe(Ljava/lang/String;Ljava/lang/String;)Zâ
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;v
+1addFollower(Ljava/lang/String;Ljava/lang/String;)Aresources.User#addFollower(Ljava/lang/String;Ljava/lang/String;)Ze
+ getFollowers(Ljava/lang/String;)Aresources.User#getFollowers(Ljava/lang/String;)Ljava/lang/String;$
+<init>()resources.User#<init>()VR
+chefRequest(Ljava/lang/String;)/resources.User#chefRequest(Ljava/lang/String;)Vi
+createUser(Ljava/lang/String;)Gresources.User#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;à
 logic.utilities.JsonLoaderjava.lang.ObjectN
 loadGlobalRecipes()7logic.utilities.JsonLoader#loadGlobalRecipes()LAVLTree;:
 loadUsers()+logic.utilities.JsonLoader#loadUsers()LBST;L
@@ -706,7 +708,7 @@ $getNotifications(Ljava/lang/String;)Eresources.User#getNotifications(Ljava/lan
 
 toString()5logic.structures.bst.BST#toString()Ljava/lang/String;9
 	getRoot(),logic.structures.bst.BST#getRoot()LTreeNode;Z
-insert(Ljava/lang/Comparable;)8logic.structures.bst.BST#insert(Ljava/lang/Comparable;)Vø
+insert(Ljava/lang/Comparable;)8logic.structures.bst.BST#insert(Ljava/lang/Comparable;)V‰
 logic.ServerManagerjava.lang.Objecth
 !getEnterprise(Ljava/lang/String;)Clogic.ServerManager#getEnterprise(Ljava/lang/String;)LAbstractUser;G
 getInstance()6logic.ServerManager#getInstance()Llogic/ServerManager;C
@@ -719,13 +721,15 @@ toString()5logic.structures.bst.BST#toString()Ljava/lang/String;9
 findRecipe(Ljava/lang/String;):logic.ServerManager#findRecipe(Ljava/lang/String;)LRecipe;1
 loadServer()!logic.ServerManager#loadServer()V]
 "createSubject(ZLjava/lang/String;)7logic.ServerManager#createSubject(ZLjava/lang/String;)V)
-<init>()logic.ServerManager#<init>()Vn
+<init>()logic.ServerManager#<init>()VD
+getChefRequest()0logic.ServerManager#getChefRequest()LSimpleList;n
 "searchSubject(Ljava/lang/String;Z)Hlogic.ServerManager#searchSubject(Ljava/lang/String;Z)Ljava/lang/String;-
 
 saveInfo()logic.ServerManager#saveInfo()V`
 findUser(ZLjava/lang/String;)?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;1
 
-getUsers()#logic.ServerManager#getUsers()LBST;{
+getUsers()#logic.ServerManager#getUsers()LBST;]
+"addChefRequest(Ljava/lang/String;)7logic.ServerManager#addChefRequest(Ljava/lang/String;)V{
 1verifyUser(ZLjava/lang/String;Ljava/lang/String;)Flogic.ServerManager#verifyUser(ZLjava/lang/String;Ljava/lang/String;)Z®
 resources.Enterprisesjava.lang.Objectò
 6verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)^resources.Enterprises#verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;•
@@ -736,7 +740,7 @@ EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)\resource
 $getNotifications(Ljava/lang/String;)Lresources.Enterprises#getNotifications(Ljava/lang/String;)Ljava/lang/String;f
 getMymenu(Ljava/lang/String;)Eresources.Enterprises#getMymenu(Ljava/lang/String;)Ljava/lang/String;c
 $createEnterprise(Ljava/lang/String;);resources.Enterprises#createEnterprise(Ljava/lang/String;)V
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)V∫
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)V–
 logic.users.AbstractUserjava.lang.Comparablejava.lang.Object6
 setRating(I)&logic.users.AbstractUser#setRating(I)VR
 equals(Ljava/lang/Object;)4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zl
@@ -753,12 +757,14 @@ hashCode()$logic.users.AbstractUser#hashCode()I@
 encryptPassword()+logic.users.AbstractUser#encryptPassword()Vg
 getSerializedNotifications()Glogic.users.AbstractUser#getSerializedNotifications()Ljava/lang/String;2
 
-makeChef()$logic.users.AbstractUser#makeChef()V.
+makeChef()$logic.users.AbstractUser#makeChef()VO
+myMenuRecients();logic.users.AbstractUser#myMenuRecients()Ljava/lang/String;.
 isChef()"logic.users.AbstractUser#isChef()ZA
 	getName()4logic.users.AbstractUser#getName()Ljava/lang/String;.
-<init>()"logic.users.AbstractUser#<init>()VY
-getSerializedMyMenu()@logic.users.AbstractUser#getSerializedMyMenu()Ljava/lang/String;h
-%compareTo(Llogic/users/AbstractUser;)?logic.users.AbstractUser#compareTo(Llogic/users/AbstractUser;)I_
+<init>()"logic.users.AbstractUser#<init>()VI
+myMenuRated()8logic.users.AbstractUser#myMenuRated()Ljava/lang/String;h
+%compareTo(Llogic/users/AbstractUser;)?logic.users.AbstractUser#compareTo(Llogic/users/AbstractUser;)IS
+myMenuDifficulty()=logic.users.AbstractUser#myMenuDifficulty()Ljava/lang/String;_
 getSerializedFollowers()Clogic.users.AbstractUser#getSerializedFollowers()Ljava/lang/String;4
 getRating()%logic.users.AbstractUser#getRating()IX
 addRecipe(Ljava/lang/String;)7logic.users.AbstractUser#addRecipe(Ljava/lang/String;)Ví
@@ -1413,10 +1419,16 @@ valueOf(J)5java.math.BigInteger#valueOf(J)Ljava/math/BigInteger;“
 <init>()0java.security.NoSuchAlgorithmException#<init>()V`
 <init>(Ljava/lang/String;)Bjava.security.NoSuchAlgorithmException#<init>(Ljava/lang/String;)Vä
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Wjava.security.NoSuchAlgorithmException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)Vf
-<init>(Ljava/lang/Throwable;)Ejava.security.NoSuchAlgorithmException#<init>(Ljava/lang/Throwable;)Võ
-resources.Searchesjava.lang.Object(
-<init>()resources.Searches#<init>()Vg
-searchUsers(Ljava/lang/String;)Dresources.Searches#searchUsers(Ljava/lang/String;)Ljava/lang/String;k
+<init>(Ljava/lang/Throwable;)Ejava.security.NoSuchAlgorithmException#<init>(Ljava/lang/Throwable;)V”
+resources.Searchesjava.lang.ObjectG
+randomRecipes()4resources.Searches#randomRecipes()Ljava/lang/String;(
+<init>()resources.Searches#<init>()VO
+randomEnterprises()8resources.Searches#randomEnterprises()Ljava/lang/String;A
+ratedUsers()1resources.Searches#ratedUsers()Ljava/lang/String;E
+ratedRecipes()3resources.Searches#ratedRecipes()Ljava/lang/String;g
+searchUsers(Ljava/lang/String;)Dresources.Searches#searchUsers(Ljava/lang/String;)Ljava/lang/String;M
+ratedEnterprises()7resources.Searches#ratedEnterprises()Ljava/lang/String;C
+randomUsers()2resources.Searches#randomUsers()Ljava/lang/String;k
 !searchRecipes(Ljava/lang/String;)Fresources.Searches#searchRecipes(Ljava/lang/String;)Ljava/lang/String;s
 %searchEnterprises(Ljava/lang/String;)Jresources.Searches#searchEnterprises(Ljava/lang/String;)Ljava/lang/String;ç
 logic.structures.avl.AVLTreejava.lang.Object?
@@ -1425,18 +1437,126 @@ valueOf(J)5java.math.BigInteger#valueOf(J)Ljava/math/BigInteger;“
 
 toString()9logic.structures.avl.AVLTree#toString()Ljava/lang/String;=
 	getRoot()0logic.structures.avl.AVLTree#getRoot()LTreeNode;^
-insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)V®
+insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)VÓ
 logic.utilities.Searcherjava.lang.Objectk
-findUsers(Ljava/lang/String;Z)Ilogic.utilities.Searcher#findUsers(Ljava/lang/String;Z)Ljava/lang/String;Y
-sugestRatedEnterprises()=logic.utilities.Searcher#sugestRatedEnterprises()LSimpleList;Q
-sugestRandomUsers(Z)9logic.utilities.Searcher#sugestRandomUsers(Z)LSimpleList;E
-randomSugest()3logic.utilities.Searcher#randomSugest()LSimpleList;Q
-randomSuggestUsers()9logic.utilities.Searcher#randomSuggestUsers()LSimpleList;m
-findRecipes(Ljava/lang/String;)Jlogic.utilities.Searcher#findRecipes(Ljava/lang/String;)Ljava/lang/String;[
-randomSuggestEnterprise()>logic.utilities.Searcher#randomSuggestEnterprise()LSimpleList;S
-recipesRatedSugests():logic.utilities.Searcher#recipesRatedSugests()LSimpleList;U
-ratedSubjectSuggest(Z);logic.utilities.Searcher#ratedSubjectSuggest(Z)LSimpleList;M
-sugestRatedUsers()7logic.utilities.Searcher#sugestRatedUsers()LSimpleList;Ú
+findUsers(Ljava/lang/String;Z)Ilogic.utilities.Searcher#findUsers(Ljava/lang/String;Z)Ljava/lang/String;[
+recipesRatedSuggests()Alogic.utilities.Searcher#recipesRatedSuggests()Ljava/lang/String;Y
+usersRandomSuggest(Z)@logic.utilities.Searcher#usersRandomSuggest(Z)Ljava/lang/String;]
+recipesRandomSuggests()Blogic.utilities.Searcher#recipesRandomSuggests()Ljava/lang/String;_
+sugestRatedEnterprises()Clogic.utilities.Searcher#sugestRatedEnterprises()Ljava/lang/String;W
+randomSuggestUsers()?logic.utilities.Searcher#randomSuggestUsers()Ljava/lang/String;m
+findRecipes(Ljava/lang/String;)Jlogic.utilities.Searcher#findRecipes(Ljava/lang/String;)Ljava/lang/String;a
+randomSuggestEnterprise()Dlogic.utilities.Searcher#randomSuggestEnterprise()Ljava/lang/String;[
+ratedSubjectSuggest(Z)Alogic.utilities.Searcher#ratedSubjectSuggest(Z)Ljava/lang/String;S
+sugestRatedUsers()=logic.utilities.Searcher#sugestRatedUsers()Ljava/lang/String;~
+java.util.Listjava.util.Collectionjava.lang.ObjectD
+spliterator()3java.util.List#spliterator()Ljava/util/Spliterator;9
+java.util.Queuejava.util.Collectionjava.lang.Object4
+java.util.Dequejava.lang.Objectjava.util.Queueí
+java.util.AbstractListjava.util.Listjava.util.AbstractCollectionP
+equals(Ljava/lang/Object;)2java.util.AbstractList#equals(Ljava/lang/Object;)Z:
+removeRange(II)'java.util.AbstractList#removeRange(II)VA
+subList(II)2java.util.AbstractList#subList(II)Ljava/util/List;O
+listIterator()=java.util.AbstractList#listIterator()Ljava/util/ListIterator;Z
+lastIndexOf(Ljava/lang/Object;)7java.util.AbstractList#lastIndexOf(Ljava/lang/Object;)I?
+	remove(I)2java.util.AbstractList#remove(I)Ljava/lang/Object;R
+indexOf(Ljava/lang/Object;)3java.util.AbstractList#indexOf(Ljava/lang/Object;)I0
+
+hashCode()"java.util.AbstractList#hashCode()IC
+
+iterator()5java.util.AbstractList#iterator()Ljava/util/Iterator;,
+<init>() java.util.AbstractList#<init>()VQ
+listIterator(I)>java.util.AbstractList#listIterator(I)Ljava/util/ListIterator;B
+rangeCheckForAdd(I)+java.util.AbstractList#rangeCheckForAdd(I)VO
+outOfBoundsMsg(I):java.util.AbstractList#outOfBoundsMsg(I)Ljava/lang/String;*
+clear()java.util.AbstractList#clear()V—
+ java.util.AbstractSequentialListjava.util.AbstractListM
+
+iterator()?java.util.AbstractSequentialList#iterator()Ljava/util/Iterator;6
+<init>()*java.util.AbstractSequentialList#<init>()VC
+get(I)9java.util.AbstractSequentialList#get(I)Ljava/lang/Object;I
+	remove(I)<java.util.AbstractSequentialList#remove(I)Ljava/lang/Object;Ó
+java.util.LinkedListjava.util.Listjava.lang.Cloneablejava.util.Deque java.util.AbstractSequentialListjava.io.Serializable7
+peek()-java.util.LinkedList#peek()Ljava/lang/Object;N
+remove(Ljava/lang/Object;)0java.util.LinkedList#remove(Ljava/lang/Object;)Z>
+	toArray()1java.util.LinkedList#toArray()[Ljava/lang/Object;?
+
+getFirst()1java.util.LinkedList#getFirst()Ljava/lang/Object;d
+toArray([Ljava/lang/Object;)Djava.util.LinkedList#toArray([Ljava/lang/Object;)[Ljava/lang/Object;=
+	remove(I)0java.util.LinkedList#remove(I)Ljava/lang/Object;R
+contains(Ljava/lang/Object;)2java.util.LinkedList#contains(Ljava/lang/Object;)Z5
+pop(),java.util.LinkedList#pop()Ljava/lang/Object;A
+pollFirst()2java.util.LinkedList#pollFirst()Ljava/lang/Object;A
+peekFirst()2java.util.LinkedList#peekFirst()Ljava/lang/Object;*
+<init>()java.util.LinkedList#<init>()V7
+get(I)-java.util.LinkedList#get(I)Ljava/lang/Object;h
+'readObject(Ljava/io/ObjectInputStream;)=java.util.LinkedList#readObject(Ljava/io/ObjectInputStream;)VO
+listIterator(I)<java.util.LinkedList#listIterator(I)Ljava/util/ListIterator;l
+)removeFirstOccurrence(Ljava/lang/Object;)?java.util.LinkedList#removeFirstOccurrence(Ljava/lang/Object;)Z?
+
+pollLast()1java.util.LinkedList#pollLast()Ljava/lang/Object;M
+outOfBoundsMsg(I)8java.util.LinkedList#outOfBoundsMsg(I)Ljava/lang/String;C
+removeLast()3java.util.LinkedList#removeLast()Ljava/lang/Object;(
+clear()java.util.LinkedList#clear()VB
+node(I)7java.util.LinkedList#node(I)Ljava/util/LinkedList$Node;=
+	getLast()0java.util.LinkedList#getLast()Ljava/lang/Object;U
+descendingIterator()=java.util.LinkedList#descendingIterator()Ljava/util/Iterator;X
+lastIndexOf(Ljava/lang/Object;)5java.util.LinkedList#lastIndexOf(Ljava/lang/Object;)I=
+	element()0java.util.LinkedList#element()Ljava/lang/Object;E
+removeFirst()4java.util.LinkedList#removeFirst()Ljava/lang/Object;;
+remove()/java.util.LinkedList#remove()Ljava/lang/Object;P
+indexOf(Ljava/lang/Object;)1java.util.LinkedList#indexOf(Ljava/lang/Object;)I7
+poll()-java.util.LinkedList#poll()Ljava/lang/Object;B
+checkElementIndex(I)*java.util.LinkedList#checkElementIndex(I)VG
+superClone()7java.util.LinkedList#superClone()Ljava/util/LinkedList;J
+spliterator()9java.util.LinkedList#spliterator()Ljava/util/Spliterator;j
+(removeLastOccurrence(Ljava/lang/Object;)>java.util.LinkedList#removeLastOccurrence(Ljava/lang/Object;)Z?
+
+peekLast()1java.util.LinkedList#peekLast()Ljava/lang/Object;9
+clone().java.util.LinkedList#clone()Ljava/lang/Object;D
+checkPositionIndex(I)+java.util.LinkedList#checkPositionIndex(I)V<
+isElementIndex(I)'java.util.LinkedList#isElementIndex(I)Zl
+)writeObject(Ljava/io/ObjectOutputStream;)?java.util.LinkedList#writeObject(Ljava/io/ObjectOutputStream;)V&
+size()java.util.LinkedList#size()I>
+isPositionIndex(I)(java.util.LinkedList#isPositionIndex(I)Z‘
+java.util.Randomjava.lang.Objectjava.io.Serializable>
+internalNextLong(JJ)&java.util.Random#internalNextLong(JJ)J$
+next(I)java.util.Random#next(I)I.
+nextDouble()java.util.Random#nextDouble()DJ
+doubles(DD);java.util.Random#doubles(DD)Ljava/util/stream/DoubleStream;,
+nextFloat()java.util.Random#nextFloat()F=
+ints()3java.util.Random#ints()Ljava/util/stream/IntStream;&
+<init>()java.util.Random#<init>()V0
+nextBytes([B)java.util.Random#nextBytes([B)Vd
+'readObject(Ljava/io/ObjectInputStream;)9java.util.Random#readObject(Ljava/io/ObjectInputStream;)VB
+longs(J)6java.util.Random#longs(J)Ljava/util/stream/LongStream;?
+ints(J)4java.util.Random#ints(J)Ljava/util/stream/IntStream;D
+	longs(JJ)7java.util.Random#longs(JJ)Ljava/util/stream/LongStream;<
+internalNextInt(II)%java.util.Random#internalNextInt(II)IA
+ints(II)5java.util.Random#ints(II)Ljava/util/stream/IntStream;(
+	nextInt()java.util.Random#nextInt()I:
+initialScramble(J)$java.util.Random#initialScramble(J)J(
+	<init>(J)java.util.Random#<init>(J)V6
+seedUniquifier()"java.util.Random#seedUniquifier()JF
+
+longs(JJJ)8java.util.Random#longs(JJJ)Ljava/util/stream/LongStream;*
+
+nextInt(I)java.util.Random#nextInt(I)IF
+	doubles()9java.util.Random#doubles()Ljava/util/stream/DoubleStream;@
+longs()5java.util.Random#longs()Ljava/util/stream/LongStream;*
+
+setSeed(J)java.util.Random#setSeed(J)V2
+nextGaussian() java.util.Random#nextGaussian()D0
+nextBoolean()java.util.Random#nextBoolean()ZC
+	ints(JII)6java.util.Random#ints(JII)Ljava/util/stream/IntStream;B
+internalNextDouble(DD)(java.util.Random#internalNextDouble(DD)DL
+doubles(JDD)<java.util.Random#doubles(JDD)Ljava/util/stream/DoubleStream;H
+
+doubles(J):java.util.Random#doubles(J)Ljava/util/stream/DoubleStream;*
+
+nextLong()java.util.Random#nextLong()Jh
+)writeObject(Ljava/io/ObjectOutputStream;);java.util.Random#writeObject(Ljava/io/ObjectOutputStream;)V.
+resetSeed(J)java.util.Random#resetSeed(J)VÚ
 gui.chefs.ChefRControllerjava.lang.ObjectK
 pressedRefreshButton()1gui.chefs.ChefRController#pressedRefreshButton()V/
 <init>()#gui.chefs.ChefRController#<init>()VE

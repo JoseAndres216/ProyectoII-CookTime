@@ -1,48 +1,89 @@
 
-Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java| |(""startingBlock*ó
+Aresources.User#shareRecipe(Ljava/lang/String;Ljava/lang/String;)Zd
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaw w("startingBlock*“
 startingBlockd
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java|" |(D†
-ù
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaz z(
-%0"
-__annotate*
-GET*
-
-userjava.lang.String°
-û
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java{ {(!
-%1"
-__annotate*
-Path*
-
-userjava.lang.Stringß
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaw x(@ß
 §
 d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java|# |(7
-%2"
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javau u(	
+%3"
+__annotate*
+POST* 
+
+
+recipeNamejava.lang.Stringß
+§
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javav v(
+%4"
+__annotate*
+Path* 
+
+
+recipeNamejava.lang.String≠
+™
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaw w(4
+%5"
 __annotate*
 
-QueryParam*
-
-userjava.lang.String©
-¶
+QueryParam* 
+
+
+recipeNamejava.lang.StringØ
+¨
 d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java|? |(C
-userjava.lang.String"__annotation*
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaw< w(F
+
+recipeNamejava.lang.String"__annotation*
 
-%0*
+%3*
 
-%1*
+%4*
 
-%2*
-1*›
-1f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÄ Ä("p
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÄ Ä(
-"":
-userjava.lang.StringB
+%5¢
+ü
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javau u(	
+%6"
+__annotate*
+POST*
+
+emailjava.lang.String¢
+ü
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javav v(
+%7"
+__annotate*
+Path*
+
+emailjava.lang.String®
+•
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javax x(2
+%8"
+__annotate*
+
+QueryParam*
+
+emailjava.lang.String™
+ß
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javax: x(?
+emailjava.lang.String"__annotation*
+
+%6*
+
+%7*
+
+%8*
+4*Ÿ
+4d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java| |(I"n
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java| |(I
+"":
+
+recipeNamejava.lang.String:
+emailjava.lang.StringB
 resources.User

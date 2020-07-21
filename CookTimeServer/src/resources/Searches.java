@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/")
+@Path("/search")
 /*
  * Esta clase es para las busquedas en el servidor, cada metodo retorna como maximo una lista con
  * 15 resultados

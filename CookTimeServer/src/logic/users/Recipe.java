@@ -1,12 +1,12 @@
 package logic.users;
 
-import com.google.gson.Gson;
 import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 
 import java.util.Objects;
 
-import static logic.ServerSettings.*;
+import static logic.ServerSettings.NOTIFICATION_COMMENTED_MESSAGE;
+import static logic.ServerSettings.NOTIFICATION_RATED_MESSAGE;
 
 
 public class Recipe implements Comparable<Recipe> {
@@ -133,18 +133,6 @@ public class Recipe implements Comparable<Recipe> {
         this.comments.append(comment);
         ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this.name);
         ServerManager.getInstance().saveInfo();
-    }
-
-    /**
-     * Method for sharing the recipe, notifies the owner (adds a notification message that
-     * needs to be processed by the mobile client
-     *
-     * @param user user who shared the recipe
-     */
-    public void shareRecipe(AbstractUser user) {
-
-        user.myMenu.addRecipe(new Gson().toJson(this));
-        ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_SHARED_MESSAGE);
     }
 
     @Override

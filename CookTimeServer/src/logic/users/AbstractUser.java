@@ -1,12 +1,10 @@
 package logic.users;
 
 import com.google.gson.Gson;
-import jdk.nashorn.internal.runtime.ECMAException;
 import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 import logic.structures.stack.Stack;
 import logic.utilities.Encrypter;
-
 
 import java.security.NoSuchAlgorithmException;
 
@@ -27,7 +25,7 @@ public class AbstractUser implements Comparable<AbstractUser> {
     protected MyMenu myMenu = new MyMenu();
     //user's followers
     protected SimpleList<AbstractUser> followers = new SimpleList<>();
-    private int rating;
+    protected int rating;
     private boolean isChef = false;
 
 

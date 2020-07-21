@@ -1,1 +1,25 @@
-{}
+{
+  "root": {
+    "data": {
+      "name": "eduardo",
+      "email": "UsuarioDePrueba",
+      "password": "1a1dc91c907325c69271ddf0c944bc72",
+      "myMenu": {},
+      "followers": {
+        "len": 0
+      },
+      "rating": 0,
+      "isChef": false
+    },
+    "right": {
+      "data": {
+        "age": 180,
+        "name": "jose",
+        "email": "usuarioRecienCreado",
+        "password": "1a1dc91c907325c69271ddf0c944bc72",
+        "rating": 0,
+        "isChef": false
+      }
+    }
+  }
+}

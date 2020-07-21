@@ -1,34 +1,15 @@
 
-2logic.users.Enterprise#equals(Ljava/lang/Object;)Zl
-bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java0 0("startingBlock*ﬁ
-startingBlockl
-bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java0 0(%∂
-≥
-l
-bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java/ /(
-%1"
-__annotate*
-java.lang.Override*
-
-objjava.lang.Object†
-ù
-l
-bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java0! 0($
-objjava.lang.Object"__annotation*
-
-%1*
-1*Ω
+3logic.users.Enterprise#toString()Ljava/lang/String;l
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java- -("1*ù
 1l
-bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java1 1(—
-Œ
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java. .(±
+Æ
 l
-bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java1 1( 
-%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
-""*
-
-objjava.lang.Object"v
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java. /(
+%0java.lang.String"__concat*
+Enterprise{*	
+email='"v
 l
-bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java1 1(!
-"":
-objjava.lang.ObjectB
+bC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Enterprise.java. 1(
+""B
 logic.users.Enterprise

@@ -1,22 +1,48 @@
 
-3logic.ServerManager#existUser(ZLjava/lang/String;)Zk
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaç ç("5*Ì
-5k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaê ê(ı
-Ú
-k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaê ê(&
-%0"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
-logic.ServerManager*
-""*
+6logic.ServerManager#getInstance()Llogic/ServerManager;i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java"- "(8"3*Ä
+2i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java$ $(*ûõ
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java$ $((
+%1logic.ServerManager"logic.ServerManager∞
+≠
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java$ $(*
+%2"logic.ServerManager#<init>()V*
 
-emailjava.lang.String*
-1*Á
-1k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaï ï("u
-k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaï ï(
-"":
-"":
-emailjava.lang.StringB
+%1logic.ServerManager∂
+≥
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java$ $(*#
+logic.ServerManager"
+
+instance"__id*
+
+%1logic.ServerManager*
+1*Ø
+3i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java# #(∂
+≥
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java# #(
+%0logic.ServerManager"__id*%*#
+logic.ServerManager"
+
+instance*
+2
+1*≤
+1i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java& &(∂
+≥
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java& &(
+%3logic.ServerManager"__id*%*#
+logic.ServerManager"
+
+instance"à
+i
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java& &(
+
+%3logic.ServerManagerB"
 logic.ServerManager
