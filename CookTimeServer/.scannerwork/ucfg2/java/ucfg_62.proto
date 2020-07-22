@@ -1,10 +1,16 @@
 
-klogic.structures.simplelist.SimpleList#addFirst(Ljava/lang/Object;)Llogic/structures/simplelist/SimpleList;|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java+ +(!"1*®
-1|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java1 1("ª
-|
-rC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/simplelist/SimpleList.java3 3(*(
-&logic.structures.simplelist.SimpleList:	
-dataTB*(
-&logic.structures.simplelist.SimpleList
+?logic.structures.TreeNode#getRight()Llogic/structures/TreeNode;o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java0 0("1*Ó
+1o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java1 1(Å
+Â
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java1 1(
+%0logic.structures.TreeNode"__id*(*&
+logic.structures.TreeNode"
+right"”
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java1 1(!
+
+%0logic.structures.TreeNodeB
+logic.structures.TreeNode

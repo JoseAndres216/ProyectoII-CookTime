@@ -1,11 +1,22 @@
 
-Hlogic.ServerManager#searchSubject(Ljava/lang/String;Z)Ljava/lang/String;k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java° °("1*ç
-1k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java± ±("u
+3logic.ServerManager#existUser(ZLjava/lang/String;)Zk
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java¶ ¶("5*í
+5k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java¹ ¹(õ
+ò
 k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java± ±(/
-"":
-keyjava.lang.String:
-""B
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java¹ ¹(&
+%0"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
+logic.ServerManager*
+""*
+
+emailjava.lang.String*
+1*ç
+1k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java¾ ¾("u
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.java¾ ¾(
+"":
+"":
+emailjava.lang.StringB
 logic.ServerManager

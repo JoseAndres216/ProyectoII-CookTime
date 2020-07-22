@@ -46,7 +46,7 @@ public class AVLTree<T extends Comparable<T>> {
 
     private TreeNode<T> delete(TreeNode<T> treeNode, T key) {
         if (treeNode == null) {
-            return treeNode;
+            return null;
         } else if (treeNode.getData().compareTo(key) > 0) {
             treeNode.setLeft(delete(treeNode.getLeft(), key));
         } else if (treeNode.getData().compareTo(key) < 0) {

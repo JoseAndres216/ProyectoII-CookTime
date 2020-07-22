@@ -13,20 +13,52 @@ import javax.ws.rs.core.MediaType;
 /*
  * Esta clase es para las busquedas en el servidor, cada metodo retorna como maximo una lista con
  * 15 resultados
+ *
+ *
+ *
+ *
  */
 public class Searches {
+
     /**
-     * Method for searching recipes on the server for recipes
+     * Method for searching recipes on the server for recipes, with rated sorting
      *
      * @param key String key to be compared with the recipes name, using regular expressions
      * @return Simple list in json format, with possible results.
      */
     @GET
-    @Path("/recipes")
+    @Path("/recipes/rated")
     @Produces(MediaType.APPLICATION_JSON)
-    public String searchRecipes(@QueryParam("key") String key) {
-        // Return some cliched textual content
-        return ServerManager.getInstance().searchRecipes(key);
+    public String searchRecipesRated(@QueryParam("key") String key) {
+
+        return ServerManager.getInstance().searchRecipesRated(key);
+    }
+
+    /**
+     * Method for searching recipes on the server for recipes, with difficulty sorting
+     *
+     * @param key String key to be compared with the recipes name, using regular expressions
+     * @return Simple list in json format, with possible results.
+     */
+    @GET
+    @Path("/recipes/difficulty")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String searchRecipesDifficulty(@QueryParam("key") String key) {
+
+        return ServerManager.getInstance().searchRecipesDifficulty(key);
+    }
+
+    /**
+     * Method for searching recipes on the server for recipes, with duration sorting
+     *
+     * @param key String key to be compared with the recipes name, using regular expressions
+     * @return Simple list in json format, with possible results.
+     */
+    @GET
+    @Path("/recipes/duration")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String searchRecipesDuration(@QueryParam("key") String key) {
+        return ServerManager.getInstance().searchRecipesDuration(key);
     }
 
     /**
@@ -35,7 +67,7 @@ public class Searches {
      * @return json format string with recipes' data.
      */
     @GET
-    @Path("/recipes/random")
+    @Path("/recipes/suggest/random")
     @Produces(MediaType.APPLICATION_JSON)
     public String randomRecipes() {
         return Searcher.recipesRandomSuggests();
@@ -47,7 +79,7 @@ public class Searches {
      * @return json format string with recipes' data.
      */
     @GET
-    @Path("/recipes/ranked")
+    @Path("/recipes/suggest/ranked")
     @Produces(MediaType.APPLICATION_JSON)
     public String ratedRecipes() {
         return Searcher.recipesRatedSuggests();
@@ -60,10 +92,10 @@ public class Searches {
      * @return Simple list in json format, with possible results.
      */
     @GET
-    @Path("/users")
+    @Path("/users/rated")
     @Produces(MediaType.APPLICATION_JSON)
-    public String searchUsers(@QueryParam("key") String key) {
-        return ServerManager.getInstance().searchSubject(key, true);
+    public String searchUsersRated(@QueryParam("key") String key) {
+        return (ServerManager.getInstance().searchSubjectRated(key, true));
     }
 
     /**
@@ -84,7 +116,7 @@ public class Searches {
      * @return json format string with recipes' data.
      */
     @GET
-    @Path("/users/ranked")
+    @Path("/users/suggest/ranked")
     @Produces(MediaType.APPLICATION_JSON)
     public String ratedUsers() {
         return Searcher.sugestRatedUsers();
@@ -97,11 +129,11 @@ public class Searches {
      * @return Simple list in json format, with possible results.
      */
     @GET
-    @Path("/enterprises")
+    @Path("/enterprises/rated")
     @Produces(MediaType.APPLICATION_JSON)
     public String searchEnterprises(@QueryParam("key") String key) {
         // Return some cliched textual content
-        return ServerManager.getInstance().searchSubject(key, false);
+        return ServerManager.getInstance().searchSubjectRated(key, false);
     }
 
     /**
@@ -122,7 +154,7 @@ public class Searches {
      * @return json format string with recipes' data.
      */
     @GET
-    @Path("/enterprises/ranked")
+    @Path("/enterprises/suggest/ranked")
     @Produces(MediaType.APPLICATION_JSON)
     public String ratedEnterprises() {
         return Searcher.sugestRatedEnterprises();

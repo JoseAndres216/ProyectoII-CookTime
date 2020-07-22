@@ -4,6 +4,8 @@ import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static logic.ServerSettings.NOTIFICATION_COMMENTED_MESSAGE;
 import static logic.ServerSettings.NOTIFICATION_RATED_MESSAGE;
@@ -15,20 +17,28 @@ public class Recipe implements Comparable<Recipe> {
     private String name;
     private String author;
     private String type;
+    private final Logger log = Logger.getLogger("RecipesLog");
     private float duration;
+    private int servings;
     private int difficulty;
-    private SimpleList<String> tags;
+    private String timing;
+    private String tags;
+    private String ingredients;
     private int price;
     private float rating;
     private float ratingsTotal;
     private int timesRated;
     private SimpleList<String> comments;
-    private int servings;
     private int likes;
+    private String steps;
 
 
     public float getRating() {
         return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 
     public String getName() {
@@ -55,6 +65,70 @@ public class Recipe implements Comparable<Recipe> {
         this.type = type;
     }
 
+    public int getServings() {
+        return servings;
+    }
+
+    public void setServings(int servings) {
+        this.servings = servings;
+    }
+
+    public String getTiming() {
+        return timing;
+    }
+
+    public void setTiming(String timing) {
+        this.timing = timing;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getSteps() {
+        return steps;
+    }
+
+    public void setSteps(String steps) {
+        this.steps = steps;
+    }
+
+    public float getRatingsTotal() {
+        return ratingsTotal;
+    }
+
+    public void setRatingsTotal(float ratingsTotal) {
+        this.ratingsTotal = ratingsTotal;
+    }
+
+    public int getTimesRated() {
+        return timesRated;
+    }
+
+    public void setTimesRated(int timesRated) {
+        this.timesRated = timesRated;
+    }
+
+    public SimpleList<String> getComments() {
+        return comments;
+    }
+
+    public void setComments(SimpleList<String> comments) {
+        this.comments = comments;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
     public float getDuration() {
         return duration;
     }
@@ -71,11 +145,11 @@ public class Recipe implements Comparable<Recipe> {
         this.difficulty = difficulty;
     }
 
-    public SimpleList<String> getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(SimpleList<String> tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
@@ -106,7 +180,7 @@ public class Recipe implements Comparable<Recipe> {
         this.timesRated++;
         this.ratingsTotal += rating;
         this.rating = (ratingsTotal / timesRated);
-        ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_RATED_MESSAGE + rating);
+        ServerManager.getInstance().getUser(this.author).addNotification(user.getName() + NOTIFICATION_RATED_MESSAGE + rating);
     }
 
     /**
@@ -131,7 +205,7 @@ public class Recipe implements Comparable<Recipe> {
             this.comments = new SimpleList<>();
         }
         this.comments.append(comment);
-        ServerManager.getInstance().getUser(this.author).addNotification(user.name + NOTIFICATION_COMMENTED_MESSAGE + this.name);
+        ServerManager.getInstance().getUser(this.author).addNotification(user.getName() + NOTIFICATION_COMMENTED_MESSAGE + this.name);
         ServerManager.getInstance().saveInfo();
     }
 
@@ -168,7 +242,7 @@ public class Recipe implements Comparable<Recipe> {
         try {
             user.updateFeed(this);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
         }
     }
 }

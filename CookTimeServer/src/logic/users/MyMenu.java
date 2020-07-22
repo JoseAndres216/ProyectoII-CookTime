@@ -5,11 +5,13 @@ import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 import logic.utilities.Sorter;
 
+import java.io.Serializable;
+
 import static logic.ServerSettings.RECIPES_LIST_TYPE;
 import static logic.ServerSettings.RECIPE_TYPE;
 
 
-public class MyMenu {
+public class MyMenu implements Serializable {
 
     protected SimpleList<Recipe> ownedRecipes;
 
@@ -59,7 +61,7 @@ public class MyMenu {
      */
     public String byRating() {
         SimpleList<Recipe> temp = this.ownedRecipes;
-        return new Gson().toJson(Sorter.bydifficulty(temp), RECIPES_LIST_TYPE);
+        return new Gson().toJson(Sorter.byhighRated(temp), RECIPES_LIST_TYPE);
 
     }
 

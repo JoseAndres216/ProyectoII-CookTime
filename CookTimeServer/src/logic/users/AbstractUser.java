@@ -6,35 +6,60 @@ import logic.structures.simplelist.SimpleList;
 import logic.structures.stack.Stack;
 import logic.utilities.Encrypter;
 
+import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
+import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static logic.ServerSettings.NOTIFICATION_ADDED_RECIPE;
 import static logic.ServerSettings.RECIPE_TYPE;
 
 
-public class AbstractUser implements Comparable<AbstractUser> {
+public class AbstractUser implements Comparable<AbstractUser>, Serializable {
+    private final transient Logger log = Logger.getLogger("AbstractUserLog");
     //User personal data and credentials
-    protected String name;
-    protected String email;
-    protected String password;
-
-    protected Stack<Recipe> newsFeed;
+    private String name;
+    private String email;
+    private String password;
+    private Stack<Recipe> newsFeed;
     //For notifications logic, UI and logical work
-    protected Stack<String> notifications;
+    private Stack<String> notifications;
     //user's mymenu, for sorting algorithms.
-    protected MyMenu myMenu = new MyMenu();
+    private MyMenu myMenu = new MyMenu();
     //user's followers
-    protected SimpleList<AbstractUser> followers = new SimpleList<>();
-    protected int rating;
+    private SimpleList<AbstractUser> followers = new SimpleList<>();
+    private int rating;
     private boolean isChef = false;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractUser user = (AbstractUser) o;
+        return getRating() == user.getRating() &&
+                isChef() == user.isChef() &&
+                Objects.equals(getName(), user.getName()) &&
+                Objects.equals(getEmail(), user.getEmail()) &&
+                Objects.equals(getPassword(), user.getPassword()) &&
+                Objects.equals(getNewsFeed(), user.getNewsFeed()) &&
+                Objects.equals(getNotifications(), user.getNotifications()) &&
+                Objects.equals(getMyMenu(), user.getMyMenu()) &&
+                Objects.equals(getFollowers(), user.getFollowers()) &&
+                Objects.equals(getLog(), user.getLog());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getEmail(), getPassword(), getNewsFeed(), getNotifications(), getMyMenu(), getFollowers(), getRating(), getLog(), isChef());
+    }
 
     //methods for the logic of followers
     public void addFollower(AbstractUser user) {
-        if (this.followers == null) {
-            this.followers = new SimpleList<>();
+        if (this.getFollowers() == null) {
+            this.setFollowers(new SimpleList<>());
         }
-        this.followers.append(user);
+        this.getFollowers().append(user);
         ServerManager.getInstance().saveInfo();
     }
 
@@ -44,82 +69,72 @@ public class AbstractUser implements Comparable<AbstractUser> {
 
     @Override
     public int compareTo(AbstractUser user) {
-        return this.email.compareTo(user.email);
+        return this.getEmail().compareTo(user.getEmail());
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
 
     @Override
     public String toString() {
         return "AbstractUser{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                "email='" + getEmail() + '\'' +
+                ", password='" + getPassword() + '\'' +
                 '}';
     }
 
     public String getPass() {
-        return this.password;
+        return this.getPassword();
     }
 
     public void encryptPassword() throws NoSuchAlgorithmException {
-        this.password = Encrypter.encryptPassword(this.password);
+        this.setPassword(Encrypter.encryptPassword(this.getPassword()));
     }
 
     public void addNotification(String notification) {
-        if (this.notifications == null) {
-            this.notifications = new Stack<>();
+        if (this.getNotifications() == null) {
+            this.setNotifications(new Stack<>());
         }
-        this.notifications.push(notification);
+        this.getNotifications().push(notification);
         ServerManager.getInstance().saveInfo();
     }
 
     public void addRecipe(String jsonRecipe) {
-        System.out.println(this + "added a recipe: " + jsonRecipe);
-        if (this.myMenu == null) {
-            this.myMenu = new MyMenu();
+        getLog().log(Level.INFO, () -> "added a recipe: " + jsonRecipe);
+        if (this.getMyMenu() == null) {
+            this.setMyMenu(new MyMenu());
         }
         Recipe newRecipe = new Gson().fromJson(jsonRecipe, RECIPE_TYPE);
-        newRecipe.setAuthor(this.email);
-
-        this.myMenu.addRecipe(new Gson().toJson(newRecipe));
+        newRecipe.setAuthor(this.getEmail());
+        this.getMyMenu().addRecipe(new Gson().toJson(newRecipe));
+        this.updateFeed(newRecipe);
         //add the new notification and the recipe to the feed of the followers
-        if (this.followers == null) {
-            this.followers = new SimpleList<>();
+        if (this.getFollowers() == null) {
+            this.setFollowers(new SimpleList<>());
         }
-        for (int i = 0; i < this.followers.len(); i++) {
-            this.followers.indexElement(i).updateFeed(newRecipe);
+        for (int i = 0; i < this.getFollowers().len(); i++) {
+            this.getFollowers().indexElement(i).addNotification(this.getName() + NOTIFICATION_ADDED_RECIPE);
+            this.getFollowers().indexElement(i).updateFeed(newRecipe);
         }
 
         ServerManager.getInstance().saveInfo();
     }
 
     public void updateFeed(Recipe newRecipe) {
-        if (this.newsFeed == null) {
-            this.newsFeed = new Stack<>();
+        if (this.getNewsFeed() == null) {
+            this.setNewsFeed(new Stack<>());
         }
-        this.newsFeed.push(newRecipe);
-        this.addNotification(this.name + NOTIFICATION_ADDED_RECIPE);
-
+        this.getNewsFeed().push(newRecipe);
     }
 
     public String getSerializedFollowers() {
         return
-                new Gson().toJson(this.followers, SimpleList.class);
+                new Gson().toJson(this.getFollowers(), SimpleList.class);
     }
 
     public String getSerializedNotifications() {
-        if (this.notifications == null) {
-            this.notifications = new Stack<>();
+        if (this.getNotifications() == null) {
+            this.setNotifications(new Stack<>());
         }
-        return new Gson().toJson(this.notifications, Stack.class);
+        return new Gson().toJson(this.getNotifications(), Stack.class);
     }
 
     /**
@@ -128,19 +143,19 @@ public class AbstractUser implements Comparable<AbstractUser> {
      * @return String of json formatted news feed.
      */
     public String getSerializedNewsFeed() {
-        return new Gson().toJson(this.newsFeed, Stack.class);
+        return new Gson().toJson(this.getNewsFeed(), Stack.class);
     }
 
     public String myMenuRated() {
-        return this.myMenu.byRating();
+        return this.getMyMenu().byRating();
     }
 
     public String myMenuDifficulty() {
-        return this.myMenu.byDifficulty();
+        return this.getMyMenu().byDifficulty();
     }
 
     public String myMenuRecients() {
-        return this.myMenu.byRecentFirst();
+        return this.getMyMenu().byRecentFirst();
     }
 
     public String getName() {
@@ -161,8 +176,7 @@ public class AbstractUser implements Comparable<AbstractUser> {
     }
 
     public void makeChef() {
-        System.out.println(this + " is now chef!!");
-        this.isChef = true;
+        this.setChef(true);
     }
 
     public boolean share(Recipe recipe) {
@@ -172,5 +186,61 @@ public class AbstractUser implements Comparable<AbstractUser> {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Stack<Recipe> getNewsFeed() {
+        return newsFeed;
+    }
+
+    public void setNewsFeed(Stack<Recipe> newsFeed) {
+        this.newsFeed = newsFeed;
+    }
+
+    public Stack<String> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Stack<String> notifications) {
+        this.notifications = notifications;
+    }
+
+    public MyMenu getMyMenu() {
+        return myMenu;
+    }
+
+    public void setMyMenu(MyMenu myMenu) {
+        this.myMenu = myMenu;
+    }
+
+    public SimpleList<AbstractUser> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(SimpleList<AbstractUser> followers) {
+        this.followers = followers;
+    }
+
+    public Logger getLog() {
+        return log;
+    }
+
+    public void setChef(boolean chef) {
+        isChef = chef;
     }
 }

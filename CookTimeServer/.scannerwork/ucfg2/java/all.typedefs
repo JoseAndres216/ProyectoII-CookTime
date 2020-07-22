@@ -20,8 +20,23 @@ hashCode()java.lang.Object#hashCode()IÚ
 gui.users.UserMControllerjava.lang.ObjectK
 pressedRefreshButton()1gui.users.UserMController#pressedRefreshButton()V/
 <init>()#gui.users.UserMController#<init>()VE
-pressedBackButton().gui.users.UserMController#pressedBackButton()VÎ
- logic.structures.simplelist.Nodejava.lang.Object|
+pressedBackButton().gui.users.UserMController#pressedBackButton()V£
+java.util.Objectsjava.lang.Objectê
+4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Xjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;`
+toString(Ljava/lang/Object;)@java.util.Objects#toString(Ljava/lang/Object;)Ljava/lang/String;¶
+?requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)cjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;M
+nonNull(Ljava/lang/Object;).java.util.Objects#nonNull(Ljava/lang/Object;)ZO
+hashCode(Ljava/lang/Object;)/java.util.Objects#hashCode(Ljava/lang/Object;)IÑ
+.toString(Ljava/lang/Object;Ljava/lang/String;)Rjava.util.Objects#toString(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;I
+hash([Ljava/lang/Object;),java.util.Objects#hash([Ljava/lang/Object;)I'
+<init>()java.util.Objects#<init>()Vù
+Ccompare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Vjava.util.Objects#compare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)IK
+isNull(Ljava/lang/Object;)-java.util.Objects#isNull(Ljava/lang/Object;)Zw
+0deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Cjava.util.Objects#deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Zo
+,equals(Ljava/lang/Object;Ljava/lang/Object;)?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Zl
+"requireNonNull(Ljava/lang/Object;)Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;(
+java.io.Serializablejava.lang.ObjectÅ
+ logic.structures.simplelist.Nodejava.lang.Objectjava.io.Serializable|
 +setPrev(Llogic/structures/simplelist/Node;)Mlogic.structures.simplelist.Node#setPrev(Llogic/structures/simplelist/Node;)VY
 	getPrev()Llogic.structures.simplelist.Node#getPrev()Llogic/structures/simplelist/Node;|
 +setNext(Llogic/structures/simplelist/Node;)Mlogic.structures.simplelist.Node#setNext(Llogic/structures/simplelist/Node;)VY
@@ -29,9 +44,8 @@ hashCode()java.lang.Object#hashCode()IÚ
 	getData()<logic.structures.simplelist.Node#getData()Ljava/lang/Object;\
 setData(Ljava/lang/Object;)=logic.structures.simplelist.Node#setData(Ljava/lang/Object;)VZ
 <init>(Ljava/lang/Object;)<logic.structures.simplelist.Node#<init>(Ljava/lang/Object;)V 
-AbstractUserjava.lang.Object£
-logic.users.EnterpriseAbstractUser4
-setRating(I)$logic.users.Enterprise#setRating(I)VP
+AbstractUserjava.lang.Objectπ
+logic.users.EnterpriseAbstractUserP
 equals(Ljava/lang/Object;)2logic.users.Enterprise#equals(Ljava/lang/Object;)ZZ
 setSchedule(Ljava/lang/String;)7logic.users.Enterprise#setSchedule(Ljava/lang/String;)V`
 "setContactInfo(Ljava/lang/String;):logic.users.Enterprise#setContactInfo(Ljava/lang/String;)VG
@@ -39,8 +53,7 @@ hashCode()java.lang.Object#hashCode()IÚ
 
 toString()3logic.users.Enterprise#toString()Ljava/lang/String;M
 getContactInfo()9logic.users.Enterprise#getContactInfo()Ljava/lang/String;t
-,<init>(Ljava/lang/String;Ljava/lang/String;)Dlogic.users.Enterprise#<init>(Ljava/lang/String;Ljava/lang/String;)V2
-getRating()#logic.users.Enterprise#getRating()I0
+,<init>(Ljava/lang/String;Ljava/lang/String;)Dlogic.users.Enterprise#<init>(Ljava/lang/String;Ljava/lang/String;)V0
 
 hashCode()"logic.users.Enterprise#hashCode()I0
 javax.ws.rs.core.Applicationjava.lang.Object´
@@ -57,8 +70,7 @@ hashCode()"logic.users.Enterprise#hashCode()I0
 stream()6java.util.Collection#stream()Ljava/util/stream/Stream;|
 java.util.Setjava.util.Collectionjava.lang.ObjectC
 spliterator()2java.util.Set#spliterator()Ljava/util/Spliterator;'
-java.lang.Cloneablejava.lang.Object(
-java.io.Serializablejava.lang.Object‚
+java.lang.Cloneablejava.lang.Object‚
 
 java.util.AbstractCollectionjava.util.Collectionjava.lang.Objecth
 #containsAll(Ljava/util/Collection;)Ajava.util.AbstractCollection#containsAll(Ljava/util/Collection;)Z4
@@ -109,77 +121,7 @@ iterator()0java.util.HashSet#iterator()Ljava/util/Iterator;'
 java.lang.Appendablejava.lang.Object+
 java.lang.AutoCloseablejava.lang.Object>
 java.io.Closeablejava.lang.Objectjava.lang.AutoCloseable%
-java.io.Flushablejava.lang.ObjectÆ
-java.io.OutputStreamjava.io.Closeablejava.lang.Objectjava.io.Flushable,
-	write([B)java.io.OutputStream#write([B)V*
-<init>()java.io.OutputStream#<init>()V(
-flush()java.io.OutputStream#flush()V0
-write([BII)!java.io.OutputStream#write([BII)V(
-close()java.io.OutputStream#close()Vé
-java.io.FilterOutputStreamjava.io.OutputStream2
-	write([B)%java.io.FilterOutputStream#write([B)V\
-<init>(Ljava/io/OutputStream;):java.io.FilterOutputStream#<init>(Ljava/io/OutputStream;)V.
-flush()#java.io.FilterOutputStream#flush()V0
-write(I)$java.io.FilterOutputStream#write(I)V6
-write([BII)'java.io.FilterOutputStream#write([BII)V.
-close()#java.io.FilterOutputStream#close()VÜ
-java.io.PrintStreamjava.lang.Appendablejava.io.Closeablejava.io.FilterOutputStream+
-	write([C)java.io.PrintStream#write([C)V)
-print(J)java.io.PrintStream#print(J)V-
-
-println(J)java.io.PrintStream#println(J)V-
-
-println(D)java.io.PrintStream#println(D)V)
-print(F)java.io.PrintStream#print(F)V-
-
-println(F)java.io.PrintStream#println(F)VO
-println(Ljava/lang/String;)0java.io.PrintStream#println(Ljava/lang/String;)VW
-<init>(Ljava/io/OutputStream;Z)4java.io.PrintStream#<init>(Ljava/io/OutputStream;Z)VE
-<init>(Ljava/io/File;)+java.io.PrintStream#<init>(Ljava/io/File;)V1
-ensureOpen()!java.io.PrintStream#ensureOpen()V´
-?printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;/
-write([BII) java.io.PrintStream#write([BII)V)
-print(Z)java.io.PrintStream#print(Z)V-
-
-setError()java.io.PrintStream#setError()V1
-clearError()!java.io.PrintStream#clearError()V-
-
-println(Z)java.io.PrintStream#println(Z)Vá
--printf(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;i
-(<init>(Ljava/io/File;Ljava/lang/String;)=java.io.PrintStream#<init>(Ljava/io/File;Ljava/lang/String;)V?
-	append(C)2java.io.PrintStream#append(C)Ljava/io/PrintStream;M
-<init>(Ljava/lang/String;)/java.io.PrintStream#<init>(Ljava/lang/String;)V)
-write(I)java.io.PrintStream#write(I)Vá
--format(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;+
-	newLine()java.io.PrintStream#newLine()V)
-print(C)java.io.PrintStream#print(C)V1
-checkError()!java.io.PrintStream#checkError()ZO
-println(Ljava/lang/Object;)0java.io.PrintStream#println(Ljava/lang/Object;)V+
-	println()java.io.PrintStream#println()VK
-print(Ljava/lang/String;).java.io.PrintStream#print(Ljava/lang/String;)V'
-close()java.io.PrintStream#close()Ví
-4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Zjava.io.PrintStream#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;)
-print(I)java.io.PrintStream#print(I)V-
-
-println(I)java.io.PrintStream#println(I)V-
-
-println(C)java.io.PrintStream#println(C)V'
-flush()java.io.PrintStream#flush()VK
-write(Ljava/lang/String;).java.io.PrintStream#write(Ljava/lang/String;)V´
-?format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;ã
-9<init>(ZLjava/io/OutputStream;Ljava/nio/charset/Charset;)Njava.io.PrintStream#<init>(ZLjava/io/OutputStream;Ljava/nio/charset/Charset;)VK
-print(Ljava/lang/Object;).java.io.PrintStream#print(Ljava/lang/Object;)V{
-1<init>(Ljava/io/OutputStream;ZLjava/lang/String;)Fjava.io.PrintStream#<init>(Ljava/io/OutputStream;ZLjava/lang/String;)Vm
- append(Ljava/lang/CharSequence;)Ijava.io.PrintStream#append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;l
-toCharset(Ljava/lang/String;)Kjava.io.PrintStream#toCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;W
-<init>(ZLjava/io/OutputStream;)4java.io.PrintStream#<init>(ZLjava/io/OutputStream;)V+
-	print([C)java.io.PrintStream#print([C)Vq
-"append(Ljava/lang/CharSequence;II)Kjava.io.PrintStream#append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;U
-<init>(Ljava/io/OutputStream;)3java.io.PrintStream#<init>(Ljava/io/OutputStream;)V)
-print(D)java.io.PrintStream#print(D)Vq
-,<init>(Ljava/lang/String;Ljava/lang/String;)Ajava.io.PrintStream#<init>(Ljava/lang/String;Ljava/lang/String;)V/
-println([C) java.io.PrintStream#println([C)Vã
-9<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)Njava.io.PrintStream#<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)Vµ
+java.io.Flushablejava.lang.Objectµ
 java.io.Writerjava.lang.Appendablejava.io.Closeablejava.lang.Objectjava.io.Flushable&
 	write([C)java.io.Writer#write([C)Vc
  append(Ljava/lang/CharSequence;)?java.io.Writer#append(Ljava/lang/CharSequence;)Ljava/io/Writer;$
@@ -248,22 +190,103 @@ getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
 <init>()java.io.IOException#<init>()VM
 <init>(Ljava/lang/String;)/java.io.IOException#<init>(Ljava/lang/String;)Vw
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.io.IOException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VS
-<init>(Ljava/lang/Throwable;)2java.io.IOException#<init>(Ljava/lang/Throwable;)V(
-java.lang.Comparablejava.lang.ObjectÒ	
-logic.users.Recipejava.lang.Comparablejava.lang.ObjectN
-setName(Ljava/lang/String;)/logic.users.Recipe#setName(Ljava/lang/String;)V5
-	getTags()(logic.users.Recipe#getTags()LSimpleList;L
-equals(Ljava/lang/Object;).logic.users.Recipe#equals(Ljava/lang/Object;)Z8
-setDifficulty(I)$logic.users.Recipe#setDifficulty(I)V=
+<init>(Ljava/lang/Throwable;)2java.io.IOException#<init>(Ljava/lang/Throwable;)V˙V
+java.util.logging.Loggerjava.lang.ObjectF
+isLevelInitialized().java.util.logging.Logger#isLevelInitialized()Zd
+#fine(Ljava/util/function/Supplier;)=java.util.logging.Logger#fine(Ljava/util/function/Supplier;)Vî
+;log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)Ujava.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)VÖ
+'findResourceBundle(Ljava/lang/String;Z)Zjava.util.logging.Logger#findResourceBundle(Ljava/lang/String;Z)Ljava/util/ResourceBundle;Ω
+CdemandLogger(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)vjava.util.logging.Logger#demandLogger(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Ljava/util/logging/Logger;g
+accessCheckedHandlers()Ljava.util.logging.Logger#accessCheckedHandlers()[Ljava/util/logging/Handler;j
+&warning(Ljava/util/function/Supplier;)@java.util.logging.Logger#warning(Ljava/util/function/Supplier;)VA
+	getName()4java.util.logging.Logger#getName()Ljava/lang/String;ä
+6setupResourceInfo(Ljava/lang/String;Ljava/lang/Class;)Pjava.util.logging.Logger#setupResourceInfo(Ljava/lang/String;Ljava/lang/Class;)Vh
+%setFilter(Ljava/util/logging/Filter;)?java.util.logging.Logger#setFilter(Ljava/util/logging/Filter;)Vè
+,findSystemResourceBundle(Ljava/util/Locale;)_java.util.logging.Logger#findSystemResourceBundle(Ljava/util/Locale;)Ljava/util/ResourceBundle;Ì
+glogp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Åjava.util.logging.Logger#logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Vﬁ
+`logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;)zjava.util.logging.Logger#logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;)V@
+checkPermission()+java.util.logging.Logger#checkPermission()V¶
+Élogrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;[Ljava/lang/Object;)ùjava.util.logging.Logger#logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;[Ljava/lang/Object;)V§
+Clog(Ljava/util/logging/Level;Ljava/lang/String;[Ljava/lang/Object;)]java.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/lang/String;[Ljava/lang/Object;)Vh
+%isLoggable(Ljava/util/logging/Level;)?java.util.logging.Logger#isLoggable(Ljava/util/logging/Level;)Zx
+-setResourceBundle(Ljava/util/ResourceBundle;)Gjava.util.logging.Logger#setResourceBundle(Ljava/util/ResourceBundle;)VN
+fine(Ljava/lang/String;)2java.util.logging.Logger#fine(Ljava/lang/String;)Vb
+"log(Ljava/util/logging/LogRecord;)<java.util.logging.Logger#log(Ljava/util/logging/LogRecord;)V]
+getResourceBundleName()Bjava.util.logging.Logger#getResourceBundleName()Ljava/lang/String;R
+config(Ljava/lang/String;)4java.util.logging.Logger#config(Ljava/lang/String;)V~
+0log(Ljava/util/logging/Level;Ljava/lang/String;)Jjava.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/lang/String;)Vz
+.entering(Ljava/lang/String;Ljava/lang/String;)Hjava.util.logging.Logger#entering(Ljava/lang/String;Ljava/lang/String;)Vf
+$doLog(Ljava/util/logging/LogRecord;)>java.util.logging.Logger#doLog(Ljava/util/logging/LogRecord;)VÔ
+hlogrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Çjava.util.logging.Logger#logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Vx
+-setLogManager(Ljava/util/logging/LogManager;)Gjava.util.logging.Logger#setLogManager(Ljava/util/logging/LogManager;)VM
+getFilter()>java.util.logging.Logger#getFilter()Ljava/util/logging/Filter;÷
+\<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/util/logging/LogManager;Z)vjava.util.logging.Logger#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/util/logging/LogManager;Z)VP
+finer(Ljava/lang/String;)3java.util.logging.Logger#finer(Ljava/lang/String;)Vl
+'doSetParent(Ljava/util/logging/Logger;)Ajava.util.logging.Logger#doSetParent(Ljava/util/logging/Logger;)Vh
+%config(Ljava/util/function/Supplier;)?java.util.logging.Logger#config(Ljava/util/function/Supplier;)VJ
+updateEffectiveLevel()0java.util.logging.Logger#updateEffectiveLevel()Vï
+{logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)ïjava.util.logging.Logger#logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Vh
+%setParent(Ljava/util/logging/Logger;)?java.util.logging.Logger#setParent(Ljava/util/logging/Logger;)V»
+Ulogp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)ojava.util.logging.Logger#logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Vr
+*removeHandler(Ljava/util/logging/Handler;)Djava.util.logging.Logger#removeHandler(Ljava/util/logging/Handler;)VJ
 
-toString()/logic.users.Recipe#toString()Ljava/lang/String;?
+getLevel()<java.util.logging.Logger#getLevel()Ljava/util/logging/Level;§
+Cthrowing(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)]java.util.logging.Logger#throwing(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Vô
+}logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)ójava.util.logging.Logger#logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)VÛ
+jlogp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Ñjava.util.logging.Logger#logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Vd
+#info(Ljava/util/function/Supplier;)=java.util.logging.Logger#info(Ljava/util/function/Supplier;)Vï
+/getLogger(Ljava/lang/String;Ljava/lang/String;)bjava.util.logging.Logger#getLogger(Ljava/lang/String;Ljava/lang/String;)Ljava/util/logging/Logger;v
+,<init>(Ljava/lang/String;Ljava/lang/String;)Fjava.util.logging.Logger#<init>(Ljava/lang/String;Ljava/lang/String;)Vh
+%severe(Ljava/util/function/Supplier;)?java.util.logging.Logger#severe(Ljava/util/function/Supplier;)Vì
+zlogrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)îjava.util.logging.Logger#logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)VR
+finest(Ljava/lang/String;)4java.util.logging.Logger#finest(Ljava/lang/String;)VR
+severe(Ljava/lang/String;)4java.util.logging.Logger#severe(Ljava/lang/String;)VM
+getParent()>java.util.logging.Logger#getParent()Ljava/util/logging/Logger;t
++setCallersClassLoaderRef(Ljava/lang/Class;)Ejava.util.logging.Logger#setCallersClassLoaderRef(Ljava/lang/Class;)V]
+getResourceBundle()Fjava.util.logging.Logger#getResourceBundle()Ljava/util/ResourceBundle;M
+getGlobal()>java.util.logging.Logger#getGlobal()Ljava/util/logging/Logger;T
+warning(Ljava/lang/String;)5java.util.logging.Logger#warning(Ljava/lang/String;)Væ
+Plog(Ljava/util/logging/Level;Ljava/lang/Throwable;Ljava/util/function/Supplier;)jjava.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/lang/Throwable;Ljava/util/function/Supplier;)Vö
+>doLog(Ljava/util/logging/LogRecord;Ljava/util/ResourceBundle;)Xjava.util.logging.Logger#doLog(Ljava/util/logging/LogRecord;Ljava/util/ResourceBundle;)VR
+<init>(Ljava/lang/String;)4java.util.logging.Logger#<init>(Ljava/lang/String;)Vl
+'addHandler(Ljava/util/logging/Handler;)Ajava.util.logging.Logger#addHandler(Ljava/util/logging/Handler;)Vf
+$finer(Ljava/util/function/Supplier;)>java.util.logging.Logger#finer(Ljava/util/function/Supplier;)VL
+setUseParentHandlers(Z)1java.util.logging.Logger#setUseParentHandlers(Z)Vú
+?removeChildLogger(Ljava/util/logging/LogManager$LoggerWeakRef;)Yjava.util.logging.Logger#removeChildLogger(Ljava/util/logging/LogManager$LoggerWeakRef;)V¢
+Blog(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)\java.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)Vd
+#setLevel(Ljava/util/logging/Level;)=java.util.logging.Logger#setLevel(Ljava/util/logging/Level;)Vx
+getEffectiveLoggerBundle()Zjava.util.logging.Logger#getEffectiveLoggerBundle()Ljava/util/logging/Logger$LoggerBundle;S
+getHandlers()Bjava.util.logging.Logger#getHandlers()[Ljava/util/logging/Handler;h
+%finest(Ljava/util/function/Supplier;)?java.util.logging.Logger#finest(Ljava/util/function/Supplier;)VÔ
+hlogp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Çjava.util.logging.Logger#logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V_
+getAnonymousLogger()Gjava.util.logging.Logger#getAnonymousLogger()Ljava/util/logging/Logger;™
+Ölogrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;Ljava/lang/Throwable;)üjava.util.logging.Logger#logrb(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/util/ResourceBundle;Ljava/lang/String;Ljava/lang/Throwable;)VÅ
+%getPlatformLogger(Ljava/lang/String;)Xjava.util.logging.Logger#getPlatformLogger(Ljava/lang/String;)Ljava/util/logging/Logger;†
+Aentering(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)[java.util.logging.Logger#entering(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)VJ
+getUseParentHandlers()0java.util.logging.Logger#getUseParentHandlers()Zq
+getLogger(Ljava/lang/String;)Pjava.util.logging.Logger#getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;ú
+?exiting(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Yjava.util.logging.Logger#exiting(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Vâ
+ulogp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/function/Supplier;)èjava.util.logging.Logger#logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/function/Supplier;)Vb
+getCallersClassLoader()Gjava.util.logging.Logger#getCallersClassLoader()Ljava/lang/ClassLoader;ä
+6doLog(Ljava/util/logging/LogRecord;Ljava/lang/String;)Pjava.util.logging.Logger#doLog(Ljava/util/logging/LogRecord;Ljava/lang/String;)VÉ
+&getAnonymousLogger(Ljava/lang/String;)Yjava.util.logging.Logger#getAnonymousLogger(Ljava/lang/String;)Ljava/util/logging/Logger;û
+@entering(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Zjava.util.logging.Logger#entering(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)VN
+info(Ljava/lang/String;)2java.util.logging.Logger#info(Ljava/lang/String;)Vx
+-exiting(Ljava/lang/String;Ljava/lang/String;)Gjava.util.logging.Logger#exiting(Ljava/lang/String;Ljava/lang/String;)V®
+Elog(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)_java.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V(
+java.lang.Comparablejava.lang.Objectª
+logic.users.Recipejava.lang.Comparablejava.lang.ObjectR
+setTiming(Ljava/lang/String;)1logic.users.Recipe#setTiming(Ljava/lang/String;)V;
+	getTags().logic.users.Recipe#getTags()Ljava/lang/String;L
+equals(Ljava/lang/Object;).logic.users.Recipe#equals(Ljava/lang/Object;)Z0
+setRating(F) logic.users.Recipe#setRating(F)V?
 getAuthor()0logic.users.Recipe#getAuthor()Ljava/lang/String;4
-setDuration(F)"logic.users.Recipe#setDuration(F)V.
-setPrice(I)logic.users.Recipe#setPrice(I)V2
-getDuration()!logic.users.Recipe#getDuration()F6
-getDifficulty()#logic.users.Recipe#getDifficulty()I,
+setDuration(F)"logic.users.Recipe#setDuration(F)V?
+getTiming()0logic.users.Recipe#getTiming()Ljava/lang/String;,
 
-hashCode()logic.users.Recipe#hashCode()I,
+hashCode()logic.users.Recipe#hashCode()IP
+setSteps(Ljava/lang/String;)0logic.users.Recipe#setSteps(Ljava/lang/String;)V2
+getServings()!logic.users.Recipe#getServings()I,
 
 getPrice()logic.users.Recipe#getPrice()IR
 setAuthor(Ljava/lang/String;)1logic.users.Recipe#setAuthor(Ljava/lang/String;)V;
@@ -271,9 +294,30 @@ getPrice()logic.users.Recipe#getPrice()IR
 <init>()logic.users.Recipe#<init>()V&
 rate(I)logic.users.Recipe#rate(I)VN
 setType(Ljava/lang/String;)/logic.users.Recipe#setType(Ljava/lang/String;)V;
-	getType().logic.users.Recipe#getType()Ljava/lang/String;.
+	getType().logic.users.Recipe#getType()Ljava/lang/String;6
+getTimesRated()#logic.users.Recipe#getTimesRated()I8
+setTimesRated(I)$logic.users.Recipe#setTimesRated(I)V=
+
+getSteps()/logic.users.Recipe#getSteps()Ljava/lang/String;.
 getRating()logic.users.Recipe#getRating()FV
-compareTo(Llogic/users/Recipe;)3logic.users.Recipe#compareTo(Llogic/users/Recipe;)I¬
+compareTo(Llogic/users/Recipe;)3logic.users.Recipe#compareTo(Llogic/users/Recipe;)IN
+setName(Ljava/lang/String;)/logic.users.Recipe#setName(Ljava/lang/String;)VI
+getIngredients()5logic.users.Recipe#getIngredients()Ljava/lang/String;8
+setDifficulty(I)$logic.users.Recipe#setDifficulty(I)V=
+
+toString()/logic.users.Recipe#toString()Ljava/lang/String;4
+setServings(I)"logic.users.Recipe#setServings(I)V<
+setRatingsTotal(F)&logic.users.Recipe#setRatingsTotal(F)V,
+
+getLikes()logic.users.Recipe#getLikes()I.
+setPrice(I)logic.users.Recipe#setPrice(I)V2
+getDuration()!logic.users.Recipe#getDuration()F6
+getDifficulty()#logic.users.Recipe#getDifficulty()I=
+getComments(),logic.users.Recipe#getComments()LSimpleList;.
+setLikes(I)logic.users.Recipe#setLikes(I)V:
+getRatingsTotal()%logic.users.Recipe#getRatingsTotal()F\
+"setIngredients(Ljava/lang/String;)6logic.users.Recipe#setIngredients(Ljava/lang/String;)VN
+setTags(Ljava/lang/String;)/logic.users.Recipe#setTags(Ljava/lang/String;)V¬
 java.lang.CharSequencejava.lang.ObjectE
 chars():java.lang.CharSequence#chars()Ljava/util/stream/IntStream;O
 codePoints()?java.lang.CharSequence#codePoints()Ljava/util/stream/IntStream;œ*
@@ -501,21 +545,7 @@ $regionMatches(ILjava/lang/String;II)6java.lang.String#regionMatches(ILjava/lan
 
 valueOf(J)-java.lang.String#valueOf(J)Ljava/lang/String;X
 !<init>(Ljava/lang/StringBuilder;)3java.lang.String#<init>(Ljava/lang/StringBuilder;)V`
-%regionMatches(ZILjava/lang/String;II)7java.lang.String#regionMatches(ZILjava/lang/String;II)Z£
-java.util.Objectsjava.lang.Objectê
-4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Xjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;`
-toString(Ljava/lang/Object;)@java.util.Objects#toString(Ljava/lang/Object;)Ljava/lang/String;¶
-?requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)cjava.util.Objects#requireNonNull(Ljava/lang/Object;Ljava/util/function/Supplier;)Ljava/lang/Object;M
-nonNull(Ljava/lang/Object;).java.util.Objects#nonNull(Ljava/lang/Object;)ZO
-hashCode(Ljava/lang/Object;)/java.util.Objects#hashCode(Ljava/lang/Object;)IÑ
-.toString(Ljava/lang/Object;Ljava/lang/String;)Rjava.util.Objects#toString(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;I
-hash([Ljava/lang/Object;),java.util.Objects#hash([Ljava/lang/Object;)I'
-<init>()java.util.Objects#<init>()Vù
-Ccompare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Vjava.util.Objects#compare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)IK
-isNull(Ljava/lang/Object;)-java.util.Objects#isNull(Ljava/lang/Object;)Zw
-0deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Cjava.util.Objects#deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Zo
-,equals(Ljava/lang/Object;Ljava/lang/Object;)?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Zl
-"requireNonNull(Ljava/lang/Object;)Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;Í
+%regionMatches(ZILjava/lang/String;II)7java.lang.String#regionMatches(ZILjava/lang/String;II)ZÍ
 logic.structures.TreeNodejava.lang.Comparablejava.lang.Objectjava.io.SerializableS
 equals(Ljava/lang/Object;)5logic.structures.TreeNode#equals(Ljava/lang/Object;)ZO
 getParent()@logic.structures.TreeNode#getParent()Llogic/structures/TreeNode;k
@@ -616,9 +646,9 @@ getRight()?logic.structures.TreeNode#getRight()Llogic/structures/TreeNode;K
 copySign(DD)java.lang.Math#copySign(DD)D,
 floorMod(II)java.lang.Math#floorMod(II)I"
 max(II)java.lang.Math#max(II)I,
-toRadians(D)java.lang.Math#toRadians(D)Dà
-&logic.structures.simplelist.SimpleListjava.lang.Objectã
-addFirst(Ljava/lang/Object;)klogic.structures.simplelist.SimpleList#addFirst(Ljava/lang/Object;)Llogic/structures/simplelist/SimpleList;>
+toRadians(D)java.lang.Math#toRadians(D)DŒ
+&logic.structures.simplelist.SimpleListjava.lang.Objectjava.io.Serializabled
+addFirst(Ljava/lang/Object;)Dlogic.structures.simplelist.SimpleList#addFirst(Ljava/lang/Object;)V>
 	isEmpty()1logic.structures.simplelist.SimpleList#isEmpty()Z<
 <init>()0logic.structures.simplelist.SimpleList#<init>()VQ
 
@@ -627,8 +657,8 @@ toString()Clogic.structures.simplelist.SimpleList#toString()Ljava/lang/String;
 	getTail()6logic.structures.simplelist.SimpleList#getTail()LNode;6
 len()-logic.structures.simplelist.SimpleList#len()ID
 deleteLast()4logic.structures.simplelist.SimpleList#deleteLast()VC
-	getHead()6logic.structures.simplelist.SimpleList#getHead()LNode;á
-append(Ljava/lang/Object;)ilogic.structures.simplelist.SimpleList#append(Ljava/lang/Object;)Llogic/structures/simplelist/SimpleList;ö
+	getHead()6logic.structures.simplelist.SimpleList#getHead()LNode;`
+append(Ljava/lang/Object;)Blogic.structures.simplelist.SimpleList#append(Ljava/lang/Object;)Vö
 java.lang.RuntimeExceptionjava.lang.Exception0
 <init>()$java.lang.RuntimeException#<init>()VT
 <init>(Ljava/lang/String;)6java.lang.RuntimeException#<init>(Ljava/lang/String;)V~
@@ -659,115 +689,162 @@ toString()9logic.structures.stack.Stack#toString()Ljava/lang/String;,
 logic.utilities.Sorterjava.lang.Object(
 logic.ServerSettingsjava.lang.Object
 	TypeTokenjava.lang.Object'
-Llogic/ServerSettings$485;	TypeToken'
-Llogic/ServerSettings$563;	TypeToken'
-Llogic/ServerSettings$645;	TypeToken'
-Llogic/ServerSettings$722;	TypeToken'
-Llogic/ServerSettings$796;	TypeToken'
-Llogic/ServerSettings$879;	TypeTokenÛ
-logic.users.MyMenujava.lang.Object(
+Llogic/ServerSettings$447;	TypeToken'
+Llogic/ServerSettings$525;	TypeToken'
+Llogic/ServerSettings$607;	TypeToken'
+Llogic/ServerSettings$680;	TypeToken'
+Llogic/ServerSettings$754;	TypeToken'
+Llogic/ServerSettings$837;	TypeTokenâ
+logic.users.MyMenujava.lang.Objectjava.io.Serializable(
 <init>()logic.users.MyMenu#<init>()VG
 byRecentFirst()4logic.users.MyMenu#byRecentFirst()Ljava/lang/String;=
 
 byRating()/logic.users.MyMenu#byRating()Ljava/lang/String;E
 byDifficulty()3logic.users.MyMenu#byDifficulty()Ljava/lang/String;R
-addRecipe(Ljava/lang/String;)1logic.users.MyMenu#addRecipe(Ljava/lang/String;)VÔ
+addRecipe(Ljava/lang/String;)1logic.users.MyMenu#addRecipe(Ljava/lang/String;)Vÿ
  logic.structures.splay.SplayTreejava.lang.ObjectC
-	inOrder()6logic.structures.splay.SplayTree#inOrder()LSimpleList;4
-print())logic.structures.splay.SplayTree#print()V6
+	inOrder()6logic.structures.splay.SplayTree#inOrder()LSimpleList;6
 <init>()*logic.structures.splay.SplayTree#<init>()VA
-	getRoot()4logic.structures.splay.SplayTree#getRoot()LTreeNode;j
-"deleteNode(Ljava/lang/Comparable;)Dlogic.structures.splay.SplayTree#deleteNode(Ljava/lang/Comparable;)Vb
-insert(Ljava/lang/Comparable;)@logic.structures.splay.SplayTree#insert(Ljava/lang/Comparable;)Vs
-"searchTree(Ljava/lang/Comparable;)Mlogic.structures.splay.SplayTree#searchTree(Ljava/lang/Comparable;)LTreeNode;≥
-resources.Userjava.lang.Objectv
-1rateRecipe(Ljava/lang/String;Ljava/lang/String;I)Aresources.User#rateRecipe(Ljava/lang/String;Ljava/lang/String;I)Zû
-EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Uresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zv
-1shareRecipe(Ljava/lang/String;Ljava/lang/String;)Aresources.User#shareRecipe(Ljava/lang/String;Ljava/lang/String;)Zm
+	getRoot()4logic.structures.splay.SplayTree#getRoot()LTreeNode;b
+insert(Ljava/lang/Comparable;)@logic.structures.splay.SplayTree#insert(Ljava/lang/Comparable;)Vü
+resources.Userjava.lang.Objectè
+1rateRecipe(Ljava/lang/String;Ljava/lang/String;I)Zresources.User#rateRecipe(Ljava/lang/String;Ljava/lang/String;I)LResponse/ResponseBuilder;∑
+EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)nresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;è
+1shareRecipe(Ljava/lang/String;Ljava/lang/String;)Zresources.User#shareRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;m
 $getMymenuRecient(Ljava/lang/String;)Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;i
 "getMymenuRated(Ljava/lang/String;)Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;m
 $getNotifications(Ljava/lang/String;)Eresources.User#getNotifications(Ljava/lang/String;)Ljava/lang/String;g
 !getMymenuDiff(Ljava/lang/String;)Bresources.User#getMymenuDiff(Ljava/lang/String;)Ljava/lang/String;Ö
-0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;t
-0likeRecipe(Ljava/lang/String;Ljava/lang/String;)@resources.User#likeRecipe(Ljava/lang/String;Ljava/lang/String;)Zâ
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Sresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;v
-1addFollower(Ljava/lang/String;Ljava/lang/String;)Aresources.User#addFollower(Ljava/lang/String;Ljava/lang/String;)Ze
+0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;ç
+0likeRecipe(Ljava/lang/String;Ljava/lang/String;)Yresources.User#likeRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;ë
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)[resources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;e
  getFollowers(Ljava/lang/String;)Aresources.User#getFollowers(Ljava/lang/String;)Ljava/lang/String;$
 <init>()resources.User#<init>()VR
 chefRequest(Ljava/lang/String;)/resources.User#chefRequest(Ljava/lang/String;)Vi
-createUser(Ljava/lang/String;)Gresources.User#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;à
-logic.utilities.JsonLoaderjava.lang.ObjectN
-loadGlobalRecipes()7logic.utilities.JsonLoader#loadGlobalRecipes()LAVLTree;:
+createUser(Ljava/lang/String;)Gresources.User#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;_
+getSubject(Ljava/lang/String;Z)<resources.User#getSubject(Ljava/lang/String;Z)LAbstractUser;ë
+2addFollower(Ljava/lang/String;Ljava/lang/String;Z)[resources.User#addFollower(Ljava/lang/String;Ljava/lang/String;Z)LResponse/ResponseBuilder;Ñ
+logic.utilities.JsonLoaderjava.lang.ObjectJ
+loadGlobalRecipes()3logic.utilities.JsonLoader#loadGlobalRecipes()LBST;:
 loadUsers()+logic.utilities.JsonLoader#loadUsers()LBST;L
-loadEnterprises()7logic.utilities.JsonLoader#loadEnterprises()LSplayTree;ˇ
-logic.structures.bst.BSTjava.lang.ObjectZ
-delete(Ljava/lang/Comparable;)8logic.structures.bst.BST#delete(Ljava/lang/Comparable;)V;
-	inOrder().logic.structures.bst.BST#inOrder()LSimpleList;,
-print()!logic.structures.bst.BST#print()V.
+loadEnterprises()7logic.utilities.JsonLoader#loadEnterprises()LSplayTree;ı
+logic.structures.bst.BSTjava.lang.Object;
+	inOrder().logic.structures.bst.BST#inOrder()LSimpleList;.
 <init>()"logic.structures.bst.BST#<init>()VC
 
 toString()5logic.structures.bst.BST#toString()Ljava/lang/String;9
 	getRoot(),logic.structures.bst.BST#getRoot()LTreeNode;Z
-insert(Ljava/lang/Comparable;)8logic.structures.bst.BST#insert(Ljava/lang/Comparable;)V‰
-logic.ServerManagerjava.lang.Objecth
-!getEnterprise(Ljava/lang/String;)Clogic.ServerManager#getEnterprise(Ljava/lang/String;)LAbstractUser;G
+insert(Ljava/lang/Comparable;)8logic.structures.bst.BST#insert(Ljava/lang/Comparable;)VÎ
+logic.ServerManagerjava.lang.ObjectÄ
++searchRecipesDifficulty(Ljava/lang/String;)Qlogic.ServerManager#searchRecipesDifficulty(Ljava/lang/String;)Ljava/lang/String;h
+!getEnterprise(Ljava/lang/String;)Clogic.ServerManager#getEnterprise(Ljava/lang/String;)LAbstractUser;v
+&searchRecipesRated(Ljava/lang/String;)Llogic.ServerManager#searchRecipesRated(Ljava/lang/String;)Ljava/lang/String;G
 getInstance()6logic.ServerManager#getInstance()Llogic/ServerManager;C
 getEnterprises()/logic.ServerManager#getEnterprises()LSplayTree;h
-getUserJson(Ljava/lang/String;)Elogic.ServerManager#getUserJson(Ljava/lang/String;)Ljava/lang/String;l
-!searchRecipes(Ljava/lang/String;)Glogic.ServerManager#searchRecipes(Ljava/lang/String;)Ljava/lang/String;E
-getGlobalRecipes()/logic.ServerManager#getGlobalRecipes()LAVLTree;\
-getUser(Ljava/lang/String;)=logic.ServerManager#getUser(Ljava/lang/String;)LAbstractUser;U
+getUserJson(Ljava/lang/String;)Elogic.ServerManager#getUserJson(Ljava/lang/String;)Ljava/lang/String;t
+%getEnterpriseJson(Ljava/lang/String;)Klogic.ServerManager#getEnterpriseJson(Ljava/lang/String;)Ljava/lang/String;A
+getGlobalRecipes()+logic.ServerManager#getGlobalRecipes()LBST;\
+getUser(Ljava/lang/String;)=logic.ServerManager#getUser(Ljava/lang/String;)LAbstractUser;x
+'searchSubjectRated(Ljava/lang/String;Z)Mlogic.ServerManager#searchSubjectRated(Ljava/lang/String;Z)Ljava/lang/String;U
 existUser(ZLjava/lang/String;)3logic.ServerManager#existUser(ZLjava/lang/String;)Z\
 findRecipe(Ljava/lang/String;):logic.ServerManager#findRecipe(Ljava/lang/String;)LRecipe;1
 loadServer()!logic.ServerManager#loadServer()V]
-"createSubject(ZLjava/lang/String;)7logic.ServerManager#createSubject(ZLjava/lang/String;)V)
+"createSubject(ZLjava/lang/String;)7logic.ServerManager#createSubject(ZLjava/lang/String;)V|
+)searchRecipesDuration(Ljava/lang/String;)Ologic.ServerManager#searchRecipesDuration(Ljava/lang/String;)Ljava/lang/String;)
 <init>()logic.ServerManager#<init>()VD
-getChefRequest()0logic.ServerManager#getChefRequest()LSimpleList;n
-"searchSubject(Ljava/lang/String;Z)Hlogic.ServerManager#searchSubject(Ljava/lang/String;Z)Ljava/lang/String;-
+getChefRequest()0logic.ServerManager#getChefRequest()LSimpleList;-
 
 saveInfo()logic.ServerManager#saveInfo()V`
 findUser(ZLjava/lang/String;)?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;1
 
 getUsers()#logic.ServerManager#getUsers()LBST;]
 "addChefRequest(Ljava/lang/String;)7logic.ServerManager#addChefRequest(Ljava/lang/String;)V{
-1verifyUser(ZLjava/lang/String;Ljava/lang/String;)Flogic.ServerManager#verifyUser(ZLjava/lang/String;Ljava/lang/String;)Z®
-resources.Enterprisesjava.lang.Objectò
-6verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)^resources.Enterprises#verifyEnterprise(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;•
-EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)\resources.Enterprises#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Vl
- getFollowers(Ljava/lang/String;)Hresources.Enterprises#getFollowers(Ljava/lang/String;)Ljava/lang/String;[
- deleteRecipe(Ljava/lang/String;)7resources.Enterprises#deleteRecipe(Ljava/lang/String;)V+
-<init>()resources.Enterprises#<init>()Vt
-$getNotifications(Ljava/lang/String;)Lresources.Enterprises#getNotifications(Ljava/lang/String;)Ljava/lang/String;f
-getMymenu(Ljava/lang/String;)Eresources.Enterprises#getMymenu(Ljava/lang/String;)Ljava/lang/String;c
-$createEnterprise(Ljava/lang/String;);resources.Enterprises#createEnterprise(Ljava/lang/String;)V
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)V–
-logic.users.AbstractUserjava.lang.Comparablejava.lang.Object6
-setRating(I)&logic.users.AbstractUser#setRating(I)VR
-equals(Ljava/lang/Object;)4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zl
-'addFollower(Llogic/users/AbstractUser;)Alogic.users.AbstractUser#addFollower(Llogic/users/AbstractUser;)Vd
-#addNotification(Ljava/lang/String;)=logic.users.AbstractUser#addNotification(Ljava/lang/String;)V]
-getSerializedNewsFeed()Blogic.users.AbstractUser#getSerializedNewsFeed()Ljava/lang/String;C
+1verifyUser(ZLjava/lang/String;Ljava/lang/String;)Flogic.ServerManager#verifyUser(ZLjava/lang/String;Ljava/lang/String;)Z¸
+java.util.logging.LogRecordjava.lang.Objectjava.io.SerializableQ
+getParameters()>java.util.logging.LogRecord#getParameters()[Ljava/lang/Object;G
+getSequenceNumber()0java.util.logging.LogRecord#getSequenceNumber()J;
+getThreadID()*java.util.logging.LogRecord#getThreadID()Iá
+3<init>(Ljava/util/logging/Level;Ljava/lang/String;)Pjava.util.logging.LogRecord#<init>(Ljava/util/logging/Level;Ljava/lang/String;)Vm
+&setSourceClassName(Ljava/lang/String;)Cjava.util.logging.LogRecord#setSourceClassName(Ljava/lang/String;)V;
+inferCaller()*java.util.logging.LogRecord#inferCaller()V`
+getResourceBundle()Ijava.util.logging.LogRecord#getResourceBundle()Ljava/util/ResourceBundle;J
+getMessage():java.util.logging.LogRecord#getMessage()Ljava/lang/String;a
+ setThrown(Ljava/lang/Throwable;)=java.util.logging.LogRecord#setThrown(Ljava/lang/Throwable;)VI
+setSequenceNumber(J)1java.util.logging.LogRecord#setSequenceNumber(J)Vc
+!setLoggerName(Ljava/lang/String;)>java.util.logging.LogRecord#setLoggerName(Ljava/lang/String;)VP
+getLoggerName()=java.util.logging.LogRecord#getLoggerName()Ljava/lang/String;9
+setMillis(J))java.util.logging.LogRecord#setMillis(J)Vo
+'readObject(Ljava/io/ObjectInputStream;)Djava.util.logging.LogRecord#readObject(Ljava/io/ObjectInputStream;)VZ
+getSourceClassName()Bjava.util.logging.LogRecord#getSourceClassName()Ljava/lang/String;{
+-setResourceBundle(Ljava/util/ResourceBundle;)Jjava.util.logging.LogRecord#setResourceBundle(Ljava/util/ResourceBundle;)Vg
+#setLevel(Ljava/util/logging/Level;)@java.util.logging.LogRecord#setLevel(Ljava/util/logging/Level;)V`
+getResourceBundleName()Ejava.util.logging.LogRecord#getResourceBundleName()Ljava/lang/String;s
+)setResourceBundleName(Ljava/lang/String;)Fjava.util.logging.LogRecord#setResourceBundleName(Ljava/lang/String;)V=
+setThreadID(I)+java.util.logging.LogRecord#setThreadID(I)V7
+getMillis()(java.util.logging.LogRecord#getMillis()Jk
+%isLoggerImplFrame(Ljava/lang/String;)Bjava.util.logging.LogRecord#isLoggerImplFrame(Ljava/lang/String;)Z\
+getSourceMethodName()Cjava.util.logging.LogRecord#getSourceMethodName()Ljava/lang/String;]
+setMessage(Ljava/lang/String;);java.util.logging.LogRecord#setMessage(Ljava/lang/String;)Vo
+'setSourceMethodName(Ljava/lang/String;)Djava.util.logging.LogRecord#setSourceMethodName(Ljava/lang/String;)VK
+getThrown()<java.util.logging.LogRecord#getThrown()Ljava/lang/Throwable;M
 
-toString()5logic.users.AbstractUser#toString()Ljava/lang/String;A
-	getPass()4logic.users.AbstractUser#getPass()Ljava/lang/String;C
+getLevel()?java.util.logging.LogRecord#getLevel()Ljava/util/logging/Level;C
+defaultThreadID().java.util.logging.LogRecord#defaultThreadID()Ie
+"setParameters([Ljava/lang/Object;)?java.util.logging.LogRecord#setParameters([Ljava/lang/Object;)Vs
+)writeObject(Ljava/io/ObjectOutputStream;)Fjava.util.logging.LogRecord#writeObject(Ljava/io/ObjectOutputStream;)VÀ
+resources.Enterprisesjava.lang.Objectñ
+1rateRecipe(Ljava/lang/String;Ljava/lang/String;I)aresources.Enterprises#rateRecipe(Ljava/lang/String;Ljava/lang/String;I)LResponse/ResponseBuilder;æ
+EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)uresources.Enterprises#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;ñ
+1shareRecipe(Ljava/lang/String;Ljava/lang/String;)aresources.Enterprises#shareRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;t
+$getMymenuRecient(Ljava/lang/String;)Lresources.Enterprises#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;j
+getMenuDiff(Ljava/lang/String;)Gresources.Enterprises#getMenuDiff(Ljava/lang/String;)Ljava/lang/String;t
+$getNotifications(Ljava/lang/String;)Lresources.Enterprises#getNotifications(Ljava/lang/String;)Ljava/lang/String;å
+0verifyUser(Ljava/lang/String;Ljava/lang/String;)Xresources.Enterprises#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;î
+0likeRecipe(Ljava/lang/String;Ljava/lang/String;)`resources.Enterprises#likeRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;ò
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)bresources.Enterprises#createRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;l
+ getFollowers(Ljava/lang/String;)Hresources.Enterprises#getFollowers(Ljava/lang/String;)Ljava/lang/String;+
+<init>()resources.Enterprises#<init>()Vp
+createUser(Ljava/lang/String;)Nresources.Enterprises#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;l
+ getMenuRated(Ljava/lang/String;)Hresources.Enterprises#getMenuRated(Ljava/lang/String;)Ljava/lang/String;ò
+2addFollower(Ljava/lang/String;Ljava/lang/String;Z)bresources.Enterprises#addFollower(Ljava/lang/String;Ljava/lang/String;Z)LResponse/ResponseBuilder;»
+logic.users.AbstractUserjava.lang.Comparablejava.lang.Objectjava.io.Serializable\
+setPassword(Ljava/lang/String;)9logic.users.AbstractUser#setPassword(Ljava/lang/String;)VR
+equals(Ljava/lang/Object;)4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zd
+#addNotification(Ljava/lang/String;)=logic.users.AbstractUser#addNotification(Ljava/lang/String;)V]
+getSerializedNewsFeed()Blogic.users.AbstractUser#getSerializedNewsFeed()Ljava/lang/String;A
+	getPass()4logic.users.AbstractUser#getPass()Ljava/lang/String;G
+getLog();logic.users.AbstractUser#getLog()Ljava/util/logging/Logger;C
 
 getEmail()5logic.users.AbstractUser#getEmail()Ljava/lang/String;2
 
 hashCode()$logic.users.AbstractUser#hashCode()I@
-encryptPassword()+logic.users.AbstractUser#encryptPassword()Vg
+encryptPassword()+logic.users.AbstractUser#encryptPassword()VV
+setEmail(Ljava/lang/String;)6logic.users.AbstractUser#setEmail(Ljava/lang/String;)V>
+getNewsFeed()-logic.users.AbstractUser#getNewsFeed()LStack;2
+
+setChef(Z)$logic.users.AbstractUser#setChef(Z)V.
+isChef()"logic.users.AbstractUser#isChef()ZI
+getPassword()8logic.users.AbstractUser#getPassword()Ljava/lang/String;A
+	getName()4logic.users.AbstractUser#getName()Ljava/lang/String;.
+<init>()"logic.users.AbstractUser#<init>()VH
+getNotifications()2logic.users.AbstractUser#getNotifications()LStack;;
+getMyMenu(),logic.users.AbstractUser#getMyMenu()LMyMenu;h
+%compareTo(Llogic/users/AbstractUser;)?logic.users.AbstractUser#compareTo(Llogic/users/AbstractUser;)I4
+getRating()%logic.users.AbstractUser#getRating()IX
+addRecipe(Ljava/lang/String;)7logic.users.AbstractUser#addRecipe(Ljava/lang/String;)V6
+setRating(I)&logic.users.AbstractUser#setRating(I)VT
+setName(Ljava/lang/String;)5logic.users.AbstractUser#setName(Ljava/lang/String;)Vl
+'addFollower(Llogic/users/AbstractUser;)Alogic.users.AbstractUser#addFollower(Llogic/users/AbstractUser;)VC
+
+toString()5logic.users.AbstractUser#toString()Ljava/lang/String;g
 getSerializedNotifications()Glogic.users.AbstractUser#getSerializedNotifications()Ljava/lang/String;2
 
 makeChef()$logic.users.AbstractUser#makeChef()VO
-myMenuRecients();logic.users.AbstractUser#myMenuRecients()Ljava/lang/String;.
-isChef()"logic.users.AbstractUser#isChef()ZA
-	getName()4logic.users.AbstractUser#getName()Ljava/lang/String;.
-<init>()"logic.users.AbstractUser#<init>()VI
-myMenuRated()8logic.users.AbstractUser#myMenuRated()Ljava/lang/String;h
-%compareTo(Llogic/users/AbstractUser;)?logic.users.AbstractUser#compareTo(Llogic/users/AbstractUser;)IS
+myMenuRecients();logic.users.AbstractUser#myMenuRecients()Ljava/lang/String;E
+getFollowers()3logic.users.AbstractUser#getFollowers()LSimpleList;I
+myMenuRated()8logic.users.AbstractUser#myMenuRated()Ljava/lang/String;S
 myMenuDifficulty()=logic.users.AbstractUser#myMenuDifficulty()Ljava/lang/String;_
-getSerializedFollowers()Clogic.users.AbstractUser#getSerializedFollowers()Ljava/lang/String;4
-getRating()%logic.users.AbstractUser#getRating()IX
-addRecipe(Ljava/lang/String;)7logic.users.AbstractUser#addRecipe(Ljava/lang/String;)Ví
+getSerializedFollowers()Clogic.users.AbstractUser#getSerializedFollowers()Ljava/lang/String;í
 gui.login.LogInControllerjava.lang.Object;
 pressedLogIn())gui.login.LogInController#pressedLogIn()V•
 CverifyUser([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)^gui.login.LogInController#verifyUser([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V/
@@ -949,193 +1026,7 @@ nextLine().java.util.Scanner#nextLine()Ljava/lang/String;I
 
 nextInt(I)java.util.Scanner#nextInt(I)I7
 reset(),java.util.Scanner#reset()Ljava/util/Scanner;=
-hasNextBigInteger()&java.util.Scanner#hasNextBigInteger()Zﬂj
-java.util.Arraysjava.lang.ObjectL
-sort([Ljava/lang/Object;II)-java.util.Arrays#sort([Ljava/lang/Object;II)V9
-copyOfRange([CII)$java.util.Arrays#copyOfRange([CII)[C6
-parallelSort([C)"java.util.Arrays#parallelSort([C)V*
-
-sort([SII)java.util.Arrays#sort([SII)V™
-JmergeSort([Ljava/lang/Object;[Ljava/lang/Object;IIILjava/util/Comparator;)\java.util.Arrays#mergeSort([Ljava/lang/Object;[Ljava/lang/Object;IIILjava/util/Comparator;)VW
-spliterator([DII)Bjava.util.Arrays#spliterator([DII)Ljava/util/Spliterator$OfDouble;à
-9parallelSort([Ljava/lang/Object;IILjava/util/Comparator;)Kjava.util.Arrays#parallelSort([Ljava/lang/Object;IILjava/util/Comparator;)V:
-parallelSort([FII)$java.util.Arrays#parallelSort([FII)V*
-
-sort([CII)java.util.Arrays#sort([CII)Vd
-'parallelSort([Ljava/lang/Comparable;II)9java.util.Arrays#parallelSort([Ljava/lang/Comparable;II)V&
-<init>()java.util.Arrays#<init>()Vb
-&legacyMergeSort([Ljava/lang/Object;II)8java.util.Arrays#legacyMergeSort([Ljava/lang/Object;II)VQ
-spliterator([J)>java.util.Arrays#spliterator([J)Ljava/util/Spliterator$OfLong;.
-hashCode([F)java.util.Arrays#hashCode([F)I6
-parallelSort([S)"java.util.Arrays#parallelSort([S)V<
-binarySearch([SIIS)%java.util.Arrays#binarySearch([SIIS)I>
-binarySearch0([SIIS)&java.util.Arrays#binarySearch0([SIIS)I?
-toString([F)/java.util.Arrays#toString([F)Ljava/lang/String;6
-parallelSort([J)"java.util.Arrays#parallelSort([J)Vä
-:parallelPrefix([IIILjava/util/function/IntBinaryOperator;)Ljava.util.Arrays#parallelPrefix([IIILjava/util/function/IntBinaryOperator;)V.
-equals([Z[Z)java.util.Arrays#equals([Z[Z)Z-
-copyOf([BI)java.util.Arrays#copyOf([BI)[B8
-binarySearch([II)#java.util.Arrays#binarySearch([II)Ii
-!deepToString([Ljava/lang/Object;)Djava.util.Arrays#deepToString([Ljava/lang/Object;)Ljava/lang/String;.
-equals([B[B)java.util.Arrays#equals([B[B)Z,
-fill([ZIIZ)java.util.Arrays#fill([ZIIZ)VÇ
-6binarySearch0([Ljava/lang/Object;IILjava/lang/Object;)Hjava.util.Arrays#binarySearch0([Ljava/lang/Object;IILjava/lang/Object;)I-
-copyOf([FI)java.util.Arrays#copyOf([FI)[F6
-parallelSort([B)"java.util.Arrays#parallelSort([B)Vå
-;parallelPrefix([DLjava/util/function/DoubleBinaryOperator;)Mjava.util.Arrays#parallelPrefix([DLjava/util/function/DoubleBinaryOperator;)VP
-spliterator([I)=java.util.Arrays#spliterator([I)Ljava/util/Spliterator$OfInt;-
-copyOf([JI)java.util.Arrays#copyOf([JI)[J9
-copyOfRange([FII)$java.util.Arrays#copyOfRange([FII)[F¶
-HparallelPrefix([Ljava/lang/Object;IILjava/util/function/BinaryOperator;)Zjava.util.Arrays#parallelPrefix([Ljava/lang/Object;IILjava/util/function/BinaryOperator;)V®
-IdeepToString([Ljava/lang/Object;Ljava/lang/StringBuilder;Ljava/util/Set;)[java.util.Arrays#deepToString([Ljava/lang/Object;Ljava/lang/StringBuilder;Ljava/util/Set;)V.
-equals([F[F)java.util.Arrays#equals([F[F)ZÇ
--copyOf([Ljava/lang/Object;ILjava/lang/Class;)Qjava.util.Arrays#copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;`
-%parallelSort([Ljava/lang/Comparable;)7java.util.Arrays#parallelSort([Ljava/lang/Comparable;)VÜ
-8parallelPrefix([ILjava/util/function/IntBinaryOperator;)Jjava.util.Arrays#parallelPrefix([ILjava/util/function/IntBinaryOperator;)Vx
-1sort([Ljava/lang/Object;IILjava/util/Comparator;)Cjava.util.Arrays#sort([Ljava/lang/Object;IILjava/util/Comparator;)V,
-fill([IIII)java.util.Arrays#fill([IIII)V:
-parallelSort([CII)$java.util.Arrays#parallelSort([CII)VH
-sort([Ljava/lang/Object;)+java.util.Arrays#sort([Ljava/lang/Object;)V.
-equals([J[J)java.util.Arrays#equals([J[J)Z(
-	fill([II)java.util.Arrays#fill([II)V.
-equals([D[D)java.util.Arrays#equals([D[D)Z-
-copyOf([ZI)java.util.Arrays#copyOf([ZI)[Z<
-binarySearch([JIIJ)%java.util.Arrays#binarySearch([JIIJ)I>
-binarySearch0([JIIJ)&java.util.Arrays#binarySearch0([JIIJ)Il
- spliterator([Ljava/lang/Object;)Hjava.util.Arrays#spliterator([Ljava/lang/Object;)Ljava/util/Spliterator;:
-parallelSort([SII)$java.util.Arrays#parallelSort([SII)V[
-asList([Ljava/lang/Object;)<java.util.Arrays#asList([Ljava/lang/Object;)Ljava/util/List;~
-4mergeSort([Ljava/lang/Object;[Ljava/lang/Object;III)Fjava.util.Arrays#mergeSort([Ljava/lang/Object;[Ljava/lang/Object;III)V8
-binarySearch([FF)#java.util.Arrays#binarySearch([FF)IE
-
-stream([I)7java.util.Arrays#stream([I)Ljava/util/stream/IntStream;?
-toString([Z)/java.util.Arrays#toString([Z)Ljava/lang/String;S
-spliterator([D)@java.util.Arrays#spliterator([D)Ljava/util/Spliterator$OfDouble;>
-binarySearch0([IIII)&java.util.Arrays#binarySearch0([IIII)I&
-sort([F)java.util.Arrays#sort([F)V<
-binarySearch([IIII)%java.util.Arrays#binarySearch([IIII)I6
-parallelSort([I)"java.util.Arrays#parallelSort([I)VJ
-stream([JII):java.util.Arrays#stream([JII)Ljava/util/stream/LongStream;Ñ
-7parallelSort([Ljava/lang/Object;Ljava/util/Comparator;)Ijava.util.Arrays#parallelSort([Ljava/lang/Object;Ljava/util/Comparator;)Vp
-"spliterator([Ljava/lang/Object;II)Jjava.util.Arrays#spliterator([Ljava/lang/Object;II)Ljava/util/Spliterator;z
-2deepEquals([Ljava/lang/Object;[Ljava/lang/Object;)Djava.util.Arrays#deepEquals([Ljava/lang/Object;[Ljava/lang/Object;)ZÄ
-5binarySearch([Ljava/lang/Object;IILjava/lang/Object;)Gjava.util.Arrays#binarySearch([Ljava/lang/Object;IILjava/lang/Object;)I:
-parallelSort([DII)$java.util.Arrays#parallelSort([DII)V*
-
-sort([III)java.util.Arrays#sort([III)VP
-hashCode([Ljava/lang/Object;)/java.util.Arrays#hashCode([Ljava/lang/Object;)I(
-	fill([ZZ)java.util.Arrays#fill([ZZ)V(
-	fill([BB)java.util.Arrays#fill([BB)V(
-	fill([JJ)java.util.Arrays#fill([JJ)Vr
-.equals([Ljava/lang/Object;[Ljava/lang/Object;)@java.util.Arrays#equals([Ljava/lang/Object;[Ljava/lang/Object;)Z?
-toString([J)/java.util.Arrays#toString([J)Ljava/lang/String;>
-binarySearch0([CIIC)&java.util.Arrays#binarySearch0([CIIC)IÜ
-8parallelSetAll([JLjava/util/function/IntToLongFunction;)Jjava.util.Arrays#parallelSetAll([JLjava/util/function/IntToLongFunction;)V<
-binarySearch([CIIC)%java.util.Arrays#binarySearch([CIIC)Iz
-2setAll([DLjava/util/function/IntToDoubleFunction;)Djava.util.Arrays#setAll([DLjava/util/function/IntToDoubleFunction;)Vt
-/sort([Ljava/lang/Object;Ljava/util/Comparator;)Ajava.util.Arrays#sort([Ljava/lang/Object;Ljava/util/Comparator;)Vt
-/setAll([ILjava/util/function/IntUnaryOperator;)Ajava.util.Arrays#setAll([ILjava/util/function/IntUnaryOperator;)V¢
-FparallelPrefix([Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Xjava.util.Arrays#parallelPrefix([Ljava/lang/Object;Ljava/util/function/BinaryOperator;)VT
-spliterator([III)?java.util.Arrays#spliterator([III)Ljava/util/Spliterator$OfInt;9
-copyOfRange([SII)$java.util.Arrays#copyOfRange([SII)[S-
-copyOf([II)java.util.Arrays#copyOf([II)[IL
-swap([Ljava/lang/Object;II)-java.util.Arrays#swap([Ljava/lang/Object;II)Vv
-0setAll([JLjava/util/function/IntToLongFunction;)Bjava.util.Arrays#setAll([JLjava/util/function/IntToLongFunction;)Vú
-CparallelSetAll([Ljava/lang/Object;Ljava/util/function/IntFunction;)Ujava.util.Arrays#parallelSetAll([Ljava/lang/Object;Ljava/util/function/IntFunction;)V,
-fill([BIIB)java.util.Arrays#fill([BIIB)V*
-
-sort([FII)java.util.Arrays#sort([FII)V:
-parallelSort([III)$java.util.Arrays#parallelSort([III)V<
-binarySearch([FIIF)%java.util.Arrays#binarySearch([FIIF)I>
-binarySearch0([FIIF)&java.util.Arrays#binarySearch0([FIIF)I®
-IbinarySearch([Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)[java.util.Arrays#binarySearch([Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)I(
-	fill([CC)java.util.Arrays#fill([CC)V(
-	fill([SS)java.util.Arrays#fill([SS)Vê
-=parallelPrefix([DIILjava/util/function/DoubleBinaryOperator;)Ojava.util.Arrays#parallelPrefix([DIILjava/util/function/DoubleBinaryOperator;)V?
-toString([I)/java.util.Arrays#toString([I)Ljava/lang/String;x
-1deepEquals0(Ljava/lang/Object;Ljava/lang/Object;)Cjava.util.Arrays#deepEquals0(Ljava/lang/Object;Ljava/lang/Object;)Z9
-copyOfRange([ZII)$java.util.Arrays#copyOfRange([ZII)[Z8
-binarySearch([DD)#java.util.Arrays#binarySearch([DD)I?
-toString([C)/java.util.Arrays#toString([C)Ljava/lang/String;l
-"copyOfRange([Ljava/lang/Object;II)Fjava.util.Arrays#copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;^
-$legacyMergeSort([Ljava/lang/Object;)6java.util.Arrays#legacyMergeSort([Ljava/lang/Object;)V,
-fill([FIIF)java.util.Arrays#fill([FIIF)V.
-hashCode([J)java.util.Arrays#hashCode([J)I¨
-KbinarySearch([Ljava/lang/Object;IILjava/lang/Object;Ljava/util/Comparator;)]java.util.Arrays#binarySearch([Ljava/lang/Object;IILjava/lang/Object;Ljava/util/Comparator;)I.
-equals([S[S)java.util.Arrays#equals([S[S)Z&
-sort([D)java.util.Arrays#sort([D)V<
-binarySearch([DIID)%java.util.Arrays#binarySearch([DIID)I.
-hashCode([B)java.util.Arrays#hashCode([B)Ip
--fill([Ljava/lang/Object;IILjava/lang/Object;)?java.util.Arrays#fill([Ljava/lang/Object;IILjava/lang/Object;)V>
-binarySearch0([DIID)&java.util.Arrays#binarySearch0([DIID)I:
-parallelSort([BII)$java.util.Arrays#parallelSort([BII)V(
-	fill([DD)java.util.Arrays#fill([DD)V:
-parallelSort([JII)$java.util.Arrays#parallelSort([JII)V9
-copyOfRange([BII)$java.util.Arrays#copyOfRange([BII)[B?
-toString([B)/java.util.Arrays#toString([B)Ljava/lang/String;-
-copyOf([DI)java.util.Arrays#copyOf([DI)[DL
-stream([DII)<java.util.Arrays#stream([DII)Ljava/util/stream/DoubleStream;F
-
-stream([J)8java.util.Arrays#stream([J)Ljava/util/stream/LongStream;.
-equals([C[C)java.util.Arrays#equals([C[C)Z9
-copyOfRange([JII)$java.util.Arrays#copyOfRange([JII)[J`
-copyOf([Ljava/lang/Object;I)@java.util.Arrays#copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;.
-hashCode([I)java.util.Arrays#hashCode([I)IX
-!deepHashCode([Ljava/lang/Object;)3java.util.Arrays#deepHashCode([Ljava/lang/Object;)I6
-parallelSort([F)"java.util.Arrays#parallelSort([F)Vé
-<legacyMergeSort([Ljava/lang/Object;IILjava/util/Comparator;)Njava.util.Arrays#legacyMergeSort([Ljava/lang/Object;IILjava/util/Comparator;)V,
-fill([DIID)java.util.Arrays#fill([DIID)V&
-sort([C)java.util.Arrays#sort([C)Vd
-stream([Ljava/lang/Object;)Ejava.util.Arrays#stream([Ljava/lang/Object;)Ljava/util/stream/Stream;*
-
-sort([DII)java.util.Arrays#sort([DII)VÑ
-7parallelSetAll([ILjava/util/function/IntUnaryOperator;)Ijava.util.Arrays#parallelSetAll([ILjava/util/function/IntUnaryOperator;)VI
-stream([III)9java.util.Arrays#stream([III)Ljava/util/stream/IntStream;ä
-:legacyMergeSort([Ljava/lang/Object;Ljava/util/Comparator;)Ljava.util.Arrays#legacyMergeSort([Ljava/lang/Object;Ljava/util/Comparator;)V?
-toString([S)/java.util.Arrays#toString([S)Ljava/lang/String;.
-hashCode([Z)java.util.Arrays#hashCode([Z)I&
-sort([S)java.util.Arrays#sort([S)V.
-equals([I[I)java.util.Arrays#equals([I[I)Z,
-fill([JIIJ)java.util.Arrays#fill([JIIJ)V&
-sort([B)java.util.Arrays#sort([B)V,
-fill([CIIC)java.util.Arrays#fill([CIIC)Vå
-;setAll([Ljava/lang/Object;Ljava/util/function/IntFunction;)Mjava.util.Arrays#setAll([Ljava/lang/Object;Ljava/util/function/IntFunction;)V8
-binarySearch([BB)#java.util.Arrays#binarySearch([BB)I8
-binarySearch([JJ)#java.util.Arrays#binarySearch([JJ)Ià
-9parallelPrefix([JLjava/util/function/LongBinaryOperator;)Kjava.util.Arrays#parallelPrefix([JLjava/util/function/LongBinaryOperator;)V&
-sort([J)java.util.Arrays#sort([J)V4
-rangeCheck(III)!java.util.Arrays#rangeCheck(III)V<
-binarySearch([BIIB)%java.util.Arrays#binarySearch([BIIB)Iä
-:parallelSetAll([DLjava/util/function/IntToDoubleFunction;)Ljava.util.Arrays#parallelSetAll([DLjava/util/function/IntToDoubleFunction;)V9
-copyOfRange([III)$java.util.Arrays#copyOfRange([III)[I>
-binarySearch0([BIIB)&java.util.Arrays#binarySearch0([BIIB)Ih
-stream([Ljava/lang/Object;II)Gjava.util.Arrays#stream([Ljava/lang/Object;II)Ljava/util/stream/Stream;U
-spliterator([JII)@java.util.Arrays#spliterator([JII)Ljava/util/Spliterator$OfLong;.
-hashCode([D)java.util.Arrays#hashCode([D)Ié
-3copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)Wjava.util.Arrays#copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;(
-	fill([FF)java.util.Arrays#fill([FF)V9
-copyOfRange([DII)$java.util.Arrays#copyOfRange([DII)[D,
-fill([SIIS)java.util.Arrays#fill([SIIS)VÆ
-LbinarySearch0([Ljava/lang/Object;IILjava/lang/Object;Ljava/util/Comparator;)^java.util.Arrays#binarySearch0([Ljava/lang/Object;IILjava/lang/Object;Ljava/util/Comparator;)I.
-hashCode([S)java.util.Arrays#hashCode([S)I|
-3binarySearch([Ljava/lang/Object;Ljava/lang/Object;)Ejava.util.Arrays#binarySearch([Ljava/lang/Object;Ljava/lang/Object;)I8
-binarySearch([CC)#java.util.Arrays#binarySearch([CC)I8
-binarySearch([SS)#java.util.Arrays#binarySearch([SS)I-
-copyOf([CI)java.util.Arrays#copyOf([CI)[Cl
-+fill([Ljava/lang/Object;Ljava/lang/Object;)=java.util.Arrays#fill([Ljava/lang/Object;Ljava/lang/Object;)V?
-toString([D)/java.util.Arrays#toString([D)Ljava/lang/String;&
-sort([I)java.util.Arrays#sort([I)V6
-parallelSort([D)"java.util.Arrays#parallelSort([D)VH
-
-stream([D):java.util.Arrays#stream([D)Ljava/util/stream/DoubleStream;.
-hashCode([C)java.util.Arrays#hashCode([C)I-
-copyOf([SI)java.util.Arrays#copyOf([SI)[S*
-
-sort([JII)java.util.Arrays#sort([JII)Vå
-;parallelPrefix([JIILjava/util/function/LongBinaryOperator;)Mjava.util.Arrays#parallelPrefix([JIILjava/util/function/LongBinaryOperator;)V*
-
-sort([BII)java.util.Arrays#sort([BII)Va
-toString([Ljava/lang/Object;)@java.util.Arrays#toString([Ljava/lang/Object;)Ljava/lang/String;Ø5
+hasNextBigInteger()&java.util.Scanner#hasNextBigInteger()ZØ5
 java.net.URIjava.lang.Comparablejava.lang.Objectjava.io.SerializableF
 equals(Ljava/lang/Object;)(java.net.URI#equals(Ljava/lang/Object;)ZÜ
 :appendFragment(Ljava/lang/StringBuffer;Ljava/lang/String;)Hjava.net.URI#appendFragment(Ljava/lang/StringBuffer;Ljava/lang/String;)VY
@@ -1419,17 +1310,19 @@ valueOf(J)5java.math.BigInteger#valueOf(J)Ljava/math/BigInteger;“
 <init>()0java.security.NoSuchAlgorithmException#<init>()V`
 <init>(Ljava/lang/String;)Bjava.security.NoSuchAlgorithmException#<init>(Ljava/lang/String;)Vä
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Wjava.security.NoSuchAlgorithmException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)Vf
-<init>(Ljava/lang/Throwable;)Ejava.security.NoSuchAlgorithmException#<init>(Ljava/lang/Throwable;)V”
-resources.Searchesjava.lang.ObjectG
-randomRecipes()4resources.Searches#randomRecipes()Ljava/lang/String;(
+<init>(Ljava/lang/Throwable;)Ejava.security.NoSuchAlgorithmException#<init>(Ljava/lang/Throwable;)VÂ
+resources.Searchesjava.lang.Object
++searchRecipesDifficulty(Ljava/lang/String;)Presources.Searches#searchRecipesDifficulty(Ljava/lang/String;)Ljava/lang/String;G
+randomRecipes()4resources.Searches#randomRecipes()Ljava/lang/String;{
+)searchRecipesDuration(Ljava/lang/String;)Nresources.Searches#searchRecipesDuration(Ljava/lang/String;)Ljava/lang/String;(
 <init>()resources.Searches#<init>()VO
 randomEnterprises()8resources.Searches#randomEnterprises()Ljava/lang/String;A
 ratedUsers()1resources.Searches#ratedUsers()Ljava/lang/String;E
-ratedRecipes()3resources.Searches#ratedRecipes()Ljava/lang/String;g
-searchUsers(Ljava/lang/String;)Dresources.Searches#searchUsers(Ljava/lang/String;)Ljava/lang/String;M
+ratedRecipes()3resources.Searches#ratedRecipes()Ljava/lang/String;u
+&searchRecipesRated(Ljava/lang/String;)Kresources.Searches#searchRecipesRated(Ljava/lang/String;)Ljava/lang/String;q
+$searchUsersRated(Ljava/lang/String;)Iresources.Searches#searchUsersRated(Ljava/lang/String;)Ljava/lang/String;M
 ratedEnterprises()7resources.Searches#ratedEnterprises()Ljava/lang/String;C
-randomUsers()2resources.Searches#randomUsers()Ljava/lang/String;k
-!searchRecipes(Ljava/lang/String;)Fresources.Searches#searchRecipes(Ljava/lang/String;)Ljava/lang/String;s
+randomUsers()2resources.Searches#randomUsers()Ljava/lang/String;s
 %searchEnterprises(Ljava/lang/String;)Jresources.Searches#searchEnterprises(Ljava/lang/String;)Ljava/lang/String;ç
 logic.structures.avl.AVLTreejava.lang.Object?
 	inOrder()2logic.structures.avl.AVLTree#inOrder()LSimpleList;2
@@ -1437,17 +1330,16 @@ valueOf(J)5java.math.BigInteger#valueOf(J)Ljava/math/BigInteger;“
 
 toString()9logic.structures.avl.AVLTree#toString()Ljava/lang/String;=
 	getRoot()0logic.structures.avl.AVLTree#getRoot()LTreeNode;^
-insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)VÓ
-logic.utilities.Searcherjava.lang.Objectk
-findUsers(Ljava/lang/String;Z)Ilogic.utilities.Searcher#findUsers(Ljava/lang/String;Z)Ljava/lang/String;[
+insert(Ljava/lang/Comparable;)<logic.structures.avl.AVLTree#insert(Ljava/lang/Comparable;)VÖ
+logic.utilities.Searcherjava.lang.Objecte
+findUsers(Ljava/lang/String;Z)Clogic.utilities.Searcher#findUsers(Ljava/lang/String;Z)LSimpleList;[
 recipesRatedSuggests()Alogic.utilities.Searcher#recipesRatedSuggests()Ljava/lang/String;Y
 usersRandomSuggest(Z)@logic.utilities.Searcher#usersRandomSuggest(Z)Ljava/lang/String;]
 recipesRandomSuggests()Blogic.utilities.Searcher#recipesRandomSuggests()Ljava/lang/String;_
 sugestRatedEnterprises()Clogic.utilities.Searcher#sugestRatedEnterprises()Ljava/lang/String;W
-randomSuggestUsers()?logic.utilities.Searcher#randomSuggestUsers()Ljava/lang/String;m
-findRecipes(Ljava/lang/String;)Jlogic.utilities.Searcher#findRecipes(Ljava/lang/String;)Ljava/lang/String;a
-randomSuggestEnterprise()Dlogic.utilities.Searcher#randomSuggestEnterprise()Ljava/lang/String;[
-ratedSubjectSuggest(Z)Alogic.utilities.Searcher#ratedSubjectSuggest(Z)Ljava/lang/String;S
+randomSuggestUsers()?logic.utilities.Searcher#randomSuggestUsers()Ljava/lang/String;g
+findRecipes(Ljava/lang/String;)Dlogic.utilities.Searcher#findRecipes(Ljava/lang/String;)LSimpleList;a
+randomSuggestEnterprise()Dlogic.utilities.Searcher#randomSuggestEnterprise()Ljava/lang/String;S
 sugestRatedUsers()=logic.utilities.Searcher#sugestRatedUsers()Ljava/lang/String;~
 java.util.Listjava.util.Collectionjava.lang.ObjectD
 spliterator()3java.util.List#spliterator()Ljava/util/Spliterator;9

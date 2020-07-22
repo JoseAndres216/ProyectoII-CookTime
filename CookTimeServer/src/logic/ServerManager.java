@@ -2,7 +2,6 @@ package logic;
 
 import com.google.gson.Gson;
 import logic.structures.TreeNode;
-import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
 import logic.structures.simplelist.SimpleList;
 import logic.structures.splay.SplayTree;
@@ -10,19 +9,20 @@ import logic.users.AbstractUser;
 import logic.users.Enterprise;
 import logic.users.Recipe;
 import logic.users.User;
-import logic.utilities.Encrypter;
-import logic.utilities.JsonLoader;
-import logic.utilities.JsonWriter;
-import logic.utilities.Searcher;
+import logic.utilities.*;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 public class ServerManager {
     private static ServerManager instance = null;
     private BST<AbstractUser> users;
     private SplayTree<AbstractUser> enterprises;
-    private AVLTree<Recipe> globalRecipes;
+    private final Logger log = Logger.getLogger("ServerManagerLog");
     private SimpleList<AbstractUser> chefRequest;
+    private BST<Recipe> globalRecipes;
 
     //Constructor
     private ServerManager() {
@@ -52,7 +52,9 @@ public class ServerManager {
             AbstractUser user = this.getUser(email);
             this.chefRequest.append(user);
         } catch (Exception e) {
-            System.out.println("user not found");
+
+            log.log(new LogRecord(Level.WARNING, ServerSettings.USER_NOT_FOUND_LOG + email));
+
         }
     }
 
@@ -133,9 +135,9 @@ public class ServerManager {
     public boolean commentRecipe(Recipe recipe, String comment, AbstractUser user) {
         if (recipe != null && user != null) {
             recipe.addComment(comment, user);
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
 
     }
@@ -150,9 +152,9 @@ public class ServerManager {
     public boolean likeRecipe(Recipe recipe, AbstractUser user) {
         if (recipe != null && user != null) {
             recipe.addLike(user);
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
 
     }
@@ -183,7 +185,7 @@ public class ServerManager {
             this.findUser(user, email);
             exists = true;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(new LogRecord(Level.WARNING, ServerSettings.USER_NOT_FOUND_LOG + email));
         }
         return exists;
     }
@@ -200,13 +202,14 @@ public class ServerManager {
         if (!isUser) {
             Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
             newSubject.encryptPassword();
-            System.out.println("Enterprise created: " + newSubject.getEmail());
+            log.log(Level.INFO, () -> "Enterprise created: " + newSubject.getEmail());
             this.enterprises.insert(newSubject);
         } else {
             User newSubject = gson.fromJson(subjectData, User.class);
             newSubject.encryptPassword();
             this.users.insert(newSubject);
-            System.out.println("User created: " + newSubject.getEmail());
+            log.log(new LogRecord(Level.INFO, "User created, json: " + subjectData));
+
 
         }
         this.saveInfo();
@@ -228,7 +231,8 @@ public class ServerManager {
             assert user != null;
             return user.getPass().equals(enctryptedPass);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(new LogRecord(Level.INFO, ServerSettings.USER_NOT_FOUND_LOG + email));
+
             return false;
         }
     }
@@ -274,7 +278,7 @@ public class ServerManager {
      *
      * @return AVL tree, containing the global recipes
      */
-    public AVLTree<Recipe> getGlobalRecipes() {
+    public BST<Recipe> getGlobalRecipes() {
         return globalRecipes;
     }
 
@@ -288,42 +292,58 @@ public class ServerManager {
 
     /**
      * Method for searching on the recipes, returns 15 results max
+     * Results are sorted by high rating
      *
      * @param key String for searching on the recipes, its compared with the recipes' name
      *            and using regular expressions
      * @return json converted simple linked list with recipes
      */
-    public String searchRecipes(String key) {
-        return Searcher.findRecipes(key);
+    public String searchRecipesRated(String key) {
+        return new Gson().toJson(Sorter.byhighRated(Searcher.findRecipes(key)), ServerSettings.RECIPES_LIST_TYPE);
     }
 
     /**
      * Method for searching on the recipes, returns 15 results max
+     * Results are sorted by difficulty
      *
-     * @param key    String for searching on the recipes, its compared with the recipes' name
-     *               and using regular expressions
-     * @param isUser true if the type is user, false if its enterprise
-     * @return json converted simple linked list with users
+     * @param key String for searching on the recipes, its compared with the recipes' name
+     *            and using regular expressions
+     * @return json converted simple linked list with recipes
      */
-    public String searchSubject(String key, boolean isUser) {
-        return Searcher.findUsers(key, isUser);
+    public String searchRecipesDifficulty(String key) {
+        return new Gson().toJson(Sorter.bydifficulty(Searcher.findRecipes(key)), ServerSettings.RECIPES_LIST_TYPE);
     }
 
+    /**
+     * Method for searching on the recipes, returns 15 results max
+     * Results are sorted by duration.
+     *
+     * @param key String for searching on the recipes, its compared with the recipes' name
+     *            and using regular expressions
+     * @return json converted simple linked list with recipes
+     */
+    public String searchRecipesDuration(String key) {
+        return new Gson().toJson(Sorter.byDuration(Searcher.findRecipes(key)), ServerSettings.RECIPES_LIST_TYPE);
+    }
+
+    public String searchSubjectRated(String key, boolean isUser) {
+        return new Gson().toJson(Sorter.ratedUsers((Searcher.findUsers(key, isUser))));
+    }
 
     public boolean shareRecipe(Recipe recipe, AbstractUser user) {
         if (user == null || recipe == null) {
-            return false;
+            return true;
         } else {
-            return user.share(recipe);
+            return !user.share(recipe);
         }
     }
 
     public boolean rate(Recipe recipe, AbstractUser user, int rating) {
         try {
             recipe.rate(rating, user);
-            return true;
-        } catch (Exception e) {
             return false;
+        } catch (Exception e) {
+            return true;
         }
     }
 }

@@ -7,10 +7,7 @@ import javafx.scene.control.ListView;
 import logic.ServerManager;
 import logic.structures.simplelist.SimpleList;
 import logic.users.AbstractUser;
-import logic.utilities.JsonLoader;
 import logic.utilities.JsonWriter;
-
-import java.io.Serializable;
 
 import static gui.login.LogInController.START_VIEW;
 
@@ -19,8 +16,7 @@ public class ChefRController {
     private Button backMenuButton;
     @FXML
     private ListView<Button> usersList;
-    @FXML
-    private Button refreshButton;
+
 
     public void pressedBackButton() {
         StartController.mainMenuAcces(START_VIEW, backMenuButton);
@@ -34,9 +30,7 @@ public class ChefRController {
                 Button tempButton = new Button();
                 int finalI = i;
                 tempButton.setText(list.indexElement(finalI).getEmail());
-                tempButton.setOnAction(event -> {
-                    list.indexElement(finalI).makeChef();
-                });
+                tempButton.setOnAction(event -> list.indexElement(finalI).makeChef());
                 this.usersList.getItems().add(tempButton);
             }
 

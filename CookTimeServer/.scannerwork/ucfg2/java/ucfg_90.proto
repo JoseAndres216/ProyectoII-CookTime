@@ -1,59 +1,9 @@
 
-Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaá á( "startingBlock*Ó
-startingBlockf
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaá  á(A¢
-Ÿ
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÞ Þ(
-%3"
-__annotate*
-GET*
-
-userjava.lang.String£
- 
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaß ß(
-%4"
-__annotate*
-Path*
-
-userjava.lang.String§
-¤
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaà à()
-%5"
-__annotate*
-
-Produces*
-
-userjava.lang.String©
-¦
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaá! á(4
-%6"
-__annotate*
-
-QueryParam*
-
-userjava.lang.String³
-°
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaá< á(@
-userjava.lang.String"__annotation*
-
-%3*
-
-%4*
-
-%5*
-
-%6*
-4*Ý
-4f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaã ã(K"p
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaã ã(K
-"":
-userjava.lang.StringB
-resources.User
+4logic.users.MyMenu#byRecentFirst()Ljava/lang/String;h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/MyMenu.java* *("1*á
+1h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/MyMenu.java+ +("r
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/MyMenu.java+ +(G
+""B
+logic.users.MyMenu

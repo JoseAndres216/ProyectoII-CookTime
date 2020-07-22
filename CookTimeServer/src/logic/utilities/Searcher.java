@@ -3,7 +3,6 @@ package logic.utilities;
 import com.google.gson.Gson;
 import logic.ServerManager;
 import logic.structures.TreeNode;
-import logic.structures.simplelist.Node;
 import logic.structures.simplelist.SimpleList;
 import logic.users.AbstractUser;
 import logic.users.Recipe;
@@ -11,6 +10,7 @@ import logic.users.Recipe;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
+import java.util.logging.Logger;
 
 import static logic.ServerSettings.*;
 import static logic.utilities.Sorter.byhighRated;
@@ -19,8 +19,8 @@ import static logic.utilities.Sorter.byhighRated;
  * Class for the search management in the data structures.
  */
 public interface Searcher {
-
     Gson gson = new Gson();
+    Logger log = Logger.getLogger("SearcherLog");
 
     /**
      * Method for getting matches, using a key and the recipes tree, the search works
@@ -29,9 +29,10 @@ public interface Searcher {
      * @param key the key is given by the user, its compared with the recipes name.
      * @return list with all possible matches.
      */
-    static String findRecipes(String key) {
+    static SimpleList<Recipe> findRecipes(String key) {
+
         TreeNode<Recipe> root = ServerManager.getInstance().getGlobalRecipes().getRoot();
-        return gson.toJson(findRecipesAux(root, MAX_RESULTS, key), RECIPES_LIST_TYPE);
+        return (findRecipesAux(root, MAX_RESULTS, key));
     }
 
     /**
@@ -80,14 +81,14 @@ public interface Searcher {
      *               enterprises tree (false).
      * @return list with all possible matches.
      */
-    static String findUsers(String key, boolean isUser) {
+    static SimpleList<AbstractUser> findUsers(String key, boolean isUser) {
         TreeNode<AbstractUser> root;
         if (isUser) {
             root = ServerManager.getInstance().getUsers().getRoot();
         } else {
             root = ServerManager.getInstance().getEnterprises().getRoot();
         }
-        return gson.toJson(findUsersAux(root, MAX_RESULTS, key), RECIPES_LIST_TYPE);
+        return findUsersAux(root, MAX_RESULTS, key);
 
 
     }
@@ -101,9 +102,9 @@ public interface Searcher {
      * @param key     string for searching in recipes name
      * @return Simple list with all matches
      */
-    static SimpleList<String> findUsersAux(TreeNode<AbstractUser> root, int counter, String key) {
+    static SimpleList<AbstractUser> findUsersAux(TreeNode<AbstractUser> root, int counter, String key) {
         //lista para agregar los matches
-        SimpleList<String> results = new SimpleList<>();
+        SimpleList<AbstractUser> results = new SimpleList<>();
         //cola para recorrer el arbol por niveles
         Queue<TreeNode<AbstractUser>> cola = new LinkedList<>();
         cola.add(root);
@@ -114,11 +115,11 @@ public interface Searcher {
                 // if the actual node matches, adds it to the list, and
                 if (node.getData().getEmail().contains(key)) {
                     if (node.getData().isChef()) {
-                        results.addFirst(node.getData().getEmail());
+                        results.addFirst(node.getData());
                         counter--;
                         continue;
                     }
-                    results.append(node.getData().getEmail());
+                    results.append(node.getData());
                     counter--;
                 }
                 cola.remove();
@@ -168,11 +169,8 @@ public interface Searcher {
             int randomInt = (new Random().nextInt(5));
             TreeNode<Recipe> node = cola.peek();
             if (node != null) {
-                System.out.println("Recipe analized: " + node.getData());
-                System.out.println(randomInt);
                 // if the actual node matches, adds it to the list, and
                 if (randomInt % 2 == 0) {
-                    System.out.println("Recipe added: " + node.getData());
                     results.append(node.getData());
                     counter--;
                 }
@@ -212,10 +210,8 @@ public interface Searcher {
             int randomInt = (new Random().nextInt(5));
             TreeNode<AbstractUser> node = cola.peek();
             if (node != null) {
-                System.out.println("User analized: " + node.getData());
                 // if the actual node matches, adds it to the list, and
                 if (randomInt % 2 == 0) {
-                    System.out.println("Users added: " + node.getData());
                     results.append(node.getData());
                     counter--;
                 }
@@ -253,41 +249,12 @@ public interface Searcher {
     }
 
     /**
-     * Method for getting suggest based on the ratings of users/enterprises
-     *
-     * @param user boolean, true if users, false if enterprises
-     * @return simple list, with the result.
-     */
-    static String ratedSubjectSuggest(boolean user) {
-        //Select the corresponding list
-        SimpleList<AbstractUser> source = ServerManager.getInstance().getUsers().inOrder();
-        if (!user) {
-            source = ServerManager.getInstance().getEnterprises().inOrder();
-        }
-        //apply selection sort to the list.
-        for (Node<AbstractUser> first = source.getHead(); first.getNext() != null; first = first.getNext()) {
-            Node<AbstractUser> smaller = first;
-            Node<AbstractUser> temp = smaller.getNext();
-            while (temp != null) {
-                if (temp.getData().getRating() > smaller.getData().getRating()) {
-                    smaller = temp;
-                }
-                temp = temp.getNext();
-            }
-            source.swap(first, smaller);
-        }
-        //return the sorted list.
-        return new Gson().toJson(source, USER_LIST_TYPE);
-
-    }
-
-    /**
      * Method for getting suggests of best rated users
      *
      * @return simple list of users.
      */
     static String sugestRatedUsers() {
-        return Searcher.ratedSubjectSuggest(true);
+        return new Gson().toJson(Sorter.ratedUsers(ServerManager.getInstance().getUsers().inOrder()), USER_LIST_TYPE);
     }
 
     /**
@@ -296,7 +263,7 @@ public interface Searcher {
      * @return simple list of enterprises.
      */
     static String sugestRatedEnterprises() {
-        return Searcher.ratedSubjectSuggest(false);
+        return new Gson().toJson(Sorter.ratedUsers(ServerManager.getInstance().getEnterprises().inOrder()), USER_LIST_TYPE);
     }
 }
 

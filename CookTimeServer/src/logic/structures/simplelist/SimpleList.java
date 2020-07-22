@@ -1,6 +1,8 @@
 package logic.structures.simplelist;
 
-public class SimpleList<T> {
+import java.io.Serializable;
+
+public class SimpleList<T> implements Serializable {
 
     private Node<T> head = null;
     private Node<T> tail = null;
@@ -28,7 +30,7 @@ public class SimpleList<T> {
         return this.head == null;
     }
 
-    public SimpleList<T> append(T data) {
+    public void append(T data) {
         Node<T> newNode = new Node<>(data);
         if (isEmpty()) {
             this.head = this.tail = newNode;
@@ -37,10 +39,10 @@ public class SimpleList<T> {
             this.tail = newNode;
         }
         this.len++;
-        return this;
+
     }
 
-    public SimpleList<T> addFirst(T data) {
+    public void addFirst(T data) {
         Node<T> newNode = new Node<>(data);
 
         if (this.head != null) {
@@ -48,7 +50,6 @@ public class SimpleList<T> {
         }
         this.head = newNode;
         this.len++;
-        return this;
     }
 
     public T indexElement(int i) {

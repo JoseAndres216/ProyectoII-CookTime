@@ -1,44 +1,34 @@
 
-6logic.structures.TreeNode#toString()Ljava/lang/String;o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaY Y("1*°	
-1o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(ÑÎ
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z($	
-%0int"%logic.structures.TreeNode#getLevel()I*
-logic.structures.TreeNode2
-getLevel()¯
-¬
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z($
-%1java.lang.String"__concat*
-
-Level *
-	
-%0int¸
-µ
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(+
-%2java.lang.String"__concat*
-
-%1java.lang.String*
-: ¬
-©
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ. Z(2
-%3T"__id*'*%
-logic.structures.TreeNode"
-data»
-¸
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(2
-%4java.lang.String"__concat*
-
-%2java.lang.String*	
-
-%3T"‹
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javaZ Z(3
-
-%4java.lang.StringB
-logic.structures.TreeNode
+.logic.users.Recipe#equals(Ljava/lang/Object;)Zj
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaÚ Ú("startingBlock*Ø
+startingBlockj
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaÚ Ú(%´
+±
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaÙ Ù(
+%1"
+__annotate*
+java.lang.Override*
+
+objjava.lang.Objectž
+›
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaÚ! Ú($
+objjava.lang.Object"__annotation*
+
+%1*
+1*·
+1j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaÛ Û(Ï
+Ì
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaÛ Û( 
+%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
+""*
+
+objjava.lang.Object"t
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.javaÛ Û(!
+"":
+objjava.lang.ObjectB
+logic.users.Recipe

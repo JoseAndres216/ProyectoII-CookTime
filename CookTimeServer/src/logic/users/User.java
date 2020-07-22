@@ -4,9 +4,9 @@ public class User extends AbstractUser {
     private int age;
 
     public User(String email, String pass) {
-        this.name = "Test User";
-        this.email = email;
-        this.password = pass;
+        this.setName("Test User");
+        this.setEmail(email);
+        this.setPassword(pass);
         this.setAge(20);
 
 
@@ -15,8 +15,8 @@ public class User extends AbstractUser {
     @Override
     public String toString() {
         return "User{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                "email='" + getEmail() + '\'' +
+                ", password='" + getPassword() + '\'' +
                 '}';
     }
 

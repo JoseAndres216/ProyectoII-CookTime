@@ -2,6 +2,7 @@ package logic.utilities;
 
 import logic.structures.simplelist.Node;
 import logic.structures.simplelist.SimpleList;
+import logic.users.AbstractUser;
 import logic.users.Recipe;
 
 import java.util.LinkedList;
@@ -13,7 +14,6 @@ import java.util.Queue;
 public interface Sorter {
 
     int MAX_DIGITS_RADIX = 2;
-
 
     // Auxiliar method for quick sort for recipes, using rating
     static Node<Recipe> quicksortAux(Node<Recipe> start, Node<Recipe> end) {
@@ -128,7 +128,7 @@ public interface Sorter {
                 //for each recipe, sort it based on the last digit of the difficult
                 Recipe actual = source.indexElement(i);
                 int actualDifficult = actual.getDifficulty();
-                int digit = ((int) (actualDifficult % Math.pow(10, counter))) / (int) (Math.pow(10, counter - 1));
+                int digit = ((int) (actualDifficult % Math.pow(10, counter))) / (int) (Math.pow(10, (double) counter - 1));
                 //add the recipes to the corresponding bucket on the buckets list.
 
                 buckets.get(digit).add(actual);
@@ -168,6 +168,32 @@ public interface Sorter {
             source.swap(first, smaller);
         }
         return source;
+    }
+
+
+    /**
+     * Method for sorting a user's list based on the qualifications..
+     *
+     * @param source unsorted list of usesr
+     * @return simple list, with the result.
+     */
+    static SimpleList<AbstractUser> ratedUsers(SimpleList<AbstractUser> source) {
+
+        //apply selection sort to the list.
+        for (Node<AbstractUser> first = source.getHead(); first.getNext() != null; first = first.getNext()) {
+            Node<AbstractUser> smaller = first;
+            Node<AbstractUser> temp = smaller.getNext();
+            while (temp != null) {
+                if (temp.getData().getRating() > smaller.getData().getRating()) {
+                    smaller = temp;
+                }
+                temp = temp.getNext();
+            }
+            source.swap(first, smaller);
+        }
+        //return the sorted list.
+        return source;
+
     }
 
 }

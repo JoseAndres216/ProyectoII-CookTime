@@ -1,17 +1,16 @@
 package logic.utilities;
 
-import logic.structures.avl.AVLTree;
+
+import com.google.gson.Gson;
 import logic.structures.bst.BST;
 import logic.structures.splay.SplayTree;
 import logic.users.AbstractUser;
 import logic.users.Recipe;
-import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static logic.ServerManager.*;
 import static logic.ServerSettings.*;
 
 public interface JsonLoader {
@@ -43,7 +42,7 @@ public interface JsonLoader {
         return null;
     }
 
-    static AVLTree<Recipe> loadGlobalRecipes() {
+    static BST<Recipe> loadGlobalRecipes() {
         try (Scanner sc = new Scanner(new File(RECIPES_JSON_PATH))) {
 
             String line = sc.nextLine();

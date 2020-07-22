@@ -8,6 +8,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static resources.User.getSubject;
 
@@ -16,6 +18,8 @@ import static resources.User.getSubject;
  */
 @Path("/enterprise")
 public class Enterprises {
+    final Logger log = Logger.getLogger("EnterprisesRscrLog");
+
     /**
      * TESTED
      * Method for adding a enterprise on the server, the verification of the existence of the server
@@ -30,15 +34,13 @@ public class Enterprises {
     public Response.ResponseBuilder createUser(@QueryParam("info") String json) {
         try {
             ServerManager.getInstance().createSubject(false, json);
-            System.out.println("Creating enterprise: " + json);
+            log.log(Level.INFO, () -> "Creating enterprise: " + json);
             return Response.status(Response.Status.CREATED);
         } catch (IllegalArgumentException | NullPointerException e) {
-            e.printStackTrace();
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.NOT_ACCEPTABLE);
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-
-
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR);
         }
 
@@ -58,12 +60,11 @@ public class Enterprises {
     public String verifyUser(@QueryParam("email") String email,
                              @QueryParam("pass") String password) throws NoSuchAlgorithmException {
         String result = null;
-        System.out.println("Verifying enterprise: " + email + " " + password);
+        log.log(Level.INFO, () -> "Verifying enterprise: " + email + " " + password);
         if (ServerManager.getInstance().verifyUser(true, email, password)) {
             result = ServerManager.getInstance().getEnterpriseJson(email);
-            System.out.println(result);
         } else {
-            System.out.println("no se pudo verificar al usuario");
+            log.log(Level.WARNING, () -> "User not verified: " + email + " " + password);
         }
         return result;
     }
@@ -105,12 +106,12 @@ public class Enterprises {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getEnterprise(email);
-            if (!ServerManager.getInstance().likeRecipe(recipe, user)) {
+            if (ServerManager.getInstance().likeRecipe(recipe, user)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -129,12 +130,12 @@ public class Enterprises {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getEnterprise(email);
-            if (!ServerManager.getInstance().shareRecipe(recipe, user)) {
+            if (ServerManager.getInstance().shareRecipe(recipe, user)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -154,12 +155,12 @@ public class Enterprises {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getEnterprise(email);
-            if (!ServerManager.getInstance().rate(recipe, user, rating)) {
+            if (ServerManager.getInstance().rate(recipe, user, rating)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -181,12 +182,12 @@ public class Enterprises {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getEnterprise(email);
-            if (!ServerManager.getInstance().commentRecipe(recipe, comment, user)) {
+            if (ServerManager.getInstance().commentRecipe(recipe, comment, user)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -205,7 +206,7 @@ public class Enterprises {
             return ServerManager.getInstance().getEnterprise(user).myMenuRecients();
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return null;
         }
     }
@@ -225,7 +226,7 @@ public class Enterprises {
             return ServerManager.getInstance().getEnterprise(user).myMenuDifficulty();
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return null;
         }
     }
@@ -243,7 +244,7 @@ public class Enterprises {
         try {
             return ServerManager.getInstance().getEnterprise(user).myMenuRated();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return null;
         }
     }
@@ -289,7 +290,6 @@ public class Enterprises {
     @POST
     @Path("/followers")
     public Response.ResponseBuilder addFollower(@QueryParam("user") String user, @QueryParam("newFollower") String follower, @QueryParam("isUser") boolean isUser) {
-
         try {
             AbstractUser newfollower;
             AbstractUser followed = ServerManager.getInstance().getEnterprise(user);
@@ -301,7 +301,7 @@ public class Enterprises {
             }
             return Response.status(Response.Status.NOT_FOUND);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR);
         }
 

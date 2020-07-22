@@ -1,13 +1,9 @@
 package logic.structures;
 
-import com.google.gson.annotations.Expose;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-
 public class TreeNode<T extends Comparable<T>> implements Serializable, Comparable<TreeNode<T>> {
-
     private T data;
     private TreeNode<T> left;
     private TreeNode<T> right;
@@ -18,6 +14,7 @@ public class TreeNode<T extends Comparable<T>> implements Serializable, Comparab
     public TreeNode(T data) {
         this(data, null, null);
     }
+
     public TreeNode(T data, TreeNode<T> left, TreeNode<T> right) {
         this.data = data;
         this.left = left;

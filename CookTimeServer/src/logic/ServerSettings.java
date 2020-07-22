@@ -1,7 +1,6 @@
 package logic;
 
 import com.google.gson.reflect.TypeToken;
-import logic.structures.avl.AVLTree;
 import logic.structures.bst.BST;
 import logic.structures.simplelist.SimpleList;
 import logic.structures.splay.SplayTree;
@@ -21,7 +20,7 @@ public interface ServerSettings {
     }.getType();
     Type SPLAY_TYPE = new TypeToken<SplayTree<AbstractUser>>() {
     }.getType();
-    Type AVL_TYPE = new TypeToken<AVLTree<Recipe>>() {
+    Type AVL_TYPE = new TypeToken<BST<Recipe>>() {
     }.getType();
     Type RECIPE_TYPE = new TypeToken<Recipe>() {
     }.getType();
@@ -39,17 +38,18 @@ public interface ServerSettings {
     String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe: ";
     //Notification for added a recipe, should add the name at the beggining
     String NOTIFICATION_ADDED_RECIPE = " added a new recipe!";
-    String DATA_BASE_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\logic\\files\\database\\";
+    String DATA_BASE_PATH = "logic/files/database/";
 
 
-    String JsonEnterprises = "Enterprises.json";
-    String ENTERPRISES_JSON_PATH = DATA_BASE_PATH + JsonEnterprises;
+    String JSON_ENTERPRISES = "Enterprises.json";
+    String ENTERPRISES_JSON_PATH = DATA_BASE_PATH + JSON_ENTERPRISES;
 
-    String JsonUsers = "Users.json";
-    String USERS_JSON_PATH = DATA_BASE_PATH + JsonUsers;
+    String JSON_USERS = "Users.json";
+    String USERS_JSON_PATH = DATA_BASE_PATH + JSON_USERS;
 
-    String JsonRecipes = "Recipes.json";
-    String RECIPES_JSON_PATH = DATA_BASE_PATH + JsonRecipes;
+    String JSON_RECIPES = "Recipes.json";
+    String RECIPES_JSON_PATH = DATA_BASE_PATH + JSON_RECIPES;
 
 
+    String USER_NOT_FOUND_LOG = "User not found, email: ";
 }

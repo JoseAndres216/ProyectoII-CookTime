@@ -1,16 +1,9 @@
 
-9logic.structures.stack.Stack#toString()Ljava/lang/String;r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java ("1*¬
-1r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java (´
-±
-r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java (
-%0java.lang.String"__concat*
-
-Stack{*
-	elements="|
-r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java (
-""B 
-logic.structures.stack.Stack
+%logic.structures.TreeNode#getLevel()Io
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javab b("1*ï
+1o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javac c("y
+o
+eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.javac c(
+""B
+logic.structures.TreeNode

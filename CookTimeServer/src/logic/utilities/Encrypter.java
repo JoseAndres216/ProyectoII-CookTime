@@ -3,16 +3,18 @@ package logic.utilities;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public interface Encrypter {
-
+    Logger log = Logger.getLogger("EncrypterLog");
 
     /**
      * Method for encryptation the passwords
      *
-     * @return
+     * @return encrypted password
      */
-    static String encryptPassword(String word) throws NoSuchAlgorithmException {
+    static String encryptPassword(String word) {
         try {
             // Static getInstance method is called with hashing MD5
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -25,16 +27,17 @@ public interface Encrypter {
             BigInteger no = new BigInteger(1, messageDigest);
 
             // Convert message digest into hex value
-            String hashtext = no.toString(16);
+            StringBuilder hashtext = new StringBuilder(no.toString(16));
             while (hashtext.length() < 32) {
-                hashtext = new StringBuilder().append("0").append(hashtext).toString();
+                hashtext.insert(0, "0");
             }
-            return hashtext;
+            return hashtext.toString();
         }
 
         // For specifying wrong message digest algorithms
         catch (NoSuchAlgorithmException e) {
-            throw new NoSuchAlgorithmException(e);
+            log.log(Level.WARNING, e.getMessage());
+            return null;
         }
     }
 

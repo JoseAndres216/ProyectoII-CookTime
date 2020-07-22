@@ -8,6 +8,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Resources class for handling request related to a user's profile
@@ -15,6 +17,7 @@ import java.security.NoSuchAlgorithmException;
  */
 @Path("/user")
 public class User {
+    final Logger log = Logger.getLogger("UserRsrcLog");
     static AbstractUser getSubject(@QueryParam("newFollower") String follower, @QueryParam("isUser") boolean isUser) {
         AbstractUser newfollower;
         if (isUser) {
@@ -41,7 +44,7 @@ public class User {
             ServerManager.getInstance().createSubject(true, json);
             return Response.status(Response.Status.CREATED);
         } catch (NoSuchAlgorithmException | IllegalArgumentException | NullPointerException e) {
-            e.printStackTrace();
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.NOT_ACCEPTABLE);
         }
     }
@@ -61,15 +64,17 @@ public class User {
     @Produces(MediaType.APPLICATION_JSON)
     public String verifyUser(@QueryParam("user") String email,
                              @QueryParam("pass") String password) throws NoSuchAlgorithmException {
-        String result = null;
-        System.out.println(email + "*<>*" + password);
+        String result;
+        log.log(Level.INFO, () -> "Verifying: " + email + " " + password);
         if (ServerManager.getInstance().verifyUser(true, email, password)) {
             result = ServerManager.getInstance().getUserJson(email);
-            System.out.println(result);
+
+            return result;
         } else {
-            System.out.println("no se pudo verificar al usuario");
+            log.log(Level.INFO, () -> "Not verified: " + email + " " + password);
+            return null;
         }
-        return result;
+
     }
 
     /**
@@ -109,12 +114,12 @@ public class User {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
-            if (!ServerManager.getInstance().likeRecipe(recipe, user)) {
+            if (ServerManager.getInstance().likeRecipe(recipe, user)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -133,12 +138,12 @@ public class User {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
-            if (!ServerManager.getInstance().shareRecipe(recipe, user)) {
+            if (ServerManager.getInstance().shareRecipe(recipe, user)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -158,12 +163,12 @@ public class User {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
-            if (!ServerManager.getInstance().rate(recipe, user, rating)) {
+            if (ServerManager.getInstance().rate(recipe, user, rating)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -185,12 +190,12 @@ public class User {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
-            if (!ServerManager.getInstance().commentRecipe(recipe, comment, user)) {
+            if (ServerManager.getInstance().commentRecipe(recipe, comment, user)) {
                 return Response.status(Response.Status.NOT_FOUND);
             }
             return Response.status(Response.Status.ACCEPTED);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.CONFLICT);
         }
     }
@@ -209,7 +214,7 @@ public class User {
             return ServerManager.getInstance().getUser(user).myMenuRecients();
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return null;
         }
     }
@@ -229,7 +234,7 @@ public class User {
             return ServerManager.getInstance().getUser(user).myMenuDifficulty();
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return null;
         }
     }
@@ -247,7 +252,7 @@ public class User {
         try {
             return ServerManager.getInstance().getUser(user).myMenuRated();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return null;
         }
     }
@@ -292,7 +297,7 @@ public class User {
      */
     @POST
     @Path("/followers")
-    public Response.ResponseBuilder addFollower(@QueryParam("user") String user, @QueryParam("newFollower") String follower, @QueryParam("isUser") boolean isUser) {
+    public Response.ResponseBuilder addFollower(@QueryParam("email") String user, @QueryParam("newFollower") String follower, @QueryParam("isUser") boolean isUser) {
 
         try {
             AbstractUser newfollower;
@@ -300,18 +305,13 @@ public class User {
             newfollower = getSubject(follower, isUser);
             if (newfollower != null && followed != null) {
                 followed.addFollower(newfollower);
-                return Response.status(Response.Status.OK);
-
+                return Response.status(Response.Status.CREATED);
             }
             return Response.status(Response.Status.NOT_FOUND);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR);
         }
-        /*
-        method for getting the followers of an user.
-         */
-
     }
 
     /**
@@ -325,7 +325,7 @@ public class User {
         try {
             ServerManager.getInstance().addChefRequest(user);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
         }
     }
 }

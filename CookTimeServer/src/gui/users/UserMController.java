@@ -9,6 +9,8 @@ import logic.structures.simplelist.SimpleList;
 import logic.users.AbstractUser;
 import logic.utilities.JsonLoader;
 
+import java.util.Objects;
+
 import static gui.login.LogInController.START_VIEW;
 
 public class UserMController {
@@ -23,7 +25,7 @@ public class UserMController {
     }
 
     public void pressedRefreshButton() {
-        SimpleList<AbstractUser> list = JsonLoader.loadUsers().inOrder();
+        SimpleList<AbstractUser> list = Objects.requireNonNull(JsonLoader.loadUsers()).inOrder();
         this.usersList.getItems().removeAll();
         for (int i = 0; i < list.len(); i++) {
             this.usersList.getItems().add(list.indexElement(i).getEmail());

@@ -14,8 +14,8 @@ public class SMProto extends Application {
 
     public static final String LOG_IN_SERVER_FXML = "logInServer.fxml";
 
-    public static final String LOGIN_FXML_PATH ="C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\gui\\login\\"
-                    + LOG_IN_SERVER_FXML;
+    public static final String LOGIN_FXML_PATH = "src/gui/login/"
+            + LOG_IN_SERVER_FXML;
 
 
     public static void main(String[] args) {

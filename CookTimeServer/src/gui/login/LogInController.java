@@ -11,22 +11,22 @@ import javafx.stage.Stage;
 import logic.utilities.Encrypter;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class LogInController {
     public static final String SERVER_CONFIG_FILE = "ServerConfiguration.txt";
     public static final String START_SERVER_M_FXML = "startServerM.fxml";
-    public static final String GUI_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\gui\\";
-    public static final String START_VIEW = GUI_PATH + "start\\" + START_SERVER_M_FXML;
-    private static final String CONFIG_PATH = GUI_PATH +"login\\"+SERVER_CONFIG_FILE;
+    public static final String GUI_PATH = "src/gui/";
+    public static final String START_VIEW = GUI_PATH + "start/" + START_SERVER_M_FXML;
+    private static final String CONFIG_PATH = GUI_PATH + "login/" + SERVER_CONFIG_FILE;
     //files for the configuration of server
-
+    final Logger log = Logger.getLogger("LogInLog");
     @FXML
     private Button logInButton;
     @FXML
@@ -35,15 +35,14 @@ public class LogInController {
     private PasswordField passwordEntry;
 
 
-    private String[] getLoginSets() throws FileNotFoundException {
+    private String[] getLoginSets() {
 
         String[] array = null;
         try (Scanner fileScanner = new Scanner(new File(CONFIG_PATH))) {
             String line = fileScanner.nextLine();
             array = line.split("#");
         } catch (Exception e) {
-            System.out.println("error cargando los archivos de configuracion");
-            e.printStackTrace();
+            log.log(Level.WARNING, () -> "Exception:" + e.getMessage());
         }
         return array;
     }
@@ -51,11 +50,11 @@ public class LogInController {
     private void verifyUser(String[] array, String username, String password) throws NoSuchAlgorithmException {
         String encryptedGivenPass = Encrypter.encryptPassword(password);
         String encryptedUserName = Encrypter.encryptPassword(username);
-        System.out.println(Arrays.toString(array));
 
+
+        assert encryptedGivenPass != null;
+        assert encryptedUserName != null;
         if (!(encryptedGivenPass.equals(array[1]) && encryptedUserName.equals(array[0]))) {
-            System.out.println(Arrays.toString(array));
-            System.out.println("Given username: ");
             throw new IllegalArgumentException("Invalid credentials");
         }
     }
@@ -72,7 +71,7 @@ public class LogInController {
             source.setScene(newScene);
 
         } catch (IOException | NullPointerException | NoSuchAlgorithmException e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, () -> "Exception:" + e.getMessage());
         }
     }
 }

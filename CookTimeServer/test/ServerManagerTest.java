@@ -1,13 +1,11 @@
-import logic.structures.simplelist.SimpleList;
-import logic.utilities.JsonLoader;
-import logic.utilities.JsonWriter;
+import com.google.gson.Gson;
 import logic.ServerManager;
 import logic.users.AbstractUser;
-import logic.utilities.Encrypter;
 import logic.users.Enterprise;
 import logic.users.Recipe;
 import logic.users.User;
-import com.google.gson.Gson;
+import logic.utilities.Encrypter;
+import logic.utilities.JsonWriter;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -204,11 +202,7 @@ public class ServerManagerTest {
         ServerManager.getInstance().createSubject(true, TEST_USER5);
 
         //write the files
-        ServerManager.getInstance().getUsers().print();
 
-        JsonWriter.updateUsers();
-
-        JsonLoader.loadUsers().print();
     }
 
     @Test
@@ -229,10 +223,6 @@ public class ServerManagerTest {
         ServerManager.getInstance().createSubject(false, TEST_USER4);
         ServerManager.getInstance().createSubject(false, TEST_USER5);
 
-        ServerManager.getInstance().getEnterprises().print();
-        //write the files
-        JsonWriter.updateEnterprises();
-        JsonLoader.loadEnterprises().print();
     }
 
     @Test
@@ -254,12 +244,6 @@ public class ServerManagerTest {
         testRecipe.setDuration(125);
         testRecipe.setAuthor(testUser.getEmail());
         testRecipe.setDifficulty(0);
-        SimpleList<String> tags = new SimpleList<>();
-        tags.append("Cancer");
-        tags.append("china");
-        tags.append("wakala las de queso");
-        tags.append("rikas las de poio");
-        testRecipe.setTags(tags);
 
 
         final String jsonRecipe = jsonConverter.toJson(testRecipe);

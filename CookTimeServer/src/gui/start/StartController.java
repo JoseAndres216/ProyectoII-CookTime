@@ -52,8 +52,8 @@ public class StartController {
             Scene newScene = new Scene(root);
             Stage source = (Stage) adminUsersButton.getScene().getWindow();
             source.setScene(newScene);
-        } catch (IOException | NullPointerException e) {
-            System.out.println(e.getMessage());
+        } catch (IOException | NullPointerException ignored) {
+
         }
     }
 }

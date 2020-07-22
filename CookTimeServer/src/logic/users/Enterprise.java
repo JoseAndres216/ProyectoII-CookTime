@@ -2,26 +2,20 @@ package logic.users;
 
 import logic.structures.simplelist.SimpleList;
 
+import java.util.Objects;
+
 public class Enterprise extends AbstractUser {
     private String contactInfo;
     private String schedule;
     private SimpleList<AbstractUser> members;
 
     public Enterprise(String email, String pass) {
-        this.email = email;
-        this.password = pass;
+        this.setEmail(email);
+        this.setPassword(pass);
     }
 
     public void addMember(AbstractUser member) {
         this.members.append(member);
-    }
-
-    public int getRating() {
-        return this.rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
     }
 
     public String getContactInfo() {
@@ -44,23 +38,24 @@ public class Enterprise extends AbstractUser {
 
     public String toString() {
         return "Enterprise{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                "email='" + getEmail() + '\'' +
+                ", password='" + getPassword() + '\'' +
                 '}';
     }
 
     @Override
-    public int compareTo(AbstractUser user) {
-        return super.compareTo(user);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Enterprise that = (Enterprise) o;
+        return Objects.equals(contactInfo, that.contactInfo) &&
+                Objects.equals(schedule, that.schedule) &&
+                Objects.equals(members, that.members);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(super.hashCode(), contactInfo, schedule, members);
     }
 }

@@ -1,16 +1,16 @@
 
-?logic.structures.TreeNode#getRight()Llogic/structures/TreeNode;o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java3 3("1*Ó
-1o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java4 4(Å
-Â
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java4 4(
-%0logic.structures.TreeNode"__id*(*&
-logic.structures.TreeNode"
-right"”
-o
-eC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/TreeNode.java4 4(!
-
-%0logic.structures.TreeNodeB
-logic.structures.TreeNode
+.logic.users.Recipe#getTags()Ljava/lang/String;j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java” ”("1*ª
+1j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java• •(¯
+¬
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java• •(
+%0java.lang.String"__id* *
+logic.users.Recipe"
+tags"†
+j
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/Recipe.java• •(
+
+%0java.lang.StringB
+logic.users.Recipe

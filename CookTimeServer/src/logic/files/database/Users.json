@@ -1,10 +1,91 @@
 {
   "root": {
     "data": {
-      "name": "eduardo",
-      "email": "UsuarioDePrueba",
+      "age": 0,
+      "name": "Eduardo",
+      "email": "Eduardo",
       "password": "1a1dc91c907325c69271ddf0c944bc72",
-      "myMenu": {},
+      "newsFeed": {
+        "elements": {
+          "head": {
+            "next": {
+              "data": {
+                "name": "MARUCHAN",
+                "author": "Josue",
+                "type": "almuezo",
+                "servings": 0,
+                "duration": 0.0,
+                "difficulty": 0,
+                "price": 100,
+                "rating": 0.0,
+                "ratingsTotal": 0.0,
+                "timesRated": 0,
+                "likes": 0
+              }
+            },
+            "data": {
+              "name": "ARROZ",
+              "author": "Eduardo",
+              "type": "almuezo",
+              "servings": 0,
+              "duration": 0.0,
+              "difficulty": 0,
+              "price": 100,
+              "rating": 0.0,
+              "ratingsTotal": 0.0,
+              "timesRated": 0,
+              "likes": 0
+            }
+          },
+          "tail": {
+            "data": {
+              "name": "MARUCHAN",
+              "author": "Josue",
+              "type": "almuezo",
+              "servings": 0,
+              "duration": 0.0,
+              "difficulty": 0,
+              "price": 100,
+              "rating": 0.0,
+              "ratingsTotal": 0.0,
+              "timesRated": 0,
+              "likes": 0
+            }
+          },
+          "len": 2
+        }
+      },
+      "notifications": {
+        "elements": {
+          "head": {
+            "data": "Josue added a new recipe!"
+          },
+          "tail": {
+            "data": "Josue added a new recipe!"
+          },
+          "len": 1
+        }
+      },
+      "myMenu": {
+        "ownedRecipes": {
+          "head": {
+            "data": {
+              "name": "ARROZ",
+              "author": "Eduardo",
+              "type": "almuezo",
+              "servings": 0,
+              "duration": 0.0,
+              "difficulty": 0,
+              "price": 100,
+              "rating": 0.0,
+              "ratingsTotal": 0.0,
+              "timesRated": 0,
+              "likes": 0
+            }
+          },
+          "len": 1
+        }
+      },
       "followers": {
         "len": 0
       },
@@ -13,10 +94,254 @@
     },
     "right": {
       "data": {
-        "age": 180,
-        "name": "jose",
-        "email": "usuarioRecienCreado",
+        "age": 0,
+        "name": "Josue",
+        "email": "Josue",
         "password": "1a1dc91c907325c69271ddf0c944bc72",
+        "newsFeed": {
+          "elements": {
+            "head": {
+              "data": {
+                "name": "MARUCHAN",
+                "author": "Josue",
+                "type": "almuezo",
+                "servings": 0,
+                "duration": 0.0,
+                "difficulty": 0,
+                "price": 100,
+                "rating": 0.0,
+                "ratingsTotal": 0.0,
+                "timesRated": 0,
+                "likes": 0
+              }
+            },
+            "tail": {
+              "data": {
+                "name": "MARUCHAN",
+                "author": "Josue",
+                "type": "almuezo",
+                "servings": 0,
+                "duration": 0.0,
+                "difficulty": 0,
+                "price": 100,
+                "rating": 0.0,
+                "ratingsTotal": 0.0,
+                "timesRated": 0,
+                "likes": 0
+              }
+            },
+            "len": 1
+          }
+        },
+        "myMenu": {
+          "ownedRecipes": {
+            "head": {
+              "data": {
+                "name": "MARUCHAN",
+                "author": "Josue",
+                "type": "almuezo",
+                "servings": 0,
+                "duration": 0.0,
+                "difficulty": 0,
+                "price": 100,
+                "rating": 0.0,
+                "ratingsTotal": 0.0,
+                "timesRated": 0,
+                "likes": 0
+              }
+            },
+            "len": 1
+          }
+        },
+        "followers": {
+          "head": {
+            "data": {
+              "name": "Eduardo",
+              "email": "Eduardo",
+              "password": "1a1dc91c907325c69271ddf0c944bc72",
+              "newsFeed": {
+                "elements": {
+                  "head": {
+                    "next": {
+                      "data": {
+                        "name": "MARUCHAN",
+                        "author": "Josue",
+                        "type": "almuezo",
+                        "servings": 0,
+                        "duration": 0.0,
+                        "difficulty": 0,
+                        "price": 100,
+                        "rating": 0.0,
+                        "ratingsTotal": 0.0,
+                        "timesRated": 0,
+                        "likes": 0
+                      }
+                    },
+                    "data": {
+                      "name": "ARROZ",
+                      "author": "Eduardo",
+                      "type": "almuezo",
+                      "servings": 0,
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "likes": 0
+                    }
+                  },
+                  "tail": {
+                    "data": {
+                      "name": "MARUCHAN",
+                      "author": "Josue",
+                      "type": "almuezo",
+                      "servings": 0,
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "likes": 0
+                    }
+                  },
+                  "len": 2
+                }
+              },
+              "notifications": {
+                "elements": {
+                  "head": {
+                    "data": "Josue added a new recipe!"
+                  },
+                  "tail": {
+                    "data": "Josue added a new recipe!"
+                  },
+                  "len": 1
+                }
+              },
+              "myMenu": {
+                "ownedRecipes": {
+                  "head": {
+                    "data": {
+                      "name": "ARROZ",
+                      "author": "Eduardo",
+                      "type": "almuezo",
+                      "servings": 0,
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "likes": 0
+                    }
+                  },
+                  "len": 1
+                }
+              },
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            }
+          },
+          "tail": {
+            "data": {
+              "name": "Eduardo",
+              "email": "Eduardo",
+              "password": "1a1dc91c907325c69271ddf0c944bc72",
+              "newsFeed": {
+                "elements": {
+                  "head": {
+                    "next": {
+                      "data": {
+                        "name": "MARUCHAN",
+                        "author": "Josue",
+                        "type": "almuezo",
+                        "servings": 0,
+                        "duration": 0.0,
+                        "difficulty": 0,
+                        "price": 100,
+                        "rating": 0.0,
+                        "ratingsTotal": 0.0,
+                        "timesRated": 0,
+                        "likes": 0
+                      }
+                    },
+                    "data": {
+                      "name": "ARROZ",
+                      "author": "Eduardo",
+                      "type": "almuezo",
+                      "servings": 0,
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "likes": 0
+                    }
+                  },
+                  "tail": {
+                    "data": {
+                      "name": "MARUCHAN",
+                      "author": "Josue",
+                      "type": "almuezo",
+                      "servings": 0,
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "likes": 0
+                    }
+                  },
+                  "len": 2
+                }
+              },
+              "notifications": {
+                "elements": {
+                  "head": {
+                    "data": "Josue added a new recipe!"
+                  },
+                  "tail": {
+                    "data": "Josue added a new recipe!"
+                  },
+                  "len": 1
+                }
+              },
+              "myMenu": {
+                "ownedRecipes": {
+                  "head": {
+                    "data": {
+                      "name": "ARROZ",
+                      "author": "Eduardo",
+                      "type": "almuezo",
+                      "servings": 0,
+                      "duration": 0.0,
+                      "difficulty": 0,
+                      "price": 100,
+                      "rating": 0.0,
+                      "ratingsTotal": 0.0,
+                      "timesRated": 0,
+                      "likes": 0
+                    }
+                  },
+                  "len": 1
+                }
+              },
+              "followers": {
+                "len": 0
+              },
+              "rating": 0,
+              "isChef": false
+            }
+          },
+          "len": 1
+        },
         "rating": 0,
         "isChef": false
       }

@@ -1,6 +1,8 @@
 package logic.structures.simplelist;
 
-public class Node<T> {
+import java.io.Serializable;
+
+public class Node<T> implements Serializable {
 
     private Node<T> next;
     private T data;
