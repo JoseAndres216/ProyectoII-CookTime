@@ -11,9 +11,12 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class StartController {
+    static Logger log = Logger.getLogger("StartContLog");
     public static final String CHEF_REQUESTS_FXML = "chefRequests.fxml";
     public static final String CHEF_REQ_PATH = "C:\\Users\\eduar\\Desktop\\CookTime\\ProyectoII-CookTime\\CookTimeServer\\src\\gui\\chefs\\" + CHEF_REQUESTS_FXML;
     public static final String USER_MANAGEMENT_FXML = "userManagement.fxml";
@@ -53,7 +56,7 @@ public class StartController {
             Stage source = (Stage) adminUsersButton.getScene().getWindow();
             source.setScene(newScene);
         } catch (IOException | NullPointerException ignored) {
-
+            log.log(Level.SEVERE, () -> "Error on starting the gui");
         }
     }
 }

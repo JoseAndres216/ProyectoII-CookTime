@@ -2,12 +2,14 @@ package resources;
 
 import logic.ServerManager;
 import logic.users.AbstractUser;
+import logic.users.Enterprise;
 import logic.users.Recipe;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -47,6 +49,27 @@ public class Enterprises {
     }
 
     /**
+     * Method for getting a enterprise's news feed
+     *
+     * @param email ID of the user
+     * @return Json-format news feed stack
+     */
+    @GET
+    @Path("/feed")
+    @Consumes(MediaType.TEXT_PLAIN)
+    public String getFeed(@QueryParam("email") String email) {
+        String response = null;
+        try {
+            AbstractUser user = ServerManager.getInstance().getEnterprise(email);
+            response = user.getSerializedNewsFeed();
+        } catch (Exception e) {
+            log.log(Level.WARNING, () -> "Exception throw in enterprise:" + e.getMessage());
+        }
+        return response;
+    }
+
+
+    /**
      * TESTED
      * used for the login of the user, the client Will try to get the user info, it'll be verified and
      * if the username and the password matches, then a json with user info will be sent.
@@ -56,7 +79,9 @@ public class Enterprises {
      * @return Json format string with the user's data, or null if not found.
      * @throws NoSuchAlgorithmException from the encrypted
      */
-
+    @GET
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Path("/verify")
     public String verifyUser(@QueryParam("email") String email,
                              @QueryParam("pass") String password) throws NoSuchAlgorithmException {
         String result = null;
@@ -281,6 +306,31 @@ public class Enterprises {
     }
 
     /**
+     * Method for getting the members of an enterprise.
+     *
+     * @param email of the enterprise
+     * @return json of the members list, null if not found
+     */
+    @GET
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/members")
+    public String getMembers(@QueryParam("email") String email) {
+        try {
+            Enterprise enterprise = (Enterprise) ServerManager.getInstance().getEnterprise(email);
+            if (enterprise != null) {
+                return enterprise.getMembers();
+            }
+            return null;
+        } catch (Exception e) {
+            log.log(Level.SEVERE, () -> "Problems finding enterprise: " + email + "Exception: " + Arrays.toString(e.getStackTrace()));
+            return null;
+        }
+
+
+    }
+
+    /**
      * TESTED
      * Method for getting the user's followers list
      *
@@ -304,8 +354,5 @@ public class Enterprises {
             log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR);
         }
-
-
     }
-
 }

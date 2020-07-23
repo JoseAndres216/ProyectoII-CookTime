@@ -3,9 +3,12 @@ package logic.structures.bst;
 import logic.structures.TreeNode;
 import logic.structures.simplelist.SimpleList;
 
-public class BST<T extends Comparable<T>> {
+import java.io.Serializable;
+
+public class BST<T extends Comparable<T> & Serializable> {
 
     private TreeNode<T> root;
+
 
     public SimpleList<T> inOrder() {
         return this.inOrder(this.root, new SimpleList<>());

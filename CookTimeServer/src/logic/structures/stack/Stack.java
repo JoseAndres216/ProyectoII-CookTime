@@ -4,7 +4,7 @@ import logic.structures.simplelist.SimpleList;
 
 import java.io.Serializable;
 
-public class Stack<T> implements Serializable {
+public class Stack<T extends Serializable> implements Serializable {
     private SimpleList<T> elements = new SimpleList<>();
 
     public void push(T data) {

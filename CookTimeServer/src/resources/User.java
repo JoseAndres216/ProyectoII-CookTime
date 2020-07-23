@@ -50,6 +50,26 @@ public class User {
     }
 
     /**
+     * Method for getting a user's news feed
+     *
+     * @param email ID of the user
+     * @return Json-format news feed stack
+     */
+    @GET
+    @Path("/feed")
+    @Consumes(MediaType.TEXT_PLAIN)
+    public String getFeed(@QueryParam("email") String email) {
+        String response = null;
+        try {
+            AbstractUser user = ServerManager.getInstance().getUser(email);
+            response = user.getSerializedNewsFeed();
+        } catch (Exception e) {
+            log.log(Level.WARNING, () -> "Exception throwed in user:" + e.getMessage());
+        }
+        return response;
+    }
+
+    /**
      * TESTED
      * used for the login of the user, the client Will try to get the user info, it'll be verified and
      * if the username and the password matches, then a json with user info will be sent.

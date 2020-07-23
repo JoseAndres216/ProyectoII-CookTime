@@ -1,11 +1,11 @@
 package logic.structures.splay;
 
-import com.google.gson.annotations.Expose;
 import logic.structures.TreeNode;
 import logic.structures.simplelist.SimpleList;
 
-public class SplayTree<T extends Comparable<T>> {
-    @Expose
+import java.io.Serializable;
+
+public class SplayTree<T extends Comparable<T> & Serializable> {
     private TreeNode<T> root;
 
     public SplayTree() {

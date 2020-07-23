@@ -1,5 +1,6 @@
 package logic.users;
 
+import logic.ServerSettings;
 import logic.structures.simplelist.SimpleList;
 
 import java.util.Objects;
@@ -47,7 +48,6 @@ public class Enterprise extends AbstractUser {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         Enterprise that = (Enterprise) o;
         return Objects.equals(contactInfo, that.contactInfo) &&
                 Objects.equals(schedule, that.schedule) &&
@@ -57,5 +57,9 @@ public class Enterprise extends AbstractUser {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), contactInfo, schedule, members);
+    }
+
+    public String getMembers() {
+        return ServerSettings.GSON_INSTANCE.toJson(this.members, ServerSettings.USER_LIST_TYPE);
     }
 }

@@ -10,11 +10,11 @@ import logic.users.Recipe;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
 
 import static logic.ServerSettings.*;
 
 public interface JsonLoader {
-
     static BST<AbstractUser> loadUsers() {
         BST<AbstractUser> users;
         try (Scanner sc = new Scanner(new File(USERS_JSON_PATH))) {
@@ -24,7 +24,7 @@ public interface JsonLoader {
             return users;
             //close the file
         } catch (IOException e) {
-            e.printStackTrace();
+            JSON_LOADER_LOG.log(Level.SEVERE, "Error loading the users");
         }
         return null;
     }
@@ -37,7 +37,7 @@ public interface JsonLoader {
 
             return new Gson().fromJson(line, SPLAY_TYPE);
         } catch (IOException e) {
-            e.printStackTrace();
+            JSON_LOADER_LOG.log(Level.SEVERE, "Error loading the enterprises");
         }
         return null;
     }
@@ -50,7 +50,7 @@ public interface JsonLoader {
             return new Gson().fromJson(line, AVL_TYPE);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            JSON_LOADER_LOG.log(Level.SEVERE, "Error loading the recipes");
         }
         return null;
     }

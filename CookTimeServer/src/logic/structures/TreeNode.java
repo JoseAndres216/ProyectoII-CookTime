@@ -3,7 +3,7 @@ package logic.structures;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class TreeNode<T extends Comparable<T>> implements Serializable, Comparable<TreeNode<T>> {
+public class TreeNode<T extends Serializable & Comparable<T>> implements Serializable, Comparable<TreeNode<T>> {
     private T data;
     private TreeNode<T> left;
     private TreeNode<T> right;
@@ -102,4 +102,5 @@ public class TreeNode<T extends Comparable<T>> implements Serializable, Comparab
     public void setLevel(int level) {
         this.level = level;
     }
+
 }

@@ -10,7 +10,6 @@ import logic.users.Recipe;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-import java.util.logging.Logger;
 
 import static logic.ServerSettings.*;
 import static logic.utilities.Sorter.byhighRated;
@@ -19,8 +18,6 @@ import static logic.utilities.Sorter.byhighRated;
  * Class for the search management in the data structures.
  */
 public interface Searcher {
-    Gson gson = new Gson();
-    Logger log = Logger.getLogger("SearcherLog");
 
     /**
      * Method for getting matches, using a key and the recipes tree, the search works

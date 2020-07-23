@@ -2,22 +2,20 @@ package logic.users;
 
 import com.google.gson.Gson;
 import logic.ServerManager;
+import logic.ServerSettings;
 import logic.structures.simplelist.SimpleList;
 import logic.structures.stack.Stack;
 import logic.utilities.Encrypter;
 
 import java.io.Serializable;
-import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static logic.ServerSettings.NOTIFICATION_ADDED_RECIPE;
 import static logic.ServerSettings.RECIPE_TYPE;
 
 
 public class AbstractUser implements Comparable<AbstractUser>, Serializable {
-    private final transient Logger log = Logger.getLogger("AbstractUserLog");
     //User personal data and credentials
     private String name;
     private String email;
@@ -45,13 +43,12 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
                 Objects.equals(getNewsFeed(), user.getNewsFeed()) &&
                 Objects.equals(getNotifications(), user.getNotifications()) &&
                 Objects.equals(getMyMenu(), user.getMyMenu()) &&
-                Objects.equals(getFollowers(), user.getFollowers()) &&
-                Objects.equals(getLog(), user.getLog());
+                Objects.equals(getFollowers(), user.getFollowers());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getEmail(), getPassword(), getNewsFeed(), getNotifications(), getMyMenu(), getFollowers(), getRating(), getLog(), isChef());
+        return Objects.hash(getName(), getEmail(), getPassword(), getNewsFeed(), getNotifications(), getMyMenu(), getFollowers(), getRating(), isChef());
     }
 
     //methods for the logic of followers
@@ -67,11 +64,14 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         return this.email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public int compareTo(AbstractUser user) {
         return this.getEmail().compareTo(user.getEmail());
     }
-
 
     @Override
     public String toString() {
@@ -85,7 +85,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         return this.getPassword();
     }
 
-    public void encryptPassword() throws NoSuchAlgorithmException {
+    public void encryptPassword() {
         this.setPassword(Encrypter.encryptPassword(this.getPassword()));
     }
 
@@ -98,7 +98,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     }
 
     public void addRecipe(String jsonRecipe) {
-        getLog().log(Level.INFO, () -> "added a recipe: " + jsonRecipe);
+        ServerSettings.ABSTRACT_USER_LOG.log(Level.INFO, () -> "added a recipe: " + jsonRecipe);
         if (this.getMyMenu() == null) {
             this.setMyMenu(new MyMenu());
         }
@@ -162,17 +162,20 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
-
     public boolean isChef() {
         return this.isChef;
+    }
+
+    public void setChef(boolean chef) {
+        isChef = chef;
     }
 
     public void makeChef() {
@@ -186,14 +189,6 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         } catch (Exception e) {
             return false;
         }
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {
@@ -234,13 +229,5 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
 
     public void setFollowers(SimpleList<AbstractUser> followers) {
         this.followers = followers;
-    }
-
-    public Logger getLog() {
-        return log;
-    }
-
-    public void setChef(boolean chef) {
-        isChef = chef;
     }
 }

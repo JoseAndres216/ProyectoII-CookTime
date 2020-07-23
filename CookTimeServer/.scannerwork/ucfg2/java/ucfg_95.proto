@@ -1,166 +1,0 @@
-
-Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaA A("startingBlock*Ü
-2d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaF F("ì
-ê
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaF F(C
-resultjava.lang.String"__id*
-"""Ñ
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaH H(
-
-resultjava.lang.String*µ
-startingBlockd
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaA B(A¢
-ü
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java> >(
-%6"
-__annotate*
-Path*
-
-emailjava.lang.String°
-û
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java? ?(
-%7"
-__annotate*
-GET*
-
-emailjava.lang.String¶
-£
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java@ @()
-%8"
-__annotate*
-
-Produces*
-
-emailjava.lang.String®
-•
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaA A(0
-%9"
-__annotate*
-
-QueryParam*
-
-emailjava.lang.String≤
-Ø
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaA8 A(=
-emailjava.lang.String"__annotation*
-
-%6*
-
-%7*
-
-%8*
-
-%9¶
-£
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java> >(
-%10"
-__annotate*
-Path*
-
-passwordjava.lang.String•
-¢
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java? ?(
-%11"
-__annotate*
-GET*
-
-passwordjava.lang.String™
-ß
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java@ @()
-%12"
-__annotate*
-
-Produces*
-
-passwordjava.lang.String¨
-©
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaB B(0
-%13"
-__annotate*
-
-QueryParam*
-
-passwordjava.lang.Stringπ
-∂
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaB8 B(@
-passwordjava.lang.String"__annotation*
-
-%10*
-
-%11*
-
-%12*
-
-%13*
-3*¶
-3d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaC C(ì
-ê
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaC C(
-resultjava.lang.String"__id*
-""¨
-©
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaD D(
-%0java.util.logging.Logger"__id**
-resources.User"
-logñ
-ì
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaD D(
-%1java.util.logging.Level"__id*
-""‘—
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaD D(J
-
-%2void"Ujava.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)V* 
-
-%0java.util.logging.Logger*
-
-%1java.util.logging.Level*
-""2;log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)*
-2
-1*¯
-1d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaJ J(¨
-©
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaJ J(
-%3java.util.logging.Logger"__id**
-resources.User"
-logñ
-ì
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaJ J(
-%4java.util.logging.Level"__id*
-""‘—
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaJ J(Q
-
-%5void"Ujava.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)V* 
-
-%3java.util.logging.Logger*
-
-%4java.util.logging.Level*
-""2;log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)"n
-d
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaK K(
-"":
-emailjava.lang.String:
-passwordjava.lang.StringB
-resources.User

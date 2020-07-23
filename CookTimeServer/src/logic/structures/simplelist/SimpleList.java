@@ -2,7 +2,7 @@ package logic.structures.simplelist;
 
 import java.io.Serializable;
 
-public class SimpleList<T> implements Serializable {
+public class SimpleList<T extends Serializable> implements Serializable {
 
     private Node<T> head = null;
     private Node<T> tail = null;

@@ -4,7 +4,9 @@ package logic.structures.avl;
 import logic.structures.TreeNode;
 import logic.structures.simplelist.SimpleList;
 
-public class AVLTree<T extends Comparable<T>> {
+import java.io.Serializable;
+
+public class AVLTree<T extends Comparable<T> & Serializable> {
     TreeNode<T> root;
 
     public AVLTree() {

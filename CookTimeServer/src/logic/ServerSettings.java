@@ -1,5 +1,6 @@
 package logic;
 
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import logic.structures.bst.BST;
 import logic.structures.simplelist.SimpleList;
@@ -8,48 +9,50 @@ import logic.users.AbstractUser;
 import logic.users.Recipe;
 
 import java.lang.reflect.Type;
+import java.util.logging.Logger;
 
-/**
- *
- */
-public interface ServerSettings {
+public abstract class ServerSettings {
     //Max amount of results in searches and recommendations.
-    int MAX_RESULTS = 15;
-
-    Type BST_TYPE = new TypeToken<BST<AbstractUser>>() {
+    public static final int MAX_RESULTS = 15;
+    public static final Type BST_TYPE = new TypeToken<BST<AbstractUser>>() {
     }.getType();
-    Type SPLAY_TYPE = new TypeToken<SplayTree<AbstractUser>>() {
+    public static final Type SPLAY_TYPE = new TypeToken<SplayTree<AbstractUser>>() {
     }.getType();
-    Type AVL_TYPE = new TypeToken<BST<Recipe>>() {
+    public static final Type AVL_TYPE = new TypeToken<BST<Recipe>>() {
     }.getType();
-    Type RECIPE_TYPE = new TypeToken<Recipe>() {
+    public static final Type RECIPE_TYPE = new TypeToken<Recipe>() {
     }.getType();
-    Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<String>>() {
+    public static final Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<String>>() {
     }.getType();
-    Type USER_LIST_TYPE = new TypeToken<SimpleList<String>>() {
+    public static final Type USER_LIST_TYPE = new TypeToken<SimpleList<String>>() {
     }.getType();
-
     //Constant notification messages
     //nofication for rated the recipe, add username at front, and qualification at end.
-    String NOTIFICATION_RATED_MESSAGE = " rated the recipe with: ";
+    public static final String NOTIFICATION_RATED_MESSAGE = " rated the recipe with: ";
     //Notification for shared the recipe, add user name at front
-    String NOTIFICATION_SHARED_MESSAGE = " shared the recipe.";
+    public static final String NOTIFICATION_SHARED_MESSAGE = " shared the recipe.";
     //Notification for comments, add username at front, message at end.
-    String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe: ";
+    public static final String NOTIFICATION_COMMENTED_MESSAGE = " commented the recipe: ";
     //Notification for added a recipe, should add the name at the beggining
-    String NOTIFICATION_ADDED_RECIPE = " added a new recipe!";
-    String DATA_BASE_PATH = "logic/files/database/";
+    public static final String NOTIFICATION_ADDED_RECIPE = " added a new recipe!";
+    public static final String DATA_BASE_PATH = "logic/files/database/";
+    public static final String JSON_ENTERPRISES = "Enterprises.json";
+    public static final String ENTERPRISES_JSON_PATH = DATA_BASE_PATH + JSON_ENTERPRISES;
+    public static final String JSON_USERS = "Users.json";
+    public static final String USERS_JSON_PATH = DATA_BASE_PATH + JSON_USERS;
+    public static final String JSON_RECIPES = "Recipes.json";
+    public static final String RECIPES_JSON_PATH = DATA_BASE_PATH + JSON_RECIPES;
+    public static final String USER_NOT_FOUND_LOG = "User not found, email: ";
+    public static final Logger ENCRYPTER_LOG = Logger.getLogger("EncrypterLog");
+    public static final Logger JSON_LOADER_LOG = Logger.getLogger("JsonLoaderLog");
+    public static final Gson GSON_INSTANCE = new Gson();
+    public static final Logger JSON_WRITER_LOG = Logger.getLogger("JsonWriterLog");
+    public static final Logger SEARCHER_LOG = Logger.getLogger("SearcherLog");
+    public static final int MAX_DIGITS_RADIX = 2;
+    public static final Logger ABSTRACT_USER_LOG = Logger.getLogger("AbstractUserLog");
+    public static final Logger RECIPES_LOG = Logger.getLogger("RecipesLog");
 
 
-    String JSON_ENTERPRISES = "Enterprises.json";
-    String ENTERPRISES_JSON_PATH = DATA_BASE_PATH + JSON_ENTERPRISES;
-
-    String JSON_USERS = "Users.json";
-    String USERS_JSON_PATH = DATA_BASE_PATH + JSON_USERS;
-
-    String JSON_RECIPES = "Recipes.json";
-    String RECIPES_JSON_PATH = DATA_BASE_PATH + JSON_RECIPES;
-
-
-    String USER_NOT_FOUND_LOG = "User not found, email: ";
+    private ServerSettings() {
+    }
 }

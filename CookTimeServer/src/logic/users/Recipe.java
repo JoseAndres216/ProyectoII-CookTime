@@ -1,23 +1,23 @@
 package logic.users;
 
 import logic.ServerManager;
+import logic.ServerSettings;
 import logic.structures.simplelist.SimpleList;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static logic.ServerSettings.NOTIFICATION_COMMENTED_MESSAGE;
 import static logic.ServerSettings.NOTIFICATION_RATED_MESSAGE;
 
 
-public class Recipe implements Comparable<Recipe> {
+public class Recipe implements Comparable<Recipe>, Serializable {
 
     //Atributes of the recipes
     private String name;
     private String author;
     private String type;
-    private final Logger log = Logger.getLogger("RecipesLog");
     private float duration;
     private int servings;
     private int difficulty;
@@ -242,7 +242,7 @@ public class Recipe implements Comparable<Recipe> {
         try {
             user.updateFeed(this);
         } catch (Exception e) {
-            log.log(Level.WARNING, e.getMessage());
+            ServerSettings.RECIPES_LOG.log(Level.WARNING, e.getMessage());
         }
     }
 }

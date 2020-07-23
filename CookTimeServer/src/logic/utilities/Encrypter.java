@@ -1,13 +1,13 @@
 package logic.utilities;
 
+import logic.ServerSettings;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public interface Encrypter {
-    Logger log = Logger.getLogger("EncrypterLog");
 
     /**
      * Method for encryptation the passwords
@@ -36,7 +36,7 @@ public interface Encrypter {
 
         // For specifying wrong message digest algorithms
         catch (NoSuchAlgorithmException e) {
-            log.log(Level.WARNING, e.getMessage());
+            ServerSettings.ENCRYPTER_LOG.log(Level.WARNING, e.getMessage());
             return null;
         }
     }

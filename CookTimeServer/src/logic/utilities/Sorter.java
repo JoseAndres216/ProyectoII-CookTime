@@ -1,5 +1,6 @@
 package logic.utilities;
 
+import logic.ServerSettings;
 import logic.structures.simplelist.Node;
 import logic.structures.simplelist.SimpleList;
 import logic.users.AbstractUser;
@@ -12,8 +13,6 @@ import java.util.Queue;
  * This interface its for sorting the data collections for the cookTime server
  */
 public interface Sorter {
-
-    int MAX_DIGITS_RADIX = 2;
 
     // Auxiliar method for quick sort for recipes, using rating
     static Node<Recipe> quicksortAux(Node<Recipe> start, Node<Recipe> end) {
@@ -98,7 +97,7 @@ public interface Sorter {
     static SimpleList<Recipe> bydifficulty(SimpleList<Recipe> source) {
         SimpleList<Recipe> temp = source;
         int counter = 1;
-        while (counter <= MAX_DIGITS_RADIX) {
+        while (counter <= ServerSettings.MAX_DIGITS_RADIX) {
             //buckets for the digits
             LinkedList<Queue<Recipe>> buckets = new LinkedList<>();
             Queue<Recipe> zeros = new LinkedList<>();

@@ -1,59 +1,0 @@
-
-Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÔ Ô(""startingBlock*Ó
-startingBlockf
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÔ" Ô(C¢
-Ÿ
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÑ Ñ(
-%4"
-__annotate*
-GET*
-
-userjava.lang.String£
- 
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÒ Ò(
-%5"
-__annotate*
-Path*
-
-userjava.lang.String§
-¤
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÓ Ó()
-%6"
-__annotate*
-
-Produces*
-
-userjava.lang.String©
-¦
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÔ# Ô(6
-%7"
-__annotate*
-
-QueryParam*
-
-userjava.lang.String³
-°
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÔ> Ô(B
-userjava.lang.String"__annotation*
-
-%4*
-
-%5*
-
-%6*
-
-%7*
-4*Ý
-4f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÖ Ö(N"p
-f
-ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaÖ Ö(N
-"":
-userjava.lang.StringB
-resources.User
