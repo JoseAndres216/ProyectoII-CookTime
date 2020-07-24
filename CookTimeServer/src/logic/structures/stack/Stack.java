@@ -8,6 +8,9 @@ public class Stack<T extends Serializable> implements Serializable {
     private SimpleList<T> elements;
 
     public void push(T data) {
+        if(this.elements == null){
+            this.elements = new SimpleList<>();
+        }
         elements.append(data);
     }
 

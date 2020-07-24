@@ -26,7 +26,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     //user's mymenu, for sorting algorithms.
     private MyMenu myMenu = new MyMenu();
     //user's followers
-    private SimpleList<AbstractUser> followers = new SimpleList<>();
+    private SimpleList<String> followers = new SimpleList<>();
     private int rating;
     private boolean isChef = false;
 
@@ -62,7 +62,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         if (this.getFollowers() == null) {
             this.setFollowers(new SimpleList<>());
         }
-        this.getFollowers().append(user);
+        this.getFollowers().append(user.getEmail());
         ServerManager.getInstance().saveInfo();
     }
 
@@ -118,7 +118,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
             this.setFollowers(new SimpleList<>());
         }
         for (int i = 0; i < this.getFollowers().len(); i++) {
-            String userEmail = this.getFollowers().indexElement(i).email;
+            String userEmail = this.getFollowers().indexElement(i);
             //did it this way cause the reference its not the same
             //GET USER IN THE BST TREE
             AbstractUser user1 = ServerManager.getInstance().getUser(userEmail);
@@ -241,11 +241,11 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
         this.myMenu = myMenu;
     }
 
-    public SimpleList<AbstractUser> getFollowers() {
+    public SimpleList<String> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(SimpleList<AbstractUser> followers) {
+    public void setFollowers(SimpleList<String> followers) {
         this.followers = followers;
     }
 
