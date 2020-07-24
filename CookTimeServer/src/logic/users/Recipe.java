@@ -210,7 +210,7 @@ public class Recipe implements Comparable<Recipe>, Serializable {
         if (this.comments == null) {
             this.comments = new SimpleList<>();
         }
-        this.comments.append(comment);
+        //this.comments.append(comment);
         ServerManager.getInstance().getUser(this.author).getRecipe(this.name).getComments().append(comment);
         ServerManager.getInstance().getUser(this.author).addNotification(user.getName() + NOTIFICATION_COMMENTED_MESSAGE + this.name);
         ServerManager.getInstance().saveInfo();

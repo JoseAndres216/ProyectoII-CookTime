@@ -192,8 +192,12 @@ public class User {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
             if (ServerManager.getInstance().rate(recipe, user, rating)) {
+                log.log(Level.INFO,()-> "Recipe not found" + recipeName);
                 return Response.status(Response.Status.NOT_FOUND).build();
             }
+            log.log(Level.INFO,()-> "User:"+ email +
+                    "Rated: " + recipeName+
+                    "with: " + rating);
             return Response.status(Response.Status.ACCEPTED).build();
         } catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());

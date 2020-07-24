@@ -55,8 +55,17 @@ public class SimpleList<T extends Serializable> implements Serializable {
         if (this.head != null) {
             newNode.setNext(this.head);
         }
-        this.head = newNode;
+        this.head = this.tail = newNode;
         this.len++;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("SimpleList{");
+        sb.append("head=").append(head);
+        sb.append(", len=").append(len);
+        sb.append('}');
+        return sb.toString();
     }
 
     public T indexElement(int i) {
@@ -73,22 +82,6 @@ public class SimpleList<T extends Serializable> implements Serializable {
             counter++;
         }
         return temp.getData();
-    }
-
-    @Override
-    public String toString() {
-        if (this.head == null) {
-            return "[]";
-        }
-        StringBuilder stringBuilder = new StringBuilder("[ ");
-        Node<T> temp = this.head;
-        while (temp != null) {
-            stringBuilder.append(temp.getData().toString());
-            stringBuilder.append(", ");
-            temp = temp.getNext();
-        }
-        stringBuilder.append(" ]");
-        return stringBuilder.toString();
     }
 
     public void deleteLast() {
