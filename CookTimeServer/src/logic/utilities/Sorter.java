@@ -178,7 +178,7 @@ public interface Sorter {
      */
     static SimpleList<AbstractUser> ratedUsers(SimpleList<AbstractUser> source) {
 
-        //apply selection sort to the list.
+
         for (Node<AbstractUser> first = source.getHead(); first.getNext() != null; first = first.getNext()) {
             Node<AbstractUser> smaller = first;
             Node<AbstractUser> temp = smaller.getNext();

@@ -1,0 +1,76 @@
+
+<resources.User#getFeed(Ljava/lang/String;)Ljava/lang/String;d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java= =("startingBlock*†
+2d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaA A(3•
+’
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaA A(3
+responsejava.lang.String"__id*
+""*
+1*Ì
+startingBlockd
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java= =(<¡
+ž
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java: :(
+%3"
+__annotate*
+GET*
+
+emailjava.lang.String¢
+Ÿ
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java; ;(
+%4"
+__annotate*
+Path*
+
+emailjava.lang.String¦
+£
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java< <(#
+%5"
+__annotate*
+
+Consumes*
+
+emailjava.lang.String¨
+¥
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java= =(.
+%6"
+__annotate*
+
+QueryParam*
+
+emailjava.lang.String²
+¯
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java=6 =(;
+emailjava.lang.String"__annotation*
+
+%3*
+
+%4*
+
+%5*
+
+%6*
+7*†
+7d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java> >(•
+’
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.java> >(
+responsejava.lang.String"__id*
+""*
+2*ò
+1d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaE E("†
+d
+ZC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/User.javaE E(
+
+responsejava.lang.String:
+emailjava.lang.StringB
+resources.User

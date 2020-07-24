@@ -30,6 +30,12 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     private int rating;
     private boolean isChef = false;
 
+    public static AbstractUser getNotNull(AbstractUser user1, AbstractUser user2) {
+        if (user1 != null) {
+            return user1;
+        } else return user2;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -94,11 +100,12 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
             this.setNotifications(new Stack<>());
         }
         this.getNotifications().push(notification);
+        ServerSettings.ABSTRACT_USER_LOG.log(Level.INFO, () -> "added a notification for :  " + this.email + ", notification: " + notification);
+
         ServerManager.getInstance().saveInfo();
     }
 
     public void addRecipe(String jsonRecipe) {
-        ServerSettings.ABSTRACT_USER_LOG.log(Level.INFO, () -> "added a recipe: " + jsonRecipe);
         if (this.getMyMenu() == null) {
             this.setMyMenu(new MyMenu());
         }
@@ -111,11 +118,19 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
             this.setFollowers(new SimpleList<>());
         }
         for (int i = 0; i < this.getFollowers().len(); i++) {
-            this.getFollowers().indexElement(i).addNotification(this.getName() + NOTIFICATION_ADDED_RECIPE);
-            this.getFollowers().indexElement(i).updateFeed(newRecipe);
+            String userEmail = this.getFollowers().indexElement(i).email;
+            //did it this way cause the reference its not the same
+            //GET USER IN THE BST TREE
+            AbstractUser user1 = ServerManager.getInstance().getUser(userEmail);
+            AbstractUser user2 = ServerManager.getInstance().getEnterprise(userEmail);
+            AbstractUser user = getNotNull(user1, user2);
+
+            user.addNotification(this.getName() + NOTIFICATION_ADDED_RECIPE);
+            user.updateFeed(newRecipe);
         }
 
         ServerManager.getInstance().saveInfo();
+        ServerSettings.ABSTRACT_USER_LOG.log(Level.INFO, () -> "added a recipe: " + jsonRecipe);
     }
 
     public void updateFeed(Recipe newRecipe) {
@@ -208,6 +223,9 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     }
 
     public Stack<String> getNotifications() {
+        if (this.notifications == null) {
+            this.notifications = new Stack<>();
+        }
         return notifications;
     }
 
@@ -229,5 +247,16 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
 
     public void setFollowers(SimpleList<AbstractUser> followers) {
         this.followers = followers;
+    }
+
+    public Recipe getRecipe(String name) {
+        SimpleList<Recipe> temp = this.myMenu.ownedRecipes;
+        for (int i = 0; i < temp.len(); i++) {
+            if (temp.indexElement(i).getName().equals(name)) {
+                return temp.indexElement(i);
+            }
+
+        }
+        return null;
     }
 }

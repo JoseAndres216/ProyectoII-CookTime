@@ -1,0 +1,31 @@
+
+Flogic.ServerManager#verifyUser(ZLjava/lang/String;Ljava/lang/String;)Zk
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaã ã("8*ç
+4k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaè è(9"u
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaè è(9
+""*í
+7k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaæ  æ($õ
+ò
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaæ  æ(<
+%0"?logic.ServerManager#findUser(ZLjava/lang/String;)LAbstractUser;*
+logic.ServerManager*
+""*
+
+emailjava.lang.String*
+4*š
+8k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaä  ä()¢
+Ÿ
+k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaä ä(P"
+enctryptedPassjava.lang.String"__id*
+""*
+7:
+"":
+emailjava.lang.String:(
+passwordNotEncryptedjava.lang.StringB
+logic.ServerManager

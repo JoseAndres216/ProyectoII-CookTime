@@ -36,7 +36,7 @@ public interface Encrypter {
 
         // For specifying wrong message digest algorithms
         catch (NoSuchAlgorithmException e) {
-            ServerSettings.ENCRYPTER_LOG.log(Level.WARNING, e.getMessage());
+            ServerSettings.ENCRYPT_LOG.log(Level.WARNING, e.getMessage());
             return null;
         }
     }

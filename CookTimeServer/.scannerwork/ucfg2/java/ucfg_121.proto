@@ -1,0 +1,76 @@
+
+Cresources.Enterprises#getFeed(Ljava/lang/String;)Ljava/lang/String;k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java< <("startingBlock*”
+2k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java@ @(3œ
+™
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java@ @(3
+responsejava.lang.String"__id*
+""*
+1*ö
+startingBlockk
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java< <(<¨
+¥
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java9 9(
+%3"
+__annotate*
+GET*
+
+emailjava.lang.String©
+¦
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java: :(
+%4"
+__annotate*
+Path*
+
+emailjava.lang.String­
+ª
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java; ;(#
+%5"
+__annotate*
+
+Consumes*
+
+emailjava.lang.String¯
+¬
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java< <(.
+%6"
+__annotate*
+
+QueryParam*
+
+emailjava.lang.String¹
+¶
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java<6 <(;
+emailjava.lang.String"__annotation*
+
+%3*
+
+%4*
+
+%5*
+
+%6*
+7*”
+7k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java= =(œ
+™
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java= =(
+responsejava.lang.String"__id*
+""*
+2*€
+1k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaD D("
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaD D(
+
+responsejava.lang.String:
+emailjava.lang.StringB
+resources.Enterprises

@@ -41,7 +41,7 @@ public class Enterprises {
         } catch (IllegalArgumentException | NullPointerException e) {
             log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.NOT_ACCEPTABLE);
-        } catch (NoSuchAlgorithmException e) {
+        } catch (Exception e) {
             log.log(Level.WARNING, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR);
         }

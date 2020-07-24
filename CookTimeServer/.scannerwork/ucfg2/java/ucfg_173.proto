@@ -1,0 +1,41 @@
+
+Blogic.utilities.Searcher#recipesRandomSuggests()Ljava/lang/String;p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaú ú('"11*†
+8p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java¶ ¶()üú
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java¶! ¶('
+%2java.util.Random"java.util.Random±
+Æ
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java¶ ¶()
+%3"java.util.Random#<init>()V*
+
+%2java.util.Random «
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java¶ ¶(4	
+%4int"java.util.Random#nextInt(I)I*
+
+%2java.util.Random*22
+nextInt(I)*
+8
+1*∏
+11p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaù  ù(-ëé
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java¢+ ¢(7
+%0"java.util.LinkedList£
+†
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java¢' ¢(9
+%1"java.util.LinkedList#<init>()V*
+
+%0*
+8
+1*Ò
+1p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java∏ ∏("z
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.java∏ ∏(=
+""B"
+logic.utilities.Searcher

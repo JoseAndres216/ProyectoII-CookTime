@@ -1,0 +1,7 @@
+organization=eduardo2108
+projectKey=CookTime
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.9968
+dashboardUrl=https://sonarcloud.io/dashboard?id=CookTime
+ceTaskId=AXN6D2YM4QT4vcI6_8V8
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXN6D2YM4QT4vcI6_8V8

@@ -1,0 +1,59 @@
+
+Nresources.Searches#searchRecipesDuration(Ljava/lang/String;)Ljava/lang/String;h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java< <('"startingBlock*Ú
+startingBlockh
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java<' <(F£
+ 
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java9 9(
+%0"
+__annotate*
+GET*
+
+keyjava.lang.String¤
+¡
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java: :(
+%1"
+__annotate*
+Path*
+
+keyjava.lang.String¨
+¥
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java; ;()
+%2"
+__annotate*
+
+Produces*
+
+keyjava.lang.Stringª
+§
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java<( <(:
+%3"
+__annotate*
+
+QueryParam*
+
+keyjava.lang.String´
+±
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java<B <(E
+keyjava.lang.String"__annotation*
+
+%0*
+
+%1*
+
+%2*
+
+%3*
+1*á
+1h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java= =("r
+h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java= =(F
+"":
+keyjava.lang.StringB
+resources.Searches

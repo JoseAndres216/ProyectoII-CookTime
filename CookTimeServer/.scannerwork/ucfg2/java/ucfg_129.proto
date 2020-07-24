@@ -1,0 +1,269 @@
+
+4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zn
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java" "("startingBlock*þ
+14n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java( ((êç
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java( (((
+%6java.lang.String"4logic.users.AbstractUser#getName()Ljava/lang/String;*
+logic.users.AbstractUser2	getName()ðí
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java(* ((8
+%7java.lang.String"4logic.users.AbstractUser#getName()Ljava/lang/String;*"
+ 
+userlogic.users.AbstractUser2	getName()Ž
+‹
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java( ((9
+%8boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*"
+java.util.Objects*
+
+%6java.lang.String*
+
+%7java.lang.String*
+2
+4
+6
+8
+10
+12
+1*¹
+16n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java' '(ÎË
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java' '(
+%4boolean""logic.users.AbstractUser#isChef()Z*
+logic.users.AbstractUser2isChef()ÔÑ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java' '()
+%5boolean""logic.users.AbstractUser#isChef()Z*"
+ 
+userlogic.users.AbstractUser2isChef()*
+2
+14
+4
+6
+8
+10
+12
+1*ø
+17n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java%+ %(,´
+±
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java% %(- 
+userlogic.users.AbstractUser"__id*
+
+ojava.lang.ObjectÐÍ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java& &(	
+%2int"%logic.users.AbstractUser#getRating()I*
+logic.users.AbstractUser2getRating()ÖÓ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java& &(.	
+%3int"%logic.users.AbstractUser#getRating()I*"
+ 
+userlogic.users.AbstractUser2getRating()*
+2
+14
+4
+16
+6
+8
+10
+12
+1*î
+18n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java$< $(A"x
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java$5 $(B
+""*Ã
+19n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java$ $(!âß
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java$ $(#
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+logic.users.AbstractUser2
+getClass()ÝÚ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java$' $(3
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+
+ojava.lang.Object2
+getClass()*
+17
+18*í
+1n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java& .(D"x
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java& .(D
+""*¥
+2n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java. .(ÝÚ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java. .(-
+%24"3logic.users.AbstractUser#getFollowers()LSimpleList;*
+logic.users.AbstractUser2getFollowers()ãà
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java./ .(B
+%25"3logic.users.AbstractUser#getFollowers()LSimpleList;*"
+ 
+userlogic.users.AbstractUser2getFollowers()ä
+á
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java. .(C
+%26"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*"
+java.util.Objects*
+
+%24*
+
+%25*
+1*ë
+startingBlockn
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java" "(#·
+´
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java! !(
+%27"
+__annotate*
+java.lang.Override*
+
+ojava.lang.Object¡
+ž
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java"! "("
+ojava.lang.Object"__annotation*
+
+%27*
+18
+19
+21*”
+4n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java- -(ÓÐ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java- -(*
+%21",logic.users.AbstractUser#getMyMenu()LMyMenu;*
+logic.users.AbstractUser2getMyMenu()ÙÖ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java-, -(<
+%22",logic.users.AbstractUser#getMyMenu()LMyMenu;*"
+ 
+userlogic.users.AbstractUser2getMyMenu()ä
+á
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java- -(=
+%23"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*"
+java.util.Objects*
+
+%21*
+
+%22*
+2
+1*±
+6n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java, ,(àÝ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java, ,(1
+%18"2logic.users.AbstractUser#getNotifications()LStack;*
+logic.users.AbstractUser2getNotifications()æã
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java,3 ,(J
+%19"2logic.users.AbstractUser#getNotifications()LStack;*"
+ 
+userlogic.users.AbstractUser2getNotifications()ä
+á
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java, ,(K
+%20"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*"
+java.util.Objects*
+
+%18*
+
+%19*	
+2
+4
+1* 
+8n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java+ +(ÖÓ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java+ +(,
+%15"-logic.users.AbstractUser#getNewsFeed()LStack;*
+logic.users.AbstractUser2getNewsFeed()ÜÙ
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java+. +(@
+%16"-logic.users.AbstractUser#getNewsFeed()LStack;*"
+ 
+userlogic.users.AbstractUser2getNewsFeed()ä
+á
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java+ +(A
+%17"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*"
+java.util.Objects*
+
+%15*
+
+%16*
+2
+4
+6
+1*î
+21n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java# #(""x
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java# #(#
+""*‹
+10n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java* *(óð
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java* *(,
+%12java.lang.String"8logic.users.AbstractUser#getPassword()Ljava/lang/String;*
+logic.users.AbstractUser2getPassword()ùö
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java*. *(@
+%13java.lang.String"8logic.users.AbstractUser#getPassword()Ljava/lang/String;*"
+ 
+userlogic.users.AbstractUser2getPassword()‘
+Ž
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java* *(A
+%14boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*"
+java.util.Objects*
+
+%12java.lang.String*
+
+%13java.lang.String*
+2
+4
+6
+8
+1*
+12n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java) )(ìé
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java) )()
+%9java.lang.String"5logic.users.AbstractUser#getEmail()Ljava/lang/String;*
+logic.users.AbstractUser2
+getEmail()óð
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java)+ )(:
+%10java.lang.String"5logic.users.AbstractUser#getEmail()Ljava/lang/String;*"
+ 
+userlogic.users.AbstractUser2
+getEmail()
+
+n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java) )(;
+%11boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*"
+java.util.Objects*
+
+%9java.lang.String*
+
+%10java.lang.String*
+2
+4
+6
+8
+10
+1:
+ojava.lang.ObjectB
+logic.users.AbstractUser

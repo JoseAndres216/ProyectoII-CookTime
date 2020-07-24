@@ -10,6 +10,7 @@ import java.util.logging.Level;
 
 import static logic.ServerSettings.NOTIFICATION_COMMENTED_MESSAGE;
 import static logic.ServerSettings.NOTIFICATION_RATED_MESSAGE;
+import static logic.users.AbstractUser.getNotNull;
 
 
 public class Recipe implements Comparable<Recipe>, Serializable {
@@ -114,6 +115,11 @@ public class Recipe implements Comparable<Recipe>, Serializable {
     }
 
     public SimpleList<String> getComments() {
+        if (comments == null) {
+            this.comments = new SimpleList<>();
+
+
+        }
         return comments;
     }
 
@@ -205,6 +211,7 @@ public class Recipe implements Comparable<Recipe>, Serializable {
             this.comments = new SimpleList<>();
         }
         this.comments.append(comment);
+        ServerManager.getInstance().getUser(this.author).getRecipe(this.name).getComments().append(comment);
         ServerManager.getInstance().getUser(this.author).addNotification(user.getName() + NOTIFICATION_COMMENTED_MESSAGE + this.name);
         ServerManager.getInstance().saveInfo();
     }
@@ -240,7 +247,11 @@ public class Recipe implements Comparable<Recipe>, Serializable {
      */
     public void share(AbstractUser user) {
         try {
+            AbstractUser user1 = ServerManager.getInstance().getUser(this.author);
+            AbstractUser user2 = ServerManager.getInstance().getEnterprise(this.author);
+            AbstractUser owner = getNotNull(user1, user2);
             user.updateFeed(this);
+            owner.addNotification(user.getEmail() + ServerSettings.NOTIFICATION_SHARED_MESSAGE + " " + this.name);
         } catch (Exception e) {
             ServerSettings.RECIPES_LOG.log(Level.WARNING, e.getMessage());
         }

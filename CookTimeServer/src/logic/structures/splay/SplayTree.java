@@ -128,6 +128,7 @@ public class SplayTree<T extends Comparable<T> & Serializable> {
 
 
     public TreeNode<T> getRoot() {
+
         return this.root;
     }
 }

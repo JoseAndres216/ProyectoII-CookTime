@@ -8,6 +8,12 @@ public class SimpleList<T extends Serializable> implements Serializable {
     private Node<T> tail = null;
     private int len = 0;
 
+    public SimpleList() {
+        this.head = null;
+        this.tail = null;
+        this.len = 0;
+    }
+
     public void swap(Node<T> i, Node<T> j) {
         T temp = i.getData();
         i.setData(j.getData());
@@ -34,6 +40,7 @@ public class SimpleList<T extends Serializable> implements Serializable {
         Node<T> newNode = new Node<>(data);
         if (isEmpty()) {
             this.head = this.tail = newNode;
+            this.head.setNext(this.tail);
         } else {
             this.tail.setNext(newNode);
             this.tail = newNode;

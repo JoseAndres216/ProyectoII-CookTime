@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 @Path("/user")
 public class User {
     final Logger log = Logger.getLogger("UserRsrcLog");
+
     static AbstractUser getSubject(@QueryParam("newFollower") String follower, @QueryParam("isUser") boolean isUser) {
         AbstractUser newfollower;
         if (isUser) {
@@ -39,13 +40,15 @@ public class User {
     @PUT
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response.ResponseBuilder createUser(@QueryParam("info") String json) {
+    public Response createUser(@QueryParam("info") String json) {
         try {
             ServerManager.getInstance().createSubject(true, json);
-            return Response.status(Response.Status.CREATED);
-        } catch (NoSuchAlgorithmException | IllegalArgumentException | NullPointerException e) {
+            log.log(Level.WARNING, () -> "HTTP Response sent: " + Response.Status.OK);
+            return Response.status(Response.Status.CREATED).build();
+        } catch (IllegalArgumentException | NullPointerException e) {
             log.log(Level.WARNING, e.getMessage());
-            return Response.status(Response.Status.NOT_ACCEPTABLE);
+            log.log(Level.WARNING, () -> "HTTP Response sent: " + Response.Status.NOT_ACCEPTABLE);
+            return Response.status(Response.Status.NOT_ACCEPTABLE).build();
         }
     }
 
@@ -64,7 +67,7 @@ public class User {
             AbstractUser user = ServerManager.getInstance().getUser(email);
             response = user.getSerializedNewsFeed();
         } catch (Exception e) {
-            log.log(Level.WARNING, () -> "Exception throwed in user:" + e.getMessage());
+            log.log(Level.WARNING, () -> "Exception thrown in user:" + e.getMessage());
         }
         return response;
     }
@@ -110,14 +113,14 @@ public class User {
     @PUT
     @Path("/recipe")
 
-    public Response.ResponseBuilder createRecipe(@QueryParam("recipe") String recipe,
+    public Response createRecipe(@QueryParam("recipe") String recipe,
                                                  @QueryParam("user") String user) {
         AbstractUser userObjct = ServerManager.getInstance().getUser(user);
         if (userObjct == null) {
-            return Response.status(Response.Status.NOT_FOUND);
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
         userObjct.addRecipe(recipe);
-        return Response.status(Response.Status.CREATED);
+        return Response.status(Response.Status.CREATED).build();
     }
 
     /**
@@ -129,18 +132,18 @@ public class User {
      */
     @POST
     @Path("/recipe/like")
-    public Response.ResponseBuilder likeRecipe(@QueryParam("recipe") String recipeName,
+    public Response likeRecipe(@QueryParam("recipe") String recipeName,
                                                @QueryParam("user") String email) {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
             if (ServerManager.getInstance().likeRecipe(recipe, user)) {
-                return Response.status(Response.Status.NOT_FOUND);
+                return Response.status(Response.Status.NOT_FOUND).build();
             }
-            return Response.status(Response.Status.ACCEPTED);
+            return Response.status(Response.Status.ACCEPTED).build();
         } catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
-            return Response.status(Response.Status.CONFLICT);
+            return Response.status(Response.Status.CONFLICT).build();
         }
     }
 
@@ -153,18 +156,23 @@ public class User {
      */
     @POST
     @Path("/recipe/share")
-    public Response.ResponseBuilder shareRecipe(@QueryParam("recipe") String recipeName,
+    public Response shareRecipe(@QueryParam("recipe") String recipeName,
                                                 @QueryParam("user") String email) {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
             if (ServerManager.getInstance().shareRecipe(recipe, user)) {
-                return Response.status(Response.Status.NOT_FOUND);
+                log.log(Level.INFO, () -> "Recipe not found: " + recipeName);
+                log.log(Level.INFO, () -> "Http code sent " + 404);
+                return Response.status(Response.Status.NOT_FOUND).build();
             }
-            return Response.status(Response.Status.ACCEPTED);
+            log.log(Level.INFO, () -> "Recipe : " + recipeName);
+            log.log(Level.INFO, () -> "Recipe shared by: " + email);
+
+            return Response.status(Response.Status.ACCEPTED).build();
         } catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
-            return Response.status(Response.Status.CONFLICT);
+            return Response.status(Response.Status.CONFLICT).build();
         }
     }
 
@@ -177,19 +185,19 @@ public class User {
      */
     @POST
     @Path("/recipe/rate")
-    public Response.ResponseBuilder rateRecipe(@QueryParam("recipe") String recipeName,
+    public Response rateRecipe(@QueryParam("recipe") String recipeName,
                                                @QueryParam("user") String email,
                                                @QueryParam("rating") int rating) {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
             if (ServerManager.getInstance().rate(recipe, user, rating)) {
-                return Response.status(Response.Status.NOT_FOUND);
+                return Response.status(Response.Status.NOT_FOUND).build();
             }
-            return Response.status(Response.Status.ACCEPTED);
+            return Response.status(Response.Status.ACCEPTED).build();
         } catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
-            return Response.status(Response.Status.CONFLICT);
+            return Response.status(Response.Status.CONFLICT).build();
         }
     }
 
@@ -204,19 +212,22 @@ public class User {
      */
     @POST
     @Path("/recipe/comment")
-    public Response.ResponseBuilder commentRecipe(@QueryParam("recipe") String recipeName,
+    public Response commentRecipe(@QueryParam("recipe") String recipeName,
                                                   @QueryParam("comment") String comment,
                                                   @QueryParam("user") String email) {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
             if (ServerManager.getInstance().commentRecipe(recipe, comment, user)) {
-                return Response.status(Response.Status.NOT_FOUND);
+                log.log(Level.INFO, "Recipe not found");
+                return Response.status(Response.Status.NOT_FOUND).build();
             }
-            return Response.status(Response.Status.ACCEPTED);
+            log.log(Level.INFO, ()->"Recipe commented: " + recipeName + "by: " + email);
+            return Response.status(Response.Status.CREATED).build();
         } catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
-            return Response.status(Response.Status.CONFLICT);
+            log.log(Level.SEVERE, ()->"Not commented: " + recipeName + "by: " + email);
+            return Response.status(Response.Status.CONFLICT).build();
         }
     }
 
@@ -317,7 +328,7 @@ public class User {
      */
     @POST
     @Path("/followers")
-    public Response.ResponseBuilder addFollower(@QueryParam("email") String user, @QueryParam("newFollower") String follower, @QueryParam("isUser") boolean isUser) {
+    public Response addFollower(@QueryParam("email") String user, @QueryParam("newFollower") String follower, @QueryParam("isUser") boolean isUser) {
 
         try {
             AbstractUser newfollower;
@@ -325,12 +336,12 @@ public class User {
             newfollower = getSubject(follower, isUser);
             if (newfollower != null && followed != null) {
                 followed.addFollower(newfollower);
-                return Response.status(Response.Status.CREATED);
+                return Response.status(Response.Status.CREATED).build();
             }
-            return Response.status(Response.Status.NOT_FOUND);
+            return Response.status(Response.Status.NOT_FOUND).build();
         } catch (Exception e) {
             log.log(Level.WARNING, e.getMessage());
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
 

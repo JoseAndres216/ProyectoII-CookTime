@@ -11,16 +11,15 @@ import logic.users.Recipe;
 import logic.users.User;
 import logic.utilities.*;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 public class ServerManager {
     private static ServerManager instance = null;
+    private final Logger log = Logger.getLogger("ServerManagerLog");
     private BST<AbstractUser> users;
     private SplayTree<AbstractUser> enterprises;
-    private final Logger log = Logger.getLogger("ServerManagerLog");
     private SimpleList<AbstractUser> chefRequest;
     private BST<Recipe> globalRecipes;
 
@@ -59,9 +58,9 @@ public class ServerManager {
     }
 
     private void loadServer() {
-        this.enterprises = JsonLoader.loadEnterprises();
-        this.users = (JsonLoader.loadUsers());
-        this.globalRecipes = (JsonLoader.loadGlobalRecipes());
+        this.setEnterprises(JsonLoader.loadEnterprises());
+        this.setUsers((JsonLoader.loadUsers()));
+        this.setGlobalRecipes((JsonLoader.loadGlobalRecipes()));
     }
 
     public void saveInfo() {
@@ -81,9 +80,12 @@ public class ServerManager {
     private AbstractUser findUser(boolean user, String email) {
         TreeNode<AbstractUser> current;
         if (user) {
-            current = this.users.getRoot();
+            current = this.getUsers().getRoot();
         } else {
-            current = this.enterprises.getRoot();
+            current = this.getEnterprises().getRoot();
+        }
+        if (current == null) {
+            return null;
         }
         while (current.getLeft() != null || current.getRight() != null) {
             if (current.getData().getEmail().compareTo(email) == 0) {
@@ -108,7 +110,7 @@ public class ServerManager {
      * @return Recipe, or null if not found
      */
     public Recipe findRecipe(String name) {
-        TreeNode<Recipe> current = this.globalRecipes.getRoot();
+        TreeNode<Recipe> current = this.getGlobalRecipes().getRoot();
         while (current.getLeft() != null || current.getRight() != null) {
             if (current.getData().getName().compareTo(name) == 0) {
                 break;
@@ -168,7 +170,7 @@ public class ServerManager {
      * @param newRecipe json file for the new recipe
      */
     public void addRecipe(Recipe newRecipe) {
-        this.globalRecipes.insert(newRecipe);
+        this.getGlobalRecipes().insert(newRecipe);
         this.saveInfo();
     }
 
@@ -196,18 +198,18 @@ public class ServerManager {
      * @param subjectData should be string in format json, with the attributes of user/enterprise to create
      * @param isUser      true if want to create a user, false if a enterprise
      */
-    public void createSubject(boolean isUser, String subjectData) throws NoSuchAlgorithmException {
+    public void createSubject(boolean isUser, String subjectData) {
         Gson gson = new Gson();
         //for saving code and simplify the project.
         if (!isUser) {
             Enterprise newSubject = gson.fromJson(subjectData, Enterprise.class);
             newSubject.encryptPassword();
             log.log(Level.INFO, () -> "Enterprise created: " + newSubject.getEmail());
-            this.enterprises.insert(newSubject);
+            this.getEnterprises().insert(newSubject);
         } else {
             User newSubject = gson.fromJson(subjectData, User.class);
             newSubject.encryptPassword();
-            this.users.insert(newSubject);
+            this.getUsers().insert(newSubject);
             log.log(new LogRecord(Level.INFO, "User created, json: " + subjectData));
 
 
@@ -222,9 +224,8 @@ public class ServerManager {
      * @param email                email of the user
      * @param passwordNotEncrypted password of the user/enterprise
      * @return true if the user exists and the password is right
-     * @throws NoSuchAlgorithmException from the encrypter
      */
-    public boolean verifyUser(boolean isUser, String email, String passwordNotEncrypted) throws NoSuchAlgorithmException {
+    public boolean verifyUser(boolean isUser, String email, String passwordNotEncrypted) {
         String enctryptedPass = Encrypter.encryptPassword(passwordNotEncrypted);
         try {
             AbstractUser user = this.findUser(isUser, email);
@@ -282,12 +283,32 @@ public class ServerManager {
         return globalRecipes;
     }
 
+    public void setGlobalRecipes(BST<Recipe> globalRecipes) {
+        this.globalRecipes = globalRecipes;
+    }
+
     public BST<AbstractUser> getUsers() {
+        if (this.users == null) {
+            log.log(Level.INFO, "No users registered");
+            return null;
+        }
         return this.users;
     }
 
+    public void setUsers(BST<AbstractUser> users) {
+        this.users = users;
+    }
+
     public SplayTree<AbstractUser> getEnterprises() {
+        if (this.enterprises == null) {
+            log.log(Level.INFO, "No enterprises registered");
+            return null;
+        }
         return this.enterprises;
+    }
+
+    public void setEnterprises(SplayTree<AbstractUser> enterprises) {
+        this.enterprises = enterprises;
     }
 
     /**

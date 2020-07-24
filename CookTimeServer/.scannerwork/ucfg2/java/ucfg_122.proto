@@ -1,0 +1,167 @@
+
+Xresources.Enterprises#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaU U("startingBlock*∞
+2k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java\ \(∫
+∑
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java\ \(
+%3java.util.logging.Logger"__id*"* 
+resources.Enterprises"
+logù
+ö
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java\ \(!
+%4java.util.logging.Level"__id*
+""€ÿ
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java\ \(X
+
+%5void"Ujava.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)V* 
+
+%3java.util.logging.Logger*
+
+%4java.util.logging.Level*
+""2;log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)*
+1*Ç
+startingBlockk
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaU V(A®
+•
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaR R(
+%6"
+__annotate*
+GET*
+
+emailjava.lang.String≠
+™
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaS S(#
+%7"
+__annotate*
+
+Consumes*
+
+emailjava.lang.String©
+¶
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaT T(
+%8"
+__annotate*
+Path*
+
+emailjava.lang.StringØ
+¨
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaU U(1
+%9"
+__annotate*
+
+QueryParam*
+
+emailjava.lang.Stringπ
+∂
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaU9 U(>
+emailjava.lang.String"__annotation*
+
+%6*
+
+%7*
+
+%8*
+
+%9¨
+©
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaR R(
+%10"
+__annotate*
+GET*
+
+passwordjava.lang.String±
+Æ
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaS S(#
+%11"
+__annotate*
+
+Consumes*
+
+passwordjava.lang.String≠
+™
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaT T(
+%12"
+__annotate*
+Path*
+
+passwordjava.lang.String≥
+∞
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaV V(0
+%13"
+__annotate*
+
+QueryParam*
+
+passwordjava.lang.String¿
+Ω
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaV8 V(@
+passwordjava.lang.String"__annotation*
+
+%10*
+
+%11*
+
+%12*
+
+%13*
+4*í
+3k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaZ Z("ö
+ó
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaZ Z(I
+resultjava.lang.String"__id*
+""*
+1*–
+4k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaW W(ö
+ó
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaW W(
+resultjava.lang.String"__id*
+""∫
+∑
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaX X(
+%0java.util.logging.Logger"__id*"* 
+resources.Enterprises"
+logù
+ö
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaX X(
+%1java.util.logging.Level"__id*
+""€ÿ
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaX X(T
+
+%2void"Ujava.util.logging.Logger#log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)V* 
+
+%0java.util.logging.Logger*
+
+%1java.util.logging.Level*
+""2;log(Ljava/util/logging/Level;Ljava/util/function/Supplier;)*
+2
+3*˛
+1k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java^ ^("ã
+k
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java^ ^(
+
+resultjava.lang.String:
+emailjava.lang.String:
+passwordjava.lang.StringB
+resources.Enterprises

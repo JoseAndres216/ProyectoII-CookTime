@@ -25,6 +25,8 @@ public interface JsonLoader {
             //close the file
         } catch (IOException e) {
             JSON_LOADER_LOG.log(Level.SEVERE, "Error loading the users");
+            JSON_LOADER_LOG.log(Level.SEVERE, ()->"Exception: " + e.getMessage());
+
         }
         return null;
     }
@@ -38,6 +40,7 @@ public interface JsonLoader {
             return new Gson().fromJson(line, SPLAY_TYPE);
         } catch (IOException e) {
             JSON_LOADER_LOG.log(Level.SEVERE, "Error loading the enterprises");
+            JSON_LOADER_LOG.log(Level.SEVERE, ()->"Exception: " + e.getMessage());
         }
         return null;
     }
@@ -51,6 +54,7 @@ public interface JsonLoader {
 
         } catch (IOException e) {
             JSON_LOADER_LOG.log(Level.SEVERE, "Error loading the recipes");
+            JSON_LOADER_LOG.log(Level.SEVERE, ()->"Exception: " + e.getMessage());
         }
         return null;
     }
