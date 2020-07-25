@@ -1,11 +1,11 @@
 
-Iresources.Searches#searchUsersRated(Ljava/lang/String;)Ljava/lang/String;h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.javaa a(""startingBlock*Ú
+Nresources.Searches#searchRecipesDuration(Ljava/lang/String;)Ljava/lang/String;h
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java< <('"startingBlock*Ú
 startingBlockh
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.javaa" a(A£
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java<' <(F£
  
 h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java^ ^(
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java9 9(
 %0"
 __annotate*
 GET*
@@ -13,7 +13,7 @@ __annotate*
 keyjava.lang.String¤
 ¡
 h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java_ _(
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java: :(
 %1"
 __annotate*
 Path*
@@ -21,7 +21,7 @@ __annotate*
 keyjava.lang.String¨
 ¥
 h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java` `()
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java; ;()
 %2"
 __annotate*
 
@@ -30,7 +30,7 @@ __annotate*
 keyjava.lang.Stringª
 §
 h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.javaa# a(5
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java<( <(:
 %3"
 __annotate*
 
@@ -39,7 +39,7 @@ QueryParam*
 keyjava.lang.String´
 ±
 h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.javaa= a(@
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java<B <(E
 keyjava.lang.String"__annotation*
 
 %0*
@@ -51,9 +51,9 @@ h
 %3*
 1*á
 1h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.javab b("r
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java= =("r
 h
-^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.javab b(K
+^C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Searches.java= =(F
 "":
 keyjava.lang.StringB
 resources.Searches

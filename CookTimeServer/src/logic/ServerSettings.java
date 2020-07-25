@@ -22,9 +22,9 @@ public final class ServerSettings {
     }.getType();
     public static final Type RECIPE_TYPE = new TypeToken<Recipe>() {
     }.getType();
-    public static final Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<String>>() {
+    public static final Type RECIPES_LIST_TYPE = new TypeToken<SimpleList<Recipe>>() {
     }.getType();
-    public static final Type USER_LIST_TYPE = new TypeToken<SimpleList<String>>() {
+    public static final Type USER_LIST_TYPE = new TypeToken<SimpleList<AbstractUser>>() {
     }.getType();
     //Constant notification messages
     //nofication for rated the recipe, add username at front, and qualification at end.
@@ -50,6 +50,9 @@ public final class ServerSettings {
     public static final int MAX_DIGITS_RADIX = 2;
     public static final Logger ABSTRACT_USER_LOG = Logger.getLogger("AbstractUserLog");
     public static final Logger RECIPES_LOG = Logger.getLogger("RecipesLog");
+    public static final String NOTIFICATION_FOLLOWED = " started following!";
+    public static final String DEF_NOTIFICATION = "Tenga piedad plox  `(*>﹏<*)′ ";
+    public static final String NOTIFICATION_LIKED = " liked a recipe!";
 
 
     private ServerSettings() {

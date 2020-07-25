@@ -1,16 +1,9 @@
 
-9logic.structures.stack.Stack#toString()Ljava/lang/String;r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java ("1*¬
+9logic.structures.stack.Stack#peek()Ljava/io/Serializable;r
+hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java ("1*õ
 1r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java (´
-±
+hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java ("|
 r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java (
-%0java.lang.String"__concat*
-
-Stack{*
-	elements="|
-r
-hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java (
+hC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/structures/stack/Stack.java (,
 ""B 
 logic.structures.stack.Stack

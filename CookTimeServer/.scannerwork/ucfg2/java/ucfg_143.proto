@@ -1,13 +1,13 @@
 
-8logic.users.AbstractUser#myMenuRated()Ljava/lang/String;p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaï ï("1*»
+Clogic.users.AbstractUser#getSerializedFollowers()Ljava/lang/String;p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaè è(("1*“
 1p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javañ ñ(‘—
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaë ë(ﬁ€
 p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javañ ñ(
-%0",logic.users.AbstractUser#getMyMenu()LMyMenu;*
-logic.users.AbstractUser2getMyMenu()"z
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaë" ë(5
+%0"3logic.users.AbstractUser#getFollowers()LSimpleList;*
+logic.users.AbstractUser2getFollowers()"z
 p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javañ ñ(+
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaê ë(I
 ""B
 logic.users.AbstractUser

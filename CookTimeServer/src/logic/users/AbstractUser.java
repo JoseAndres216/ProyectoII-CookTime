@@ -11,8 +11,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.logging.Level;
 
-import static logic.ServerSettings.NOTIFICATION_ADDED_RECIPE;
-import static logic.ServerSettings.RECIPE_TYPE;
+import static logic.ServerSettings.*;
 
 
 public class AbstractUser implements Comparable<AbstractUser>, Serializable {
@@ -63,6 +62,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
             this.setFollowers(new SimpleList<>());
         }
         this.getFollowers().append(user.getEmail());
+        this.addNotification(user.getName() + ServerSettings.NOTIFICATION_FOLLOWED);
         ServerManager.getInstance().saveInfo();
     }
 
@@ -98,6 +98,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
     public void addNotification(String notification) {
         if (this.getNotifications() == null) {
             this.setNotifications(new Stack<>());
+            this.getNotifications().push(DEF_NOTIFICATION);
         }
         this.getNotifications().push(notification);
         ServerSettings.ABSTRACT_USER_LOG.log(Level.INFO, () -> "added a notification for :  " + this.email + ", notification: " + notification);
@@ -125,7 +126,7 @@ public class AbstractUser implements Comparable<AbstractUser>, Serializable {
             AbstractUser user2 = ServerManager.getInstance().getEnterprise(userEmail);
             AbstractUser user = getNotNull(user1, user2);
 
-            user.addNotification(this.getName() + NOTIFICATION_ADDED_RECIPE);
+
             user.updateFeed(newRecipe);
         }
 

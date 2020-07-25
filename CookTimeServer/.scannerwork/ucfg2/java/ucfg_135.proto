@@ -1,69 +1,16 @@
 
-5logic.users.AbstractUser#toString()Ljava/lang/String;n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaM M("1*¦
+5logic.users.AbstractUser#getEmail()Ljava/lang/String;n
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaE E("1*½
 1n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN N(µ
-²
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaF F(º
+·
 n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN O(
-%0java.lang.String"__concat*
-AbstractUser{*	
-email='ìé
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaF F(
+%0java.lang.String"__id*'*%
+logic.users.AbstractUser"
+email"Š
 n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaO O(&
-%1java.lang.String"5logic.users.AbstractUser#getEmail()Ljava/lang/String;*
-logic.users.AbstractUser2
-getEmail()É
-Æ
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN O(&
-%2java.lang.String"__concat*
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaF F(
 
-%0java.lang.String*
-
-%1java.lang.String·
-´
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN O(-
-%3java.lang.String"__concat*
-
-%2java.lang.String*
-""Á
-¾
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN P(
-%4java.lang.String"__concat*
-
-%3java.lang.String*
-, password='òï
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaP! P(.
-%5java.lang.String"8logic.users.AbstractUser#getPassword()Ljava/lang/String;*
-logic.users.AbstractUser2getPassword()É
-Æ
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN P(.
-%6java.lang.String"__concat*
-
-%4java.lang.String*
-
-%5java.lang.String·
-´
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN P(5
-%7java.lang.String"__concat*
-
-%6java.lang.String*
-""·
-´
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN Q(
-%8java.lang.String"__concat*
-
-%7java.lang.String*
-"""Š
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaN Q(
-
-%8java.lang.StringB
+%0java.lang.StringB
 logic.users.AbstractUser

@@ -608,12 +608,12 @@ toString()9logic.structures.stack.Stack#toString()Ljava/lang/String;,
 logic.ServerSettingsjava.lang.Object*
 <init>()logic.ServerSettings#<init>()V
 	TypeTokenjava.lang.Object'
-Llogic/ServerSettings$540;	TypeToken'
-Llogic/ServerSettings$638;	TypeToken'
-Llogic/ServerSettings$740;	TypeToken'
-Llogic/ServerSettings$833;	TypeToken'
-Llogic/ServerSettings$927;	TypeToken(
-Llogic/ServerSettings$1030;	TypeTokenâ
+Llogic/ServerSettings$537;	TypeToken'
+Llogic/ServerSettings$635;	TypeToken'
+Llogic/ServerSettings$737;	TypeToken'
+Llogic/ServerSettings$830;	TypeToken'
+Llogic/ServerSettings$924;	TypeToken(
+Llogic/ServerSettings$1027;	TypeTokenâ
 logic.users.MyMenujava.lang.Objectjava.io.Serializable(
 <init>()logic.users.MyMenu#<init>()VG
 byRecentFirst()4logic.users.MyMenu#byRecentFirst()Ljava/lang/String;=
@@ -625,25 +625,25 @@ byRating()/logic.users.MyMenu#byRating()Ljava/lang/String;E
 	inOrder()6logic.structures.splay.SplayTree#inOrder()LSimpleList;6
 <init>()*logic.structures.splay.SplayTree#<init>()VA
 	getRoot()4logic.structures.splay.SplayTree#getRoot()LTreeNode;b
-insert(Ljava/lang/Comparable;)@logic.structures.splay.SplayTree#insert(Ljava/lang/Comparable;)V¸
-resources.Userjava.lang.Objectè
-1rateRecipe(Ljava/lang/String;Ljava/lang/String;I)Zresources.User#rateRecipe(Ljava/lang/String;Ljava/lang/String;I)LResponse/ResponseBuilder;[
-getFeed(Ljava/lang/String;)<resources.User#getFeed(Ljava/lang/String;)Ljava/lang/String;∑
-EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)nresources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;è
-1shareRecipe(Ljava/lang/String;Ljava/lang/String;)Zresources.User#shareRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;m
+insert(Ljava/lang/Comparable;)@logic.structures.splay.SplayTree#insert(Ljava/lang/Comparable;)Vâ
+resources.Userjava.lang.Object
+1rateRecipe(Ljava/lang/String;Ljava/lang/String;I)Jresources.User#rateRecipe(Ljava/lang/String;Ljava/lang/String;I)LResponse;[
+getFeed(Ljava/lang/String;)<resources.User#getFeed(Ljava/lang/String;)Ljava/lang/String;ß
+EcommentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)^resources.User#commentRecipe(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)LResponse;
+1shareRecipe(Ljava/lang/String;Ljava/lang/String;)Jresources.User#shareRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse;m
 $getMymenuRecient(Ljava/lang/String;)Eresources.User#getMymenuRecient(Ljava/lang/String;)Ljava/lang/String;i
 "getMymenuRated(Ljava/lang/String;)Cresources.User#getMymenuRated(Ljava/lang/String;)Ljava/lang/String;m
 $getNotifications(Ljava/lang/String;)Eresources.User#getNotifications(Ljava/lang/String;)Ljava/lang/String;g
 !getMymenuDiff(Ljava/lang/String;)Bresources.User#getMymenuDiff(Ljava/lang/String;)Ljava/lang/String;Ö
-0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;ç
-0likeRecipe(Ljava/lang/String;Ljava/lang/String;)Yresources.User#likeRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;ë
-2createRecipe(Ljava/lang/String;Ljava/lang/String;)[resources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse/ResponseBuilder;e
+0verifyUser(Ljava/lang/String;Ljava/lang/String;)Qresources.User#verifyUser(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;}
+0likeRecipe(Ljava/lang/String;Ljava/lang/String;)Iresources.User#likeRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse;Å
+2createRecipe(Ljava/lang/String;Ljava/lang/String;)Kresources.User#createRecipe(Ljava/lang/String;Ljava/lang/String;)LResponse;e
  getFollowers(Ljava/lang/String;)Aresources.User#getFollowers(Ljava/lang/String;)Ljava/lang/String;$
 <init>()resources.User#<init>()VR
-chefRequest(Ljava/lang/String;)/resources.User#chefRequest(Ljava/lang/String;)Vi
-createUser(Ljava/lang/String;)Gresources.User#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;_
-getSubject(Ljava/lang/String;Z)<resources.User#getSubject(Ljava/lang/String;Z)LAbstractUser;ë
-2addFollower(Ljava/lang/String;Ljava/lang/String;Z)[resources.User#addFollower(Ljava/lang/String;Ljava/lang/String;Z)LResponse/ResponseBuilder;˙V
+chefRequest(Ljava/lang/String;)/resources.User#chefRequest(Ljava/lang/String;)VY
+createUser(Ljava/lang/String;)7resources.User#createUser(Ljava/lang/String;)LResponse;_
+getSubject(Ljava/lang/String;Z)<resources.User#getSubject(Ljava/lang/String;Z)LAbstractUser;Å
+2addFollower(Ljava/lang/String;Ljava/lang/String;Z)Kresources.User#addFollower(Ljava/lang/String;Ljava/lang/String;Z)LResponse;˙V
 java.util.logging.Loggerjava.lang.ObjectF
 isLevelInitialized().java.util.logging.Logger#isLevelInitialized()Zd
 #fine(Ljava/util/function/Supplier;)=java.util.logging.Logger#fine(Ljava/util/function/Supplier;)Vî
@@ -811,7 +811,7 @@ $getNotifications(Ljava/lang/String;)Lresources.Enterprises#getNotifications(Lj
 <init>()resources.Enterprises#<init>()Vp
 createUser(Ljava/lang/String;)Nresources.Enterprises#createUser(Ljava/lang/String;)LResponse/ResponseBuilder;l
  getMenuRated(Ljava/lang/String;)Hresources.Enterprises#getMenuRated(Ljava/lang/String;)Ljava/lang/String;ò
-2addFollower(Ljava/lang/String;Ljava/lang/String;Z)bresources.Enterprises#addFollower(Ljava/lang/String;Ljava/lang/String;Z)LResponse/ResponseBuilder;«
+2addFollower(Ljava/lang/String;Ljava/lang/String;Z)bresources.Enterprises#addFollower(Ljava/lang/String;Ljava/lang/String;Z)LResponse/ResponseBuilder;‚
 logic.users.AbstractUserjava.lang.Comparablejava.lang.Objectjava.io.Serializable\
 setPassword(Ljava/lang/String;)9logic.users.AbstractUser#setPassword(Ljava/lang/String;)VR
 equals(Ljava/lang/Object;)4logic.users.AbstractUser#equals(Ljava/lang/Object;)Zd
@@ -823,7 +823,8 @@ getEmail()5logic.users.AbstractUser#getEmail()Ljava/lang/String;2
 
 hashCode()$logic.users.AbstractUser#hashCode()I@
 encryptPassword()+logic.users.AbstractUser#encryptPassword()VV
-setEmail(Ljava/lang/String;)6logic.users.AbstractUser#setEmail(Ljava/lang/String;)V>
+setEmail(Ljava/lang/String;)6logic.users.AbstractUser#setEmail(Ljava/lang/String;)V∑
+@getNotNull(Llogic/users/AbstractUser;Llogic/users/AbstractUser;)slogic.users.AbstractUser#getNotNull(Llogic/users/AbstractUser;Llogic/users/AbstractUser;)Llogic/users/AbstractUser;>
 getNewsFeed()-logic.users.AbstractUser#getNewsFeed()LStack;2
 
 setChef(Z)$logic.users.AbstractUser#setChef(Z)V.
@@ -836,7 +837,8 @@ setChef(Z)$logic.users.AbstractUser#setChef(Z)V.
 %compareTo(Llogic/users/AbstractUser;)?logic.users.AbstractUser#compareTo(Llogic/users/AbstractUser;)I4
 getRating()%logic.users.AbstractUser#getRating()IX
 addRecipe(Ljava/lang/String;)7logic.users.AbstractUser#addRecipe(Ljava/lang/String;)VT
-setName(Ljava/lang/String;)5logic.users.AbstractUser#setName(Ljava/lang/String;)Vl
+setName(Ljava/lang/String;)5logic.users.AbstractUser#setName(Ljava/lang/String;)V_
+getRecipe(Ljava/lang/String;)>logic.users.AbstractUser#getRecipe(Ljava/lang/String;)LRecipe;l
 'addFollower(Llogic/users/AbstractUser;)Alogic.users.AbstractUser#addFollower(Llogic/users/AbstractUser;)VC
 
 toString()5logic.users.AbstractUser#toString()Ljava/lang/String;g

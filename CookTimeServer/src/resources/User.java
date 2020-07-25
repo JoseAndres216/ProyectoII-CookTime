@@ -140,6 +140,7 @@ public class User {
             if (ServerManager.getInstance().likeRecipe(recipe, user)) {
                 return Response.status(Response.Status.NOT_FOUND).build();
             }
+            ServerManager.getInstance().saveInfo();
             return Response.status(Response.Status.ACCEPTED).build();
         } catch (Exception e) {
             log.log(Level.SEVERE, e.getMessage());
@@ -157,7 +158,7 @@ public class User {
     @POST
     @Path("/recipe/share")
     public Response shareRecipe(@QueryParam("recipe") String recipeName,
-                                                @QueryParam("user") String email) {
+                                @QueryParam("user") String email) {
         try {
             Recipe recipe = ServerManager.getInstance().findRecipe(recipeName);
             AbstractUser user = ServerManager.getInstance().getUser(email);
@@ -340,6 +341,7 @@ public class User {
             newfollower = getSubject(follower, isUser);
             if (newfollower != null && followed != null) {
                 followed.addFollower(newfollower);
+                log.log(Level.INFO, newfollower + " started following " + user);
                 return Response.status(Response.Status.CREATED).build();
             }
             return Response.status(Response.Status.NOT_FOUND).build();

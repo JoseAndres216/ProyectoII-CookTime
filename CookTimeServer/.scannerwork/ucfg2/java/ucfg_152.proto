@@ -1,17 +1,9 @@
 
-8logic.users.AbstractUser#getPassword()Ljava/lang/String;p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaÂ Â("1*Æ
+"logic.users.AbstractUser#isChef()Zp
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java¼ ¼("1*ñ
 1p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaÃ Ã(¿
-¼
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java½ ½("z
 p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaÃ Ã(
-%0java.lang.String"__id***(
-logic.users.AbstractUser"
-
-password"Œ
-p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.javaÃ Ã(
-
-%0java.lang.StringB
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java½ ½(
+""B
 logic.users.AbstractUser

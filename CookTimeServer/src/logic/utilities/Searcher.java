@@ -51,7 +51,7 @@ public interface Searcher {
             TreeNode<Recipe> node = cola.peek();
             if (node != null) {
                 // if the actual node matches, adds it to the list, and
-                if (node.getData().getName().contains(key)) {
+                if (node.getData().getName().toLowerCase().trim().contains(key)) {
                     results.append(node.getData());
                     counter--;
                 }
@@ -110,7 +110,7 @@ public interface Searcher {
             TreeNode<AbstractUser> node = cola.peek();
             if (node != null) {
                 // if the actual node matches, adds it to the list, and
-                if (node.getData().getEmail().contains(key)) {
+                if (node.getData().getEmail().toLowerCase().trim().contains(key)) {
                     if (node.getData().isChef()) {
                         results.addFirst(node.getData());
                         counter--;

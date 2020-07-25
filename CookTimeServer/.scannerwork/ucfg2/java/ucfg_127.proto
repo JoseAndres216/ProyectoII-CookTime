@@ -1,28 +1,28 @@
 
-Hresources.Enterprises#getFollowers(Ljava/lang/String;)Ljava/lang/String;m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java° °("startingBlock*ý
+Hresources.Enterprises#getMenuRated(Ljava/lang/String;)Ljava/lang/String;m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaŒ Œ("startingBlock*ý
 startingBlockm
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java° °(?©
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaŒ Œ(?©
 ¦
 m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java­ ­(
-%0"
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java‰ ‰(
+%4"
 __annotate*
 GET*
 
 userjava.lang.Stringª
 §
 m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java® ®(
-%1"
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaŠ Š(
+%5"
 __annotate*
 Path*
 
 userjava.lang.String®
 «
 m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java¯ ¯()
-%2"
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java‹ ‹()
+%6"
 __annotate*
 
 Produces*
@@ -30,8 +30,8 @@ __annotate*
 userjava.lang.String°
 ­
 m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java° °(2
-%3"
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaŒ Œ(2
+%7"
 __annotate*
 
 QueryParam*
@@ -39,21 +39,21 @@ QueryParam*
 userjava.lang.Stringº
 ·
 m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java°: °(>
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaŒ: Œ(>
 userjava.lang.String"__annotation*
 
-%0*
+%4*
 
-%1*
+%5*
 
-%2*
+%6*
 
-%3*
-1*ë
-1m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java± ±("w
+%7*
+4*ë
+4m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaŽ Ž(Q"w
 m
-aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java± ±(X
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaŽ Ž(Q
 "":
 userjava.lang.StringB
 resources.Enterprises

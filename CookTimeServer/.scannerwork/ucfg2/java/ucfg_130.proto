@@ -1,56 +1,55 @@
 
-$logic.users.AbstractUser#hashCode()In
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java2 2("1*¤
-1n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3(êç
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3(%
-%0java.lang.String"4logic.users.AbstractUser#getName()Ljava/lang/String;*
-logic.users.AbstractUser2	getName()ìé
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3' 3(1
-%1java.lang.String"5logic.users.AbstractUser#getEmail()Ljava/lang/String;*
-logic.users.AbstractUser2
-getEmail()òï
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java33 3(@
-%2java.lang.String"8logic.users.AbstractUser#getPassword()Ljava/lang/String;*
-logic.users.AbstractUser2getPassword()ÕÒ
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3B 3(O
-%3"-logic.users.AbstractUser#getNewsFeed()LStack;*
-logic.users.AbstractUser2getNewsFeed()ßÜ
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3Q 3(c
-%4"2logic.users.AbstractUser#getNotifications()LStack;*
-logic.users.AbstractUser2getNotifications()ÒÏ
-n
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3e 3(p
-%5",logic.users.AbstractUser#getMyMenu()LMyMenu;*
-logic.users.AbstractUser2getMyMenu()ÝÚ
-o
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3r 3(€
-%6"3logic.users.AbstractUser#getFollowers()LSimpleList;*
-logic.users.AbstractUser2getFollowers()ÒÏ
-p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3‚ 3(	
-%7int"%logic.users.AbstractUser#getRating()I*
-logic.users.AbstractUser2getRating()ÐÍ
-p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3(—
-%8boolean""logic.users.AbstractUser#isChef()Z*
-logic.users.AbstractUser2isChef()Ë
-È
-o
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3(˜
-%9",java.util.Objects#hash([Ljava/lang/Object;)I*"
-java.util.Objects*
-
-%0java.lang.String*
-
-%1java.lang.String*
-
-%2java.lang.String*
+Fresources.Enterprises#getMembers(Ljava/lang/String;)Ljava/lang/String;m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java¾ ¾("startingBlock*¿	
+startingBlockm
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java¾ ¾(?ª
+§
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaº º(
+%3"
+__annotate*
+GET*
+
+emailjava.lang.String¯
+¬
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java» »(#
+%4"
+__annotate*
+
+Consumes*
+
+emailjava.lang.String¯
+¬
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java¼ ¼()
+%5"
+__annotate*
+
+Produces*
+
+emailjava.lang.String«
+¨
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java½ ½(
+%6"
+__annotate*
+Path*
+
+emailjava.lang.String±
+®
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java¾ ¾(1
+%7"
+__annotate*
+
+QueryParam*
+
+emailjava.lang.StringÃ
+À
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.java¾9 ¾(>
+emailjava.lang.String"__annotation*
 
 %3*
 
@@ -58,12 +57,20 @@ dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/us
 
 %5*
 
-%6*
-	
-%7int*
-
-%8boolean"y
-o
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/users/AbstractUser.java3 3(™
-""B
-logic.users.AbstractUser
+%6*
+
+%7*
+3
+4*ë
+3m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaÄ Ä("w
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaÄ Ä(
+""*ë
+4m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaÂ Â(/"w
+m
+aC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/resources/Enterprises.javaÂ Â(/
+"":
+emailjava.lang.StringB
+resources.Enterprises

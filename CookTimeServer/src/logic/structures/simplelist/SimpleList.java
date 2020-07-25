@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class SimpleList<T extends Serializable> implements Serializable {
 
-    private Node<T> head = null;
-    private Node<T> tail = null;
-    private int len = 0;
+    private Node<T> head  ;
+    private Node<T> tail  ;
+    private int len;
 
     public SimpleList() {
         this.head = null;

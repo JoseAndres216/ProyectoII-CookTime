@@ -1,5 +1,6 @@
 package resources;
 
+import com.sun.istack.internal.logging.Logger;
 import logic.ServerManager;
 import logic.utilities.Searcher;
 
@@ -8,6 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import java.util.logging.Level;
 
 @Path("/search")
 /*
@@ -20,6 +22,8 @@ import javax.ws.rs.core.MediaType;
  */
 public class Searches {
 
+    private Logger log = Logger.getLogger("Searches Log.", this.getClass());
+
     /**
      * Method for searching recipes on the server for recipes, with rated sorting
      *
@@ -30,7 +34,7 @@ public class Searches {
     @Path("/recipes/rated")
     @Produces(MediaType.APPLICATION_JSON)
     public String searchRecipesRated(@QueryParam("key") String key) {
-
+        log.log(Level.WARNING, "Recipes rated results: " + ServerManager.getInstance().searchRecipesRated(key));
         return ServerManager.getInstance().searchRecipesRated(key);
     }
 
@@ -44,6 +48,7 @@ public class Searches {
     @Path("/recipes/difficulty")
     @Produces(MediaType.APPLICATION_JSON)
     public String searchRecipesDifficulty(@QueryParam("key") String key) {
+        log.log(Level.WARNING, "Recipes rated results: " + ServerManager.getInstance().searchRecipesDifficulty(key));
 
         return ServerManager.getInstance().searchRecipesDifficulty(key);
     }
@@ -58,6 +63,8 @@ public class Searches {
     @Path("/recipes/duration")
     @Produces(MediaType.APPLICATION_JSON)
     public String searchRecipesDuration(@QueryParam("key") String key) {
+        log.log(Level.WARNING, "Recipes rated results: " + ServerManager.getInstance().searchRecipesDuration(key));
+
         return ServerManager.getInstance().searchRecipesDuration(key);
     }
 
@@ -82,6 +89,7 @@ public class Searches {
     @Path("/recipes/suggest/ranked")
     @Produces(MediaType.APPLICATION_JSON)
     public String ratedRecipes() {
+        log.log(Level.WARNING, "Recipes by ranking: " + Searcher.recipesRatedSuggests());
         return Searcher.recipesRatedSuggests();
     }
 
@@ -95,6 +103,9 @@ public class Searches {
     @Path("/users/rated")
     @Produces(MediaType.APPLICATION_JSON)
     public String searchUsersRated(@QueryParam("key") String key) {
+        log.log(Level.WARNING, "Users rated results: " + ServerManager.getInstance().searchSubjectRated(key, true));
+
+
         return (ServerManager.getInstance().searchSubjectRated(key, true));
     }
 
@@ -119,6 +130,7 @@ public class Searches {
     @Path("/users/suggest/ranked")
     @Produces(MediaType.APPLICATION_JSON)
     public String ratedUsers() {
+        log.log(Level.WARNING, "Users by ranking: " + Searcher.sugestRatedUsers());
         return Searcher.sugestRatedUsers();
     }
 

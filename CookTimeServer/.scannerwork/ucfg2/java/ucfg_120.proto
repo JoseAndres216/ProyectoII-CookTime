@@ -1,11 +1,10 @@
 
-Mlogic.ServerManager#searchSubjectRated(Ljava/lang/String;Z)Ljava/lang/String;k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÉ É($"1*ç
+Qlogic.ServerManager#searchRecipesDifficulty(Ljava/lang/String;)Ljava/lang/String;k
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÎ Î()"1*ç
 1k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÊ Ê("u
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÏ Ï("u
 k
-_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÊ Ê(W
+_C:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/ServerManager.javaÏ Ï(s
 "":
-keyjava.lang.String:
-""B
+keyjava.lang.StringB
 logic.ServerManager

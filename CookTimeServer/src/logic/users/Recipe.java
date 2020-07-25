@@ -237,6 +237,7 @@ public class Recipe implements Comparable<Recipe>, Serializable {
      * @param user user that liked the recipe
      */
     public void addLike(AbstractUser user) {
+        ServerManager.getInstance().getUser(this.author).addNotification(this.author + ServerSettings.NOTIFICATION_LIKED);
         this.likes++;
     }
 

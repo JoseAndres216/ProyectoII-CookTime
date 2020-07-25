@@ -1,9 +1,42 @@
 
-=logic.utilities.Searcher#sugestRatedUsers()Ljava/lang/String;p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaý ý(""1*ñ
-1p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaþ þ("z
+@logic.utilities.Searcher#usersRandomSuggest(Z)Ljava/lang/String;p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaÁ Á($"11* 
+8p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaÏ Ï()Ÿœ
 p
-dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaþ þ(v
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaÏ! Ï('
+%2java.util.Random"java.util.Random±
+®
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaÏ Ï()
+%3"java.util.Random#<init>()V*
+
+%2java.util.RandomÊÇ
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaÏ Ï(4	
+%4int"java.util.Random#nextInt(I)I*
+
+%2java.util.Random*22
+nextInt(I)*
+8
+1*¸
+11p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaÈ È(!‘Ž
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaË1 Ë(=
+%0"java.util.LinkedList£
+ 
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaË- Ë(?
+%1"java.util.LinkedList#<init>()V*
+
+%0*
+8
+1*ñ
+1p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaá á("z
+p
+dC:/Users/eduar/Desktop/CookTime/ProyectoII-CookTime/CookTimeServer/src/logic/utilities/Searcher.javaá á(:
+"":
 ""B"
 logic.utilities.Searcher
